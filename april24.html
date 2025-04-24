@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Preguntas sobre las Plantas de Colombia</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .correct {
+            color: green;
+        }
+        .incorrect {
+            color: red;
+        }
+        .explanation {
+            font-size: 0.875rem; /* 14px */
+            color: #6b7280; /* gray-500 */
+            margin-top: 0.5rem; /* 8px */
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-r from-green-100 to-yellow-100 min-h-screen flex justify-center items-start py-8">
+    <div class="bg-white rounded-lg shadow-xl p-8 w-full max-w-2xl">
+        <h1 class="text-2xl font-semibold text-green-600 mb-6 text-center">Preguntas sobre las Plantas de Colombia</h1>
+
+        <div id="preguntas-container" class="space-y-6">
+            </div>
+
+        <button id="verificar-respuestas" class="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2.5 px-5 rounded-lg transition duration-300 ease-in-out w-full">
+            Verificar Respuestas
+        </button>
+
+        <div id="resultados" class="mt-6 p-4 bg-yellow-100 rounded-md border border-yellow-300 text-yellow-700 hidden">
+            <h2 class="text-lg font-semibold mb-2">Resultados:</h2>
+            <p id="puntaje"></p>
+            <p id="respuestas-correctas"></p>
+        </div>
+    </div>
+
+    <script>
+        const preguntas = [
+            {
+                tipo: "multiple",
+                pregunta: "¿Qué es la fotosíntesis?",
+                opciones: [
+                    "El proceso en que las plantas respiran.",
+                    "El proceso en que las plantas producen su alimento usando luz solar, agua y dióxido de carbono.",
+                    "El proceso en que las plantas absorben nutrientes del suelo."
+                ],
+                respuesta: "El proceso en que las plantas producen su alimento usando luz solar, agua y dióxido de carbono.",
+                explicacion: "La fotosíntesis es el proceso mediante el cual las plantas convierten la energía de la luz en energía química para su sustento."
+            },
+            {
+                tipo: "multiple",
+                pregunta: "¿Cuál de las siguientes es una parte de la planta y su función?",
+                opciones: [
+                    "Tallo: absorbe agua.",
+                    "Hoja: realiza la fotosíntesis.",
+                    "Raíz: sostiene la planta."
+                ],
+                respuesta: "Hoja: realiza la fotosíntesis.",
+                explicacion: "Las hojas son los principales órganos fotosintéticos de las plantas."
+            },
+            {
+                tipo: "multiple",
+                pregunta: "¿Cómo se adaptan los cactus al desierto de la Tatacoa?",
+                opciones: [
+                    "Tienen hojas grandes para captar más luz.",
+                    "Almacenan agua en sus tallos gruesos y tienen espinas para no perder agua.",
+                    "Crecen muy rápido para buscar sombra."
+                ],
+                respuesta: "Almacenan agua en sus tallos gruesos y tienen espinas para no perder agua.",
+                explicacion: "Los cactus han desarrollado adaptaciones para conservar agua en ambientes áridos."
+            },
+            {
+                tipo: "multiple",
+                pregunta: "¿Qué tienen las hojas del frailejón para protegerse del frío?",
+                opciones: [
+                    "Son muy delgadas.",
+                    "Son de color rojo.",
+                    "Son peludas."
+                ],
+                respuesta: "Son peludas.",
+                explicacion: "Los pelos en las hojas del frailejón ayudan a aislar la planta del frío."
+            },
+            {
+                tipo: "multiple",
+                pregunta: "¿Cuál es la flor nacional de Colombia?",
+                opciones: [
+                    "El girasol.",
+                    "La rosa.",
+                    "La orquídea."
+                ],
+                respuesta: "La orquídea.",
+                explicacion: "La orquídea es la flor nacional de Colombia, conocida por su diversidad y belleza."
+            },
+            {
+                tipo: "checkbox",
+                pregunta: "¿Qué necesita una planta para realizar la fotosíntesis? (Selecciona todas las que apliquen)",
+                opciones: [
+                    "Luz solar",
+                    "Agua",
+                    "Dióxido de carbono",
+                    "Oxígeno"
+                ],
+                respuesta: ["Luz solar", "Agua", "Dióxido de carbono"],
+                explicacion: "La fotosíntesis requiere luz solar, agua y dióxido de carbono. El oxígeno es un producto de este proceso, no un reactivo."
+            },
+            {
+                tipo: "checkbox",
+                pregunta: "¿Qué nos proporcionan las plantas? (Selecciona todas las que apliquen)",
+                opciones: [
+                    "Alimento",
+                    "Medicinas",
+                    "Materiales para construir",
+                    "Dióxido de carbono"
+                ],
+                respuesta: ["Alimento", "Medicinas", "Materiales para construir"],
+                explicacion: "Las plantas son fuentes de alimento, medicinas y materiales de construcción. El dióxido de carbono es consumido por las plantas, no proporcionado."
+            },
+            {
+                tipo: "checkbox",
+                pregunta: "¿Qué adaptaciones permiten a las plantas sobrevivir en diferentes regiones de Colombia? (Selecciona todas las que apliquen)",
+                opciones: [
+                    "Almacenar agua en tallos gruesos",
+                    "Tener hojas peludas",
+                     "Tener raíces muy largas",
+                    "Subir a los árboles para buscar luz"
+                ],
+                respuesta: ["Almacenar agua en tallos gruesos", "Tener hojas peludas", "Subir a los árboles para buscar luz"],
+                explicacion: "Estas adaptaciones ayudan a las plantas a sobrevivir en condiciones de sequía, frío y falta de luz, respectivamente."
+            },
+             {
+                tipo: "checkbox",
+                pregunta: "¿Qué partes de la planta están involucradas en el transporte de agua y nutrientes? (Selecciona todas las que apliquen)",
+                opciones: [
+                    "Raíz",
+                    "Tallo",
+                    "Hojas",
+                    "Flores"
+                ],
+                respuesta: ["Raíz", "Tallo"],
+                explicacion: "Las raíces absorben el agua y los nutrientes del suelo, y el tallo los transporta a otras partes de la planta."
+            },
+            {
+                tipo: "checkbox",
+                pregunta: "¿Qué características ayudan a las plantas a atraer a los insectos para la reproducción? (Selecciona todas las que apliquen)",
+                opciones: [
+                    "Espinas",
+                    "Colores únicos",
+                    "Formas únicas",
+                    "Aromas Dulces"
+                ],
+                respuesta: ["Colores únicos", "Formas únicas", "Aromas Dulces"],
+                explicacion: "Los colores, formas y aromas atractivos ayudan a las plantas a atraer polinizadores."
+            }
+        ];
+
+        const preguntasContainer = document.getElementById('preguntas-container');
+        const verificarRespuestasButton = document.getElementById('verificar-respuestas');
+        const resultadosDiv = document.getElementById('resultados');
+        const puntajeSpan = document.getElementById('puntaje');
+        const respuestasCorrectasSpan = document.getElementById('respuestas-correctas');
+
+        function mostrarPreguntas() {
+            preguntas.forEach((pregunta, index) => {
+                const preguntaDiv = document.createElement('div');
+                preguntaDiv.classList.add('pregunta', 'p-6', 'rounded-lg', 'bg-gradient-to-r', 'from-white', 'to-white', 'shadow-md');
+                preguntaDiv.innerHTML = `<h2 class="text-xl font-semibold text-indigo-600 mb-4">${index + 1}. ${pregunta.pregunta}</h2>`;
+
+                if (pregunta.tipo === "multiple") {
+                    pregunta.opciones.forEach(opcion => {
+                        preguntaDiv.innerHTML += `
+                            <div class="mb-3">
+                                <label class="flex items-center">
+                                    <input type="radio" name="pregunta-${index}" value="${opcion}" class="mr-3 text-blue-500 focus:ring-blue-500 h-5 w-5">
+                                    <span class="text-gray-700">${opcion}</span>
+                                </label>
+                            </div>
+                        `;
+                    });
+                } else if (pregunta.tipo === "checkbox") {
+                    pregunta.opciones.forEach(opcion => {
+                        preguntaDiv.innerHTML += `
+                            <div class="mb-3">
+                                <label class="flex items-center">
+                                    <input type="checkbox" name="pregunta-${index}" value="${opcion}" class="mr-3 text-blue-500 focus:ring-blue-500 h-5 w-5">
+                                    <span class="text-gray-700">${opcion}</span>
+                                </label>
+                            </div>
+                        `;
+                    });
+                }
+
+                preguntasContainer.appendChild(preguntaDiv);
+            });
+        }
+
+        function verificarRespuestas() {
+            let puntaje = 0;
+            const respuestasCorrectas = [];
+
+            preguntas.forEach((pregunta, index) => {
+                const preguntaDiv = preguntasContainer.children[index];
+                let respuestaUsuario;
+
+                if (pregunta.tipo === "multiple") {
+                    const opciones = preguntaDiv.querySelectorAll('input[type="radio"]');
+                    opciones.forEach(opcion => {
+                        if (opcion.checked) {
+                            respuestaUsuario = opcion.value;
+                        }
+                    });
+                    if (respuestaUsuario === pregunta.respuesta) {
+                        puntaje++;
+                        respuestasCorrectas.push(`Pregunta ${index + 1}: Correcta`);
+                         const preguntaTexto = preguntaDiv.querySelector('h2');
+                         preguntaTexto.classList.add('correct')
+                    }
+                    else{
+                        respuestasCorrectas.push(`Pregunta ${index + 1}: Incorrecta`);
+                         const preguntaTexto = preguntaDiv.querySelector('h2');
+                         preguntaTexto.classList.add('incorrect')
+                    }
+
+                    const explicacionDiv = document.createElement('div');
+                    explicacionDiv.classList.add('explanation');
+                    explicacionDiv.textContent = pregunta.explicacion;
+                    preguntaDiv.appendChild(explicacionDiv);
+
+                } else if (pregunta.tipo === "checkbox") {
+                    const opciones = preguntaDiv.querySelectorAll('input[type="checkbox"]');
+                    const respuestasUsuarioArray = [];
+                    opciones.forEach(opcion => {
+                        if (opcion.checked) {
+                            respuestasUsuarioArray.push(opcion.value);
+                        }
+                    });
+                    if (respuestasUsuarioArray.length === pregunta.respuesta.length &&
+                        respuestasUsuarioArray.every(respuesta => pregunta.respuesta.includes(respuesta))) {
+                        puntaje++;
+                        respuestasCorrectas.push(`Pregunta ${index + 1}: Correcta`);
+                        const preguntaTexto = preguntaDiv.querySelector('h2');
+                         preguntaTexto.classList.add('correct')
+                    }
+                     else{
+                        respuestasCorrectas.push(`Pregunta ${index + 1}: Incorrecta`);
+                        const preguntaTexto = preguntaDiv.querySelector('h2');
+                         preguntaTexto.classList.add('incorrect')
+                    }
+                    const explicacionDiv = document.createElement('div');
+                    explicacionDiv.classList.add('explanation');
+                    explicacionDiv.textContent = pregunta.explicacion;
+                    preguntaDiv.appendChild(explicacionDiv);
+                }
+            });
+
+            puntajeSpan.textContent = `Obtuviste ${puntaje} de ${preguntas.length}`;
+            respuestasCorrectasSpan.textContent = respuestasCorrectas.join(', ');
+            resultadosDiv.classList.remove('hidden');
+        }
+
+        mostrarPreguntas();
+        verificarRespuestasButton.addEventListener('click', verificarRespuestas);
+    </script>
+</body>
+</html>
