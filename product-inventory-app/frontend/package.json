@@ -1,0 +1,33 @@
+{
+  "name": "product-inventory-app",
+  "version": "1.0.0",
+  "description": "A web application for managing product inventory.",
+  "main": "src/index.js",
+  "scripts": {
+    "ng": "ng",
+    "start": "ng serve",
+    "build": "ng build",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/common": "^12.0.0",
+    "@angular/core": "^12.0.0",
+    "@angular/forms": "^12.0.0",
+    "@angular/platform-browser": "^12.0.0",
+    "@angular/platform-browser-dynamic": "^12.0.0",
+    "@angular/router": "^12.0.0",
+    "rxjs": "~6.6.0",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular/compiler-cli": "^12.0.0",
+    "@types/node": "^12.11.7",
+    "typescript": "~4.2.3"
+  },
+  "engines": {
+    "node": ">=12.0.0"
+  }
+}

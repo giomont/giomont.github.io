@@ -1,0 +1,99 @@
+{
+  "version": 1,
+  "newProjectRoot": "projects",
+  "projects": {
+    "product-webapp": {
+      "projectType": "application",
+      "root": "client",
+      "sourceRoot": "client/src",
+      "prefix": "app",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/product-webapp",
+            "index": "client/src/index.html",
+            "main": "client/src/main.ts",
+            "polyfills": "client/src/polyfills.ts",
+            "tsConfig": "client/tsconfig.app.json",
+            "assets": [
+              "client/src/favicon.ico",
+              "client/src/assets"
+            ],
+            "styles": [
+              "client/src/styles.css"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "client/src/environments/environment.ts",
+                  "with": "client/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2kb",
+                  "maximumError": "5kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "product-webapp:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "product-webapp:build:production"
+            }
+          }
+        },
+        "test": {
+          "builder": "@angular-devkit/build-angular:karma",
+          "options": {
+            "main": "client/src/test.ts",
+            "polyfills": "client/src/polyfills.ts",
+            "tsConfig": "client/tsconfig.spec.json",
+            "karmaConfig": "client/karma.conf.js",
+            "assets": [
+              "client/src/favicon.ico",
+              "client/src/assets"
+            ],
+            "styles": [
+              "client/src/styles.css"
+            ],
+            "scripts": []
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "client/tsconfig.app.json",
+              "client/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**"
+            ]
+          }
+        }
+      }
+    }
+  },
+  "defaultProject": "product-webapp"
+}

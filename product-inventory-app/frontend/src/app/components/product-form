@@ -1,0 +1,23 @@
+export class ProductFormComponent {
+    productName: string = '';
+    productPrice: number = 0;
+    productQuantity: number = 0;
+
+    constructor(private productService: ProductService) {}
+
+    onSubmit() {
+        const product = {
+            name: this.productName,
+            price: this.productPrice,
+            quantity: this.productQuantity
+        };
+
+        this.productService.addProduct(product).subscribe(response => {
+            console.log('Product added:', response);
+            // Reset form fields after submission
+            this.productName = '';
+            this.productPrice = 0;
+            this.productQuantity = 0;
+        });
+    }
+}

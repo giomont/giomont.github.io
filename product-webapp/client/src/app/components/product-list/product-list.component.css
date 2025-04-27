@@ -1,0 +1,27 @@
+/* Styles for the product list component */
+.product-list {
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+}
+
+.product-item {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.product-name {
+    font-weight: bold;
+}
+
+.product-price {
+    color: green;
+}
+
+.product-quantity {
+    color: #555;
+}
