@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz: Diptongos, Triptongos e Hiatos</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: "Inter", sans-serif;
+            background-color: #f0f4f8;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Align items to the top */
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .container {
+            background-color: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            max-width: 800px;
+            width: 100%;
+        }
+        .question {
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #eef2f7;
+            border-radius: 8px;
+        }
+        .question p {
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #334155;
+        }
+        .options label {
+            display: block;
+            margin-bottom: 8px;
+            cursor: pointer;
+            color: #475569;
+            transition: color 0.2s ease;
+        }
+        .options label:hover {
+            color: #1e3a8a;
+        }
+        .options input[type="radio"] {
+            margin-right: 8px;
+            accent-color: #3b82f6; /* Primary color for radio buttons */
+        }
+        .submit-button {
+            display: block;
+            width: 100%;
+            padding: 12px;
+            background-color: #3b82f6;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .submit-button:hover {
+            background-color: #2563eb;
+        }
+        .results {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid #e2e8f0;
+        }
+        .results h2 {
+            font-size: 24px;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #1e293b;
+        }
+        .incorrect-answer {
+            margin-bottom: 15px;
+            padding: 15px;
+            background-color: #fee2e2; /* Light red */
+            border-left: 4px solid #ef4444; /* Red border */
+            border-radius: 8px;
+        }
+        .incorrect-answer p {
+            margin-bottom: 5px;
+            color: #b91c1c; /* Darker red */
+        }
+        .correct-answer {
+            font-weight: bold;
+            color: #16a34a; /* Green */
+        }
+        .percentage-bar-container {
+            width: 100%;
+            height: 25px;
+            background-color: #e2e8f0;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-top: 20px;
+        }
+        .percentage-bar {
+            height: 100%;
+            background: linear-gradient(to right, #ef4444, #f97316, #eab308, #84cc16, #22c55e); /* Red to Green gradient */
+            transition: width 0.5s ease-in-out;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1 class="text-2xl font-bold mb-6 text-center text-gray-800">Quiz: Diptongos, Triptongos e Hiatos</h1>
+
+        <form id="quizForm">
+            <div class="question">
+                <p>1. ¿Cuál de las siguientes palabras contiene un diptongo?</p>
+                <div class="options">
+                    <label><input type="radio" name="q1" value="a"> a) Ca-er</label>
+                    <label><input type="radio" name="q1" value="b"> b) Pie</label>
+                    <label><input type="radio" name="q1" value="c"> c) Pa-ís</label>
+                    <label><input type="radio" name="q1" value="d"> d) A-é-re-o</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>2. ¿Qué condición es necesaria para que se forme un triptongo?</p>
+                <div class="options">
+                    <label><input type="radio" name="q2" value="a"> a) La presencia de dos vocales abiertas y una cerrada.</label>
+                    <label><input type="radio" name="q2" value="b"> b) La unión de dos vocales cerradas.</label>
+                    <label><input type="radio" name="q2" value="c"> c) La presencia de una vocal abierta entre dos vocales cerradas.</label>
+                    <label><input type="radio" name="q2" value="d"> d) La presencia de una vocal cerrada entre dos vocales abiertas</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>3. En la palabra "reír", ¿qué tipo de encuentro vocálico hay?</p>
+                <div class="options">
+                    <label><input type="radio" name="q3" value="a"> a) Diptongo</label>
+                    <label><input type="radio" name="q3" value="b"> b) Triptongo</label>
+                    <label><input type="radio" name="q3" value="c"> c) Hiato</label>
+                    <label><input type="radio" name="q3" value="d"> d) No hay encuentro vocálico</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>4. ¿Cuál de las siguientes palabras NO contiene un hiato?</p>
+                <div class="options">
+                    <label><input type="radio" name="q4" value="a"> a) búho</label>
+                    <label><input type="radio" name="q4" value="b"> b) país</label>
+                    <label><input type="radio" name="q4" value="c"> c) agua</label>
+                    <label><input type="radio" name="q4" value="d"> d) caer</label>
+                </div>
+            </div>
+
+            <div class="question">
+                <p>5. ¿Cuál es la diferencia fundamental entre un diptongo y un hiato?</p>
+                <div class="options">
+                    <label><input type="radio" name="q5" value="a"> a) El número de vocales involucradas.</label>
+                    <label><input type="radio" name="q5" value="b"> b) La posición de las vocales en la palabra.</label>
+                    <label><input type="radio" name="q5" value="c"> c) Si las vocales se pronuncian en la misma sílaba o en sílabas diferentes.</label>
+                    <label><input type="radio" name="q5" value="d"> d) Si las vocales son abiertas o cerradas</label>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-button">Enviar Respuestas</button>
+        </form>
+
+        <div id="results" class="results hidden">
+            <h2>Resultados</h2>
+            <div id="incorrectAnswers">
+                </div>
+            <div class="percentage-bar-container">
+                <div id="percentageBar" class="percentage-bar" style="width: 0%;">0%</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        const form = document.getElementById('quizForm');
+        const resultsDiv = document.getElementById('results');
+        const incorrectAnswersDiv = document.getElementById('incorrectAnswers');
+        const percentageBar = document.getElementById('percentageBar');
+
+        // Define the correct answers
+        const correctAnswers = {
+            q1: 'b',
+            q2: 'c',
+            q3: 'c',
+            q4: 'c',
+            q5: 'c'
+        };
+
+        // Define the full text of the questions and options for displaying results
+        const questionsData = [
+            {
+                question: '1. ¿Cuál de las siguientes palabras contiene un diptongo?',
+                options: {
+                    a: 'a) Ca-er',
+                    b: 'b) Pie',
+                    c: 'c) Pa-ís',
+                    d: 'd) A-é-re-o'
+                },
+                correct: 'b'
+            },
+            {
+                question: '2. ¿Qué condición es necesaria para que se forme un triptongo?',
+                options: {
+                    a: 'a) La presencia de dos vocales abiertas y una cerrada.',
+                    b: 'b) La unión de dos vocales cerradas.',
+                    c: 'c) La presencia de una vocal abierta entre dos vocales cerradas.',
+                    d: 'd) La presencia de una vocal cerrada entre dos vocales abiertas'
+                },
+                correct: 'c'
+            },
+            {
+                question: '3. En la palabra "reír", ¿qué tipo de encuentro vocálico hay?',
+                options: {
+                    a: 'a) Diptongo',
+                    b: 'b) Triptongo',
+                    c: 'c) Hiato',
+                    d: 'd) No hay encuentro vocálico'
+                },
+                correct: 'c'
+            },
+            {
+                question: '4. ¿Cuál de las siguientes palabras NO contiene un hiato?',
+                options: {
+                    a: 'a) búho',
+                    b: 'b) país',
+                    c: 'c) agua',
+                    d: 'd) caer'
+                },
+                correct: 'c'
+            },
+            {
+                question: '5. ¿Cuál es la diferencia fundamental entre un diptongo y un hiato?',
+                options: {
+                    a: 'a) El número de vocales involucradas.',
+                    b: 'b) La posición de las vocales en la palabra.',
+                    c: 'c) Si las vocales se pronuncian en la misma sílaba o en sílabas diferentes.',
+                    d: 'd) Si las vocales son abiertas o cerradas'
+                },
+                correct: 'c'
+            }
+        ];
+
+
+        form.addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent default form submission
+
+            let correctCount = 0;
+            const totalQuestions = questionsData.length;
+            const incorrectAnswersList = [];
+
+            // Check each question
+            questionsData.forEach((qData, index) => {
+                const questionName = `q${index + 1}`;
+                const selectedOption = form.elements[questionName].value;
+
+                if (selectedOption === qData.correct) {
+                    correctCount++;
+                } else {
+                    // Add incorrect question details to the list
+                    incorrectAnswersList.push({
+                        question: qData.question,
+                        yourAnswer: qData.options[selectedOption] || 'No respondida', // Handle unanswered
+                        correctAnswer: qData.options[qData.correct]
+                    });
+                }
+            });
+
+            // Calculate percentage
+            const percentage = (correctCount / totalQuestions) * 100;
+
+            // Display results
+            incorrectAnswersDiv.innerHTML = ''; // Clear previous results
+
+            if (incorrectAnswersList.length === 0) {
+                incorrectAnswersDiv.innerHTML = '<p class="text-green-600 font-bold">¡Felicidades! Respondiste todas las preguntas correctamente.</p>';
+            } else {
+                incorrectAnswersList.forEach(item => {
+                    const div = document.createElement('div');
+                    div.classList.add('incorrect-answer');
+                    div.innerHTML = `
+                        <p>${item.question}</p>
+                        <p>Tu respuesta: ${item.yourAnswer}</p>
+                        <p class="correct-answer">Respuesta correcta: ${item.correctAnswer}</p>
+                    `;
+                    incorrectAnswersDiv.appendChild(div);
+                });
+            }
+
+            // Update percentage bar
+            percentageBar.style.width = `${percentage}%`;
+            percentageBar.textContent = `${Math.round(percentage)}%`;
+
+            // Show results section
+            resultsDiv.classList.remove('hidden');
+
+            // Optionally hide the form after submission
+             form.classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>
