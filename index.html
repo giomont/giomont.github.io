@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parque Arví - Medellín</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        /* Custom styles */
+        body {
+            font-family: 'Inter', sans-serif; /* Apply Inter font */
+        }
+        /* Simple fade transition for the slider */
+        .slider-image {
+            transition: opacity 0.5s ease-in-out;
+        }
+        .slider-image.hidden {
+            opacity: 0;
+        }
+        .slider-image.visible {
+            opacity: 1;
+        }
+        /* Ensure images cover the slider area */
+        .slider-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Cover the area, may crop */
+        }
+        /* Style for slider buttons */
+        .slider-button {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            padding: 0.75rem 1rem; /* p-3 px-4 */
+            border-radius: 9999px; /* rounded-full */
+            cursor: pointer;
+            z-index: 10;
+            font-size: 1.5rem; /* text-2xl */
+            line-height: 1;
+        }
+        .slider-button:hover {
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        .slider-button.prev {
+            left: 1rem; /* left-4 */
+        }
+        .slider-button.next {
+            right: 1rem; /* right-4 */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 text-gray-800">
+
+    <div class="container mx-auto max-w-4xl p-4">
+
+        <h1 class="text-3xl md:text-4xl font-bold text-center text-green-700 my-6">Explore Parque Arví</h1>
+
+        <div id="image-slider" class="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-lg bg-gray-300">
+            <img id="slider-img" src="" alt="Parque Arví scenery" class="absolute inset-0 w-full h-full object-cover">
+
+            <button id="prev-button" class="slider-button prev">&lt;</button>
+            <button id="next-button" class="slider-button next">&gt;</button>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-2xl font-bold text-green-600 mb-4">About Parque Arví</h2>
+            <p class="text-base leading-relaxed">
+                These articles collectively describe Parque Arví, a large ecological park near Medellín, Colombia. They highlight its accessibility via the Metrocable, various outdoor activities like hiking and picnicking, and its rich biodiversity including numerous plant and animal species. Several sources also touch upon the park's archaeological significance, mentioning pre-Hispanic structures and artifacts discovered within its bounds, and the ongoing efforts to conserve both its natural environment and cultural heritage. Visitors are encouraged to explore the park's trails, markets, and designated areas like Piedras Blancas and Comfama, while also being advised on safety and practical considerations for their visit.
+            </p>
+        </div>
+
+    </div>
+
+    <script>
+        // --- Slider Configuration ---
+        const images = [
+            // Placeholder images representing different aspects of Parque Arví
+            { src: 'https://placehold.co/1000x600/8FBC8F/333333?text=Parque+Arvi+Nature+Trail', alt: 'Lush green nature trail in Parque Arví' },
+            { src: 'https://placehold.co/1000x600/A9A9A9/FFFFFF?text=Metrocable+to+Arvi', alt: 'Metrocable gondola ascending towards Parque Arví' }, // Metrocable image
+            { src: 'https://placehold.co/1000x600/FFD700/556B2F?text=Biodiversity+(Flower)', alt: 'Close-up of a colorful flower representing biodiversity in Parque Arví' },
+            { src: 'https://placehold.co/1000x600/D2B48C/4682B4?text=Archaeological+Site', alt: 'Representation of an archaeological structure or path in Parque Arví' },
+            { src: 'https://placehold.co/1000x600/ADD8E6/00008B?text=Hiking+in+Arvi', alt: 'People hiking on a trail in Parque Arví' }
+        ];
+        let currentImageIndex = 0;
+
+        // --- DOM Elements ---
+        const sliderImageElement = document.getElementById('slider-img');
+        const prevButton = document.getElementById('prev-button');
+        const nextButton = document.getElementById('next-button');
+
+        // --- Functions ---
+        function showImage(index) {
+            // Basic fade effect (remove, update src/alt, add back)
+            sliderImageElement.style.opacity = 0; // Start fade out
+
+            // Use setTimeout to allow fade out effect before changing image
+            setTimeout(() => {
+                if (index >= images.length) {
+                    currentImageIndex = 0; // Wrap around to the first image
+                } else if (index < 0) {
+                    currentImageIndex = images.length - 1; // Wrap around to the last image
+                } else {
+                    currentImageIndex = index;
+                }
+                // Update image source and alt text
+                sliderImageElement.src = images[currentImageIndex].src;
+                sliderImageElement.alt = images[currentImageIndex].alt;
+                 // Handle potential loading errors for placeholder images
+                sliderImageElement.onerror = function() {
+                    console.error("Error loading image:", images[currentImageIndex].src);
+                    // Optionally set a default fallback image or text
+                    sliderImageElement.src = 'https://placehold.co/1000x600/CCCCCC/FFFFFF?text=Image+Not+Found';
+                    sliderImageElement.alt = 'Image not found';
+                };
+                sliderImageElement.style.opacity = 1; // Start fade in
+            }, 300); // Match timeout roughly with CSS transition duration
+        }
+
+        // --- Event Listeners ---
+        prevButton.addEventListener('click', () => {
+            showImage(currentImageIndex - 1);
+        });
+
+        nextButton.addEventListener('click', () => {
+            showImage(currentImageIndex + 1);
+        });
+
+        // --- Initialization ---
+        // Show the first image when the page loads
+        // Use window.onload to ensure the image element is available
+        window.onload = () => {
+             if (sliderImageElement) {
+                showImage(currentImageIndex);
+             } else {
+                 console.error("Slider image element not found on load.");
+             }
+        };
+
+    </script>
+
+</body>
+</html>
