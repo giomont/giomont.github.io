@@ -13,22 +13,27 @@
         body {
             font-family: 'Inter', sans-serif; /* Apply Inter font */
         }
-        /* Simple fade transition for the slider */
-        .slider-image {
-            transition: opacity 0.5s ease-in-out;
+        /* Slider Styles */
+        #image-slider {
+            position: relative; /* Needed for absolute positioning of images */
+            /* overflow: hidden; /* Optional: if images might have different aspect ratios and you want to clip */
         }
-        .slider-image.hidden {
-            opacity: 0;
+        .slider-image { /* This class will be applied to each image in the slider */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: opacity 1s ease-in-out; /* Smoother and longer fade */
+            opacity: 0; /* Start all images as transparent */
         }
         .slider-image.visible {
             opacity: 1;
+            z-index: 2; /* Bring visible image to the front */
         }
-        /* Ensure images cover the slider area */
-        .slider-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover; /* Cover the area, may crop */
-        }
+        /* .slider-image.hidden is the default state (opacity: 0) */
+
         /* Style for slider buttons */
         .slider-button {
             position: absolute;
@@ -62,10 +67,18 @@
         <h1 class="text-3xl md:text-4xl font-bold text-center text-green-700 my-6">Explore Parque Arví</h1>
 
         <div id="image-slider" class="relative w-full h-64 md:h-96 mb-8 rounded-lg overflow-hidden shadow-lg bg-gray-300">
-            <img id="slider-img" src="" alt="Parque Arví scenery" class="absolute inset-0 w-full h-full object-cover">
-
+            <!-- Overlay text -->
+            <div id="slider-overlay" class="absolute bottom-0 left-0 w-full bg-black bg-opacity-50 text-white p-4 text-lg md:text-xl font-semibold transition-opacity duration-500">
+                <!-- Text will be injected here -->
+            </div>
             <button id="prev-button" class="slider-button prev">&lt;</button>
             <button id="next-button" class="slider-button next">&gt;</button>
+        </div>
+
+        <!-- Upload Button and Input -->
+        <div class="flex items-center justify-center mb-8">
+            <input type="file" id="upload-input" accept="image/*" class="hidden" multiple>
+            <button id="upload-btn" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-4 rounded">Upload Images</button>
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-md">
@@ -75,72 +88,259 @@
             </p>
         </div>
 
+        <!-- Book Now Section -->
+        <div class="my-8 text-center">
+            <a href="#booking" class="bg-green-700 hover:bg-green-800 text-white font-bold py-3 px-8 rounded text-xl shadow-lg transition">Book Now</a>
+        </div>
+
+        <!-- Booking Form -->
+        <div id="booking" class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4">Reserve Your Tour</h2>
+            <form class="space-y-4">
+                <div>
+                    <label class="block font-semibold mb-1">Name</label>
+                    <input type="text" class="w-full border rounded px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Email</label>
+                    <input type="email" class="w-full border rounded px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Tour Date</label>
+                    <input type="date" class="w-full border rounded px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Number of People</label>
+                    <input type="number" min="1" class="w-full border rounded px-3 py-2" required>
+                </div>
+                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded">Book Tour</button>
+            </form>
+        </div>
+
+        <!-- Tours Info Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4">Our Tours</h2>
+            <ul class="space-y-2">
+                <li><span class="font-semibold">Nature Walk:</span> $20 USD per person, daily at 10:00 AM & 2:00 PM</li>
+                <li><span class="font-semibold">Archaeological Tour:</span> $25 USD per person, weekends at 11:00 AM</li>
+                <li><span class="font-semibold">Birdwatching Experience:</span> $30 USD per person, Fridays at 7:00 AM</li>
+            </ul>
+        </div>
+
+        <!-- Testimonials Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4">What Visitors Say</h2>
+            <div class="space-y-4">
+                <blockquote class="border-l-4 border-green-600 pl-4 italic text-gray-700">“A magical place! The guided tour was informative and fun.”<br><span class="font-semibold">– Maria G.</span></blockquote>
+                <blockquote class="border-l-4 border-green-600 pl-4 italic text-gray-700">“Booking was easy and the staff were very helpful.”<br><span class="font-semibold">– John D.</span></blockquote>
+            </div>
+        </div>
+
+        <!-- FAQ Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4">Frequently Asked Questions</h2>
+            <ul class="list-disc pl-6 space-y-2">
+                <li><span class="font-semibold">How do I get to Parque Arví?</span> Take the Metrocable from Medellín to the park entrance.</li>
+                <li><span class="font-semibold">Are tours available in English?</span> Yes, select tours are available in English and Spanish.</li>
+                <li><span class="font-semibold">Is the park accessible for people with disabilities?</span> Some areas are accessible; please contact us for details.</li>
+            </ul>
+        </div>
+
+        <!-- Contact Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4">Contact Us</h2>
+            <form class="space-y-4 mb-4">
+                <div>
+                    <label class="block font-semibold mb-1">Your Name</label>
+                    <input type="text" class="w-full border rounded px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Your Email</label>
+                    <input type="email" class="w-full border rounded px-3 py-2" required>
+                </div>
+                <div>
+                    <label class="block font-semibold mb-1">Message</label>
+                    <textarea class="w-full border rounded px-3 py-2" rows="3" required></textarea>
+                </div>
+                <button type="submit" class="bg-green-600 hover:bg-green-700 text-white font-bold py-2 px-6 rounded">Send</button>
+            </form>
+            <div class="text-center">
+                <a href="https://wa.me/573001234567" target="_blank" class="inline-block bg-green-500 hover:bg-green-600 text-white font-bold py-2 px-4 rounded">Chat on WhatsApp</a>
+            </div>
+        </div>
+
+        <!-- Map Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-green-600 mb-4">Find Us</h2>
+            <div class="w-full h-64">
+                <iframe class="w-full h-full rounded" frameborder="0" style="border:0"
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.789123456789!2d-75.500000!3d6.300000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e4682b1c1c1c1c1%3A0x123456789abcdef!2sParque%20Arv%C3%AD!5e0!3m2!1sen!2sco!4v1680000000000!5m2!1sen!2sco" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+        </div>
+
     </div>
 
     <script>
         // --- Slider Configuration ---
         const images = [
-            // Placeholder images representing different aspects of Parque Arví
-            { src: 'https://placehold.co/1000x600/8FBC8F/333333?text=Parque+Arvi+Nature+Trail', alt: 'Lush green nature trail in Parque Arví' },
-            { src: 'https://placehold.co/1000x600/A9A9A9/FFFFFF?text=Metrocable+to+Arvi', alt: 'Metrocable gondola ascending towards Parque Arví' }, // Metrocable image
-            { src: 'https://placehold.co/1000x600/FFD700/556B2F?text=Biodiversity+(Flower)', alt: 'Close-up of a colorful flower representing biodiversity in Parque Arví' },
-            { src: 'https://placehold.co/1000x600/D2B48C/4682B4?text=Archaeological+Site', alt: 'Representation of an archaeological structure or path in Parque Arví' },
-            { src: 'https://placehold.co/1000x600/ADD8E6/00008B?text=Hiking+in+Arvi', alt: 'People hiking on a trail in Parque Arví' }
+            {
+                src: 'https://placehold.co/1000x600/8FBC8F/333333?text=Parque+Arvi+Nature+Trail',
+                alt: 'Lush green nature trail in Parque Arví',
+                text: `These articles collectively describe Parque Arví, a large ecological park near Medellín, Colombia. They highlight its accessibility via the Metrocable, various outdoor activities like hiking and picnicking, and its rich biodiversity including numerous plant and animal species. Several sources also touch upon the park's archaeological significance, mentioning pre-Hispanic structures and artifacts discovered within its bounds, and the ongoing efforts to conserve both its natural environment and cultural heritage. Visitors are encouraged to explore the park's trails, markets, and designated areas like Piedras Blancas and Comfama, while also being advised on safety and practical considerations for their visit.`
+            },
+            {
+                src: 'https://placehold.co/1000x600/A9A9A9/FFFFFF?text=Metrocable+to+Arvi',
+                alt: 'Metrocable gondola ascending towards Parque Arví',
+                text: `These articles collectively describe Parque Arví, a large ecological park near Medellín, Colombia. They highlight its accessibility via the Metrocable, various outdoor activities like hiking and picnicking, and its rich biodiversity including numerous plant and animal species. Several sources also touch upon the park's archaeological significance, mentioning pre-Hispanic structures and artifacts discovered within its bounds, and the ongoing efforts to conserve both its natural environment and cultural heritage. Visitors are encouraged to explore the park's trails, markets, and designated areas like Piedras Blancas and Comfama, while also being advised on safety and practical considerations for their visit.`
+            },
+            {
+                src: 'https://placehold.co/1000x600/FFD700/556B2F?text=Biodiversity+(Flower)',
+                alt: 'Close-up of a colorful flower representing biodiversity in Parque Arví',
+                text: `These articles collectively describe Parque Arví, a large ecological park near Medellín, Colombia. They highlight its accessibility via the Metrocable, various outdoor activities like hiking and picnicking, and its rich biodiversity including numerous plant and animal species. Several sources also touch upon the park's archaeological significance, mentioning pre-Hispanic structures and artifacts discovered within its bounds, and the ongoing efforts to conserve both its natural environment and cultural heritage. Visitors are encouraged to explore the park's trails, markets, and designated areas like Piedras Blancas and Comfama, while also being advised on safety and practical considerations for their visit.`
+            },
+            {
+                src: 'https://placehold.co/1000x600/D2B48C/4682B4?text=Archaeological+Site',
+                alt: 'Representation of an archaeological structure or path in Parque Arví',
+                text: `These articles collectively describe Parque Arví, a large ecological park near Medellín, Colombia. They highlight its accessibility via the Metrocable, various outdoor activities like hiking and picnicking, and its rich biodiversity including numerous plant and animal species. Several sources also touch upon the park's archaeological significance, mentioning pre-Hispanic structures and artifacts discovered within its bounds, and the ongoing efforts to conserve both its natural environment and cultural heritage. Visitors are encouraged to explore the park's trails, markets, and designated areas like Piedras Blancas and Comfama, while also being advised on safety and practical considerations for their visit.`
+            },
+            {
+                src: 'https://placehold.co/1000x600/ADD8E6/00008B?text=Hiking+in+Arvi',
+                alt: 'People hiking on a trail in Parque Arví',
+                text: `These articles collectively describe Parque Arví, a large ecological park near Medellín, Colombia. They highlight its accessibility via the Metrocable, various outdoor activities like hiking and picnicking, and its rich biodiversity including numerous plant and animal species. Several sources also touch upon the park's archaeological significance, mentioning pre-Hispanic structures and artifacts discovered within its bounds, and the ongoing efforts to conserve both its natural environment and cultural heritage. Visitors are encouraged to explore the park's trails, markets, and designated areas like Piedras Blancas and Comfama, while also being advised on safety and practical considerations for their visit.`
+            }
         ];
         let currentImageIndex = 0;
+        let autoplayInterval = null;
+        const AUTOPLAY_DELAY = 5000; // 5 seconds
 
         // --- DOM Elements ---
-        const sliderImageElement = document.getElementById('slider-img');
+        const imageSliderDiv = document.getElementById('image-slider');
         const prevButton = document.getElementById('prev-button');
         const nextButton = document.getElementById('next-button');
+        const uploadInput = document.getElementById('upload-input');
+        // const uploadBtn = document.getElementById('upload-btn'); // Not directly used in this new JS logic for slider
+        const sliderOverlay = document.getElementById('slider-overlay');
 
         // --- Functions ---
         function showImage(index) {
-            // Basic fade effect (remove, update src/alt, add back)
-            sliderImageElement.style.opacity = 0; // Start fade out
-
-            // Use setTimeout to allow fade out effect before changing image
-            setTimeout(() => {
-                if (index >= images.length) {
-                    currentImageIndex = 0; // Wrap around to the first image
-                } else if (index < 0) {
-                    currentImageIndex = images.length - 1; // Wrap around to the last image
+            document.querySelectorAll('#image-slider .slider-image').forEach((img, idx) => {
+                if (idx === index) {
+                    img.classList.add('visible');
+                    img.classList.remove('hidden'); // Though hidden is mostly implicit by opacity 0
                 } else {
-                    currentImageIndex = index;
+                    img.classList.remove('visible');
+                    img.classList.add('hidden');
                 }
-                // Update image source and alt text
-                sliderImageElement.src = images[currentImageIndex].src;
-                sliderImageElement.alt = images[currentImageIndex].alt;
-                 // Handle potential loading errors for placeholder images
-                sliderImageElement.onerror = function() {
-                    console.error("Error loading image:", images[currentImageIndex].src);
-                    // Optionally set a default fallback image or text
-                    sliderImageElement.src = 'https://placehold.co/1000x600/CCCCCC/FFFFFF?text=Image+Not+Found';
-                    sliderImageElement.alt = 'Image not found';
-                };
-                sliderImageElement.style.opacity = 1; // Start fade in
-            }, 300); // Match timeout roughly with CSS transition duration
+            });
+
+            currentImageIndex = index;
+            if (sliderOverlay && images[currentImageIndex]) {
+                sliderOverlay.textContent = images[currentImageIndex].text;
+            }
+            resetAutoplay();
+        }
+
+        function nextImage() {
+            let newIndex = currentImageIndex + 1;
+            if (newIndex >= images.length) {
+                newIndex = 0;
+            }
+            showImage(newIndex);
+        }
+
+        function prevImage() {
+            let newIndex = currentImageIndex - 1;
+            if (newIndex < 0) {
+                newIndex = images.length - 1;
+            }
+            showImage(newIndex);
+        }
+
+        function startAutoplay() {
+            stopAutoplay();
+            autoplayInterval = setInterval(nextImage, AUTOPLAY_DELAY);
+        }
+
+        function stopAutoplay() {
+            clearInterval(autoplayInterval);
+        }
+
+        function resetAutoplay() {
+            stopAutoplay();
+            if (images.length > 1) { // Only start autoplay if there's more than one image
+                startAutoplay();
+            }
         }
 
         // --- Event Listeners ---
-        prevButton.addEventListener('click', () => {
-            showImage(currentImageIndex - 1);
-        });
+        if (prevButton) prevButton.addEventListener('click', prevImage);
+        if (nextButton) nextButton.addEventListener('click', nextImage);
 
-        nextButton.addEventListener('click', () => {
-            showImage(currentImageIndex + 1);
-        });
+        if (uploadInput) {
+            uploadInput.addEventListener('change', (event) => {
+                const files = Array.from(event.target.files);
+                const currentImageCount = images.length;
+
+                files.forEach((file, i) => {
+                    const reader = new FileReader();
+                    reader.onload = (e) => {
+                        const newImageData = { src: e.target.result, alt: file.name, text: file.name };
+                        images.push(newImageData);
+
+                        const imgElement = document.createElement('img');
+                        imgElement.src = newImageData.src;
+                        imgElement.alt = newImageData.alt;
+                        imgElement.classList.add('slider-image');
+                        // Insert before buttons and overlay
+                        const firstControl = imageSliderDiv.querySelector('.slider-button, #slider-overlay');
+                        imageSliderDiv.insertBefore(imgElement, firstControl);
+                        
+                        // If this is the first image of a new batch, and it's the one being processed now
+                        if (i === 0 && images.length === currentImageCount + 1) {
+                           showImage(currentImageCount); // Show the first newly added image
+                        } else if (images.length > 1) {
+                            resetAutoplay(); // Reset autoplay if more images are added
+                        }
+                    };
+                    reader.readAsDataURL(file);
+                });
+            });
+        }
 
         // --- Initialization ---
-        // Show the first image when the page loads
-        // Use window.onload to ensure the image element is available
-        window.onload = () => {
-             if (sliderImageElement) {
-                showImage(currentImageIndex);
-             } else {
-                 console.error("Slider image element not found on load.");
-             }
-        };
+        document.addEventListener('DOMContentLoaded', () => {
+            // Remove or hide the original static img#slider-img if it exists
+            const originalStaticImg = document.getElementById('slider-img');
+            if (originalStaticImg && originalStaticImg.parentNode === imageSliderDiv) {
+                originalStaticImg.remove();
+            }
+
+            // Create and append image elements for the initial set
+            images.forEach((imgData, index) => {
+                const imgElement = document.createElement('img');
+                imgElement.src = imgData.src;
+                imgElement.alt = imgData.alt;
+                imgElement.classList.add('slider-image');
+                if (index === 0) {
+                    imgElement.classList.add('visible');
+                } else {
+                    imgElement.classList.add('hidden');
+                }
+                // Insert before buttons and overlay
+                const firstControl = imageSliderDiv.querySelector('.slider-button, #slider-overlay');
+                imageSliderDiv.insertBefore(imgElement, firstControl);
+            });
+
+            if (images.length > 0) {
+                showImage(0); // Initialize with the first image
+            } else if (imageSliderDiv) {
+                const placeholderText = document.createElement('p');
+                placeholderText.textContent = 'No images to display.';
+                placeholderText.style.textAlign = 'center';
+                placeholderText.style.paddingTop = '20%';
+                imageSliderDiv.appendChild(placeholderText);
+            }
+        });
 
     </script>
 
