@@ -1,0 +1,14 @@
+[
+  {
+    "id": 1,
+    "nombre": "Laptop",
+    "precio": 800.00,
+    "imagen": "/ubuntubar/images/laptop.jpg"
+  },
+  {
+    "id": 2,
+    "nombre": "Teclado Mecánico",
+    "precio": 75.50,
+    "imagen": "/ubuntubar/images/keyboard.png"
+  }
+]

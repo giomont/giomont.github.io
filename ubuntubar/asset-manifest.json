@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/ubuntubar/static/css/main.fe45a16d.css",
+    "main.js": "/ubuntubar/static/js/main.2d184cc9.js",
+    "static/js/453.fcb504c4.chunk.js": "/ubuntubar/static/js/453.fcb504c4.chunk.js",
+    "index.html": "/ubuntubar/index.html",
+    "main.fe45a16d.css.map": "/ubuntubar/static/css/main.fe45a16d.css.map",
+    "main.2d184cc9.js.map": "/ubuntubar/static/js/main.2d184cc9.js.map",
+    "453.fcb504c4.chunk.js.map": "/ubuntubar/static/js/453.fcb504c4.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fe45a16d.css",
+    "static/js/main.2d184cc9.js"
+  ]
+}
