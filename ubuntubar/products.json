@@ -1,14 +1,20 @@
 [
   {
-    "id": 1,
-    "nombre": "Laptop",
-    "precio": 800.00,
-    "imagen": "/ubuntubar/images/laptop.jpg"
+    "id": 1748129475699,
+    "nombre": "PASTELITOS DE POLLO ",
+    "precio": 9000,
+    "imagen": "/ubuntubar/markup_312.png"
   },
   {
-    "id": 2,
-    "nombre": "Teclado Mecánico",
-    "precio": 75.50,
-    "imagen": "/ubuntubar/images/keyboard.png"
+    "id": 1748129545123,
+    "nombre": "CERVEZA ARTESANAL",
+    "precio": 7000,
+    "imagen": "/ubuntubar/logo192.png"
+  },
+  {
+    "id": 1748129579808,
+    "nombre": "VICHE",
+    "precio": 4000,
+    "imagen": "/logo192.png"
   }
 ]
