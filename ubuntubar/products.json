@@ -9,12 +9,12 @@
     "id": 1748129545123,
     "nombre": "CERVEZA ARTESANAL",
     "precio": 7000,
-    "imagen": "/ubuntubar/logo192.png"
+    "imagen": "/ubuntubar/markup_308.png"
   },
   {
     "id": 1748129579808,
     "nombre": "VICHE",
     "precio": 4000,
-    "imagen": "/logo192.png"
+    "imagen": "/ubuntubar/markup_307.png"
   }
 ]
