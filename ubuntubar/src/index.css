@@ -1,0 +1,150 @@
+/* --- index.css --- */
+
+/* --- Variables CSS (Colores y Fuentes) --- */
+:root {
+    /* Paleta de Colores */
+    --primary-color: #007bff;          /* Azul brillante para acciones principales */
+    --primary-dark: #0056b3;           /* Azul más oscuro para hover */
+    --accent-color: #28a745;           /* Verde para éxito/añadir */
+    --accent-dark: #218838;            /* Verde más oscuro para hover */
+    --danger-color: #dc3545;           /* Rojo para eliminar */
+    --danger-dark: #c82333;            /* Rojo más oscuro para hover */
+    --warning-color: #ffc107;          /* Amarillo para editar */
+    --warning-dark: #e0a800;           /* Amarillo más oscuro para hover */
+
+    --background-light: #f8f9fa;       /* Fondo muy claro */
+    --surface-light: #ffffff;          /* Superficie de tarjetas/contenedores */
+    --text-dark: #343a40;              /* Texto oscuro, no negro puro */
+    --text-muted: #6c757d;             /* Texto secundario/deshabilitado */
+    --border-light: #dee2e6;           /* Borde sutil */
+    --shadow-light: rgba(0, 0, 0, 0.08); /* Sombra suave */
+
+    /* Tipografía */
+    --font-primary: 'Open Sans', sans-serif; /* Fuente principal para el cuerpo */
+    --font-heading: 'Montserrat', sans-serif; /* Fuente para encabezados */
+    --font-size-base: 16px; /* Tamaño de fuente base */
+}
+
+/* --- Reseteo Básico y Estilos Generales del Body --- */
+*, *::before, *::after {
+    box-sizing: border-box; /* Incluye padding y border en el tamaño del elemento */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-primary);
+    line-height: 1.6; /* Espaciado entre líneas para mejor lectura */
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    -webkit-font-smoothing: antialiased; /* Suavizado de fuentes en WebKit */
+    -moz-osx-font-smoothing: grayscale;  /* Suavizado de fuentes en Firefox */
+}
+
+/* --- Contenedor Principal de la Aplicación --- */
+.app-container {
+    max-width: 960px; /* Ancho máximo para no ocupar toda la pantalla */
+    margin: 2em auto; /* Centrar el contenedor y darle espacio arriba/abajo */
+    padding: 2.5em; /* Padding generoso */
+    background-color: var(--surface-light);
+    border-radius: 12px; /* Bordes notablemente redondeados */
+    box-shadow: 0 8px 25px var(--shadow-light); /* Sombra más pronunciada */
+    display: flex;
+    flex-direction: column;
+    gap: 2em; /* Espacio entre secciones principales */
+}
+
+/* --- Tipografía y Jerarquía Global --- */
+h1, h2, h3 {
+    font-family: var(--font-heading);
+    color: var(--text-dark);
+    margin-bottom: 0.8em; /* Espacio debajo de los encabezados */
+    text-align: center;
+    font-weight: 700; /* Negrita para encabezados */
+}
+
+h1 {
+    font-size: 2.8em;
+    padding-bottom: 0.3em;
+    border-bottom: 2px solid var(--border-light); /* Línea sutil bajo el título principal */
+    margin-bottom: 1.5em;
+}
+
+h2 {
+    font-size: 2.2em;
+    margin-top: 1.5em; /* Espacio arriba de los sub-encabezados */
+}
+
+h3 {
+    font-size: 1.6em;
+    margin-top: 1em;
+}
+
+p {
+    font-size: var(--font-size-base);
+    line-height: 1.7;
+    margin-bottom: 1em;
+}
+
+/* --- Estilos para la Sección de Datos Actuales (JSON) --- */
+/* Se mantiene aquí porque es una sección "global" que muestra el estado de los datos */
+.json-display-section {
+    margin-top: 2em;
+    padding: 2em;
+    background-color: #f0f4f7; /* Fondo ligeramente azulado */
+    border-radius: 10px;
+    border: 1px dashed var(--border-light); /* Borde punteado */
+}
+
+.json-display-section h2 {
+    color: var(--primary-color);
+    margin-bottom: 1em;
+}
+
+.json-output {
+    background-color: #e9ecef; /* Un gris más oscuro */
+    color: var(--text-dark);
+    padding: 1.5em;
+    border-radius: 8px;
+    font-family: 'SFMono-Regular', Consolas, 'Liberation Mono', Menlo, Courier, monospace; /* Fuente monoespacio */
+    white-space: pre-wrap; /* Preserva los espacios y saltos de línea */
+    word-wrap: break-word; /* Rompe palabras largas */
+    font-size: 0.9em;
+    overflow-x: auto; /* Para scroll horizontal en móviles */
+}
+
+/* --- Responsive Design (Media Queries Generales) --- */
+@media (max-width: 768px) {
+    .app-container {
+        margin: 1em; /* Menos margen en dispositivos pequeños */
+        padding: 1.5em;
+    }
+
+    h1 {
+        font-size: 2em;
+    }
+    h2 {
+        font-size: 1.6em;
+    }
+    h3 {
+        font-size: 1.2em;
+    }
+
+    .json-output {
+        font-size: 0.8em;
+        padding: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .app-container {
+        padding: 1em;
+    }
+
+    h1 {
+        font-size: 1.8em;
+    }
+    h2 {
+        font-size: 1.4em;
+    }
+}
