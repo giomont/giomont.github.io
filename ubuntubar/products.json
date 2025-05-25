@@ -21,10 +21,9 @@
     "id": 1748210273626,
     "nombre": "TORTA CHOCLO Y QUESO",
     "precio": 7000,
-<<<<<<< HEAD
-    "imagen": "/ubuntubar/.png"
-=======
     "imagen": "/ubuntubar/tqueso.png"
->>>>>>> df68d5dfb7ebf15093f5bdc056ace4c537cca226
+
+    
+
   }
 ]
