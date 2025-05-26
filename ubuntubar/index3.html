@@ -1,0 +1,709 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Productos</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+        
+        .add-product-section {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 30px;
+            border-left: 4px solid #007bff;
+        }
+        
+        .form-group {
+            margin-bottom: 15px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        input[type="text"], input[type="number"], input[type="file"], select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 14px;
+            box-sizing: border-box;
+            background-color: white;
+        }
+        
+        button {
+            background: #007bff;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            margin: 5px;
+            transition: background 0.3s;
+        }
+        
+        button:hover {
+            background: #0056b3;
+        }
+        
+        .btn-danger {
+            background: #dc3545;
+        }
+        
+        .btn-danger:hover {
+            background: #c82333;
+        }
+        
+        .btn-success {
+            background: #28a745;
+        }
+        
+        .btn-success:hover {
+            background: #218838;
+        }
+        
+        .btn-warning {
+            background: #ffc107;
+            color: #212529;
+        }
+        
+        .btn-warning:hover {
+            background: #e0a800;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+        }
+        
+        .btn-secondary:hover {
+            background: #5a6268;
+        }
+        
+        .product-list {
+            margin-top: 30px;
+        }
+        
+        .product-item {
+            display: flex;
+            align-items: center;
+            padding: 15px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            background: #fff;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .product-item.removing {
+            animation: fadeOut 0.5s ease-out;
+        }
+        
+        .product-image {
+            width: 80px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-right: 15px;
+        }
+        
+        .product-info {
+            flex-grow: 1;
+        }
+        
+        .product-name {
+            font-weight: bold;
+            font-size: 18px;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        
+        .product-price {
+            font-size: 16px;
+            color: #007bff;
+            margin-bottom: 5px;
+        }
+        
+        .product-id {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        .product-category {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #e9ecef;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
+        }
+        
+        .product-actions {
+            display: flex;
+            gap: 10px;
+        }
+        
+        .json-output {
+            background: #f8f9fa;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 15px;
+            margin-top: 20px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap;
+            font-size: 12px;
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        
+        .alert {
+            padding: 15px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+        }
+        
+        .alert-success {
+            background: #d4edda;
+            border: 1px solid #c3e6cb;
+            color: #155724;
+        }
+        
+        .alert-error {
+            background: #f8d7da;
+            border: 1px solid #f5c6cb;
+            color: #721c24;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 20px;
+            color: #666;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+        
+        /* Modal styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.5);
+            animation: fadeIn 0.3s ease-out;
+        }
+        
+        .modal-content {
+            background-color: white;
+            margin: 5% auto;
+            padding: 30px;
+            border-radius: 10px;
+            width: 90%;
+            max-width: 500px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            animation: slideIn 0.3s ease-out;
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .modal-title {
+            color: #333;
+            margin: 0;
+        }
+        
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            line-height: 1;
+        }
+        
+        .close:hover {
+            color: #000;
+        }
+        
+        .modal-footer {
+            display: flex;
+            justify-content: flex-end;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #ddd;
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(20px); }
+        }
+        
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateY(-50px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @media (max-width: 768px) {
+            .product-item {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .product-image {
+                margin-right: 0;
+                margin-bottom: 10px;
+            }
+            
+            .product-actions {
+                flex-direction: column;
+                width: 100%;
+            }
+            
+            .modal-content {
+                margin: 10% auto;
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Gestión de Productos</h1>
+        
+        <div id="alert-container"></div>
+        
+        <!-- Sección para agregar producto -->
+        <div class="add-product-section">
+            <h2>Agregar Nuevo Producto</h2>
+            <form id="productForm">
+                <div class="form-group">
+                    <label for="productName">Nombre del Producto:</label>
+                    <input type="text" id="productName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productPrice">Precio:</label>
+                    <input type="number" id="productPrice" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="productCategory">Categoría:</label>
+                    <select id="productCategory" required>
+                        <option value="">Seleccione una categoría</option>
+                        <option value="BEBIDAS">Bebidas</option>
+                        <option value="COMIDAS">Comidas</option>
+                        <option value="POSTRES">Postres</option>
+                        <option value="SNACKS">Snacks</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="productImage">Imagen:</label>
+                    <input type="file" id="productImage" accept="image/*">
+                </div>
+                
+                <button type="submit" class="btn-success">Agregar Producto</button>
+            </form>
+        </div>
+        
+        <!-- Lista de productos -->
+        <div class="product-list">
+            <h2>Lista de Productos</h2>
+            <div class="category-filter">
+                <label for="categoryFilter">Filtrar por categoría:</label>
+                <select id="categoryFilter">
+                    <option value="">Todas las categorías</option>
+                    <option value="BEBIDAS">Bebidas</option>
+                    <option value="COMIDAS">Comidas</option>
+                    <option value="POSTRES">Postres</option>
+                    <option value="SNACKS">Snacks</option>
+                </select>
+            </div>
+            <div id="productContainer">
+                <div class="loading">Cargando productos...</div>
+            </div>
+        </div>
+        
+        <!-- Datos para GitHub -->
+        <div id="jsonSection" style="display: none;">
+            <h2>Datos Actuales (para copiar y pegar en GitHub)</h2>
+            <div id="jsonOutput" class="json-output"></div>
+            <button id="copyJsonBtn">Copiar JSON</button>
+        </div>
+    </div>
+
+    <!-- Modal de edición -->
+    <div id="editModal" class="modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title">Editar Producto</h2>
+                <span class="close" id="closeModal">&times;</span>
+            </div>
+            <form id="editProductForm">
+                <div class="form-group">
+                    <label for="editProductName">Nombre del Producto:</label>
+                    <input type="text" id="editProductName" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editProductPrice">Precio:</label>
+                    <input type="number" id="editProductPrice" step="0.01" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editProductCategory">Categoría:</label>
+                    <select id="editProductCategory" required>
+                        <option value="">Seleccione una categoría</option>
+                        <option value="BEBIDAS">Bebidas</option>
+                        <option value="COMIDAS">Comidas</option>
+                        <option value="POSTRES">Postres</option>
+                        <option value="SNACKS">Snacks</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="editProductImage">Nueva imagen (opcional):</label>
+                    <input type="file" id="editProductImage" accept="image/*">
+                    <small style="color: #666; font-size: 12px;">Deje vacío para mantener la imagen actual</small>
+                </div>
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn-secondary" id="cancelEdit">Cancelar</button>
+                    <button type="submit" class="btn-success">Guardar Cambios</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        class ProductManager {
+            constructor() {
+                this.products = [];
+                this.editingProductId = null;
+                this.init();
+            }
+            
+            async init() {
+                await this.loadProducts();
+                this.setupEventListeners();
+                this.renderProducts();
+            }
+            
+            async loadProducts() {
+                try {
+                    // Intentar cargar desde products.json
+                    const response = await fetch('./products.json');
+                    if (response.ok) {
+                        this.products = await response.json();
+                        this.showAlert('Productos cargados desde products.json', 'success');
+                    } else {
+                        // Si no existe, usar datos de ejemplo
+                        this.products = [
+                            {
+                                "id": 1748129475699,
+                                "nombre": "PASTELITOS DE POLLO",
+                                "precio": 9000,
+                                "categoria": "COMIDAS",
+                                "imagen": "/ubuntubar/markup_312.png"
+                            },
+                            {
+                                "id": 1748129545123,
+                                "nombre": "CERVEZA ARTESANAL",
+                                "precio": 7000,
+                                "categoria": "BEBIDAS",
+                                "imagen": "/ubuntubar/markup_308.png"
+                            },
+                            {
+                                "id": 1748129579808,
+                                "nombre": "VICHE",
+                                "precio": 4000,
+                                "categoria": "BEBIDAS",
+                                "imagen": "/ubuntubar/markup_307.png"
+                            }
+                        ];
+                        this.showAlert('Usando productos de ejemplo. Suba un archivo products.json válido.', 'error');
+                    }
+                } catch (error) {
+                    console.error('Error cargando productos:', error);
+                    this.products = [];
+                    this.showAlert('Error cargando productos: ' + error.message, 'error');
+                }
+            }
+            
+            setupEventListeners() {
+                // Formulario de agregar producto
+                document.getElementById('productForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.addProduct();
+                });
+                
+                // Formulario de editar producto
+                document.getElementById('editProductForm').addEventListener('submit', (e) => {
+                    e.preventDefault();
+                    this.saveEditedProduct();
+                });
+                
+                // Filtro de categoría
+                document.getElementById('categoryFilter').addEventListener('change', () => {
+                    this.renderProducts();
+                });
+                
+                // Botón copiar JSON
+                document.getElementById('copyJsonBtn').addEventListener('click', () => {
+                    this.copyToClipboard();
+                });
+                
+                // Modal events
+                document.getElementById('closeModal').addEventListener('click', () => {
+                    this.closeEditModal();
+                });
+                
+                document.getElementById('cancelEdit').addEventListener('click', () => {
+                    this.closeEditModal();
+                });
+                
+                // Cerrar modal al hacer clic fuera
+                document.getElementById('editModal').addEventListener('click', (e) => {
+                    if (e.target.id === 'editModal') {
+                        this.closeEditModal();
+                    }
+                });
+            }
+            
+            async addProduct() {
+                const name = document.getElementById('productName').value;
+                const price = parseFloat(document.getElementById('productPrice').value);
+                const category = document.getElementById('productCategory').value;
+                const imageFile = document.getElementById('productImage').files[0];
+                
+                if (!name || !price || !category) {
+                    this.showAlert('Por favor complete todos los campos obligatorios', 'error');
+                    return;
+                }
+                
+                let imagePath = '/ubuntubar/default-product.png';
+                
+                if (imageFile) {
+                    imagePath = `/ubuntubar/${imageFile.name}`;
+                }
+                
+                const newProduct = {
+                    id: Date.now(),
+                    nombre: name.toUpperCase(),
+                    precio: price,
+                    categoria: category,
+                    imagen: imagePath
+                };
+                
+                this.products.push(newProduct);
+                this.renderProducts();
+                this.updateJsonOutput();
+                
+                // Limpiar formulario
+                document.getElementById('productForm').reset();
+                
+                this.showAlert('Producto agregado exitosamente', 'success');
+            }
+            
+            editProduct(id) {
+                const product = this.products.find(p => p.id === id);
+                if (!product) return;
+                
+                this.editingProductId = id;
+                
+                // Llenar el formulario de edición
+                document.getElementById('editProductName').value = product.nombre;
+                document.getElementById('editProductPrice').value = product.precio;
+                document.getElementById('editProductCategory').value = product.categoria;
+                
+                // Mostrar modal
+                document.getElementById('editModal').style.display = 'block';
+            }
+            
+            saveEditedProduct() {
+                const name = document.getElementById('editProductName').value;
+                const price = parseFloat(document.getElementById('editProductPrice').value);
+                const category = document.getElementById('editProductCategory').value;
+                const imageFile = document.getElementById('editProductImage').files[0];
+                
+                if (!name || !price || !category) {
+                    this.showAlert('Por favor complete todos los campos obligatorios', 'error');
+                    return;
+                }
+                
+                const productIndex = this.products.findIndex(p => p.id === this.editingProductId);
+                if (productIndex === -1) return;
+                
+                // Actualizar producto
+                this.products[productIndex].nombre = name.toUpperCase();
+                this.products[productIndex].precio = price;
+                this.products[productIndex].categoria = category;
+                
+                // Solo cambiar imagen si se seleccionó una nueva
+                if (imageFile) {
+                    this.products[productIndex].imagen = `/ubuntubar/${imageFile.name}`;
+                }
+                
+                this.renderProducts();
+                this.updateJsonOutput();
+                this.closeEditModal();
+                
+                this.showAlert('Producto actualizado exitosamente', 'success');
+            }
+            
+            closeEditModal() {
+                document.getElementById('editModal').style.display = 'none';
+                document.getElementById('editProductForm').reset();
+                this.editingProductId = null;
+            }
+            
+            removeProduct(id) {
+                if (confirm('¿Está seguro de que desea eliminar este producto?')) {
+                    const productElement = document.querySelector(`[data-product-id="${id}"]`);
+                    if (productElement) {
+                        productElement.classList.add('removing');
+                        setTimeout(() => {
+                            this.products = this.products.filter(product => product.id !== id);
+                            this.renderProducts();
+                            this.updateJsonOutput();
+                            this.showAlert('Producto eliminado', 'success');
+                        }, 500);
+                    }
+                }
+            }
+            
+            renderProducts() {
+                const container = document.getElementById('productContainer');
+                const selectedCategory = document.getElementById('categoryFilter').value;
+                
+                const filteredProducts = selectedCategory 
+                    ? this.products.filter(p => p.categoria === selectedCategory)
+                    : this.products;
+                
+                if (filteredProducts.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <p>${this.products.length === 0 ? 'No hay productos disponibles' : 'No hay productos en esta categoría'}</p>
+                            <p>${this.products.length === 0 ? 'Agregue productos usando el formulario superior' : 'Seleccione otra categoría o agregue productos'}</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                container.innerHTML = filteredProducts.map(product => `
+                    <div class="product-item" data-product-id="${product.id}">
+                        <img src="${product.imagen}" alt="${product.nombre}" class="product-image" 
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik00MCAyMEM0Ni42Mjc0IDIwIDUyIDI1LjM3MjYgNTIgMzJDNTIgMzguNjI3NCA0Ni42Mjc0IDQ0IDQwIDQ0QzMzLjM3MjYgNDQgMjggMzguNjI3NCAyOCAzMkMyOCAyNS4zNzI2IDMzLjM3MjYgMjAgNDAgMjBaTTQwIDQ4QzUwLjQ5NDMgNDggNTkgNTIuNDc3MiA1OSA1OFY2MEgyMVY1OEMyMSA1Mi40NzcyIDI5LjUwNTcgNDggNDAgNDhaIiBmaWxsPSIjQ0NDQ0NDIi8+Cjwvc3ZnPgo='">
+                        <div class="product-info">
+                            <div class="product-name">${product.nombre}</div>
+                            <div class="product-category">${product.categoria}</div>
+                            <div class="product-price">$${product.precio.toLocaleString()}</div>
+                            <div class="product-id">ID: ${product.id}</div>
+                        </div>
+                        <div class="product-actions">
+                            <button class="btn-warning" onclick="productManager.editProduct(${product.id})">
+                                Editar
+                            </button>
+                            <button class="btn-danger" onclick="productManager.removeProduct(${product.id})">
+                                Eliminar
+                            </button>
+                        </div>
+                    </div>
+                `).join('');
+                
+                this.updateJsonOutput();
+            }
+            
+            updateJsonOutput() {
+                const jsonOutput = document.getElementById('jsonOutput');
+                const jsonSection = document.getElementById('jsonSection');
+                
+                if (this.products.length > 0) {
+                    jsonOutput.textContent = JSON.stringify(this.products, null, 2);
+                    jsonSection.style.display = 'block';
+                } else {
+                    jsonSection.style.display = 'none';
+                }
+            }
+            
+            async copyToClipboard() {
+                const jsonText = JSON.stringify(this.products, null, 2);
+                try {
+                    await navigator.clipboard.writeText(jsonText);
+                    this.showAlert('JSON copiado al portapapeles', 'success');
+                } catch (err) {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = jsonText;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+                    this.showAlert('JSON copiado al portapapeles', 'success');
+                }
+            }
+            
+            showAlert(message, type) {
+                const alertContainer = document.getElementById('alert-container');
+                const alertDiv = document.createElement('div');
+                alertDiv.className = `alert alert-${type === 'success' ? 'success' : 'error'}`;
+                alertDiv.textContent = message;
+                
+                alertContainer.appendChild(alertDiv);
+                
+                setTimeout(() => {
+                    if (alertDiv.parentNode) {
+                        alertDiv.parentNode.removeChild(alertDiv);
+                    }
+                }, 5000);
+            }
+        }
+        
+        // Inicializar la aplicación
+        const productManager = new ProductManager();
+    </script>
+</body>
+</html>
