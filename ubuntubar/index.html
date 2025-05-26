@@ -46,13 +46,14 @@
             color: #555;
         }
         
-        input[type="text"], input[type="number"], input[type="file"] {
+        input[type="text"], input[type="number"], input[type="file"], select {
             width: 100%;
             padding: 10px;
             border: 1px solid #ddd;
             border-radius: 5px;
             font-size: 14px;
             box-sizing: border-box;
+            background-color: white;
         }
         
         button {
@@ -100,6 +101,11 @@
             border-radius: 8px;
             background: #fff;
             box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            animation: fadeIn 0.5s ease-out;
+        }
+        
+        .product-item.removing {
+            animation: fadeOut 0.5s ease-out;
         }
         
         .product-image {
@@ -130,6 +136,16 @@
         .product-id {
             font-size: 12px;
             color: #666;
+        }
+        
+        .product-category {
+            display: inline-block;
+            padding: 4px 8px;
+            background-color: #e9ecef;
+            border-radius: 12px;
+            font-size: 12px;
+            color: #666;
+            margin-bottom: 5px;
         }
         
         .product-actions {
@@ -180,6 +196,17 @@
             color: #666;
         }
         
+        /* Animaciones */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        @keyframes fadeOut {
+            from { opacity: 1; transform: translateY(0); }
+            to { opacity: 0; transform: translateY(20px); }
+        }
+        
         @media (max-width: 768px) {
             .product-item {
                 flex-direction: column;
@@ -214,6 +241,17 @@
                 </div>
                 
                 <div class="form-group">
+                    <label for="productCategory">Categoría:</label>
+                    <select id="productCategory" required>
+                        <option value="">Seleccione una categoría</option>
+                        <option value="BEBIDAS">Bebidas</option>
+                        <option value="COMIDAS">Comidas</option>
+                        <option value="POSTRES">Postres</option>
+                        <option value="SNACKS">Snacks</option>
+                    </select>
+                </div>
+
+                <div class="form-group">
                     <label for="productImage">Imagen:</label>
                     <input type="file" id="productImage" accept="image/*">
                 </div>
@@ -225,6 +263,16 @@
         <!-- Lista de productos -->
         <div class="product-list">
             <h2>Lista de Productos</h2>
+            <div class="category-filter">
+                <label for="categoryFilter">Filtrar por categoría:</label>
+                <select id="categoryFilter">
+                    <option value="">Todas las categorías</option>
+                    <option value="BEBIDAS">Bebidas</option>
+                    <option value="COMIDAS">Comidas</option>
+                    <option value="POSTRES">Postres</option>
+                    <option value="SNACKS">Snacks</option>
+                </select>
+            </div>
             <div id="productContainer">
                 <div class="loading">Cargando productos...</div>
             </div>
@@ -295,8 +343,8 @@
                     this.addProduct();
                 });
                 
-                document.getElementById('refreshBtn').addEventListener('click', () => {
-                    this.loadProducts().then(() => this.renderProducts());
+                document.getElementById('categoryFilter').addEventListener('change', () => {
+                    this.renderProducts();
                 });
                 
                 document.getElementById('copyJsonBtn').addEventListener('click', () => {
@@ -307,9 +355,10 @@
             async addProduct() {
                 const name = document.getElementById('productName').value;
                 const price = parseFloat(document.getElementById('productPrice').value);
+                const category = document.getElementById('productCategory').value;
                 const imageFile = document.getElementById('productImage').files[0];
                 
-                if (!name || !price) {
+                if (!name || !price || !category) {
                     this.showAlert('Por favor complete todos los campos obligatorios', 'error');
                     return;
                 }
@@ -326,6 +375,7 @@
                     id: Date.now(),
                     nombre: name.toUpperCase(),
                     precio: price,
+                    categoria: category,
                     imagen: imagePath
                 };
                 
@@ -341,32 +391,47 @@
             
             removeProduct(id) {
                 if (confirm('¿Está seguro de que desea eliminar este producto?')) {
-                    this.products = this.products.filter(product => product.id !== id);
-                    this.renderProducts();
-                    this.updateJsonOutput();
-                    this.showAlert('Producto eliminado', 'success');
+                    // Primero agregar la clase de animación
+                    const productElement = document.querySelector(`[data-product-id="${id}"]`);
+                    if (productElement) {
+                        productElement.classList.add('removing');
+                        // Esperar a que termine la animación antes de eliminar
+                        setTimeout(() => {
+                            this.products = this.products.filter(product => product.id !== id);
+                            this.renderProducts();
+                            this.updateJsonOutput();
+                            this.showAlert('Producto eliminado', 'success');
+                        }, 500); // Este tiempo debe coincidir con la duración de la animación
+                    }
                 }
             }
             
             renderProducts() {
                 const container = document.getElementById('productContainer');
+                const selectedCategory = document.getElementById('categoryFilter').value;
                 
-                if (this.products.length === 0) {
+                // Filtrar productos por categoría
+                const filteredProducts = selectedCategory 
+                    ? this.products.filter(p => p.categoria === selectedCategory)
+                    : this.products;
+                
+                if (filteredProducts.length === 0) {
                     container.innerHTML = `
                         <div class="empty-state">
-                            <p>No hay productos disponibles</p>
-                            <p>Agregue productos usando el formulario superior</p>
+                            <p>${this.products.length === 0 ? 'No hay productos disponibles' : 'No hay productos en esta categoría'}</p>
+                            <p>${this.products.length === 0 ? 'Agregue productos usando el formulario superior' : 'Seleccione otra categoría o agregue productos'}</p>
                         </div>
                     `;
                     return;
                 }
                 
-                container.innerHTML = this.products.map(product => `
-                    <div class="product-item">
+                container.innerHTML = filteredProducts.map(product => `
+                    <div class="product-item" data-product-id="${product.id}">
                         <img src="${product.imagen}" alt="${product.nombre}" class="product-image" 
                              onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik00MCAyMEM0Ni42Mjc0IDIwIDUyIDI1LjM3MjYgNTIgMzJDNTIgMzguNjI3NCA0Ni42Mjc0IDQ0IDQwIDQ0QzMzLjM3MjYgNDQgMjggMzguNjI3NCAyOCAzMkMyOCAyNS4zNzI2IDMzLjM3MjYgMjAgNDAgMjBaTTQwIDQ4QzUwLjQ5NDMgNDggNTkgNTIuNDc3MiA1OSA1OFY2MEgyMVY1OEMyMSA1Mi40NzcyIDI5LjUwNTcgNDggNDAgNDhaIiBmaWxsPSIjQ0NDQ0NDIi8+Cjwvc3ZnPgo='">
                         <div class="product-info">
                             <div class="product-name">${product.nombre}</div>
+                            <div class="product-category">${product.categoria}</div>
                             <div class="product-price">$${product.precio.toLocaleString()}</div>
                             <div class="product-id">ID: ${product.id}</div>
                         </div>

@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menú - Ubuntu Bar</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        h1, h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .category-filter {
+            margin: 20px auto;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        select {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            margin-top: 10px;
+        }
+
+        .menu-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .menu-item {
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            overflow: hidden;
+            transition: transform 0.3s ease;
+            animation: fadeIn 0.5s ease-out;
+        }
+
+        .menu-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .menu-image {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .menu-info {
+            padding: 15px;
+        }
+
+        .menu-name {
+            font-size: 18px;
+            font-weight: bold;
+            margin: 0;
+            color: #333;
+        }
+
+        .menu-price {
+            font-size: 16px;
+            color: #007bff;
+            margin-top: 5px;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .empty-state {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+        }
+
+        @media (max-width: 768px) {
+            .menu-grid {
+                grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Menú Ubuntu Bar</h1>
+        
+        <div class="category-filter">
+            <select id="categoryFilter">
+                <option value="">Todas las categorías</option>
+                <option value="ALIMENTOS">Alimentos</option>
+                <option value="BEBIDAS">Bebidas</option>
+            </select>
+        </div>
+
+        <div id="menuContainer" class="menu-grid">
+            <div class="loading">Cargando menú...</div>
+        </div>
+    </div>
+
+    <script>
+        class MenuManager {
+            constructor() {
+                this.products = [];
+                this.init();
+            }
+            
+            async init() {
+                await this.loadProducts();
+                this.setupEventListeners();
+                this.renderMenu();
+            }
+            
+            async loadProducts() {
+                try {
+                    const response = await fetch('./products.json');
+                    if (response.ok) {
+                        this.products = await response.json();
+                        // Convertir las categorías existentes a ALIMENTOS o BEBIDAS
+                        this.products = this.products.map(product => ({
+                            ...product,
+                            categoria: this.mapCategory(product.categoria)
+                        }));
+                    } else {
+                        this.products = [];
+                    }
+                } catch (error) {
+                    console.error('Error cargando productos:', error);
+                    this.products = [];
+                }
+            }
+
+            mapCategory(originalCategory) {
+                const foodCategories = ['COMIDAS', 'POSTRES', 'SNACKS'];
+                const drinkCategories = ['BEBIDAS', 'VICHE', 'CERVEZA'];
+                
+                if (foodCategories.includes(originalCategory)) return 'ALIMENTOS';
+                if (drinkCategories.includes(originalCategory)) return 'BEBIDAS';
+                return originalCategory;
+            }
+            
+            setupEventListeners() {
+                document.getElementById('categoryFilter').addEventListener('change', () => {
+                    this.renderMenu();
+                });
+            }
+            
+            renderMenu() {
+                const container = document.getElementById('menuContainer');
+                const selectedCategory = document.getElementById('categoryFilter').value;
+                
+                const filteredProducts = selectedCategory 
+                    ? this.products.filter(p => p.categoria === selectedCategory)
+                    : this.products;
+                
+                if (filteredProducts.length === 0) {
+                    container.innerHTML = `
+                        <div class="empty-state">
+                            <p>No hay productos disponibles en esta categoría</p>
+                        </div>
+                    `;
+                    return;
+                }
+                
+                container.innerHTML = filteredProducts.map(product => `
+                    <div class="menu-item">
+                        <img src="${product.imagen}" alt="${product.nombre}" class="menu-image" 
+                             onerror="this.src='data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iODAiIGhlaWdodD0iODAiIHZpZXdCb3g9IjAgMCA4MCA4MCIgZmlsbD0ibm9uZSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4KPHJlY3Qgd2lkdGg9IjgwIiBoZWlnaHQ9IjgwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik00MCAyMEM0Ni42Mjc0IDIwIDUyIDI1LjM3MjYgNTIgMzJDNTIgMzguNjI3NCA0Ni42Mjc0IDQ0IDQwIDQ0QzMzLjM3MjYgNDQgMjggMzguNjI3NCAyOCAzMkMyOCAyNS4zNzI2IDMzLjM3MjYgMjAgNDAgMjBaTTQwIDQ4QzUwLjQ5NDMgNDggNTkgNTIuNDc3MiA1OSA1OFY2MEgyMVY1OEMyMSA1Mi40NzcyIDI5LjUwNTcgNDggNDAgNDhaIiBmaWxsPSIjQ0NDQ0NDIi8+Cjwvc3ZnPgo='">
+                        <div class="menu-info">
+                            <h3 class="menu-name">${product.nombre}</h3>
+                            <div class="menu-price">$${product.precio.toLocaleString()}</div>
+                        </div>
+                    </div>
+                `).join('');
+            }
+        }
+        
+        // Inicializar el menú
+        const menuManager = new MenuManager();
+    </script>
+</body>
+</html>
