@@ -1,52 +1,10 @@
 [
   {
-    "id": 1748129475699,
-    "nombre": "PASTELITOS DE POLLO ",
-    "precio": 9000,
-    "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/markup_312.png"
-  },
-  {
-    "id": 1748129545123,
-    "nombre": "CERVEZA ARTESANAL",
-    "precio": 7000,
-    "categoria": "BEBIDAS",
-    "imagen": "/ubuntubar/markup_308.png"
-  },
-  {
-    "id": 1748129579808,
-    "nombre": "VICHE",
-    "precio": 4000,
-    "imagen": "/ubuntubar/markup_307.png",
-    "categoria": "BEBIDAS"
-  },
-  {
-    "id": 1748210273626,
-    "nombre": "TORTA CHOCLO Y QUESO",
-    "precio": 7000,
-    "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/tqueso.png"
-  },
-  {
     "id": 1748221435114,
     "nombre": "COCA COLA",
     "precio": 4000,
     "categoria": "BEBIDAS",
     "imagen": "/ubuntubar/Screenshot_20250525-203416.png"
-  },
-  {
-    "id": 1748221537640,
-    "nombre": "PASTEL CHOCOANO",
-    "precio": 22000,
-    "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/Screenshot_20250525-203254.png"
-  },
-  {
-    "id": 1748380713337,
-    "nombre": "CERVEZA PILSEN ",
-    "precio": 4000,
-    "categoria": "BEBIDAS",
-    "imagen": "/ubuntubar/img/pilsen.jpg"
   },
   {
     "id": 1748380892014,
