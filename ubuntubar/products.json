@@ -46,13 +46,13 @@
     "nombre": "CERVEZA PILSEN ",
     "precio": 4000,
     "categoria": "BEBIDAS",
-    "imagen": "/ubuntubar/563.jpg"
+    "imagen": "/ubuntubar/img/pilsen.jpg"
   },
   {
     "id": 1748380892014,
     "nombre": "BRETAÑA 250",
     "precio": 4000,
     "categoria": "BEBIDAS",
-    "imagen": "/ubuntubar/563.jpg"
+    "imagen": "/ubuntubar/img/bretana.png"
   }
 ]
