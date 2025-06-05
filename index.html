@@ -131,8 +131,8 @@
         <div class="bg-white p-6 rounded-lg shadow-md mb-8">
             <h2 class="text-2xl font-bold text-green-600 mb-4">What Visitors Say</h2>
             <div class="space-y-4">
-                <blockquote class="border-l-4 border-green-600 pl-4 italic text-gray-700">“A magical place! The guided tour was informative and fun.”<br><span class="font-semibold">– Maria G.</span></blockquote>
-                <blockquote class="border-l-4 border-green-600 pl-4 italic text-gray-700">“Booking was easy and the staff were very helpful.”<br><span class="font-semibold">– John D.</span></blockquote>
+                <blockquote class="border-l-4 border-green-600 pl-4 italic text-gray-700">"A magical place! The guided tour was informative and fun."<br><span class="font-semibold">– Maria G.</span></blockquote>
+                <blockquote class="border-l-4 border-green-600 pl-4 italic text-gray-700">"Booking was easy and the staff were very helpful."<br><span class="font-semibold">– John D.</span></blockquote>
             </div>
         </div>
 
@@ -189,9 +189,9 @@
                 text: `These articles collectively describe Parque Arví, a large ecological park near Medellín, Colombia. They highlight its accessibility via the Metrocable, various outdoor activities like hiking and picnicking, and its rich biodiversity including numerous plant and animal species. Several sources also touch upon the park's archaeological significance, mentioning pre-Hispanic structures and artifacts discovered within its bounds, and the ongoing efforts to conserve both its natural environment and cultural heritage. Visitors are encouraged to explore the park's trails, markets, and designated areas like Piedras Blancas and Comfama, while also being advised on safety and practical considerations for their visit.`
             },
             {
-                src: 'https://placehold.co/1000x600/A9A9A9/FFFFFF?text=Metrocable+to+Arvi',
-                alt: 'Metrocable gondola ascending towards Parque Arví',
-                text: `These articles collectively describe Parque Arví, a large ecological park near Medellín, Colombia. They highlight its accessibility via the Metrocable, various outdoor activities like hiking and picnicking, and its rich biodiversity including numerous plant and animal species. Several sources also touch upon the park's archaeological significance, mentioning pre-Hispanic structures and artifacts discovered within its bounds, and the ongoing efforts to conserve both its natural environment and cultural heritage. Visitors are encouraged to explore the park's trails, markets, and designated areas like Piedras Blancas and Comfama, while also being advised on safety and practical considerations for their visit.`
+                src: 'https://giomont.github.io/flora1.jpg',
+                alt: 'Flora del Parque Arví',
+                text: `Descubre la increíble biodiversidad del Parque Arví. Este parque ecológico alberga una gran variedad de especies de plantas y animales nativos de la región. Los visitantes pueden explorar senderos naturales y observar la rica flora que caracteriza este ecosistema único cerca de Medellín.`
             },
             {
                 src: 'https://placehold.co/1000x600/FFD700/556B2F?text=Biodiversity+(Flower)',
@@ -218,7 +218,7 @@
         const prevButton = document.getElementById('prev-button');
         const nextButton = document.getElementById('next-button');
         const uploadInput = document.getElementById('upload-input');
-        // const uploadBtn = document.getElementById('upload-btn'); // Not directly used in this new JS logic for slider
+        const uploadBtn = document.getElementById('upload-btn');
         const sliderOverlay = document.getElementById('slider-overlay');
 
         // --- Functions ---
@@ -275,6 +275,12 @@
         // --- Event Listeners ---
         if (prevButton) prevButton.addEventListener('click', prevImage);
         if (nextButton) nextButton.addEventListener('click', nextImage);
+
+        if (uploadBtn) {
+            uploadBtn.addEventListener('click', () => {
+                uploadInput.click();
+            });
+        }
 
         if (uploadInput) {
             uploadInput.addEventListener('change', (event) => {
