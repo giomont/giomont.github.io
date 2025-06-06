@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider Moderno</title>
+    <title>Slider Moderno - Texto en Footer</title>
     <style>
         * {
             margin: 0;
@@ -75,24 +75,28 @@
             mix-blend-mode: overlay;
         }
 
-        .slide-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+        /* Footer con texto fijo */
+        .footer-content {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.95) 100%);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 30;
+            padding: 3rem 2rem 2rem;
             text-align: center;
-            color: white;
-            z-index: 10;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        .slide-title {
-            font-size: 3.5rem;
+        .footer-text {
+            color: white;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 2.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
@@ -103,12 +107,11 @@
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
         }
 
-        .slide-description {
-            font-size: 1.2rem;
+        .footer-description {
+            font-size: 1.1rem;
             line-height: 1.6;
             opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
+            margin-bottom: 2rem;
         }
 
         @keyframes gradientShift {
@@ -152,7 +155,7 @@
 
         .dots-container {
             position: absolute;
-            bottom: 2rem;
+            bottom: 12rem;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -190,22 +193,45 @@
             background-size: 400% 400%;
             animation: gradientShift 3s ease infinite;
             transform-origin: left;
+            z-index: 35;
+        }
+
+        /* Información del slide actual */
+        .slide-info {
+            position: absolute;
+            top: 2rem;
+            left: 2rem;
+            color: white;
             z-index: 25;
+            background: rgba(0, 0, 0, 0.3);
+            backdrop-filter: blur(10px);
+            padding: 1rem 1.5rem;
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .slide-number {
+            font-size: 0.9rem;
+            opacity: 0.8;
+            margin-bottom: 0.5rem;
+        }
+
+        .slide-title-small {
+            font-size: 1.2rem;
+            font-weight: 600;
         }
 
         @media (max-width: 768px) {
-            .slide-title {
-                font-size: 2.5rem;
+            .footer-title {
+                font-size: 2rem;
             }
             
-            .slide-description {
+            .footer-description {
                 font-size: 1rem;
-                padding: 0 1rem;
             }
             
-            .slide-content {
-                padding: 1.5rem;
-                margin: 0 1rem;
+            .footer-content {
+                padding: 2rem 1rem 1.5rem;
             }
             
             .navigation {
@@ -221,15 +247,43 @@
             .nav-next {
                 right: 1rem;
             }
+
+            .dots-container {
+                bottom: 10rem;
+            }
+
+            .slide-info {
+                top: 1rem;
+                left: 1rem;
+                padding: 0.8rem 1rem;
+            }
+
+            .slide-title-small {
+                font-size: 1rem;
+            }
+
+            .slide-number {
+                font-size: 0.8rem;
+            }
         }
 
         @media (max-width: 480px) {
-            .slide-title {
-                font-size: 2rem;
+            .footer-title {
+                font-size: 1.8rem;
             }
             
-            .slide-description {
+            .footer-description {
                 font-size: 0.9rem;
+            }
+
+            .dots-container {
+                bottom: 9rem;
+                gap: 0.8rem;
+            }
+
+            .dot {
+                width: 10px;
+                height: 10px;
             }
         }
     </style>
@@ -239,84 +293,54 @@
         <div class="slider">
             <!-- Slide 1 -->
             <div class="slide active">
-                <div class="slide-bg" style="background-image: url('https://github.com/giomont/giomont.github.io/blob/master/img/flora1.jpg');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">PARQUE ARVI</h2>
-                    <p class="slide-description">Descubre la belleza natural en su máxima expresión.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop');"></div>
             </div>
 
             <!-- Slide 2 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('img/arvi/2.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">SENDERO LA FLORA</h2>
-                    <p class="slide-description">Sumérgete en un mundo donde la naturaleza despliega su paleta de colores más impresionante.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop');"></div>
             </div>
 
             <!-- Slide 3 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('img/arvi/3.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">CAMINO DE MUSGOS </h2>
-                    <p class="slide-description">Almacenan el agua de las lluvias y previenen la erosión de los suelos.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&h=1080&fit=crop');"></div>
             </div>
 
             <!-- Slide 4 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('img/arvi/4.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">Ambiente Acogedor</h2>
-                    <p class="slide-description">Un espacio diseñado para crear momentos memorables en compañía de amigos y familia.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=1080&fit=crop');"></div>
             </div>
 
             <!-- Slide 5 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('img/arvi/5.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">Oasis de Paz</h2>
-                    <p class="slide-description">Encuentra la serenidad en este oasis donde cada elemento natural te invita a la contemplación.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop');"></div>
             </div>
 
             <!-- Slide 6 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('img/arvi/6.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">Sinfonía Natural</h2>
-                    <p class="slide-description">Una sinfonía visual donde cada elemento de la naturaleza contribuye a crear una obra maestra.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop');"></div>
             </div>
 
             <!-- Slide 7 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('img/mar/7.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">Azul Profundo</h2>
-                    <p class="slide-description">Sumérgete en las profundidades del océano donde cada ola cuenta una historia diferente.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&h=1080&fit=crop');"></div>
             </div>
 
             <!-- Slide 8 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('img/mar/8.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">Atardecer Marino</h2>
-                    <p class="slide-description">Contempla cómo el sol se despide pintando el horizonte marino con tonos dorados y púrpuras.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop');"></div>
             </div>
 
             <!-- Slide 9 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('img/mar/9.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">Vida Marina</h2>
-                    <p class="slide-description">Descubre el fascinante mundo submarino lleno de color y movimiento.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop');"></div>
             </div>
+        </div>
+
+        <!-- Información del slide actual -->
+        <div class="slide-info">
+            <div class="slide-number" id="slideNumber">1 / 9</div>
+            <div class="slide-title-small" id="slideTitle">Flora Exótica</div>
         </div>
 
         <!-- Navigation -->
@@ -336,6 +360,18 @@
             <div class="dot" onclick="currentSlide(9)"></div>
         </div>
 
+        <!-- Footer fijo con texto -->
+        <div class="footer-content">
+            <div class="footer-text">
+                <h2 class="footer-title">Galería de Experiencias</h2>
+                <p class="footer-description">
+                    Sumérgete en un mundo de colores, texturas y sensaciones únicas. 
+                    Cada imagen cuenta una historia diferente, desde la serenidad de la naturaleza 
+                    hasta la vibrante energía de los sabores auténticos.
+                </p>
+            </div>
+        </div>
+
         <!-- Progress Bar -->
         <div class="progress-bar" id="progressBar"></div>
     </div>
@@ -347,6 +383,26 @@
         const totalSlides = slides.length;
         let autoSlideInterval;
         const progressBar = document.getElementById('progressBar');
+        const slideNumberEl = document.getElementById('slideNumber');
+        const slideTitleEl = document.getElementById('slideTitle');
+
+        // Títulos para cada slide
+        const slideTitles = [
+            'Flora Exótica',
+            'Naturaleza Vibrante', 
+            'Sabores Únicos',
+            'Ambiente Acogedor',
+            'Oasis de Paz',
+            'Sinfonía Natural',
+            'Azul Profundo',
+            'Atardecer Marino',
+            'Vida Marina'
+        ];
+
+        function updateSlideInfo(index) {
+            slideNumberEl.textContent = `${index + 1} / ${totalSlides}`;
+            slideTitleEl.textContent = slideTitles[index];
+        }
 
         function showSlide(index) {
             // Remove active class from all slides and dots
@@ -366,6 +422,9 @@
 
             // Update progress bar
             progressBar.style.transform = `scaleX(${(index + 1) / totalSlides})`;
+
+            // Update slide info
+            updateSlideInfo(index);
         }
 
         function changeSlide(direction) {
