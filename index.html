@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Slider Moderno - Texto en Footer</title>
+    <title>Slider Moderno</title>
     <style>
         * {
             margin: 0;
@@ -75,28 +75,24 @@
             mix-blend-mode: overlay;
         }
 
-        /* Footer con texto fijo */
-        .footer-content {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.8) 40%, rgba(0, 0, 0, 0.95) 100%);
-            backdrop-filter: blur(20px);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            z-index: 30;
-            padding: 3rem 2rem 2rem;
+        .slide-content {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
             text-align: center;
-        }
-
-        .footer-text {
             color: white;
-            max-width: 800px;
-            margin: 0 auto;
+            z-index: 10;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
         }
 
-        .footer-title {
-            font-size: 2.5rem;
+        .slide-title {
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 1rem;
             background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
@@ -107,11 +103,12 @@
             text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
         }
 
-        .footer-description {
-            font-size: 1.1rem;
+        .slide-description {
+            font-size: 1.2rem;
             line-height: 1.6;
             opacity: 0.9;
-            margin-bottom: 2rem;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
         @keyframes gradientShift {
@@ -155,7 +152,7 @@
 
         .dots-container {
             position: absolute;
-            bottom: 12rem;
+            bottom: 2rem;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
@@ -193,45 +190,22 @@
             background-size: 400% 400%;
             animation: gradientShift 3s ease infinite;
             transform-origin: left;
-            z-index: 35;
-        }
-
-        /* Información del slide actual */
-        .slide-info {
-            position: absolute;
-            top: 2rem;
-            left: 2rem;
-            color: white;
             z-index: 25;
-            background: rgba(0, 0, 0, 0.3);
-            backdrop-filter: blur(10px);
-            padding: 1rem 1.5rem;
-            border-radius: 10px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-        }
-
-        .slide-number {
-            font-size: 0.9rem;
-            opacity: 0.8;
-            margin-bottom: 0.5rem;
-        }
-
-        .slide-title-small {
-            font-size: 1.2rem;
-            font-weight: 600;
         }
 
         @media (max-width: 768px) {
-            .footer-title {
-                font-size: 2rem;
+            .slide-title {
+                font-size: 2.5rem;
             }
             
-            .footer-description {
+            .slide-description {
                 font-size: 1rem;
+                padding: 0 1rem;
             }
             
-            .footer-content {
-                padding: 2rem 1rem 1.5rem;
+            .slide-content {
+                padding: 1.5rem;
+                margin: 0 1rem;
             }
             
             .navigation {
@@ -247,43 +221,15 @@
             .nav-next {
                 right: 1rem;
             }
-
-            .dots-container {
-                bottom: 10rem;
-            }
-
-            .slide-info {
-                top: 1rem;
-                left: 1rem;
-                padding: 0.8rem 1rem;
-            }
-
-            .slide-title-small {
-                font-size: 1rem;
-            }
-
-            .slide-number {
-                font-size: 0.8rem;
-            }
         }
 
         @media (max-width: 480px) {
-            .footer-title {
-                font-size: 1.8rem;
+            .slide-title {
+                font-size: 2rem;
             }
             
-            .footer-description {
+            .slide-description {
                 font-size: 0.9rem;
-            }
-
-            .dots-container {
-                bottom: 9rem;
-                gap: 0.8rem;
-            }
-
-            .dot {
-                width: 10px;
-                height: 10px;
             }
         }
     </style>
@@ -293,54 +239,75 @@
         <div class="slider">
             <!-- Slide 1 -->
             <div class="slide active">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Flora Exótica</h2>
+                    <p class="slide-description">Descubre la belleza natural en su máxima expresión. Cada pétalo cuenta una historia única de color y vida.</p>
+                </div>
             </div>
 
             <!-- Slide 2 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Naturaleza Vibrante</h2>
+                    <p class="slide-description">Sumérgete en un mundo donde la naturaleza despliega su paleta de colores más impresionante.</p>
+                </div>
             </div>
 
             <!-- Slide 3 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=1920&h=1080&fit=crop');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Jardín Secreto</h2>
+                    <p class="slide-description">Un refugio de tranquilidad donde cada flor susurra secretos de la madre naturaleza.</p>
+                </div>
             </div>
 
             <!-- Slide 4 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?w=1920&h=1080&fit=crop');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Paraíso Floral</h2>
+                    <p class="slide-description">Experimenta la magia de un paraíso donde la belleza natural alcanza su máximo esplendor.</p>
+                </div>
             </div>
 
             <!-- Slide 5 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Oasis de Paz</h2>
+                    <p class="slide-description">Encuentra la serenidad en este oasis donde cada elemento natural te invita a la contemplación.</p>
+                </div>
             </div>
 
             <!-- Slide 6 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/refs/heads/master/img/arvi/flora1.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Sinfonía Natural</h2>
+                    <p class="slide-description">Una sinfonía visual donde cada elemento de la naturaleza contribuye a crear una obra maestra.</p>
+                </div>
             </div>
 
-            <!-- Slide 7 -->
+            <!-- Slide 7 - Metrocable -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1505142468610-359e7d316be0?w=1920&h=1080&fit=crop');"></div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1544986581-efac024faf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Metrocable Medellín</h2>
+                    <p class="slide-description">Vuela sobre la ciudad eterna primavera. El Metrocable conecta montañas, sueños y comunidades en una experiencia única de transporte urbano.</p>
+                </div>
             </div>
 
-            <!-- Slide 8 -->
+            <!-- Slide 8 - Restaurantes -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1506905925346-21bda4d32df4?w=1920&h=1080&fit=crop');"></div>
+                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                <div class="slide-content">
+                    <h2 class="slide-title">Comida Típica Paisa</h2>
+                    <p class="slide-description">Saborea la tradición en cada bocado. Bandeja paisa, arepas, sancocho y más delicias que llenan el alma con el sabor auténtico de Antioquia.</p>
+                </div>
             </div>
-
-            <!-- Slide 9 -->
-            <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1441974231531-c6227db76b6e?w=1920&h=1080&fit=crop');"></div>
-            </div>
-        </div>
-
-        <!-- Información del slide actual -->
-        <div class="slide-info">
-            <div class="slide-number" id="slideNumber">1 / 9</div>
-            <div class="slide-title-small" id="slideTitle">Flora Exótica</div>
         </div>
 
         <!-- Navigation -->
@@ -357,19 +324,6 @@
             <div class="dot" onclick="currentSlide(6)"></div>
             <div class="dot" onclick="currentSlide(7)"></div>
             <div class="dot" onclick="currentSlide(8)"></div>
-            <div class="dot" onclick="currentSlide(9)"></div>
-        </div>
-
-        <!-- Footer fijo con texto -->
-        <div class="footer-content">
-            <div class="footer-text">
-                <h2 class="footer-title">Galería de Experiencias</h2>
-                <p class="footer-description">
-                    Sumérgete en un mundo de colores, texturas y sensaciones únicas. 
-                    Cada imagen cuenta una historia diferente, desde la serenidad de la naturaleza 
-                    hasta la vibrante energía de los sabores auténticos.
-                </p>
-            </div>
         </div>
 
         <!-- Progress Bar -->
@@ -383,26 +337,6 @@
         const totalSlides = slides.length;
         let autoSlideInterval;
         const progressBar = document.getElementById('progressBar');
-        const slideNumberEl = document.getElementById('slideNumber');
-        const slideTitleEl = document.getElementById('slideTitle');
-
-        // Títulos para cada slide
-        const slideTitles = [
-            'Flora Exótica',
-            'Naturaleza Vibrante', 
-            'Sabores Únicos',
-            'Ambiente Acogedor',
-            'Oasis de Paz',
-            'Sinfonía Natural',
-            'Azul Profundo',
-            'Atardecer Marino',
-            'Vida Marina'
-        ];
-
-        function updateSlideInfo(index) {
-            slideNumberEl.textContent = `${index + 1} / ${totalSlides}`;
-            slideTitleEl.textContent = slideTitles[index];
-        }
 
         function showSlide(index) {
             // Remove active class from all slides and dots
@@ -422,9 +356,6 @@
 
             // Update progress bar
             progressBar.style.transform = `scaleX(${(index + 1) / totalSlides})`;
-
-            // Update slide info
-            updateSlideInfo(index);
         }
 
         function changeSlide(direction) {
