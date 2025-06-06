@@ -11,77 +11,77 @@
     "nombre": "BRETAÑA 250ML",
     "precio": 4000,
     "categoria": "BEBIDAS",
-    "imagen": "/ubuntubar/logo192.png"
+    "imagen": "/img/cocacola.jpg"
   },
   {
     "id": 1748380892015,
     "nombre": "PEPSI 300ML",
     "precio": 3800,
     "categoria": "BEBIDAS",
-    "imagen": "/ubuntubar/cocacola.png"
+    "imagen": "/img/cocacola.jpg"
   },
   {
     "id": 1748380892016,
     "nombre": "SPRITE 300ML",
     "precio": 3800,
     "categoria": "BEBIDAS",
-    "imagen": "/ubuntubar/cocacola.png"
+    "imagen": "/img/cocacola.jpg"
   },
   {
     "id": 1748380892017,
     "nombre": "AGUA CRISTAL 600ML",
     "precio": 3000,
     "categoria": "BEBIDAS",
-    "imagen": "/ubuntubar/cocacola.png"
+    "imagen": "/img/cocacola.jpg"
   },
   {
     "id": 1748380892018,
     "nombre": "HAMBURGUESA CLASICA",
     "precio": 18000,
     "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/tipicos.png"
+    "imagen": "/img/amburguesa.png"
   },
   {
     "id": 1748380892019,
-    "nombre": "PERRO CALIENTE ESPECIAL",
+    "nombre": "sanchoco",
     "precio": 12000,
     "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/tipicos.png"
+    "imagen": "/img/sancocho.png"
   },
   {
     "id": 1748380892020,
-    "nombre": "PIZZA PERSONAL",
+    "nombre": "bandeja",
     "precio": 22000,
     "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/tipicos.png"
+    "imagen": "/img/bandeja.png"
   },
   {
     "id": 1748380892021,
-    "nombre": "TACOS MIXTOS",
+    "nombre": "MONDONGO",
     "precio": 15000,
     "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/tipicos.png"
+    "imagen": "/img/mondongo.png"
   },
   {
     "id": 1748380892022,
-    "nombre": "NACHOS CON QUESO",
+    "nombre": "PESCADO",
     "precio": 10000,
     "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/tipicos.png"
+    "imagen": "/img/pescado.png"
   },
   {
     "id": 1748380892023,
-    "nombre": "SANDWICH DE POLLO",
+    "nombre": "SANCOCHO",
     "precio": 14000,
     "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/tipicos.png"
+    "imagen": "/img/sancocho.png"
   },
   {
     "id": 1748380892024,
     "nombre": "ALITAS BBQ X6",
     "precio": 25000,
     "categoria": "COMIDAS",
-    "imagen": "/ubuntubar/tipicos.png"
+    "imagen": "/img/tipicos.png"
   },
   {
     "id": 1748380892025,
