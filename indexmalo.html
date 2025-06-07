@@ -71,7 +71,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(255, 0, 150, 0.3), rgba(0, 255, 255, 0.2));
+            background: linear-gradient(45deg, rgba(15, 206, 72, 0.3), rgba(0, 255, 255, 0.2));
             mix-blend-mode: overlay;
         }
 
@@ -347,42 +347,42 @@
         <div class="slider">
             <!-- Slide 1 -->
             <div class="slide active">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/5.png');"></div>
             </div>
 
             <!-- Slide 2 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/5.png');"></div>
             </div>
 
             <!-- Slide 3 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/5.png');"></div>
             </div>
 
             <!-- Slide 4 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/5.png');"></div>
             </div>
 
             <!-- Slide 5 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/5.png');"></div>
             </div>
 
             <!-- Slide 6 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/5.png');"></div>
             </div>
 
             <!-- Slide 7 - Metrocable -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1544986581-efac024faf62?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/5.png');"></div>
             </div>
 
             <!-- Slide 8 - Restaurantes -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80');"></div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/5.png');"></div>
             </div>
         </div>
 
@@ -604,4 +604,13 @@
         }
 
         // Reset timeout on user interaction
-   
+        document.addEventListener('mousemove', resetFooterTimeout);
+        document.addEventListener('click', resetFooterTimeout);
+        document.addEventListener('touchstart', resetFooterTimeout);
+
+        // Initialize slider and auto-slide
+        showSlide(0);
+        startAutoSlide();
+    </script>
+</body>
+</html>
