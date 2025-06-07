@@ -71,49 +71,8 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: linear-gradient(45deg, rgba(255, 0, 150, 0.3), rgba(0, 255, 255, 0.2));
+            /*background: linear-gradient(45deg, rgba(15, 206, 72, 0.3), rgba(0, 255, 255, 0.2));*/
             mix-blend-mode: overlay;
-        }
-
-        .slide-content {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            text-align: center;
-            color: white;
-            z-index: 10;
-            padding: 2rem;
-            backdrop-filter: blur(10px);
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-        }
-
-        .slide-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
-            background-size: 400% 400%;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            animation: gradientShift 3s ease infinite;
-            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
-        }
-
-        .slide-description {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        @keyframes gradientShift {
-            0%, 100% { background-position: 0% 50%; }
-            50% { background-position: 100% 50%; }
         }
 
         .navigation {
@@ -150,14 +109,115 @@
             right: 2rem;
         }
 
-        .dots-container {
+        /* Footer Overlay */
+        .footer-overlay {
             position: absolute;
-            bottom: 2rem;
-            left: 50%;
-            transform: translateX(-50%);
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7), transparent);
+           /* backdrop-filter: blur(15px);*/
+            z-index: 15;
+            padding: 2rem;
+            transform: translateY(0);
+            transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+        }
+
+        .footer-overlay.minimized {
+            transform: translateY(calc(100% - 80px));
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .footer-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+
+        .toggle-btn {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        .toggle-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+        }
+
+        .slide-info {
+            text-align: center;
+            color: white;
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+
+        .footer-overlay.minimized .slide-info {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .slide-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
+            background-size: 400% 400%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradientShift 3s ease infinite;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+        }
+
+        .slide-description {
+            font-size: 1.1rem;
+            line-height: 1.6;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto 1.5rem;
+        }
+
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+
+        .footer-controls {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 2rem;
+            opacity: 1;
+            transition: all 0.5s ease;
+        }
+
+        .footer-overlay.minimized .footer-controls {
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .dots-container {
             display: flex;
             gap: 1rem;
-            z-index: 20;
         }
 
         .dot {
@@ -182,20 +242,60 @@
         }
 
         .progress-bar {
-            position: absolute;
-            bottom: 0;
-            left: 0;
+            width: 200px;
             height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .progress-fill {
+            height: 100%;
             background: linear-gradient(90deg, #ff6b6b, #4ecdc4, #45b7d1, #f9ca24);
             background-size: 400% 400%;
             animation: gradientShift 3s ease infinite;
-            transform-origin: left;
-            z-index: 25;
+            border-radius: 2px;
+            transition: width 0.5s ease;
+            width: 12.5%;
+        }
+
+        .slide-counter {
+            color: white;
+            font-size: 0.9rem;
+            opacity: 0.8;
+            min-width: 60px;
+            text-align: center;
+        }
+
+        .mini-preview {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            border-radius: 15px;
+            padding: 0.5rem 1rem;
+            color: white;
+            font-size: 0.9rem;
+            opacity: 0;
+            transition: all 0.3s ease;
+            pointer-events: none;
+        }
+
+        .footer-overlay.minimized .mini-preview {
+            opacity: 1;
         }
 
         @media (max-width: 768px) {
+            .footer-overlay {
+                padding: 1.5rem;
+            }
+            
             .slide-title {
-                font-size: 2.5rem;
+                font-size: 2rem;
             }
             
             .slide-description {
@@ -203,9 +303,13 @@
                 padding: 0 1rem;
             }
             
-            .slide-content {
-                padding: 1.5rem;
-                margin: 0 1rem;
+            .footer-controls {
+                flex-direction: column;
+                gap: 1rem;
+            }
+            
+            .progress-bar {
+                width: 150px;
             }
             
             .navigation {
@@ -225,11 +329,15 @@
 
         @media (max-width: 480px) {
             .slide-title {
-                font-size: 2rem;
+                font-size: 1.5rem;
             }
             
             .slide-description {
                 font-size: 0.9rem;
+            }
+            
+            .footer-overlay {
+                padding: 1rem;
             }
         }
     </style>
@@ -239,74 +347,42 @@
         <div class="slider">
             <!-- Slide 1 -->
             <div class="slide active">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/flora1.jpg');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">SENDERO DE LA FLORA</h2>
-                    <p class="slide-description">Descubre la belleza natural en su máxima expresión.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/1flora.jpg');"></div>
             </div>
 
             <!-- Slide 2 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/1.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">SENDERO DE MUSGOS</h2>
-                    <p class="slide-description">Almacenan el agua y previenen la erosiòn</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/2flora.png');"></div>
             </div>
 
             <!-- Slide 3 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/2.jpg');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">ZONA DE PICNIK</h2>
-                    <p class="slide-description">Un espacio para comparir</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/3flora.jpg');"></div>
             </div>
 
             <!-- Slide 4 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/3.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">CHORRO CLARIN</h2>
-                    <p class="slide-description">Experimenta la magia de un paraíso donde la belleza natural alcanza su máximo esplendor.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/3musgos.png');"></div>
             </div>
 
             <!-- Slide 5 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/4.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">CASCADAS</h2>
-                    <p class="slide-description">Encuentra la serenidad en este oasis donde cada elemento natural te invita a la contemplación.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/4helechos.png');"></div>
             </div>
 
             <!-- Slide 6 -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/5.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">SENDERO BOSQUE DEL SILENCIO</h2>
-                    <p class="slide-description">Una sinfonía visual donde cada elemento de la naturaleza contribuye a crear una obra maestra.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/6chorroclarin.png');"></div>
             </div>
 
             <!-- Slide 7 - Metrocable -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/6.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">MERCADO CAMPESINO</h2>
-                    <p class="slide-description">Vuela sobre la ciudad eterna primavera. El Metrocable conecta montañas, sueños y comunidades en una experiencia única de transporte urbano.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/7picknic.png');"></div>
             </div>
 
             <!-- Slide 8 - Restaurantes -->
             <div class="slide">
-                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/7.png');"></div>
-                <div class="slide-content">
-                    <h2 class="slide-title">BOSQUES DEL SILENCIO</h2>
-                    <p class="slide-description">Saborea la tradición en cada bocado. Bandeja paisa, arepas, sancocho y más delicias que llenan el alma con el sabor auténtico de Antioquia.</p>
-                </div>
+                <div class="slide-bg" style="background-image: url('https://raw.githubusercontent.com/giomont/giomont.github.io/master/img/arvi/8cascada.png');"></div>
             </div>
         </div>
 
@@ -314,29 +390,103 @@
         <div class="navigation nav-prev" onclick="changeSlide(-1)">‹</div>
         <div class="navigation nav-next" onclick="changeSlide(1)">›</div>
 
-        <!-- Dots -->
-        <div class="dots-container">
-            <div class="dot active" onclick="currentSlide(1)"></div>
-            <div class="dot" onclick="currentSlide(2)"></div>
-            <div class="dot" onclick="currentSlide(3)"></div>
-            <div class="dot" onclick="currentSlide(4)"></div>
-            <div class="dot" onclick="currentSlide(5)"></div>
-            <div class="dot" onclick="currentSlide(6)"></div>
-            <div class="dot" onclick="currentSlide(7)"></div>
-            <div class="dot" onclick="currentSlide(8)"></div>
-        </div>
+        <!-- Footer Overlay -->
+        <div class="footer-overlay" id="footerOverlay">
+            <div class="mini-preview" id="miniPreview">
+                <span id="miniTitle">FLORA TRIAL</span>
+            </div>
+            
+            <div class="footer-content">
+                <div class="footer-header">
+                    <div class="slide-counter" id="slideCounter">1 / 8</div>
+                    <div class="toggle-btn" id="toggleBtn" onclick="toggleFooter()">▲</div>
+                </div>
+                
+                <div class="slide-info" id="slideInfo">
+                    <h2 class="slide-title" id="footerTitle">FLORA TRIAL</h2>
+                    <p class="slide-description" id="footerDescription">Descubre la belleza natural en su máxima expresión. Cada pétalo cuenta una historia única de color y vida.</p>
+                </div>
 
-        <!-- Progress Bar -->
-        <div class="progress-bar" id="progressBar"></div>
+                <div class="footer-controls">
+                    <div class="dots-container">
+                        <div class="dot active" onclick="currentSlide(1)"></div>
+                        <div class="dot" onclick="currentSlide(2)"></div>
+                        <div class="dot" onclick="currentSlide(3)"></div>
+                        <div class="dot" onclick="currentSlide(4)"></div>
+                        <div class="dot" onclick="currentSlide(5)"></div>
+                        <div class="dot" onclick="currentSlide(6)"></div>
+                        <div class="dot" onclick="currentSlide(7)"></div>
+                        <div class="dot" onclick="currentSlide(8)"></div>
+                    </div>
+                    
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script>
         let currentSlideIndex = 0;
+        let isFooterMinimized = false;
         const slides = document.querySelectorAll('.slide');
         const dots = document.querySelectorAll('.dot');
         const totalSlides = slides.length;
         let autoSlideInterval;
-        const progressBar = document.getElementById('progressBar');
+        
+        const footerOverlay = document.getElementById('footerOverlay');
+        const footerTitle = document.getElementById('footerTitle');
+        const footerDescription = document.getElementById('footerDescription');
+        const slideCounter = document.getElementById('slideCounter');
+        const progressFill = document.getElementById('progressFill');
+        const toggleBtn = document.getElementById('toggleBtn');
+        const miniPreview = document.getElementById('miniPreview');
+        const miniTitle = document.getElementById('miniTitle');
+
+        const slideData = [
+            {
+                title: "SENDERO LA FLORA",
+                description: "Descubre la belleza natural en su máxima expresión. Cada pétalo cuenta una historia única de color y vida."
+            },
+            {
+                title: "SENDERO MUSGOS",
+                description: "Sumérgete en un mundo donde la naturaleza despliega su paleta de colores más impresionante."
+            },
+            {
+                title: "SENDERO DE MUSGOS",
+                description: "Un refugio de tranquilidad donde cada flor susurra secretos de la madre naturaleza."
+            },
+            {
+                title: "SENDERO HELECHOS",
+                description: "Experimenta la magia de un paraíso donde la belleza natural alcanza su máximo esplendor."
+            },
+            {
+                title: "CHORRO CLARIN Y CASCADAS",
+                description: "Encuentra la serenidad en este oasis donde cada elemento natural te invita a la contemplación."
+            },
+            {
+                title: "SENDERO BOSQUE DEL SILENCIO",
+                description: "Una sinfonía visual donde cada elemento de la naturaleza contribuye a crear una obra maestra."
+            },
+            {
+                title: "MERCADO CAMPESINO",
+                description: "Vuela sobre la ciudad eterna primavera. El Metrocable conecta montañas, sueños y comunidades en una experiencia única de transporte urbano."
+            },
+            {
+                title: "METROCABLE ARVI",
+                description: "Saborea la tradición en cada bocado. Bandeja paisa, arepas, sancocho y más delicias que llenan el alma con el sabor auténtico de Antioquia."
+            }
+        ];
+
+        function updateFooterContent(index) {
+            const data = slideData[index];
+            footerTitle.textContent = data.title;
+            footerDescription.textContent = data.description;
+            miniTitle.textContent = data.title;
+            slideCounter.textContent = `${index + 1} / ${totalSlides}`;
+            progressFill.style.width = `${((index + 1) / totalSlides) * 100}%`;
+        }
 
         function showSlide(index) {
             // Remove active class from all slides and dots
@@ -354,8 +504,8 @@
             slides[prevIndex].classList.add('prev');
             slides[nextIndex].classList.add('next');
 
-            // Update progress bar
-            progressBar.style.transform = `scaleX(${(index + 1) / totalSlides})`;
+            // Update footer content
+            updateFooterContent(index);
         }
 
         function changeSlide(direction) {
@@ -375,8 +525,14 @@
             showSlide(currentSlideIndex);
         }
 
+        function toggleFooter() {
+            isFooterMinimized = !isFooterMinimized;
+            footerOverlay.classList.toggle('minimized', isFooterMinimized);
+            toggleBtn.textContent = isFooterMinimized ? '▼' : '▲';
+        }
+
         function startAutoSlide() {
-            autoSlideInterval = setInterval(nextSlide, 12000);
+            autoSlideInterval = setInterval(nextSlide, 4000);
         }
 
         function resetAutoSlide() {
@@ -390,6 +546,9 @@
                 changeSlide(-1);
             } else if (e.key === 'ArrowRight') {
                 changeSlide(1);
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                toggleFooter();
             }
         });
 
@@ -433,15 +592,25 @@
             startAutoSlide();
         });
 
-        // Initialize
+        // Auto-minimize footer after 5 seconds of inactivity
+        let footerTimeout;
+        function resetFooterTimeout() {
+            clearTimeout(footerTimeout);
+            if (!isFooterMinimized) {
+                footerTimeout = setTimeout(() => {
+                    toggleFooter();
+                }, 5000);
+            }
+        }
+
+        // Reset timeout on user interaction
+        document.addEventListener('mousemove', resetFooterTimeout);
+        document.addEventListener('click', resetFooterTimeout);
+        document.addEventListener('touchstart', resetFooterTimeout);
+
+        // Initialize slider and auto-slide
         showSlide(0);
         startAutoSlide();
-
-        // Animate progress bar on load
-        window.addEventListener('load', function() {
-            progressBar.style.transition = 'transform 0.3s ease';
-            progressBar.style.transform = `scaleX(${1 / totalSlides})`;
-        });
     </script>
 </body>
 </html>
