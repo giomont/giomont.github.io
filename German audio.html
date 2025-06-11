@@ -1,0 +1,546 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Flashcards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            margin-bottom: 30px;
+        }
+
+        .flashcard {
+            width: 400px;
+            height: 300px;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 15px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+            text-align: center;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
+            color: #333;
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            transform: rotateY(180deg);
+        }
+
+        .english-text {
+            font-size: 2.2em;
+            font-weight: bold;
+            margin-bottom: 15px;
+            color: #667eea;
+        }
+
+        .english-meaning {
+            font-size: 1.2em;
+            opacity: 0.7;
+            margin-bottom: 20px;
+        }
+
+        .german-text {
+            font-size: 2.8em;
+            font-weight: bold;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .audio-button {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            border-radius: 50px;
+            padding: 15px 25px;
+            font-size: 1.1em;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            margin-top: 15px;
+        }
+
+        .audio-button:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(255, 107, 107, 0.4);
+        }
+
+        .audio-button:active {
+            transform: translateY(0px);
+            background: #e53935;
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .control-btn {
+            background: white;
+            color: #667eea;
+            border: none;
+            border-radius: 25px;
+            padding: 12px 25px;
+            font-size: 1em;
+            font-weight: bold;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .control-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .swipe-hint {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .progress {
+            color: white;
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+
+        .flip-hint {
+            color: rgba(51, 51, 51, 0.6);
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        .flip-hint-back {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9em;
+            margin-top: 20px;
+        }
+
+        .side-label {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            font-size: 0.8em;
+            opacity: 0.6;
+            font-weight: bold;
+        }
+
+        @media (max-width: 480px) {
+            .flashcard {
+                width: 320px;
+                height: 280px;
+            }
+            
+            .english-text, .german-text {
+                font-size: 2em;
+            }
+            
+            .controls {
+                flex-direction: column;
+                align-items: center;
+            }
+        }
+
+        .loading {
+            opacity: 0.6;
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress">
+        <span id="current-card">1</span> / <span id="total-cards">10</span>
+    </div>
+
+    <div class="flashcard-container">
+        <div class="flashcard" id="flashcard">
+            <!-- English Side (Front) -->
+            <div class="card-face card-front">
+                <div class="side-label">ENGLISH</div>
+                <div class="english-text" id="english-text"></div>
+                <div class="english-meaning" id="english-meaning"></div>
+                <div class="flip-hint">Click to see German</div>
+            </div>
+            <!-- German Side (Back) -->
+            <div class="card-face card-back">
+                <div class="side-label">DEUTSCH</div>
+                <div class="german-text" id="german-text"></div>
+                <button class="audio-button" id="audio-btn">
+                    🔊 Hören (Listen)
+                </button>
+                <div class="flip-hint-back">Click to see English</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="controls">
+        <button class="control-btn" id="shuffle-btn">🔀 Shuffle</button>
+    </div>
+
+    <div class="swipe-hint">
+        👆 Swipe left/right to change cards • Tap to flip
+    </div>
+
+    <script>
+        const verbs = [
+            { english: "to be", german: "sein", meaning: "ser/estar" },
+            { english: "to have", german: "haben", meaning: "tener" },
+            { english: "to become", german: "werden", meaning: "llegar a ser" },
+            { english: "can/to be able to", german: "können", meaning: "poder" },
+            { english: "must/have to", german: "müssen", meaning: "deber" },
+            { english: "to say", german: "sagen", meaning: "decir" },
+            { english: "to make/do", german: "machen", meaning: "hacer" },
+            { english: "to go", german: "gehen", meaning: "ir" },
+            { english: "to come", german: "kommen", meaning: "venir" },
+            { english: "to want", german: "wollen", meaning: "querer" }
+        ];
+
+        let currentIndex = 0;
+        let isFlipped = false;
+        let speechReady = false;
+        
+        // Touch/swipe variables
+        let startX = 0;
+        let startY = 0;
+        let currentX = 0;
+        let currentY = 0;
+        let isDragging = false;
+        let startTime = 0;
+
+        const flashcard = document.getElementById('flashcard');
+        const englishText = document.getElementById('english-text');
+        const englishMeaning = document.getElementById('english-meaning');
+        const germanText = document.getElementById('german-text');
+        const audioBtn = document.getElementById('audio-btn');
+        const shuffleBtn = document.getElementById('shuffle-btn');
+        const currentCard = document.getElementById('current-card');
+        const totalCards = document.getElementById('total-cards');
+
+        // Initialize speech synthesis
+        function initSpeech() {
+            if ('speechSynthesis' in window) {
+                // Force load voices
+                speechSynthesis.getVoices();
+                
+                speechSynthesis.onvoiceschanged = () => {
+                    speechReady = true;
+                    console.log('Voices loaded:', speechSynthesis.getVoices().length);
+                };
+                
+                // Check if voices are already loaded
+                if (speechSynthesis.getVoices().length > 0) {
+                    speechReady = true;
+                    console.log('Voices already available:', speechSynthesis.getVoices().length);
+                }
+                
+                // Fallback for browsers that don't fire the event
+                setTimeout(() => {
+                    if (!speechReady && speechSynthesis.getVoices().length > 0) {
+                        speechReady = true;
+                        console.log('Voices loaded via timeout');
+                    }
+                }, 2000);
+                
+                // Final fallback - enable even without specific voices
+                setTimeout(() => {
+                    if (!speechReady) {
+                        speechReady = true;
+                        console.log('Speech enabled as fallback');
+                    }
+                }, 3000);
+            } else {
+                console.error('Speech synthesis not supported');
+            }
+        }
+
+        function updateCard() {
+            const verb = verbs[currentIndex];
+            englishText.textContent = verb.english;
+            englishMeaning.textContent = `(${verb.meaning})`;
+            germanText.textContent = verb.german;
+            
+            currentCard.textContent = currentIndex + 1;
+            totalCards.textContent = verbs.length;
+            
+            // Reset flip state
+            if (isFlipped) {
+                flashcard.classList.remove('flipped');
+                isFlipped = false;
+            }
+        }
+
+        function speakGerman(text) {
+            if (!('speechSynthesis' in window)) {
+                alert('Tu navegador no soporta síntesis de voz');
+                return;
+            }
+
+            // Cancel any ongoing speech
+            speechSynthesis.cancel();
+            
+            // Visual feedback
+            audioBtn.classList.add('loading');
+            audioBtn.textContent = '🔊 Reproduciendo...';
+            
+            // Wait a moment for cancel to complete
+            setTimeout(() => {
+                const utterance = new SpeechSynthesisUtterance(text);
+                utterance.lang = 'de-DE';
+                utterance.rate = 0.8;
+                utterance.pitch = 1;
+                utterance.volume = 1;
+                
+                // Get available voices
+                const voices = speechSynthesis.getVoices();
+                console.log('Available voices:', voices.map(v => `${v.name} (${v.lang})`));
+                
+                // Try to find German voice with multiple fallbacks
+                let germanVoice = voices.find(voice => voice.lang === 'de-DE') ||
+                                voices.find(voice => voice.lang === 'de') ||
+                                voices.find(voice => voice.lang.startsWith('de-')) ||
+                                voices.find(voice => voice.name.toLowerCase().includes('german')) ||
+                                voices.find(voice => voice.name.toLowerCase().includes('deutsch'));
+                
+                if (germanVoice) {
+                    utterance.voice = germanVoice;
+                    console.log('Using German voice:', germanVoice.name, germanVoice.lang);
+                } else {
+                    console.log('No German voice found, using default voice');
+                    // Use default voice but keep German language setting
+                }
+                
+                utterance.onstart = () => {
+                    console.log('Speech started');
+                };
+                
+                utterance.onend = () => {
+                    console.log('Speech ended');
+                    audioBtn.classList.remove('loading');
+                    audioBtn.textContent = '🔊 Hören (Listen)';
+                };
+                
+                utterance.onerror = (e) => {
+                    console.error('Speech error:', e.error);
+                    audioBtn.classList.remove('loading');
+                    audioBtn.textContent = '🔊 Hören (Listen)';
+                    
+                    // Try again with default settings
+                    if (e.error === 'voice-unavailable') {
+                        setTimeout(() => {
+                            const simpleUtterance = new SpeechSynthesisUtterance(text);
+                            simpleUtterance.rate = 0.8;
+                            speechSynthesis.speak(simpleUtterance);
+                        }, 100);
+                    }
+                };
+                
+                try {
+                    speechSynthesis.speak(utterance);
+                    console.log('Speech synthesis started for:', text);
+                } catch (error) {
+                    console.error('Error starting speech:', error);
+                    audioBtn.classList.remove('loading');
+                    audioBtn.textContent = '🔊 Hören (Listen)';
+                }
+            }, 100);
+        }
+
+        function shuffleArray(array) {
+            const shuffled = [...array];
+            for (let i = shuffled.length - 1; i > 0; i--) {
+                const j = Math.floor(Math.random() * (i + 1));
+                [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+            }
+            return shuffled;
+        }
+
+        function nextCard() {
+            currentIndex = (currentIndex + 1) % verbs.length;
+            updateCard();
+        }
+
+        function prevCard() {
+            currentIndex = (currentIndex - 1 + verbs.length) % verbs.length;
+            updateCard();
+        }
+
+        // Touch event handlers
+        function handleTouchStart(e) {
+            startX = e.touches[0].clientX;
+            startY = e.touches[0].clientY;
+            startTime = Date.now();
+            isDragging = false;
+        }
+
+        function handleTouchMove(e) {
+            if (!startX || !startY) return;
+            
+            currentX = e.touches[0].clientX;
+            currentY = e.touches[0].clientY;
+            
+            const diffX = Math.abs(currentX - startX);
+            const diffY = Math.abs(currentY - startY);
+            
+            // Only consider it dragging if horizontal movement is greater than vertical
+            if (diffX > diffY && diffX > 10) {
+                isDragging = true;
+                e.preventDefault(); // Prevent scrolling
+            }
+        }
+
+        function handleTouchEnd(e) {
+            if (!startX || !startY) return;
+            
+            const endX = currentX || e.changedTouches[0].clientX;
+            const endY = currentY || e.changedTouches[0].clientY;
+            const timeDiff = Date.now() - startTime;
+            
+            const diffX = endX - startX;
+            const diffY = endY - startY;
+            const absDiffX = Math.abs(diffX);
+            const absDiffY = Math.abs(diffY);
+            
+            // Reset values
+            startX = 0;
+            startY = 0;
+            currentX = 0;
+            currentY = 0;
+
+            // Check if it's a swipe (horizontal movement > vertical, minimum distance, not too slow)
+            if (absDiffX > absDiffY && absDiffX > 50 && timeDiff < 500) {
+                if (diffX > 0) {
+                    // Swipe right - previous card
+                    prevCard();
+                } else {
+                    // Swipe left - next card
+                    nextCard();
+                }
+                return;
+            }
+            
+            // If not a swipe and not dragging, treat as tap for flip
+            if (!isDragging && absDiffX < 10 && absDiffY < 10) {
+                // Check if tap was on audio button
+                const target = document.elementFromPoint(endX, endY);
+                if (!target || (!target.closest('.audio-button'))) {
+                    flashcard.classList.toggle('flipped');
+                    isFlipped = !isFlipped;
+                }
+            }
+            
+            isDragging = false;
+        }
+
+        // Event listeners
+        flashcard.addEventListener('click', (e) => {
+            // Don't flip if clicking the audio button
+            if (e.target === audioBtn || e.target.closest('.audio-button')) {
+                return;
+            }
+            
+            flashcard.classList.toggle('flipped');
+            isFlipped = !isFlipped;
+        });
+
+        // Touch events for mobile
+        flashcard.addEventListener('touchstart', handleTouchStart, { passive: false });
+        flashcard.addEventListener('touchmove', handleTouchMove, { passive: false });
+        flashcard.addEventListener('touchend', handleTouchEnd, { passive: false });
+
+        audioBtn.addEventListener('click', (e) => {
+            e.stopPropagation(); // Prevent card flip
+            const verb = verbs[currentIndex];
+            speakGerman(verb.german);
+        });
+
+        shuffleBtn.addEventListener('click', () => {
+            const shuffledVerbs = shuffleArray(verbs);
+            verbs.splice(0, verbs.length, ...shuffledVerbs);
+            currentIndex = 0;
+            updateCard();
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') {
+                prevCard();
+            } else if (e.key === 'ArrowRight') {
+                nextCard();
+            } else if (e.key === ' ') {
+                e.preventDefault();
+                flashcard.click();
+            } else if (e.key === 'Enter' && isFlipped) {
+                audioBtn.click();
+            }
+        });
+
+        // Initialize
+        initSpeech();
+        updateCard();
+
+        // Debug: Check speech synthesis status
+        setTimeout(() => {
+            console.log('Speech ready:', speechReady);
+            console.log('Available voices:', speechSynthesis.getVoices().length);
+            if (speechSynthesis.getVoices().length === 0) {
+                console.log('Trying to reload voices...');
+                speechSynthesis.getVoices();
+            }
+        }, 2000);
+
+        // User interaction required for some browsers
+        document.addEventListener('click', function enableAudio() {
+            if (!speechReady && 'speechSynthesis' in window) {
+                speechReady = true;
+                console.log('Audio enabled after user interaction');
+            }
+        }, { once: true });
+    </script>
+</body>
+</html>
