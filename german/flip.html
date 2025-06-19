@@ -1,0 +1,671 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Verb Flashcards</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .flashcard-container {
+            perspective: 1000px;
+            width: 100%;
+            max-width: 400px;
+            height: 500px;
+            position: relative;
+        }
+
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: relative;
+            transform-style: preserve-3d;
+            transition: transform 0.6s;
+            cursor: pointer;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        }
+
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+
+        .card-face {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            backface-visibility: hidden;
+            border-radius: 20px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        .card-front {
+            background: linear-gradient(135deg, #ff6b6b, #ee5a24);
+        }
+
+        .card-back {
+            background: linear-gradient(135deg, #4834d4, #686de0);
+            transform: rotateY(180deg);
+        }
+
+        .verb-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .sentences {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
+        }
+
+        .navigation {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            gap: 20px;
+            z-index: 1000;
+        }
+
+        .nav-btn {
+            background: rgba(255, 255, 255, 0.2);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: white;
+            padding: 15px 25px;
+            border-radius: 50px;
+            cursor: pointer;
+            font-size: 1rem;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .nav-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            border-color: rgba(255, 255, 255, 0.5);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+
+        .nav-btn:active {
+            transform: translateY(0);
+        }
+
+        .card-counter {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.2);
+            padding: 10px 20px;
+            border-radius: 25px;
+            color: white;
+            font-weight: bold;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .flip-instruction {
+            position: fixed;
+            top: 80px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(255, 255, 255, 0.15);
+            padding: 8px 16px;
+            border-radius: 20px;
+            color: white;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            animation: pulse 2s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 0.7; }
+            50% { opacity: 1; }
+        }
+
+        .slide-animation {
+            animation: slideIn 0.5s ease-out;
+        }
+
+        @keyframes slideIn {
+            from {
+                transform: translateX(100%);
+                opacity: 0;
+            }
+            to {
+                transform: translateX(0);
+                opacity: 1;
+            }
+        }
+
+        .slide-out {
+            animation: slideOut 0.3s ease-in;
+        }
+
+        @keyframes slideOut {
+            from {
+                transform: translateX(0);
+                opacity: 1;
+            }
+            to {
+                transform: translateX(-100%);
+                opacity: 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .flashcard-container {
+                max-width: 350px;
+                height: 450px;
+            }
+            
+            .verb-title {
+                font-size: 2rem;
+            }
+            
+            .sentences {
+                font-size: 1rem;
+            }
+            
+            .card-face {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="card-counter">
+        <span id="currentCard">1</span> / <span id="totalCards">91</span>
+    </div>
+    
+    <div class="flip-instruction">
+        Tap card to flip • Swipe to navigate
+    </div>
+
+    <div class="flashcard-container">
+        <div class="flashcard" id="flashcard">
+            <div class="card-face card-front">
+                <h2 class="verb-title" id="englishVerb">be</h2>
+                <h3 class="sentences" id="englishSentences">
+                    I am tired.<br>
+                    You are very kind.<br>
+                    He is my brother.
+                </h3>
+            </div>
+            <div class="card-face card-back">
+                <h2 class="verb-title" id="germanVerb">sein</h2>
+                <h3 class="sentences" id="germanSentences">
+                    Ich bin müde.<br>
+                    Du bist sehr nett.<br>
+                    Er ist mein Bruder.
+                </h3>
+            </div>
+        </div>
+    </div>
+
+    <div class="navigation">
+        <button class="nav-btn" id="prevBtn">← Previous</button>
+        <button class="nav-btn" id="nextBtn">Next →</button>
+    </div>
+
+    <script>
+        const verbs = [
+            {
+                english: "be",
+                german: "sein",
+                englishSentences: ["I am tired.", "You are very kind.", "He is my brother."],
+                germanSentences: ["Ich bin müde.", "Du bist sehr nett.", "Er ist mein Bruder."]
+            },
+            {
+                english: "have",
+                german: "haben",
+                englishSentences: ["I have a dog.", "You have beautiful eyes.", "She has a lot of money."],
+                germanSentences: ["Ich habe einen Hund.", "Du hast schöne Augen.", "Sie hat viel Geld."]
+            },
+            {
+                english: "become",
+                german: "werden",
+                englishSentences: ["I will become a doctor.", "You are getting old.", "It's getting dark."],
+                germanSentences: ["Ich werde Arzt.", "Du wirst alt.", "Es wird dunkel."]
+            },
+            {
+                english: "can",
+                german: "können",
+                englishSentences: ["I can swim.", "You can sing well.", "He can speak German."],
+                germanSentences: ["Ich kann schwimmen.", "Du kannst gut singen.", "Er kann Deutsch sprechen."]
+            },
+            {
+                english: "must",
+                german: "müssen",
+                englishSentences: ["I must work.", "You must be punctual.", "She must go home."],
+                germanSentences: ["Ich muss arbeiten.", "Du musst pünktlich sein.", "Sie muss nach Hause gehen."]
+            },
+            {
+                english: "say",
+                german: "sagen",
+                englishSentences: ["I tell the truth.", "You always say yes.", "He says nothing."],
+                germanSentences: ["Ich sage die Wahrheit.", "Du sagst immer ja.", "Er sagt nichts."]
+            },
+            {
+                english: "make",
+                german: "machen",
+                englishSentences: ["I do homework.", "You make a mistake.", "She makes the food."],
+                germanSentences: ["Ich mache Hausaufgaben.", "Du machst einen Fehler.", "Sie macht das Essen."]
+            },
+            {
+                english: "give",
+                german: "geben",
+                englishSentences: ["I give you a gift.", "You give me hope.", "He spends a lot of money."],
+                germanSentences: ["Ich gebe dir ein Geschenk.", "Du gibst mir Hoffnung.", "Er gibt viel Geld aus."]
+            },
+            {
+                english: "come",
+                german: "kommen",
+                englishSentences: ["I come from Germany.", "You arrive late.", "She comes tomorrow."],
+                germanSentences: ["Ich komme aus Deutschland.", "Du kommst zu spät.", "Sie kommt morgen."]
+            },
+            {
+                english: "should",
+                german: "sollen",
+                englishSentences: ["I should sleep early.", "You shouldn't lie.", "He should wait here."],
+                germanSentences: ["Ich soll früh schlafen.", "Du sollst nicht lügen.", "Er soll hier warten."]
+            },
+            {
+                english: "want",
+                german: "wollen",
+                englishSentences: ["I want to go to Paris.", "You always want to be right.", "She wants to be a teacher."],
+                germanSentences: ["Ich will nach Paris.", "Du willst immer recht haben.", "Sie will Lehrerin werden."]
+            },
+            {
+                english: "go",
+                german: "gehen",
+                englishSentences: ["I go to school.", "You go too fast.", "He goes jogging every day."],
+                germanSentences: ["Ich gehe zur Schule.", "Du gehst zu schnell.", "Er geht jeden Tag joggen."]
+            },
+            {
+                english: "know",
+                german: "wissen",
+                englishSentences: ["I know the answer.", "You know everything better.", "She knows nothing about it."],
+                germanSentences: ["Ich weiß die Antwort.", "Du weißt alles besser.", "Sie weiß nichts davon."]
+            },
+            {
+                english: "see",
+                german: "sehen",
+                englishSentences: ["I watch a movie.", "You look tired.", "He sees his family."],
+                germanSentences: ["Ich sehe einen Film.", "Du siehst müde aus.", "Er sieht seine Familie."]
+            },
+            {
+                english: "let",
+                german: "lassen",
+                englishSentences: ["I leave you alone.", "You don't let me speak.", "She lets the cat out."],
+                germanSentences: ["Ich lasse dich in Ruhe.", "Du lässt mich nicht sprechen.", "Sie lässt die Katze raus."]
+            },
+            {
+                english: "stand",
+                german: "stehen",
+                englishSentences: ["I get up early.", "You stand in front of the door.", "The car is in the parking lot."],
+                germanSentences: ["Ich stehe früh auf.", "Du stehst vor der Tür.", "Das Auto steht im Parkplatz."]
+            },
+            {
+                english: "find",
+                german: "finden",
+                englishSentences: ["I can't find my keys.", "You always find a solution.", "He finds the city beautiful."],
+                germanSentences: ["Ich finde meine Schlüssel nicht.", "Du findest immer eine Lösung.", "Er findet die Stadt schön."]
+            },
+            {
+                english: "stay",
+                german: "bleiben",
+                englishSentences: ["I stay at home.", "You stay calm.", "She stays with us."],
+                germanSentences: ["Ich bleibe zu Hause.", "Du bleibst ruhig.", "Sie bleibt bei uns."]
+            },
+            {
+                english: "lie",
+                german: "liegen",
+                englishSentences: ["I lie in bed.", "You are wrong.", "The book is on the table."],
+                germanSentences: ["Ich liege im Bett.", "Du liegst falsch.", "Das Buch liegt auf dem Tisch."]
+            },
+            {
+                english: "be called",
+                german: "heißen",
+                englishSentences: ["My name is Maria.", "Your name is Peter.", "His name is Schmidt."],
+                germanSentences: ["Ich heiße Maria.", "Du heißt Peter.", "Er heißt Schmidt."]
+            },
+            {
+                english: "think",
+                german: "denken",
+                englishSentences: ["I think of you.", "You think too much.", "She thinks it's right."],
+                germanSentences: ["Ich denke an dich.", "Du denkst zu viel.", "Sie denkt, es ist richtig."]
+            },
+            {
+                english: "take",
+                german: "nehmen",
+                englishSentences: ["I take the bus.", "You take too much sugar.", "He takes his medicine."],
+                germanSentences: ["Ich nehme den Bus.", "Du nimmst zu viel Zucker.", "Er nimmt seine Medizin."]
+            },
+            {
+                english: "do",
+                german: "tun",
+                englishSentences: ["I do my best.", "I feel sorry for you.", "She acts as if nothing happened."],
+                germanSentences: ["Ich tue mein Bestes.", "Du tust mir leid.", "Sie tut so, als ob nichts passiert ist."]
+            },
+            {
+                english: "may",
+                german: "dürfen",
+                englishSentences: ["I may not smoke.", "You may stay up later today.", "He may drive a car."],
+                germanSentences: ["Ich darf nicht rauchen.", "Du darfst heute länger aufbleiben.", "Er darf Auto fahren."]
+            },
+            {
+                english: "believe",
+                german: "glauben",
+                englishSentences: ["I believe in God.", "You don't believe me.", "She believes in love."],
+                germanSentences: ["Ich glaube an Gott.", "Du glaubst mir nicht.", "Sie glaubt an die Liebe."]
+            },
+            {
+                english: "hold",
+                german: "halten",
+                englishSentences: ["I hold the baby.", "You keep your promise.", "The bus stops here."],
+                germanSentences: ["Ich halte das Baby.", "Du hältst dein Versprechen.", "Der Bus hält hier."]
+            },
+            {
+                english: "call",
+                german: "nennen",
+                englishSentences: ["I call him my friend.", "You always call me by name.", "They call him the king."],
+                germanSentences: ["Ich nenne ihn meinen Freund.", "Du nennst mich immer beim Namen.", "Man nennt ihn den König."]
+            },
+            {
+                english: "like",
+                german: "mögen",
+                englishSentences: ["I like chocolate.", "You don't like spiders.", "She likes classical music."],
+                germanSentences: ["Ich mag Schokolade.", "Du magst keine Spinnen.", "Sie mag klassische Musik."]
+            },
+            {
+                english: "show",
+                german: "zeigen",
+                englishSentences: ["I show you the way.", "You show me your photos.", "He shows no emotions."],
+                germanSentences: ["Ich zeige dir den Weg.", "Du zeigst mir deine Fotos.", "Er zeigt keine Emotionen."]
+            },
+            {
+                english: "lead",
+                german: "führen",
+                englishSentences: ["I lead the team.", "You lead us astray.", "This street leads to the center."],
+                germanSentences: ["Ich führe das Team.", "Du führst uns in die Irre.", "Diese Straße führt zum Zentrum."]
+            },
+            {
+                english: "speak",
+                german: "sprechen",
+                englishSentences: ["I speak three languages.", "You speak too quietly.", "She speaks German fluently."],
+                germanSentences: ["Ich spreche drei Sprachen.", "Du sprichst zu leise.", "Sie spricht fließend Deutsch."]
+            },
+            {
+                english: "bring",
+                german: "bringen",
+                englishSentences: ["I bring you coffee.", "You make me laugh.", "He brings good grades home."],
+                germanSentences: ["Ich bringe dir Kaffee.", "Du bringst mich zum Lachen.", "Er bringt gute Noten nach Hause."]
+            },
+            {
+                english: "live",
+                german: "leben",
+                englishSentences: ["I live in Berlin.", "You live healthily.", "She lives alone."],
+                germanSentences: ["Ich lebe in Berlin.", "Du lebst gesund.", "Sie lebt allein."]
+            },
+            {
+                english: "drive",
+                german: "fahren",
+                englishSentences: ["I go by car.", "You drive too fast.", "She travels to Italy."],
+                germanSentences: ["Ich fahre mit dem Auto.", "Du fährst zu schnell.", "Sie fährt nach Italien."]
+            },
+            {
+                english: "mean",
+                german: "meinen",
+                englishSentences: ["I think you're right.", "You're not serious.", "He means well."],
+                germanSentences: ["Ich meine, du hast recht.", "Du meinst es nicht ernst.", "Er meint es gut."]
+            },
+            {
+                english: "ask",
+                german: "fragen",
+                englishSentences: ["I ask for directions.", "You ask too many questions.", "She asks about her mother."],
+                germanSentences: ["Ich frage nach dem Weg.", "Du fragst zu viele Fragen.", "Sie fragt nach ihrer Mutter."]
+            },
+            {
+                english: "know",
+                german: "kennen",
+                englishSentences: ["I know this man.", "You know the rules.", "He knows all the secrets."],
+                germanSentences: ["Ich kenne diesen Mann.", "Du kennst die Regeln.", "Er kennt alle Geheimnisse."]
+            },
+            {
+                english: "try",
+                german: "versuchen",
+                englishSentences: ["I try to help.", "You try your luck.", "She tries to lose weight."],
+                germanSentences: ["Ich versuche zu helfen.", "Du versuchst dein Glück.", "Sie versucht abzunehmen."]
+            },
+            {
+                english: "get",
+                german: "bekommen",
+                englishSentences: ["I get a gift.", "You get a chance.", "He gets a visitor."],
+                germanSentences: ["Ich bekomme ein Geschenk.", "Du bekommst eine Chance.", "Er bekommt Besuch."]
+            },
+            {
+                english: "begin",
+                german: "beginnen",
+                englishSentences: ["I start work.", "You begin to understand.", "The movie starts at eight."],
+                germanSentences: ["Ich beginne mit der Arbeit.", "Du beginnst zu verstehen.", "Der Film beginnt um acht."]
+            },
+            {
+                english: "tell",
+                german: "erzählen",
+                englishSentences: ["I tell a story.", "You tell me nothing new.", "She tells about her trip."],
+                germanSentences: ["Ich erzähle eine Geschichte.", "Du erzählst mir nichts Neues.", "Sie erzählt von ihrer Reise."]
+            },
+            {
+                english: "work",
+                german: "arbeiten",
+                englishSentences: ["I work in the office.", "You work too much.", "She works as a doctor."],
+                germanSentences: ["Ich arbeite im Büro.", "Du arbeitest zu viel.", "Sie arbeitet als Ärztin."]
+            },
+            {
+                english: "play",
+                german: "spielen",
+                englishSentences: ["I play football.", "You play piano.", "The child plays in the garden."],
+                germanSentences: ["Ich spiele Fußball.", "Du spielst Klavier.", "Das Kind spielt im Garten."]
+            },
+            {
+                english: "learn",
+                german: "lernen",
+                englishSentences: ["I learn German.", "You learn quickly.", "She studies for the exam."],
+                germanSentences: ["Ich lerne Deutsch.", "Du lernst schnell.", "Sie lernt für die Prüfung."]
+            },
+            {
+                english: "put",
+                german: "setzen",
+                englishSentences: ["I sit down.", "You put on the hat.", "He puts everything on one card."],
+                germanSentences: ["Ich setze mich hin.", "Du setzt den Hut auf.", "Er setzt alles auf eine Karte."]
+            },
+            {
+                english: "follow",
+                german: "folgen",
+                englishSentences: ["I follow you.", "You follow my advice.", "She follows fashion."],
+                germanSentences: ["Ich folge dir.", "Du folgst meinem Rat.", "Sie folgt der Mode."]
+            },
+            {
+                english: "run",
+                german: "laufen",
+                englishSentences: ["I run every morning.", "You run too slowly.", "He runs marathons."],
+                germanSentences: ["Ich laufe jeden Morgen.", "Du läufst zu langsam.", "Er läuft Marathon."]
+            },
+            {
+                english: "hear",
+                german: "hören",
+                englishSentences: ["I listen to music.", "You don't listen.", "She listens to the news."],
+                germanSentences: ["Ich höre Musik.", "Du hörst nicht zu.", "Sie hört die Nachrichten."]
+            },
+            {
+                english: "stop",
+                german: "aufhören",
+                englishSentences: ["I stop smoking.", "You don't stop talking.", "The rain stops."],
+                germanSentences: ["Ich höre auf zu rauchen.", "Du hörst nicht auf zu reden.", "Der Regen hört auf."]
+            },
+            {
+                english: "understand",
+                german: "verstehen",
+                englishSentences: ["I understand the problem.", "You misunderstand me.", "She doesn't understand German."],
+                germanSentences: ["Ich verstehe das Problem.", "Du verstehst mich falsch.", "Sie versteht kein Deutsch."]
+            },
+            {
+                english: "read",
+                german: "lesen",
+                englishSentences: ["I read a book.", "You read the newspaper.", "He reads every evening."],
+                germanSentences: ["Ich lese ein Buch.", "Du liest die Zeitung.", "Er liest jeden Abend."]
+            },
+            {
+                english: "leave",
+                german: "verlassen",
+                englishSentences: ["I leave the house.", "You never abandon me.", "She leaves the city."],
+                germanSentences: ["Ich verlasse das Haus.", "Du verlässt mich nie.", "Sie verlässt die Stadt."]
+            },
+            {
+                english: "write",
+                german: "schreiben",
+                englishSentences: ["I write a letter.", "You write beautifully.", "He writes a book."],
+                germanSentences: ["Ich schreibe einen Brief.", "Du schreibst schön.", "Er schreibt ein Buch."]
+            },
+            {
+                english: "fall",
+                german: "fallen",
+                englishSentences: ["I fall from the chair.", "You faint.", "The apple falls from the tree."],
+                germanSentences: ["Ich falle vom Stuhl.", "Du fällst in Ohnmacht.", "Der Apfel fällt vom Baum."]
+            },
+            {
+                english: "close",
+                german: "schließen",
+                englishSentences: ["I close the door.", "You close the window.", "The store closes at six."],
+                germanSentences: ["Ich schließe die Tür.", "Du schließt das Fenster.", "Das Geschäft schließt um sechs."]
+            },
+            {
+                english: "expect",
+                german: "erwarten",
+                englishSentences: ["I expect visitors.", "You expect too much.", "She expects a baby."],
+                germanSentences: ["Ich erwarte Besuch.", "Du erwartest zu viel.", "Sie erwartet ein Baby."]
+            },
+            {
+                english: "buy",
+                german: "kaufen",
+                englishSentences: ["I buy bread.", "You buy a new car.", "She buys clothes."],
+                germanSentences: ["Ich kaufe Brot.", "Du kaufst ein neues Auto.", "Sie kauft Kleider."]
+            },
+            {
+                english: "help",
+                german: "helfen",
+                englishSentences: ["I help my mother.", "You always help me.", "He helps the poor."],
+                germanSentences: ["Ich helfe meiner Mutter.", "Du hilfst mir immer.", "Er hilft den Armen."]
+            },
+            {
+                english: "mean",
+                german: "bedeuten",
+                englishSentences: ["I mean nothing to you.", "You mean a lot to me.", "That means war."],
+                germanSentences: ["Ich bedeute dir nichts.", "Du bedeutest mir viel.", "Das bedeutet Krieg."]
+            },
+            {
+                english: "meet",
+                german: "treffen",
+                englishSentences: ["I meet my friends.", "You always hit the mark.", "She makes a decision."],
+                germanSentences: ["Ich treffe meine Freunde.", "Du triffst immer ins Schwarze.", "Sie trifft eine Entscheidung."]
+            },
+            {
+                english: "appear",
+                german: "erscheinen",
+                englishSentences: ["I appear punctually.", "You seem tired.", "The article appears tomorrow."],
+                germanSentences: ["Ich erscheine pünktlich.", "Du erscheinst müde.", "Der Artikel erscheint morgen."]
+            },
+            {
+                english: "build",
+                german: "bauen",
+                englishSentences: ["I build a house.", "You talk nonsense.", "They build a bridge."],
+                germanSentences: ["Ich baue ein Haus.", "Du baust Unsinn.", "Sie bauen eine Brücke."]
+            },
+            {
+                english: "sit",
+                german: "sitzen",
+                englishSentences: ["I sit at the table.", "You sit too long.", "He is in prison."],
+                germanSentences: ["Ich sitze am Tisch.", "Du sitzt zu lange.", "Er sitzt im Gefängnis."]
+            },
+            {
+                english: "reach",
+                german: "erreichen",
+                englishSentences: ["I reach my goal.", "You don't reach anyone.", "She reaches the station."],
+                germanSentences: ["Ich erreiche mein Ziel.", "Du erreichst niemanden.", "Sie erreicht den Bahnhof."]
+            },
+            {
+                english: "pull",
+                german: "ziehen",
+                englishSentences: ["I move to Berlin.", "You pull the leash.", "He takes off his jacket."],
+                germanSentences: ["Ich ziehe nach Berlin.", "Du ziehst an der Leine.", "Er zieht seine Jacke aus."]
+            },
+            {
+                english: "decide",
+                german: "entscheiden",
+                englishSentences: ["I decide on you.", "You decide too quickly.", "She decides our fate."],
+                germanSentences: ["Ich entscheide mich für dich.", "Du entscheidest zu schnell.", "Sie entscheidet über unser Schicksal."]
+            },
+            {
+                english: "call",
+                german: "anrufen",
+                englishSentences: ["I call you.", "You never call.", "She calls the doctor."],
+                germanSentences: ["Ich rufe dich an.", "Du rufst nie an.", "Sie ruft den Arzt an."]
+            },
+            {
+                english: "forget",
+                german: "vergessen",
+                englishSentences: ["I forget your name.", "You forget everything.", "He forgets his keys."],
+                germanSentences: ["Ich vergesse deinen Namen.", "Du vergisst alles.", "Er vergisst seine Schlüssel."]
+            },
+            {
+                english: "use",
+                german: "benutzen",
+                englishSentences: ["I use the computer.", "You use me.", "She uses public transport."],
+                germanSentences: ["Ich benutze den Computer.", "Du benutzt mich.", "Sie benutzt öffentliche Verkehrsmittel."]
+            },
+            {
+                english: "look",
+                german: "schauen",
+                englishSentences: ["I watch TV.", "You look in the mirror.", "He looks out the window."],
+                germanSentences: ["Ich schaue Fernsehen.", "Du schaust in den Spiegel.", "Er schaut aus dem Fenster."]
+            },
+            {
+                english: "wait",
+                german: "warten",
+                englishSentences: ["I wait for the bus.", "You've been waiting for a long time.", "She waits for an answer."],
+                germanSentences: ["Ich warte auf den Bus.", "Du wartest schon lange.", "Sie wartet auf eine Antwort."]
+            },
+            {
+                english: "die",
+                german: "sterben",
+                englishSentences: ["
