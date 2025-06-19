@@ -1,0 +1,643 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English-German Verb Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .flashcard-container {
+            perspective: 1000px;
+            width: 90vw;
+            max-width: 400px;
+            height: 60vw;
+            max-height: 300px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: transform 0.6s, left 0.5s;
+            transform-style: preserve-3d;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+        .flashcard.slide-left {
+            left: -100%;
+        }
+        .flashcard.slide-right {
+            left: 100%;
+        }
+        .front, .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .back {
+            transform: rotateY(180deg);
+        }
+        h2 {
+            margin: 8px 0;
+            color: #333;
+            font-size: clamp(1.2rem, 5vw, 1.5rem);
+            text-align: center;
+        }
+        h4 {
+            margin: 4px 0;
+            font-weight: normal;
+            color: #555;
+            font-size: clamp(0.8rem, 3.5vw, 1rem);
+            text-align: center;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: clamp(0.9rem, 4vw, 1rem);
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .progress-container {
+            width: 90vw;
+            max-width: 400px;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #28a745;
+            transition: width 0.3s ease;
+        }
+        .tts-button {
+            background-color: #17a2b8;
+        }
+        .tts-button:hover {
+            background-color: #117a8b;
+        }
+        @media (max-width: 600px) {
+            .flashcard-container {
+                width: 95vw;
+                height: 65vw;
+            }
+            .front, .back {
+                padding: 10px;
+            }
+            .buttons {
+                gap: 8px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
+    </div>
+    <div class="flashcard-container">
+        <div class="flashcard" id="flashcard">
+            <div class="front" id="front">
+                <h2 id="verb-en"></h2>
+                <h4 id="ex1-en"></h4>
+                <h4 id="ex2-en"></h4>
+                <h4 id="ex3-en"></h4>
+            </div>
+            <div class="back" id="back">
+                <h2 id="verb-de"></h2>
+                <h4 id="ex1-de"></h4>
+                <h4 id="ex2-de"></h4>
+                <h4 id="ex3-de"></h4>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="back-btn" disabled>Back</button>
+        <button id="tts-btn" class="tts-button">Speak</button>
+        <button id="next-btn">Next</button>
+    </div>
+
+    <script>
+        const verbs = [
+            {
+                en: { verb: "to be", ex1: "I am happy.", ex2: "You are tired.", ex3: "He is here." },
+                de: { verb: "sein", ex1: "Ich bin glücklich.", ex2: "Du bist müde.", ex3: "Er ist hier." }
+            },
+            {
+                en: { verb: "to have", ex1: "I have a book.", ex2: "You have time.", ex3: "He is hungry." },
+                de: { verb: "haben", ex1: "Ich habe ein Buch.", ex2: "Du hast Zeit.", ex3: "Er hat Hunger." }
+            },
+            {
+                en: { verb: "to become", ex1: "I will become a doctor.", ex2: "You are becoming stronger.", ex3: "It is becoming big." },
+                de: { verb: "werden", ex1: "Ich werde Arzt.", ex2: "Du wirst stärker.", ex3: "Es wird groß." }
+            },
+            {
+                en: { verb: "to go", ex1: "I am going to school.", ex2: "You are going home.", ex3: "She is going to the cinema." },
+                de: { verb: "gehen", ex1: "Ich gehe zur Schule.", ex2: "Du gehst nach Hause.", ex3: "Sie geht ins Kino." }
+            },
+            {
+                en: { verb: "to come", ex1: "I am coming later.", ex2: "You are coming with us.", ex3: "He is coming tomorrow." },
+                de: { verb: "kommen", ex1: "Ich komme später.", ex2: "Du kommst mit uns.", ex3: "Er kommt morgen." }
+            },
+            {
+                en: { verb: "to do/make", ex1: "I am doing homework.", ex2: "You are making a cake.", ex3: "She is making mistakes." },
+                de: { verb: "machen", ex1: "Ich mache Hausaufgaben.", ex2: "Du machst einen Kuchen.", ex3: "Sie macht Fehler." }
+            },
+            {
+                en: { verb: "to know", ex1: "I know the answer.", ex2: "You know everything.", ex3: "He knows nothing." },
+                de: { verb: "wissen", ex1: "Ich weiß die Antwort.", ex2: "Du weißt alles.", ex3: "Er weiß nichts." }
+            },
+            {
+                en: { verb: "to think", ex1: "I am thinking of you.", ex2: "You think too much.", ex3: "She thinks differently." },
+                de: { verb: "denken", ex1: "Ich denke an dich.", ex2: "Du denkst zu viel.", ex3: "Sie denkt anders." }
+            },
+            {
+                en: { verb: "to learn", ex1: "I am learning German.", ex2: "You learn quickly.", ex3: "He learns a lot." },
+                de: { verb: "lernen", ex1: "Ich lerne Deutsch.", ex2: "Du lernst schnell.", ex3: "Er lernt viel." }
+            },
+            {
+                en: { verb: "to speak", ex1: "I speak English.", ex2: "You speak loudly.", ex3: "She speaks slowly." },
+                de: { verb: "sprechen", ex1: "Ich spreche Englisch.", ex2: "Du sprichst laut.", ex3: "Sie spricht langsam." }
+            },
+            {
+                en: { verb: "to write", ex1: "I am writing a letter.", ex2: "You write well.", ex3: "He writes every day." },
+                de: { verb: "schreiben", ex1: "Ich schreibe einen Brief.", ex2: "Du schreibst gut.", ex3: "Er schreibt jeden Tag." }
+            },
+            {
+                en: { verb: "to read", ex1: "I am reading a book.", ex2: "You are reading a newspaper.", ex3: "She reads comics." },
+                de: { verb: "lesen", ex1: "Ich lese ein Buch.", ex2: "Du liest Zeitung.", ex3: "Sie liest Comics." }
+            },
+            {
+                en: { verb: "to see", ex1: "I am watching a movie.", ex2: "You see the sky.", ex3: "He sees us." },
+                de: { verb: "sehen", ex1: "Ich sehe einen Film.", ex2: "Du siehst den Himmel.", ex3: "Er sieht uns." }
+            },
+            {
+                en: { verb: "to hear/listen", ex1: "I am listening to music.", ex2: "You hear a noise.", ex3: "She listens to the radio." },
+                de: { verb: "hören", ex1: "Ich höre Musik.", ex2: "Du hörst ein Geräusch.", ex3: "Sie hört Radio." }
+            },
+            {
+                en: { verb: "to eat", ex1: "I am eating pizza.", ex2: "You are eating an apple.", ex3: "He eats vegetables." },
+                de: { verb: "essen", ex1: "Ich esse Pizza.", ex2: "Du isst Apfel.", ex3: "Er isst Gemüse." }
+            },
+            {
+                en: { verb: "to drink", ex1: "I am drinking water.", ex2: "You are drinking coffee.", ex3: "She drinks juice." },
+                de: { verb: "trinken", ex1: "Ich trinke Wasser.", ex2: "Du trinkst Kaffee.", ex3: "Sie trinkt Saft." }
+            },
+            {
+                en: { verb: "to sleep", ex1: "I am sleeping well.", ex2: "You sleep for a long time.", ex3: "He sleeps deeply." },
+                de: { verb: "schlafen", ex1: "Ich schlafe gut.", ex2: "Du schläfst lange.", ex3: "Er schläft tief." }
+            },
+            {
+                en: { verb: "to work", ex1: "I am working today.", ex2: "You work a lot.", ex3: "She works hard." },
+                de: { verb: "arbeiten", ex1: "Ich arbeite heute.", ex2: "Du arbeitest viel.", ex3: "Sie arbeitet hart." }
+            },
+            {
+                en: { verb: "to play", ex1: "I am playing soccer.", ex2: "You are playing cards.", ex3: "He plays the piano." },
+                de: { verb: "spielen", ex1: "Ich spiele Fußball.", ex2: "Du spielst Karten.", ex3: "Er spielt Klavier." }
+            },
+            {
+                en: { verb: "to help", ex1: "I am helping you.", ex2: "You are helping your mother.", ex3: "She helps the neighbor." },
+                de: { verb: "helfen", ex1: "Ich helfe dir.", ex2: "Du hilfst deiner Mutter.", ex3: "Sie hilft dem Nachbarn." }
+            },
+            {
+                en: { verb: "to walk/run", ex1: "I walk to the park.", ex2: "You run fast.", ex3: "He runs every morning." },
+                de: { verb: "laufen", ex1: "Ich laufe zum Park.", ex2: "Du läufst schnell.", ex3: "Er läuft jeden Morgen." }
+            },
+            {
+                en: { verb: "to buy", ex1: "I buy bread.", ex2: "You buy a ticket.", ex3: "She buys clothes." },
+                de: { verb: "kaufen", ex1: "Ich kaufe Brot.", ex2: "Du kaufst ein Ticket.", ex3: "Sie kauft Kleidung." }
+            },
+            {
+                en: { verb: "to find", ex1: "I find a key.", ex2: "You find the way.", ex3: "He finds a solution." },
+                de: { verb: "finden", ex1: "Ich finde einen Schlüssel.", ex2: "Du findest den Weg.", ex3: "Er findet eine Lösung." }
+            },
+            {
+                en: { verb: "to say", ex1: "I say hello.", ex2: "You say nothing.", ex3: "She says the truth." },
+                de: { verb: "sagen", ex1: "Ich sage hallo.", ex2: "Du sagst nichts.", ex3: "Sie sagt die Wahrheit." }
+            },
+            {
+                en: { verb: "to take", ex1: "I take a photo.", ex2: "You take the bus.", ex3: "He takes a break." },
+                de: { verb: "nehmen", ex1: "Ich nehme ein Foto.", ex2: "Du nimmst den Bus.", ex3: "Er nimmt eine Pause." }
+            },
+            {
+                en: { verb: "to feel", ex1: "I feel good.", ex2: "You feel cold.", ex3: "She feels tired." },
+                de: { verb: "fühlen", ex1: "Ich fühle mich gut.", ex2: "Du fühlst dich kalt.", ex3: "Sie fühlt sich müde." }
+            },
+            {
+                en: { verb: "to stay", ex1: "I stay at home.", ex2: "You stay here.", ex3: "He stays in Berlin." },
+                de: { verb: "bleiben", ex1: "Ich bleibe zu Hause.", ex2: "Du bleibst hier.", ex3: "Er bleibt in Berlin." }
+            },
+            {
+                en: { verb: "to give", ex1: "I give a gift.", ex2: "You give advice.", ex3: "She gives money." },
+                de: { verb: "geben", ex1: "Ich gebe ein Geschenk.", ex2: "Du gibst einen Rat.", ex3: "Sie gibt Geld." }
+            },
+            {
+                en: { verb: "to call", ex1: "I call my friend.", ex2: "You call the office.", ex3: "He calls his mother." },
+                de: { verb: "anrufen", ex1: "Ich rufe meinen Freund an.", ex2: "Du rufst das Büro an.", ex3: "Er ruft seine Mutter an." }
+            },
+            {
+                en: { verb: "to understand", ex1: "I understand the question.", ex2: "You understand German.", ex3: "She understands everything." },
+                de: { verb: "verstehen", ex1: "Ich verstehe die Frage.", ex2: "Du verstehst Deutsch.", ex3: "Sie versteht alles." }
+            },
+            {
+                en: { verb: "to ask", ex1: "I ask for help.", ex2: "You ask a question.", ex3: "He asks for directions." },
+                de: { verb: "fragen", ex1: "Ich frage nach Hilfe.", ex2: "Du fragst eine Frage.", ex3: "Er fragt nach dem Weg." }
+            },
+            {
+                en: { verb: "to answer", ex1: "I answer quickly.", ex2: "You answer politely.", ex3: "She answers correctly." },
+                de: { verb: "antworten", ex1: "Ich antworte schnell.", ex2: "Du antwortest höflich.", ex3: "Sie antwortet richtig." }
+            },
+            {
+                en: { verb: "to look/appear", ex1: "I look tired.", ex2: "You look happy.", ex3: "He looks good." },
+                de: { verb: "aussehen", ex1: "Ich sehe müde aus.", ex2: "Du siehst glücklich aus.", ex3: "Er sieht gut aus." }
+            },
+            {
+                en: { verb: "to begin", ex1: "I begin work.", ex2: "You begin a book.", ex3: "She begins a course." },
+                de: { verb: "beginnen", ex1: "Ich beginne die Arbeit.", ex2: "Du beginnst ein Buch.", ex3: "Sie beginnt einen Kurs." }
+            },
+            {
+                en: { verb: "to forget", ex1: "I forget my keys.", ex2: "You forget the time.", ex3: "He forgets his lines." },
+                de: { verb: "vergessen", ex1: "Ich vergesse meine Schlüssel.", ex2: "Du vergisst die Zeit.", ex3: "Er vergisst seinen Text." }
+            },
+            {
+                en: { verb: "to travel", ex1: "I travel to Germany.", ex2: "You travel often.", ex3: "She travels alone." },
+                de: { verb: "reisen", ex1: "Ich reise nach Deutschland.", ex2: "Du reist oft.", ex3: "Sie reist allein." }
+            },
+            {
+                en: { verb: "to visit", ex1: "I visit my family.", ex2: "You visit a museum.", ex3: "He visits friends." },
+                de: { verb: "besuchen", ex1: "Ich besuche meine Familie.", ex2: "Du besuchst ein Museum.", ex3: "Er besucht Freunde." }
+            },
+            {
+                en: { verb: "to laugh", ex1: "I laugh loudly.", ex2: "You laugh at jokes.", ex3: "She laughs happily." },
+                de: { verb: "lachen", ex1: "Ich lache laut.", ex2: "Du lachst über Witze.", ex3: "Sie lacht glücklich." }
+            },
+            {
+                en: { verb: "to dance", ex1: "I dance well.", ex2: "You dance with friends.", ex3: "He dances at parties." },
+                de: { verb: "tanzen", ex1: "Ich tanze gut.", ex2: "Du tanzt mit Freunden.", ex3: "Er tanzt auf Partys." }
+            },
+            {
+                en: { verb: "to sing", ex1: "I sing a song.", ex2: "You sing beautifully.", ex3: "She sings in a choir." },
+                de: { verb: "singen", ex1: "Ich singe ein Lied.", ex2: "Du singst schön.", ex3: "Sie singt im Chor." }
+            },
+            {
+                en: { verb: "to swim", ex1: "I swim in the lake.", ex2: "You swim fast.", ex3: "He swims every day." },
+                de: { verb: "schwimmen", ex1: "Ich schwimme im See.", ex2: "Du schwimmst schnell.", ex3: "Er schwimmt jeden Tag." }
+            },
+            {
+                en: { verb: "to drive/ride", ex1: "I drive a car.", ex2: "You ride a bike.", ex3: "She drives to work." },
+                de: { verb: "fahren", ex1: "Ich fahre ein Auto.", ex2: "Du fährst ein Fahrrad.", ex3: "Sie fährt zur Arbeit." }
+            },
+            {
+                en: { verb: "to fly", ex1: "I fly to London.", ex2: "You fly often.", ex3: "He flies with Lufthansa." },
+                de: { verb: "fliegen", ex1: "Ich fliege nach London.", ex2: "Du fliegst oft.", ex3: "Er fliegt mit Lufthansa." }
+            },
+            {
+                en: { verb: "to wear/carry", ex1: "I wear a jacket.", ex2: "You carry a bag.", ex3: "She wears glasses." },
+                de: { verb: "tragen", ex1: "Ich trage eine Jacke.", ex2: "Du trägst eine Tasche.", ex3: "Sie trägt eine Brille." }
+            },
+            {
+                en: { verb: "to love", ex1: "I love chocolate.", ex2: "You love music.", ex3: "He loves his dog." },
+                de: { verb: "lieben", ex1: "Ich liebe Schokolade.", ex2: "Du liebst Musik.", ex3: "Er liebt seinen Hund." }
+            },
+            {
+                en: { verb: "to hate", ex1: "I hate rain.", ex2: "You hate waiting.", ex3: "She hates spinach." },
+                de: { verb: "hassen", ex1: "Ich hasse Regen.", ex2: "Du hasst Warten.", ex3: "Sie hasst Spinat." }
+            },
+            {
+                en: { verb: "to wait", ex1: "I wait for the bus.", ex2: "You wait patiently.", ex3: "He waits at the station." },
+                de: { verb: "warten", ex1: "Ich warte auf den Bus.", ex2: "Du wartest geduldig.", ex3: "Er wartet am Bahnhof." }
+            },
+            {
+                en: { verb: "to open", ex1: "I open the door.", ex2: "You open a window.", ex3: "She opens a book." },
+                de: { verb: "öffnen", ex1: "Ich öffne die Tür.", ex2: "Du öffnest ein Fenster.", ex3: "Sie öffnet ein Buch." }
+            },
+            {
+                en: { verb: "to close", ex1: "I close the shop.", ex2: "You close the bag.", ex3: "He closes the gate." },
+                de: { verb: "schließen", ex1: "Ich schließe den Laden.", ex2: "Du schließt die Tasche.", ex3: "Er schließt das Tor." }
+            },
+            {
+                en: { verb: "to search/look for", ex1: "I search for my phone.", ex2: "You look for your keys.", ex3: "She searches online." },
+                de: { verb: "suchen", ex1: "Ich suche mein Handy.", ex2: "Du suchst deine Schlüssel.", ex3: "Sie sucht online." }
+            },
+            {
+                en: { verb: "to show", ex1: "I show a picture.", ex2: "You show your ticket.", ex3: "He shows a trick." },
+                de: { verb: "zeigen", ex1: "Ich zeige ein Bild.", ex2: "Du zeigst dein Ticket.", ex3: "Er zeigt einen Trick." }
+            },
+            {
+                en: { verb: "to explain", ex1: "I explain the rules.", ex2: "You explain the plan.", ex3: "She explains clearly." },
+                de: { verb: "erklären", ex1: "Ich erkläre die Regeln.", ex2: "Du erklärst den Plan.", ex3: "Sie erklärt klar." }
+            },
+            {
+                en: { verb: "to help", ex1: "I help my brother.", ex2: "You help a friend.", ex3: "She helps at school." },
+                de: { verb: "helfen", ex1: "Ich helfe meinem Bruder.", ex2: "Du hilfst einem Freund.", ex3: "Sie hilft in der Schule." }
+            },
+            {
+                en: { verb: "to decide", ex1: "I decide quickly.", ex2: "You decide for us.", ex3: "He decides later." },
+                de: { verb: "entscheiden", ex1: "Ich entscheide schnell.", ex2: "Du entscheidest für uns.", ex3: "Er entscheidet später." }
+            },
+            {
+                en: { verb: "to change", ex1: "I change my clothes.", ex2: "You change your mind.", ex3: "She changes her plan." },
+                de: { verb: "ändern", ex1: "Ich ändere meine Kleidung.", ex2: "Du änderst deine Meinung.", ex3: "Sie ändert ihren Plan." }
+            },
+            {
+                en: { verb: "to remember", ex1: "I remember the name.", ex2: "You remember the date.", ex3: "He remembers everything." },
+                de: { verb: "erinnern", ex1: "Ich erinnere mich an den Namen.", ex2: "Du erinnerst dich an das Datum.", ex3: "Er erinnert sich an alles." }
+            },
+            {
+                en: { verb: "to try", ex1: "I try new food.", ex2: "You try hard.", ex3: "She tries again." },
+                de: { verb: "versuchen", ex1: "Ich versuche neues Essen.", ex2: "Du versuchst es hart.", ex3: "Sie versucht es wieder." }
+            },
+            {
+                en: { verb: "to choose", ex1: "I choose a book.", ex2: "You choose a color.", ex3: "He chooses a team." },
+                de: { verb: "wählen", ex1: "Ich wähle ein Buch.", ex2: "Du wählst eine Farbe.", ex3: "Er wählt ein Team." }
+            },
+            {
+                en: { verb: "to live", ex1: "I live in Munich.", ex2: "You live happily.", ex3: "She lives alone." },
+                de: { verb: "leben", ex1: "Ich lebe in München.", ex2: "Du lebst glücklich.", ex3: "Sie lebt allein." }
+            },
+            {
+                en: { verb: "to die", ex1: "I am not dying.", ex2: "You fear dying.", ex3: "He dies peacefully." },
+                de: { verb: "sterben", ex1: "Ich sterbe nicht.", ex2: "Du fürchtest das Sterben.", ex3: "Er stirbt friedlich." }
+            },
+            {
+                en: { verb: "to cook", ex1: "I cook dinner.", ex2: "You cook well.", ex3: "She cooks soup." },
+                de: { verb: "kochen", ex1: "Ich koche Abendessen.", ex2: "Du kochst gut.", ex3: "Sie kocht Suppe." }
+            },
+            {
+                en: { verb: "to bake", ex1: "I bake a cake.", ex2: "You bake bread.", ex3: "He bakes cookies." },
+                de: { verb: "backen", ex1: "Ich backe einen Kuchen.", ex2: "Du bäckst Brot.", ex3: "Er bäckst Kekse." }
+            },
+            {
+                en: { verb: "to clean", ex1: "I clean the house.", ex2: "You clean the windows.", ex3: "She cleans the kitchen." },
+                de: { verb: "putzen", ex1: "Ich putze das Haus.", ex2: "Du putzt die Fenster.", ex3: "Sie putzt die Küche." }
+            },
+            {
+                en: { verb: "to wash", ex1: "I wash my hands.", ex2: "You wash your car.", ex3: "He washes dishes." },
+                de: { verb: "waschen", ex1: "Ich wasche meine Hände.", ex2: "Du wäschst dein Auto.", ex3: "Er wäscht Geschirr." }
+            },
+            {
+                en: { verb: "to study/learn", ex1: "I study German.", ex2: "You study math.", ex3: "She studies at university." },
+                de: { verb: "lernen", ex1: "Ich lerne Deutsch.", ex2: "Du lernst Mathematik.", ex3: "Sie lernt an der Universität." }
+            },
+            {
+                en: { verb: "to work", ex1: "I work in an office.", ex2: "You work hard.", ex3: "He works at night." },
+                de: { verb: "arbeiten", ex1: "Ich arbeite im Büro.", ex2: "Du arbeitest hart.", ex3: "Er arbeitet nachts." }
+            },
+            {
+                en: { verb: "to save", ex1: "I save money.", ex2: "You save time.", ex3: "She saves energy." },
+                de: { verb: "sparen", ex1: "Ich spare Geld.", ex2: "Du sparst Zeit.", ex3: "Sie spart Energie." }
+            },
+            {
+                en: { verb: "to share", ex1: "I share my food.", ex2: "You share a story.", ex3: "He shares his toys." },
+                de: { verb: "teilen", ex1: "Ich teile mein Essen.", ex2: "Du teilst eine Geschichte.", ex3: "Er teilt sein Spielzeug." }
+            },
+            {
+                en: { verb: "to pay", ex1: "I pay the bill.", ex2: "You pay in cash.", ex3: "She pays online." },
+                de: { verb: "bezahlen", ex1: "Ich bezahle die Rechnung.", ex2: "Du bezahlst bar.", ex3: "Sie bezahlt online." }
+            },
+            {
+                en: { verb: "to sell", ex1: "I sell my car.", ex2: "You sell books.", ex3: "He sells clothes." },
+                de: { verb: "verkaufen", ex1: "Ich verkaufe mein Auto.", ex2: "Du verkaufst Bücher.", ex3: "Er verkauft Kleidung." }
+            },
+            {
+                en: { verb: "to build", ex1: "I build a house.", ex2: "You build a model.", ex3: "She builds a bridge." },
+                de: { verb: "bauen", ex1: "Ich baue ein Haus.", ex2: "Du baust ein Modell.", ex3: "Sie baut eine Brücke." }
+            },
+            {
+                en: { verb: "to destroy", ex1: "I destroy a toy.", ex2: "You destroy the plan.", ex3: "He destroys the paper." },
+                de: { verb: "zerstören", ex1: "Ich zerstöre ein Spielzeug.", ex2: "Du zerstörst den Plan.", ex3: "Er zerstört das Papier." }
+            },
+            {
+                en: { verb: "to freeze", ex1: "I am freezing.", ex2: "You freeze in winter.", ex3: "She freezes outside." },
+                de: { verb: "frieren", ex1: "Ich friere.", ex2: "Du frierst im Winter.", ex3: "Sie friert draußen." }
+            },
+            {
+                en: { verb: "to taste", ex1: "I taste the soup.", ex2: "You taste the wine.", ex3: "He tastes the cake." },
+                de: { verb: "schmecken", ex1: "Ich schmecke die Suppe.", ex2: "Du schmeckst den Wein.", ex3: "Er schmeckt den Kuchen." }
+            },
+            {
+                en: { verb: "to smell", ex1: "I smell flowers.", ex2: "You smell coffee.", ex3: "She smells perfume." },
+                de: { verb: "riechen", ex1: "Ich rieche Blumen.", ex2: "Du riechst Kaffee.", ex3: "Sie riecht Parfüm." }
+            },
+            {
+                en: { verb: "to fall", ex1: "I fall down.", ex2: "You fall off the bike.", ex3: "He falls in the snow." },
+                de: { verb: "fallen", ex1: "Ich falle hin.", ex2: "Du fällst vom Fahrrad.", ex3: "Er fällt in den Schnee." }
+            },
+            {
+                en: { verb: "to stand", ex1: "I stand in line.", ex2: "You stand still.", ex3: "She stands at the door." },
+                de: { verb: "stehen", ex1: "Ich stehe in der Schlange.", ex2: "Du stehst still.", ex3: "Sie steht an der Tür." }
+            },
+            {
+                en: { verb: "to sit", ex1: "I sit on a chair.", ex2: "You sit in class.", ex3: "He sits on the bench." },
+                de: { verb: "sitzen", ex1: "Ich sitze auf einem Stuhl.", ex2: "Du sitzt im Unterricht.", ex3: "Er sitzt auf der Bank." }
+            },
+            {
+                en: { verb: "to lie", ex1: "I lie on the bed.", ex2: "You lie on the grass.", ex3: "She lies on the sofa." },
+                de: { verb: "liegen", ex1: "Ich liege auf dem Bett.", ex2: "Du liegst auf dem Gras.", ex3: "Sie liegt auf dem Sofa." }
+            },
+            {
+                en: { verb: "to jump", ex1: "I jump high.", ex2: "You jump over the rope.", ex3: "He jumps into the water." },
+                de: { verb: "springen", ex1: "Ich springe hoch.", ex2: "Du springst über das Seil.", ex3: "Er springt ins Wasser." }
+            },
+            {
+                en: { verb: "to climb", ex1: "I climb a tree.", ex2: "You climb a mountain.", ex3: "She climbs the ladder." },
+                de: { verb: "klettern", ex1: "Ich klettere auf einen Baum.", ex2: "Du kletterst auf einen Berg.", ex3: "Sie klettert die Leiter." }
+            },
+            {
+                en: { verb: "to throw", ex1: "I throw a ball.", ex2: "You throw a stone.", ex3: "He throws a frisbee." },
+                de: { verb: "werfen", ex1: "Ich werfe einen Ball.", ex2: "Du wirfst einen Stein.", ex3: "Er wirft eine Frisbee." }
+            },
+            {
+                en: { verb: "to catch", ex1: "I catch the ball.", ex2: "You catch a fish.", ex3: "She catches a butterfly." },
+                de: { verb: "fangen", ex1: "Ich fange den Ball.", ex2: "Du fängst einen Fisch.", ex3: "Sie fängt einen Schmetterling." }
+            },
+            {
+                en: { verb: "to pull", ex1: "I pull the rope.", ex2: "You pull the door.", ex3: "He pulls a cart." },
+                de: { verb: "ziehen", ex1: "Ich ziehe das Seil.", ex2: "Du ziehst die Tür.", ex3: "Er zieht einen Wagen." }
+            },
+            {
+                en: { verb: "to push", ex1: "I push the cart.", ex2: "You push the bike.", ex3: "She pushes the door." },
+                de: { verb: "schieben", ex1: "Ich schiebe den Wagen.", ex2: "Du schiebst das Fahrrad.", ex3: "Sie schiebt die Tür." }
+            },
+            {
+                en: { verb: "to lift", ex1: "I lift a box.", ex2: "You lift weights.", ex3: "He lifts a chair." },
+                de: { verb: "heben", ex1: "Ich hebe eine Kiste.", ex2: "Du hebst Gewichte.", ex3: "Er hebt einen Stuhl." }
+            },
+            {
+                en: { verb: "to carry", ex1: "I carry a backpack.", ex2: "You carry a bag.", ex3: "She carries a baby." },
+                de: { verb: "tragen", ex1: "Ich trage einen Rucksack.", ex2: "Du trägst eine Tasche.", ex3: "Sie trägt ein Baby." }
+            },
+            {
+                en: { verb: "to cut", ex1: "I cut paper.", ex2: "You cut vegetables.", ex3: "He cuts wood." },
+                de: { verb: "schneiden", ex1: "Ich schneide Papier.", ex2: "Du schneidest Gemüse.", ex3: "Er schneidet Holz." }
+            },
+            {
+                en: { verb: "to paint", ex1: "I paint a picture.", ex2: "You paint a wall.", ex3: "She paints a house." },
+                de: { verb: "malen", ex1: "Ich male ein Bild.", ex2: "Du malst eine Wand.", ex3: "Sie malt ein Haus." }
+            },
+            {
+                en: { verb: "to draw", ex1: "I draw a tree.", ex2: "You draw a portrait.", ex3: "He draws a map." },
+                de: { verb: "zeichnen", ex1: "Ich zeichne einen Baum.", ex2: "Du zeichnest ein Porträt.", ex3: "Er zeichnet eine Karte." }
+            },
+            {
+                en: { verb: "to photograph", ex1: "I photograph the city.", ex2: "You photograph nature.", ex3: "She photographs people." },
+                de: { verb: "fotografieren", ex1: "Ich fotografiere die Stadt.", ex2: "Du fotografierst die Natur.", ex3: "Sie fotografiert Menschen." }
+            },
+            {
+                en: { verb: "to celebrate", ex1: "I celebrate my birthday.", ex2: "You celebrate Christmas.", ex3: "He celebrates a win." },
+                de: { verb: "feiern", ex1: "Ich feiere meinen Geburtstag.", ex2: "Du feierst Weihnachten.", ex3: "Er feiert einen Sieg." }
+            },
+            {
+                en: { verb: "to train", ex1: "I train in the gym.", ex2: "You train for a race.", ex3: "She trains every day." },
+                de: { verb: "trainieren", ex1: "Ich trainiere im Fitnessstudio.", ex2: "Du trainierst für ein Rennen.", ex3: "Sie trainiert jeden Tag." }
+            },
+            {
+                en: { verb: "to lose", ex1: "I lose my wallet.", ex2: "You lose the game.", ex3: "He loses his keys." },
+                de: { verb: "verlieren", ex1: "Ich verliere meine Brieftasche.", ex2: "Du verlierst das Spiel.", ex3: "Er verliert seine Schlüssel." }
+            },
+            {
+                en: { verb: "to win", ex1: "I win a prize.", ex2: "You win a match.", ex3: "She wins a contest." },
+                de: { verb: "gewinnen", ex1: "Ich gewinne einen Preis.", ex2: "Du gewinnst ein Spiel.", ex3: "Sie gewinnt einen Wettbewerb." }
+            },
+            {
+                en: { verb: "to fit", ex1: "I fit in the dress.", ex2: "You fit in the team.", ex3: "He fits in the group." },
+                de: { verb: "passen", ex1: "Ich passe in das Kleid.", ex2: "Du passt ins Team.", ex3: "Er passt in die Gruppe." }
+            },
+            {
+                en: { verb: "to need", ex1: "I need help.", ex2: "You need money.", ex3: "She needs time." },
+                de: { verb: "brauchen", ex1: "Ich brauche Hilfe.", ex2: "Du brauchst Geld.", ex3: "Sie braucht Zeit." }
+            },
+            {
+                en: { verb: "to know", ex1: "I know the rules.", ex2: "You know the answer.", ex3: "He knows the way." },
+                de: { verb: "wissen", ex1: "Ich weiß die Regeln.", ex2: "Du weißt die Antwort.", ex3: "Er weiß den Weg." }
+            },
+            {
+                en: { verb: "to think", ex1: "I think about you.", ex2: "You think carefully.", ex3: "She thinks positively." },
+                de: { verb: "denken", ex1: "Ich denke an dich.", ex2: "Du denkst sorgfältig.", ex3: "Sie denkt positiv." }
+            },
+            {
+                en: { verb: "to hope", ex1: "I hope for sun.", ex2: "You hope for success.", ex3: "He hopes for peace." },
+                de: { verb: "hoffen", ex1: "Ich hoffe auf Sonne.", ex2: "Du hoffst auf Erfolg.", ex3: "Er hofft auf Frieden." }
+            }
+        ];
+
+        let currentIndex = 0;
+        const flashcard = document.getElementById('flashcard');
+        const nextBtn = document.getElementById('next-btn');
+        const backBtn = document.getElementById('back-btn');
+        const ttsBtn = document.getElementById('tts-btn');
+        const progressBar = document.getElementById('progress-bar');
+
+        function updateCard() {
+            const front = document.getElementById('front');
+            const back = document.getElementById('back');
+            const verbEn = document.getElementById('verb-en');
+            const verbDe = document.getElementById('verb-de');
+            const ex1En = document.getElementById('ex1-en');
+            const ex2En = document.getElementById('ex2-en');
+            const ex3En = document.getElementById('ex3-en');
+            const ex1De = document.getElementById('ex1-de');
+            const ex2De = document.getElementById('ex2-de');
+            const ex3De = document.getElementById('ex3-de');
+
+            verbEn.textContent = verbs[currentIndex].en.verb;
+            ex1En.textContent = verbs[currentIndex].en.ex1;
+            ex2En.textContent = verbs[currentIndex].en.ex2;
+            ex3En.textContent = verbs[currentIndex].en.ex3;
+            verbDe.textContent = verbs[currentIndex].de.verb;
+            ex1De.textContent = verbs[currentIndex].de.ex1;
+            ex2De.textContent = verbs[currentIndex].de.ex2;
+            ex3De.textContent = verbs[currentIndex].de.ex3;
+
+            backBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === verbs.length - 1;
+
+            // Update progress bar
+            const progress = ((currentIndex + 1) / verbs.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function flipCard() {
+            flashcard.classList.toggle('flipped');
+        }
+
+        function slideCard(direction) {
+            flashcard.classList.add(`slide-${direction}`);
+            setTimeout(() => {
+                flashcard.classList.remove(`slide-${direction}`);
+                flashcard.style.left = '0';
+                if (direction === 'left') {
+                    currentIndex = Math.max(0, currentIndex - 1);
+                } else {
+                    currentIndex = Math.min(verbs.length - 1, currentIndex + 1);
+                }
+                flashcard.classList.remove('flipped');
+                updateCard();
+            }, 500);
+        }
+
+        function speakText() {
+            const isFlipped = flashcard.classList.contains('flipped');
+            const lang = isFlipped ? 'de-DE' : 'en-US';
+            const verb = isFlipped ? verbs[currentIndex].de.verb : verbs[currentIndex].en.verb;
+            const ex1 = isFlipped ? verbs[currentIndex].de.ex1 : verbs[currentIndex].en.ex1;
+            const ex2 = isFlipped ? verbs[currentIndex].de.ex2 : verbs[currentIndex].en.ex2;
+            const ex3 = isFlipped ? verbs[currentIndex].de.ex3 : verbs[currentIndex].en.ex3;
+
+            const text = `${verb}. ${ex1} ${ex2} ${ex3}`;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        flashcard.addEventListener('click', flipCard);
+        flashcard.addEventListener('touchstart', flipCard);
+        nextBtn.addEventListener('click', () => slideCard('right'));
+        backBtn.addEventListener('click', () => slideCard('left'));
+        ttsBtn.addEventListener('click', speakText);
+
+        updateCard();
+    </script>
+</body>
+</html>
