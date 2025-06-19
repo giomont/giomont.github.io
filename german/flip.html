@@ -1,158 +1,323 @@
-Great — you want everything in **one standalone HTML file**, including touch-to-flip support on mobile.
-
-Here’s your **complete HTML** with:
-
-* ✅ Card flip on both click and touch
-* ✅ Works on mobile and desktop
-* ✅ Self-contained in a single file
-
----
-
-### ✅ One-File Flashcard App (Simplified Demo Version)
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>German Verb Flashcard</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, sans-serif;
-      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-
-    .flashcard-container {
-      perspective: 1000px;
-      width: 90%;
-      max-width: 400px;
-      height: 500px;
-    }
-
-    .flashcard {
-      width: 100%;
-      height: 100%;
-      position: relative;
-      transform-style: preserve-3d;
-      transition: transform 0.6s;
-      cursor: pointer;
-      border-radius: 20px;
-      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
-    }
-
-    .flipped {
-      transform: rotateY(180deg);
-    }
-
-    .card-face {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      backface-visibility: hidden;
-      border-radius: 20px;
-      padding: 30px;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      color: white;
-      text-align: center;
-    }
-
-    .card-front {
-      background: linear-gradient(135deg, #ff6b6b, #ee5a24);
-    }
-
-    .card-back {
-      background: linear-gradient(135deg, #4834d4, #686de0);
-      transform: rotateY(180deg);
-    }
-
-    .verb-title {
-      font-size: 2rem;
-      font-weight: bold;
-      margin-bottom: 20px;
-    }
-
-    .sentences {
-      font-size: 1.2rem;
-      line-height: 1.5;
-    }
-
-    .instruction {
-      position: fixed;
-      bottom: 30px;
-      left: 50%;
-      transform: translateX(-50%);
-      color: white;
-      font-size: 1rem;
-      background: rgba(255,255,255,0.1);
-      padding: 8px 16px;
-      border-radius: 20px;
-      backdrop-filter: blur(5px);
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>English-German Verb Flashcards</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            background-color: #f0f0f0;
+            padding: 10px;
+            box-sizing: border-box;
+        }
+        .flashcard-container {
+            perspective: 1000px;
+            width: 90vw;
+            max-width: 400px;
+            height: 60vw;
+            max-height: 300px;
+            position: relative;
+            margin-bottom: 20px;
+        }
+        .flashcard {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            transition: transform 0.6s, left 0.5s;
+            transform-style: preserve-3d;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .flashcard.flipped {
+            transform: rotateY(180deg);
+        }
+        .flashcard.slide-left {
+            left: -100%;
+        }
+        .flashcard.slide-right {
+            left: 100%;
+        }
+        .front, .back {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            backface-visibility: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 15px;
+            box-sizing: border-box;
+            overflow-y: auto;
+        }
+        .back {
+            transform: rotateY(180deg);
+        }
+        h2 {
+            margin: 8px 0;
+            color: #333;
+            font-size: clamp(1.2rem, 5vw, 1.5rem);
+            text-align: center;
+        }
+        h4 {
+            margin: 4px 0;
+            font-weight: normal;
+            color: #555;
+            font-size: clamp(0.8rem, 3.5vw, 1rem);
+            text-align: center;
+        }
+        .buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 8px 16px;
+            font-size: clamp(0.9rem, 4vw, 1rem);
+            border: none;
+            border-radius: 5px;
+            background-color: #007bff;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #0056b3;
+        }
+        button:disabled {
+            background-color: #ccc;
+            cursor: not-allowed;
+        }
+        .progress-container {
+            width: 90vw;
+            max-width: 400px;
+            height: 10px;
+            background-color: #e0e0e0;
+            border-radius: 5px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+        .progress-bar {
+            height: 100%;
+            background-color: #28a745;
+            transition: width 0.3s ease;
+        }
+        .tts-button {
+            background-color: #17a2b8;
+        }
+        .tts-button:hover {
+            background-color: #117a8b;
+        }
+        @media (max-width: 600px) {
+            .flashcard-container {
+                width: 95vw;
+                height: 65vw;
+            }
+            .front, .back {
+                padding: 10px;
+            }
+            .buttons {
+                gap: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div class="flashcard-container">
-    <div class="flashcard" id="flashcard">
-      <div class="card-face card-front">
-        <h2 class="verb-title">be</h2>
-        <div class="sentences">
-          I am tired.<br />
-          You are kind.<br />
-          He is my brother.
-        </div>
-      </div>
-      <div class="card-face card-back">
-        <h2 class="verb-title">sein</h2>
-        <div class="sentences">
-          Ich bin müde.<br />
-          Du bist nett.<br />
-          Er ist mein Bruder.
-        </div>
-      </div>
+    <div class="progress-container">
+        <div class="progress-bar" id="progress-bar"></div>
     </div>
-  </div>
-  <div class="instruction">Tap to flip</div>
+    <div class="flashcard-container">
+        <div class="flashcard" id="flashcard">
+            <div class="front" id="front">
+                <h2 id="verb-en"></h2>
+                <h4 id="ex1-en"></h4>
+                <h4 id="ex2-en"></h4>
+                <h4 id="ex3-en"></h4>
+            </div>
+            <div class="back" id="back">
+                <h2 id="verb-de"></h2>
+                <h4 id="ex1-de"></h4>
+                <h4 id="ex2-de"></h4>
+                <h4 id="ex3-de"></h4>
+            </div>
+        </div>
+    </div>
+    <div class="buttons">
+        <button id="back-btn" disabled>Back</button>
+        <button id="tts-btn" class="tts-button">Speak</button>
+        <button id="next-btn">Next</button>
+    </div>
 
-  <script>
-    const card = document.getElementById("flashcard");
-    let touchHandled = false;
+    <script>
+        const verbs = [
+            {
+                en: { verb: "to be", ex1: "I am happy.", ex2: "You are tired.", ex3: "He is here." },
+                de: { verb: "sein", ex1: "Ich bin glücklich.", ex2: "Du bist müde.", ex3: "Er ist hier." }
+            },
+            {
+                en: { verb: "to have", ex1: "I have a book.", ex2: "You have time.", ex3: "He is hungry." },
+                de: { verb: "haben", ex1: "Ich habe ein Buch.", ex2: "Du hast Zeit.", ex3: "Er hat Hunger." }
+            },
+            {
+                en: { verb: "to become", ex1: "I will become a doctor.", ex2: "You are becoming stronger.", ex3: "It is becoming big." },
+                de: { verb: "werden", ex1: "Ich werde Arzt.", ex2: "Du wirst stärker.", ex3: "Es wird groß." }
+            },
+            {
+                en: { verb: "to go", ex1: "I am going to school.", ex2: "You are going home.", ex3: "She is going to the cinema." },
+                de: { verb: "gehen", ex1: "Ich gehe zur Schule.", ex2: "Du gehst nach Hause.", ex3: "Sie geht ins Kino." }
+            },
+            {
+                en: { verb: "to come", ex1: "I am coming later.", ex2: "You are coming with us.", ex3: "He is coming tomorrow." },
+                de: { verb: "kommen", ex1: "Ich komme später.", ex2: "Du kommst mit uns.", ex3: "Er kommt morgen." }
+            },
+            {
+                en: { verb: "to do/make", ex1: "I am doing homework.", ex2: "You are making a cake.", ex3: "She is making mistakes." },
+                de: { verb: "machen", ex1: "Ich mache Hausaufgaben.", ex2: "Du machst einen Kuchen.", ex3: "Sie macht Fehler." }
+            },
+            {
+                en: { verb: "to know", ex1: "I know the answer.", ex2: "You know everything.", ex3: "He knows nothing." },
+                de: { verb: "wissen", ex1: "Ich weiß die Antwort.", ex2: "Du weißt alles.", ex3: "Er weiß nichts." }
+            },
+            {
+                en: { verb: "to think", ex1: "I am thinking of you.", ex2: "You think too much.", ex3: "She thinks differently." },
+                de: { verb: "denken", ex1: "Ich denke an dich.", ex2: "Du denkst zu viel.", ex3: "Sie denkt anders." }
+            },
+            {
+                en: { verb: "to learn", ex1: "I am learning German.", ex2: "You learn quickly.", ex3: "He learns a lot." },
+                de: { verb: "lernen", ex1: "Ich lerne Deutsch.", ex2: "Du lernst schnell.", ex3: "Er lernt viel." }
+            },
+            {
+                en: { verb: "to speak", ex1: "I speak English.", ex2: "You speak loudly.", ex3: "She speaks slowly." },
+                de: { verb: "sprechen", ex1: "Ich spreche Englisch.", ex2: "Du sprichst laut.", ex3: "Sie spricht langsam." }
+            },
+            {
+                en: { verb: "to write", ex1: "I am writing a letter.", ex2: "You write well.", ex3: "He writes every day." },
+                de: { verb: "schreiben", ex1: "Ich schreibe einen Brief.", ex2: "Du schreibst gut.", ex3: "Er schreibt jeden Tag." }
+            },
+            {
+                en: { verb: "to read", ex1: "I am reading a book.", ex2: "You are reading a newspaper.", ex3: "She reads comics." },
+                de: { verb: "lesen", ex1: "Ich lese ein Buch.", ex2: "Du liest Zeitung.", ex3: "Sie liest Comics." }
+            },
+            {
+                en: { verb: "to see", ex1: "I am watching a movie.", ex2: "You see the sky.", ex3: "He sees us." },
+                de: { verb: "sehen", ex1: "Ich sehe einen Film.", ex2: "Du siehst den Himmel.", ex3: "Er sieht uns." }
+            },
+            {
+                en: { verb: "to hear/listen", ex1: "I am listening to music.", ex2: "You hear a noise.", ex3: "She listens to the radio." },
+                de: { verb: "hören", ex1: "Ich höre Musik.", ex2: "Du hörst ein Geräusch.", ex3: "Sie hört Radio." }
+            },
+            {
+                en: { verb: "to eat", ex1: "I am eating pizza.", ex2: "You are eating an apple.", ex3: "He eats vegetables." },
+                de: { verb: "essen", ex1: "Ich esse Pizza.", ex2: "Du isst Apfel.", ex3: "Er isst Gemüse." }
+            },
+            {
+                en: { verb: "to drink", ex1: "I am drinking water.", ex2: "You are drinking coffee.", ex3: "She drinks juice." },
+                de: { verb: "trinken", ex1: "Ich trinke Wasser.", ex2: "Du trinkst Kaffee.", ex3: "Sie trinkt Saft." }
+            },
+            {
+                en: { verb: "to sleep", ex1: "I am sleeping well.", ex2: "You sleep for a long time.", ex3: "He sleeps deeply." },
+                de: { verb: "schlafen", ex1: "Ich schlafe gut.", ex2: "Du schläfst lange.", ex3: "Er schläft tief." }
+            },
+            {
+                en: { verb: "to work", ex1: "I am working today.", ex2: "You work a lot.", ex3: "She works hard." },
+                de: { verb: "arbeiten", ex1: "Ich arbeite heute.", ex2: "Du arbeitest viel.", ex3: "Sie arbeitet hart." }
+            },
+            {
+                en: { verb: "to play", ex1: "I am playing soccer.", ex2: "You are playing cards.", ex3: "He plays the piano." },
+                de: { verb: "spielen", ex1: "Ich spiele Fußball.", ex2: "Du spielst Karten.", ex3: "Er spielt Klavier." }
+            },
+            {
+                en: { verb: "to help", ex1: "I am helping you.", ex2: "You are helping your mother.", ex3: "She helps the neighbor." },
+                de: { verb: "helfen", ex1: "Ich helfe dir.", ex2: "Du hilfst deiner Mutter.", ex3: "Sie hilft dem Nachbarn." }
+            }
+        ];
 
-    // Flip on touchstart
-    card.addEventListener("touchstart", () => {
-      card.classList.toggle("flipped");
-      touchHandled = true;
-    }, { passive: true });
+        let currentIndex = 0;
+        const flashcard = document.getElementById('flashcard');
+        const nextBtn = document.getElementById('next-btn');
+        const backBtn = document.getElementById('back-btn');
+        const ttsBtn = document.getElementById('tts-btn');
+        const progressBar = document.getElementById('progress-bar');
 
-    // Flip on click (ignore if just touched)
-    card.addEventListener("click", () => {
-      if (touchHandled) {
-        touchHandled = false;
-        return;
-      }
-      card.classList.toggle("flipped");
-    });
-  </script>
+        function updateCard() {
+            const front = document.getElementById('front');
+            const back = document.getElementById('back');
+            const verbEn = document.getElementById('verb-en');
+            const verbDe = document.getElementById('verb-de');
+            const ex1En = document.getElementById('ex1-en');
+            const ex2En = document.getElementById('ex2-en');
+            const ex3En = document.getElementById('ex3-en');
+            const ex1De = document.getElementById('ex1-de');
+            const ex2De = document.getElementById('ex2-de');
+            const ex3De = document.getElementById('ex3-de');
+
+            verbEn.textContent = verbs[currentIndex].en.verb;
+            ex1En.textContent = verbs[currentIndex].en.ex1;
+            ex2En.textContent = verbs[currentIndex].en.ex2;
+            ex3En.textContent = verbs[currentIndex].en.ex3;
+            verbDe.textContent = verbs[currentIndex].de.verb;
+            ex1De.textContent = verbs[currentIndex].de.ex1;
+            ex2De.textContent = verbs[currentIndex].de.ex2;
+            ex3De.textContent = verbs[currentIndex].de.ex3;
+
+            backBtn.disabled = currentIndex === 0;
+            nextBtn.disabled = currentIndex === verbs.length - 1;
+
+            // Update progress bar
+            const progress = ((currentIndex + 1) / verbs.length) * 100;
+            progressBar.style.width = `${progress}%`;
+        }
+
+        function flipCard() {
+            flashcard.classList.toggle('flipped');
+        }
+
+        function slideCard(direction) {
+            flashcard.classList.add(`slide-${direction}`);
+            setTimeout(() => {
+                flashcard.classList.remove(`slide-${direction}`);
+                flashcard.style.left = '0';
+                if (direction === 'left') {
+                    currentIndex = Math.max(0, currentIndex - 1);
+                } else {
+                    currentIndex = Math.min(verbs.length - 1, currentIndex + 1);
+                }
+                flashcard.classList.remove('flipped');
+                updateCard();
+            }, 500);
+        }
+
+        function speakText() {
+            const isFlipped = flashcard.classList.contains('flipped');
+            const lang = isFlipped ? 'de-DE' : 'en-US';
+            const verb = isFlipped ? verbs[currentIndex].de.verb : verbs[currentIndex].en.verb;
+            const ex1 = isFlipped ? verbs[currentIndex].de.ex1 : verbs[currentIndex].en.ex1;
+            const ex2 = isFlipped ? verbs[currentIndex].de.ex2 : verbs[currentIndex].en.ex2;
+            const ex3 = isFlipped ? verbs[currentIndex].de.ex3 : verbs[currentIndex].en.ex3;
+
+            const text = `${verb}. ${ex1} ${ex2} ${ex3}`;
+            const utterance = new SpeechSynthesisUtterance(text);
+            utterance.lang = lang;
+            window.speechSynthesis.speak(utterance);
+        }
+
+        flashcard.addEventListener('click', flipCard);
+        flashcard.addEventListener('touchstart', flipCard);
+        nextBtn.addEventListener('click', () => slideCard('right'));
+        backBtn.addEventListener('click', () => slideCard('left'));
+        ttsBtn.addEventListener('click', speakText);
+
+        updateCard();
+    </script>
 </body>
 </html>
-```
-
----
-
-### ✅ Works On:
-
-* Mobile touchscreens (e.g. iPhone, Android)
-* Desktop (clicking)
-
-You can copy-paste this file and open it directly in a browser — no external dependencies.
-
-Let me know if you'd like navigation buttons, swiping between multiple verbs, or random shuffle — all still possible in one file.
