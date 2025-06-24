@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>20 Deutsche Verben</title>
+  <style>
+    body {
+      font-family: sans-serif;
+      background-color: #f0f0f0;
+      padding: 20px;
+      margin: 0;
+    }
+    .slide {
+      display: none;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .slide.active {
+      display: block;
+    }
+    .sentence {
+      margin-bottom: 1rem;
+    }
+    .sentence button {
+      margin-top: 0.3rem;
+    }
+    .nav-buttons {
+      text-align: center;
+      margin-top: 1.5rem;
+    }
+    .nav-buttons button {
+      padding: 0.5rem 1rem;
+      margin: 0 1rem;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    .de { font-weight: bold; }
+    .en { color: #555; }
+  </style>
+</head>
+<body>
+  <h1 style="text-align:center;">20 Most Useful German Verbs</h1>
+
+  <div id="slides-container"></div>
+
+  <div class="nav-buttons">
+    <button onclick="prevSlide()">⏮️ Anterior</button>
+    <button onclick="nextSlide()">Siguiente ⏭️</button>
+  </div>
+
+  <script>
+    const verbs = [
+      {
+        verb: "sein", meaning: "to be", examples: {
+          ich: ["Ich bin müde.", "I am tired."],
+          du: ["Du bist müde.", "You are tired."],
+          er: ["Er ist müde.", "He is tired."],
+          wir: ["Wir sind müde.", "We are tired."],
+          ihr: ["Ihr seid müde.", "You all are tired."],
+          sie: ["Sie sind müde.", "They are tired."]
+        }
+      },
+      {
+        verb: "haben", meaning: "to have", examples: {
+          ich: ["Ich habe ein Buch.", "I have a book."],
+          du: ["Du hast ein Buch.", "You have a book."],
+          er: ["Er hat ein Buch.", "He has a book."],
+          wir: ["Wir haben ein Buch.", "We have a book."],
+          ihr: ["Ihr habt ein Buch.", "You all have a book."],
+          sie: ["Sie haben ein Buch.", "They have a book."]
+        }
+      },
+      {
+        verb: "gehen", meaning: "to go", examples: {
+          ich: ["Ich gehe nach Hause.", "I go home."],
+          du: ["Du gehst nach Hause.", "You go home."],
+          er: ["Er geht nach Hause.", "He goes home."],
+          wir: ["Wir gehen nach Hause.", "We go home."],
+          ihr: ["Ihr geht nach Hause.", "You all go home."],
+          sie: ["Sie gehen nach Hause.", "They go home."]
+        }
+      },
+      {
+        verb: "kommen", meaning: "to come", examples: {
+          ich: ["Ich komme aus Berlin.", "I come from Berlin."],
+          du: ["Du kommst aus Berlin.", "You come from Berlin."],
+          er: ["Er kommt aus Berlin.", "He comes from Berlin."],
+          wir: ["Wir kommen aus Berlin.", "We come from Berlin."],
+          ihr: ["Ihr kommt aus Berlin.", "You all come from Berlin."],
+          sie: ["Sie kommen aus Berlin.", "They come from Berlin."]
+        }
+      },
+      {
+        verb: "machen", meaning: "to do/make", examples: {
+          ich: ["Ich mache Frühstück.", "I make breakfast."],
+          du: ["Du machst Frühstück.", "You make breakfast."],
+          er: ["Er macht Frühstück.", "He makes breakfast."],
+          wir: ["Wir machen Frühstück.", "We make breakfast."],
+          ihr: ["Ihr macht Frühstück.", "You all make breakfast."],
+          sie: ["Sie machen Frühstück.", "They make breakfast."]
+        }
+      },
+      {
+        verb: "sehen", meaning: "to see", examples: {
+          ich: ["Ich sehe den Hund.", "I see the dog."],
+          du: ["Du siehst den Hund.", "You see the dog."],
+          er: ["Er sieht den Hund.", "He sees the dog."],
+          wir: ["Wir sehen den Hund.", "We see the dog."],
+          ihr: ["Ihr seht den Hund.", "You all see the dog."],
+          sie: ["Sie sehen den Hund.", "They see the dog."]
+        }
+      },
+      {
+        verb: "geben", meaning: "to give", examples: {
+          ich: ["Ich gebe dir das Buch.", "I give you the book."],
+          du: ["Du gibst mir das Buch.", "You give me the book."],
+          er: ["Er gibt mir das Buch.", "He gives me the book."],
+          wir: ["Wir geben dir das Buch.", "We give you the book."],
+          ihr: ["Ihr gebt mir das Buch.", "You all give me the book."],
+          sie: ["Sie geben mir das Buch.", "They give me the book."]
+        }
+      },
+      {
+        verb: "nehmen", meaning: "to take", examples: {
+          ich: ["Ich nehme das Geld.", "I take the money."],
+          du: ["Du nimmst das Geld.", "You take the money."],
+          er: ["Er nimmt das Geld.", "He takes the money."],
+          wir: ["Wir nehmen das Geld.", "We take the money."],
+          ihr: ["Ihr nehmt das Geld.", "You all take the money."],
+          sie: ["Sie nehmen das Geld.", "They take the money."]
+        }
+      },
+      {
+        verb: "sprechen", meaning: "to speak", examples: {
+          ich: ["Ich spreche Deutsch.", "I speak German."],
+          du: ["Du sprichst Deutsch.", "You speak German."],
+          er: ["Er spricht Deutsch.", "He speaks German."],
+          wir: ["Wir sprechen Deutsch.", "We speak German."],
+          ihr: ["Ihr sprecht Deutsch.", "You all speak German."],
+          sie: ["Sie sprechen Deutsch.", "They speak German."]
+        }
+      },
+      {
+        verb: "lernen", meaning: "to learn", examples: {
+          ich: ["Ich lerne Deutsch.", "I learn German."],
+          du: ["Du lernst Deutsch.", "You learn German."],
+          er: ["Er lernt Deutsch.", "He learns German."],
+          wir: ["Wir lernen Deutsch.", "We learn German."],
+          ihr: ["Ihr lernt Deutsch.", "You all learn German."],
+          sie: ["Sie lernen Deutsch.", "They learn German."]
+        }
+      }
+    ];
+
+    const container = document.getElementById("slides-container");
+
+    verbs.forEach((v, index) => {
+      const slide = document.createElement("div");
+      slide.className = `slide${index === 0 ? " active" : ""}`;
+      slide.innerHTML = `
+        <h2>${index + 1}. <em>${v.verb}</em> – ${v.meaning}</h2>
+        ${Object.entries(v.examples).map(([p, [de, en]]) => `
+          <div class="sentence">
+            <div><strong>${p}</strong>: ${de}<br><em>${en}</em></div>
+            <button onclick="speakBoth('${de}', '${en}')">▶️ Escuchar</button>
+          </div>
+        `).join("")}
+      `;
+      container.appendChild(slide);
+    });
+
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+
+    function showSlide(n) {
+      slides[currentSlide].classList.remove("active");
+      currentSlide = (n + slides.length) % slides.length;
+      slides[currentSlide].classList.add("active");
+    }
+
+    function nextSlide() {
+      showSlide(currentSlide + 1);
+    }
+
+    function prevSlide() {
+      showSlide(currentSlide - 1);
+    }
+
+    function speakBoth(german, english) {
+      const utter1 = new SpeechSynthesisUtterance(german);
+      utter1.lang = "de-DE";
+      const utter2 = new SpeechSynthesisUtterance(english);
+      utter2.lang = "en-US";
+      utter1.onend = () => speechSynthesis.speak(utter2);
+      speechSynthesis.speak(utter1);
+    }
+  </script>
+</body>
+</html>
