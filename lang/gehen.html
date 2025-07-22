@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Gehen – To Go (Enhanced Slider)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h2 {
+      color: white;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
+
+    .slider {
+      width: 90%;
+      max-width: 700px;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      position: relative;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .pronoun {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4a5568;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .sentence {
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .sentence:hover {
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .german {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+      color: #2d3748;
+    }
+
+    .english {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      color: #2d3748;
+    }
+
+    .spanish {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      color: #2d3748;
+    }
+
+    .flags {
+      font-size: 1.8rem;
+      margin-right: 10px;
+    }
+
+    .audio-btn {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .audio-btn:hover {
+      background: rgba(255,255,255,1);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .navigation {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-button {
+      padding: 15px 25px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .nav-button:active {
+      transform: translateY(0);
+    }
+
+    .link-button {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      padding: 12px 20px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .link-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      text-decoration: none;
+      color: white;
+    }
+
+    .slide-counter {
+      background: rgba(102, 126, 234, 0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: #4a5568;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .slider {
+        padding: 25px;
+      }
+      
+      .sentence {
+        font-size: 1.2rem;
+      }
+      
+      .pronoun {
+        font-size: 1.5rem;
+      }
+      
+      .navigation {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🚶‍♂️ <i>gehen</i> – to go</h2>
+
+  <div class="slider">
+
+    <div class="slide active">
+      <div class="pronoun">ich</div>
+      <div class="sentence german" onclick="speak('Ich gehe nach Hause', 'de-DE')">
+        <span class="flags">🇩🇪</span>Ich gehe nach Hause.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Ich gehe nach Hause', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('I go home', 'en-US')">
+        <span class="flags">🇺🇸</span>I go home.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('I go home', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Yo voy a casa', 'es-ES')">
+        <span class="flags">🇪🇸</span>Yo voy a casa.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Yo voy a casa', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">du</div>
+      <div class="sentence german" onclick="speak('Du gehst nach Hause', 'de-DE')">
+        <span class="flags">🇩🇪</span>Du gehst nach Hause.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Du gehst nach Hause', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('You go home', 'en-US')">
+        <span class="flags">🇺🇸</span>You go home.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('You go home', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Tú vas a casa', 'es-ES')">
+        <span class="flags">🇪🇸</span>Tú vas a casa.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Tú vas a casa', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">er</div>
+      <div class="sentence german" onclick="speak('Er geht nach Hause', 'de-DE')">
+        <span class="flags">🇩🇪</span>Er geht nach Hause.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Er geht nach Hause', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('He goes home', 'en-US')">
+        <span class="flags">🇺🇸</span>He goes home.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('He goes home', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Él va a casa', 'es-ES')">
+        <span class="flags">🇪🇸</span>Él va a casa.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Él va a casa', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">wir</div>
+      <div class="sentence german" onclick="speak('Wir gehen nach Hause', 'de-DE')">
+        <span class="flags">🇩🇪</span>Wir gehen nach Hause.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Wir gehen nach Hause', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('We go home', 'en-US')">
+        <span class="flags">🇺🇸</span>We go home.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('We go home', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Nosotros vamos a casa', 'es-ES')">
+        <span class="flags">🇪🇸</span>Nosotros vamos a casa.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Nosotros vamos a casa', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">ihr</div>
+      <div class="sentence german" onclick="speak('Ihr geht nach Hause', 'de-DE')">
+        <span class="flags">🇩🇪</span>Ihr geht nach Hause.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Ihr geht nach Hause', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('You all go home', 'en-US')">
+        <span class="flags">🇺🇸</span>You all go home.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('You all go home', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Ustedes van a casa', 'es-ES')">
+        <span class="flags">🇪🇸</span>Ustedes van a casa.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Ustedes van a casa', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">sie</div>
+      <div class="sentence german" onclick="speak('Sie gehen nach Hause', 'de-DE')">
+        <span class="flags">🇩🇪</span>Sie gehen nach Hause.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Sie gehen nach Hause', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('They go home', 'en-US')">
+        <span class="flags">🇺🇸</span>They go home.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('They go home', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Ellos van a casa', 'es-ES')">
+        <span class="flags">🇪🇸</span>Ellos van a casa.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Ellos van a casa', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+      <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">6</span>
+      </div>
+      <button class="nav-button" onclick="nextSlide()">Siguiente ➡️</button>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <a href="https://giomont.github.io/lang/gehen.html" target="_blank" class="link-button">
+        🌐 giomont.github.io/lang/gehen.html
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      document.getElementById('current-slide').textContent = index + 1;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function speak(text, lang) {
+      if ('speechSynthesis' in window) {
+        // Stop any current speech
+        speechSynthesis.cancel();
+        
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = 0.8; // Slightly slower for better comprehension
+        utterance.volume = 0.8;
+        
+        // Add a slight delay to ensure previous speech is cancelled
+        setTimeout(() => {
+          speechSynthesis.speak(utterance);
+        }, 100);
+      } else {
+        alert('Speech synthesis not supported in this browser');
+      }
+    }
+
+    // Initialize slide counter
+    document.getElementById('total-slides').textContent = totalSlides;
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    // Initialize
+    showSlide(0);
+  </script>
+
+</body>
+</html>
