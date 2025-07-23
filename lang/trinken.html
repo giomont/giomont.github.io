@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Verb Learning - Essen</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #ff6b6b, #ffa07a);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: #333;
+        }
+
+        .header {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .verb-title {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: white;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+            margin-bottom: 10px;
+        }
+
+        .verb-meaning {
+            font-size: 1.5rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 30px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pronoun-section {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+
+        .pronoun-title {
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .sentence-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            margin-bottom: 15px;
+            border-radius: 15px;
+            font-size: 1.3rem;
+            font-weight: 500;
+            transition: transform 0.2s ease;
+            cursor: pointer;
+        }
+
+        .sentence-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+
+        .german { background: #ffb3ba; }
+        .english { background: #bae1ff; }
+        .spanish { background: #ffffba; }
+
+        .flag {
+            font-size: 1.5rem;
+            margin-right: 15px;
+        }
+
+        .audio-btn {
+            background: #ff6b6b;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            color: white;
+            font-size: 1.2rem;
+            position: relative;
+        }
+
+        .audio-btn:hover {
+            background: #ff5252;
+            transform: scale(1.1);
+        }
+
+        .audio-btn:active {
+            background: #4caf50;
+            transform: scale(0.95);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 20px;
+        }
+
+        .nav-btn {
+            background: #ff6b6b;
+            color: white;
+            border: none;
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .nav-btn:hover {
+            background: #ff5252;
+            transform: translateY(-1px);
+        }
+
+        .nav-btn:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        .page-indicator {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 10px 20px;
+            border-radius: 20px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .url-bar {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 20px;
+            font-size: 1rem;
+            color: white;
+            text-align: center;
+            margin-top: 15px;
+        }
+
+        .additional-sentences {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 20px;
+            padding: 25px;
+            margin-top: 20px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #333;
+        }
+
+        @media (max-width: 480px) {
+            .verb-title { font-size: 2rem; }
+            .pronoun-title { font-size: 1.5rem; }
+            .sentence-card { font-size: 1.1rem; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="verb-title">🍽️ essen</div>
+        <div class="verb-meaning">– to eat</div>
+    </div>
+
+    <div class="main-content">
+        <div class="pronoun-section">
+            <div class="pronoun-title">ICH</div>
+            
+            <div class="sentence-card german" onclick="playAudio('ich-trinke-wasser')">
+                <div>
+                    <span class="flag">🇩🇪</span>
+                    Ich trinke Wasser.
+                </div>
+                <button class="audio-btn">🔊</button>
+            </div>
+
+            <div class="sentence-card english" onclick="playAudio('i-drink-water')">
+                <div>
+                    <span class="flag">🇺🇸</span>
+                    I drink water.
+                </div>
+                <button class="audio-btn">🔊</button>
+            </div>
+
+            <div class="sentence-card spanish" onclick="playAudio('yo-bebo-agua')">
+                <div>
+                    <span class="flag">🇪🇸</span>
+                    Yo bebo agua.
+                </div>
+                <button class="audio-btn">🔊</button>
+            </div>
+        </div>
+
+        <div class="additional-sentences">
+            <div class="section-title">Translation Practice</div>
+            
+            <div class="sentence-card english" onclick="playAudio('drinking-water-is-good-en')">
+                <div>
+                    <span class="flag">🇺🇸</span>
+                    Drinking water is good for the body.
+                </div>
+                <button class="audio-btn">🔊</button>
+            </div>
+
+            <div class="sentence-card spanish" onclick="playAudio('drinking-water-is-good-es')">
+                <div>
+                    <span class="flag">🇪🇸</span>
+                    Beber agua es bueno para el cuerpo.
+                </div>
+                <button class="audio-btn">🔊</button>
+            </div>
+
+            <div class="sentence-card german" onclick="playAudio('drinking-water-is-good-de')">
+                <div>
+                    <span class="flag">🇩🇪</span>
+                    Wasser trinken ist gut für den Körper.
+                </div>
+                <button class="audio-btn">🔊</button>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn" onclick="previousPage()">⬅️ Anterior</button>
+            <div class="page-indicator">1 / 6</div>
+            <button class="nav-btn" onclick="nextPage()">Siguiente ➡️</button>
+        </div>
+
+        <div class="url-bar">giomont.github.io/lang/trinken.html</div>
+    </div>
+
+    <script>
+        // Verb data for different pages
+        const verbData = [
+            {
+                verb: "trinken",
+                emoji: "💧",
+                meaning: "– to drink",
+                mainSentences: {
+                    german: { text: "Ich trinke Wasser", audio: "ich-trinke-wasser" },
+                    english: { text: "I drink water", audio: "i-drink-water" },
+                    spanish: { text: "Yo bebo agua", audio: "yo-bebo-agua" }
+                },
+                practiceTitle: "Translation Practice",
+                practiceSentences: [
+                    { lang: "english", flag: "🇺🇸", text: "Drinking water is good for the body", audio: "drinking-water-is-good-en" },
+                    { lang: "spanish", flag: "🇪🇸", text: "Beber agua es bueno para el cuerpo", audio: "drinking-water-is-good-es" },
+                    { lang: "german", flag: "🇩🇪", text: "Wasser trinken ist gut für den Körper", audio: "drinking-water-is-good-de" }
+                ]
+            },
+            {
+                verb: "essen",
+                emoji: "🍽️",
+                meaning: "– to eat",
+                mainSentences: {
+                    german: { text: "Ich esse einen Apfel", audio: "ich-esse-apfel" },
+                    english: { text: "I eat an apple", audio: "i-eat-apple" },
+                    spanish: { text: "Yo como una manzana", audio: "yo-como-manzana" }
+                },
+                practiceTitle: "Translation Practice",
+                practiceSentences: [
+                    { lang: "english", flag: "🇺🇸", text: "Eating fruits is healthy", audio: "eating-fruits-healthy-en" },
+                    { lang: "spanish", flag: "🇪🇸", text: "Comer frutas es saludable", audio: "eating-fruits-healthy-es" },
+                    { lang: "german", flag: "🇩🇪", text: "Obst essen ist gesund", audio: "eating-fruits-healthy-de" }
+                ]
+            },
+            {
+                verb: "lernen",
+                emoji: "📚",
+                meaning: "– to learn",
+                mainSentences: {
+                    german: { text: "Ich lerne Deutsch", audio: "ich-lerne-deutsch" },
+                    english: { text: "I learn German", audio: "i-learn-german" },
+                    spanish: { text: "Yo aprendo alemán", audio: "yo-aprendo-aleman" }
+                },
+                practiceTitle: "Translation Practice",
+                practiceSentences: [
+                    { lang: "english", flag: "🇺🇸", text: "Learning languages is fun", audio: "learning-languages-fun-en" },
+                    { lang: "spanish", flag: "🇪🇸", text: "Aprender idiomas es divertido", audio: "learning-languages-fun-es" },
+                    { lang: "german", flag: "🇩🇪", text: "Sprachen lernen macht Spaß", audio: "learning-languages-fun-de" }
+                ]
+            },
+            {
+                verb: "gehen",
+                emoji: "🚶",
+                meaning: "– to go",
+                mainSentences: {
+                    german: { text: "Ich gehe zur Schule", audio: "ich-gehe-schule" },
+                    english: { text: "I go to school", audio: "i-go-school" },
+                    spanish: { text: "Yo voy a la escuela", audio: "yo-voy-escuela" }
+                },
+                practiceTitle: "Translation Practice",
+                practiceSentences: [
+                    { lang: "english", flag: "🇺🇸", text: "Going for walks is relaxing", audio: "going-walks-relaxing-en" },
+                    { lang: "spanish", flag: "🇪🇸", text: "Caminar es relajante", audio: "caminar-relajante-es" },
+                    { lang: "german", flag: "🇩🇪", text: "Spazieren gehen ist entspannend", audio: "spazieren-entspannend-de" }
+                ]
+            },
+            {
+                verb: "arbeiten",
+                emoji: "💼",
+                meaning: "– to work",
+                mainSentences: {
+                    german: { text: "Ich arbeite im Büro", audio: "ich-arbeite-buero" },
+                    english: { text: "I work in the office", audio: "i-work-office" },
+                    spanish: { text: "Yo trabajo en la oficina", audio: "yo-trabajo-oficina" }
+                },
+                practiceTitle: "Translation Practice",
+                practiceSentences: [
+                    { lang: "english", flag: "🇺🇸", text: "Working together is important", audio: "working-together-important-en" },
+                    { lang: "spanish", flag: "🇪🇸", text: "Trabajar juntos es importante", audio: "trabajar-juntos-importante-es" },
+                    { lang: "german", flag: "🇩🇪", text: "Zusammenarbeiten ist wichtig", audio: "zusammenarbeiten-wichtig-de" }
+                ]
+            },
+            {
+                verb: "sprechen",
+                emoji: "🗣️",
+                meaning: "– to speak",
+                mainSentences: {
+                    german: { text: "Ich spreche drei Sprachen", audio: "ich-spreche-sprachen" },
+                    english: { text: "I speak three languages", audio: "i-speak-languages" },
+                    spanish: { text: "Yo hablo tres idiomas", audio: "yo-hablo-idiomas" }
+                },
+                practiceTitle: "Translation Practice",
+                practiceSentences: [
+                    { lang: "english", flag: "🇺🇸", text: "Speaking clearly helps communication", audio: "speaking-clearly-helps-en" },
+                    { lang: "spanish", flag: "🇪🇸", text: "Hablar claro ayuda la comunicación", audio: "hablar-claro-ayuda-es" },
+                    { lang: "german", flag: "🇩🇪", text: "Klar sprechen hilft der Kommunikation", audio: "klar-sprechen-hilft-de" }
+                ]
+            }
+        ];
+
+        let currentPage = 0;
+        const totalPages = verbData.length;
+
+        // Audio texts for all verbs
+        const audioTexts = {
+            // Trinken
+            'ich-trinke-wasser': { text: 'Ich trinke Wasser', lang: 'de-DE' },
+            'i-drink-water': { text: 'I drink water', lang: 'en-US' },
+            'yo-bebo-agua': { text: 'Yo bebo agua', lang: 'es-ES' },
+            'drinking-water-is-good-en': { text: 'Drinking water is good for the body', lang: 'en-US' },
+            'drinking-water-is-good-es': { text: 'Beber agua es bueno para el cuerpo', lang: 'es-ES' },
+            'drinking-water-is-good-de': { text: 'Wasser trinken ist gut für den Körper', lang: 'de-DE' },
+            
+            // Essen
+            'ich-esse-apfel': { text: 'Ich esse einen Apfel', lang: 'de-DE' },
+            'i-eat-apple': { text: 'I eat an apple', lang: 'en-US' },
+            'yo-como-manzana': { text: 'Yo como una manzana', lang: 'es-ES' },
+            'eating-fruits-healthy-en': { text: 'Eating fruits is healthy', lang: 'en-US' },
+            'eating-fruits-healthy-es': { text: 'Comer frutas es saludable', lang: 'es-ES' },
+            'eating-fruits-healthy-de': { text: 'Obst essen ist gesund', lang: 'de-DE' },
+            
+            // Lernen
+            'ich-lerne-deutsch': { text: 'Ich lerne Deutsch', lang: 'de-DE' },
+            'i-learn-german': { text: 'I learn German', lang: 'en-US' },
+            'yo-aprendo-aleman': { text: 'Yo aprendo alemán', lang: 'es-ES' },
+            'learning-languages-fun-en': { text: 'Learning languages is fun', lang: 'en-US' },
+            'learning-languages-fun-es': { text: 'Aprender idiomas es divertido', lang: 'es-ES' },
+            'learning-languages-fun-de': { text: 'Sprachen lernen macht Spaß', lang: 'de-DE' },
+            
+            // Gehen
+            'ich-gehe-schule': { text: 'Ich gehe zur Schule', lang: 'de-DE' },
+            'i-go-school': { text: 'I go to school', lang: 'en-US' },
+            'yo-voy-escuela': { text: 'Yo voy a la escuela', lang: 'es-ES' },
+            'going-walks-relaxing-en': { text: 'Going for walks is relaxing', lang: 'en-US' },
+            'caminar-relajante-es': { text: 'Caminar es relajante', lang: 'es-ES' },
+            'spazieren-entspannend-de': { text: 'Spazieren gehen ist entspannend', lang: 'de-DE' },
+            
+            // Arbeiten
+            'ich-arbeite-buero': { text: 'Ich arbeite im Büro', lang: 'de-DE' },
+            'i-work-office': { text: 'I work in the office', lang: 'en-US' },
+            'yo-trabajo-oficina': { text: 'Yo trabajo en la oficina', lang: 'es-ES' },
+            'working-together-important-en': { text: 'Working together is important', lang: 'en-US' },
+            'trabajar-juntos-importante-es': { text: 'Trabajar juntos es importante', lang: 'es-ES' },
+            'zusammenarbeiten-wichtig-de': { text: 'Zusammenarbeiten ist wichtig', lang: 'de-DE' },
+            
+            // Sprechen
+            'ich-spreche-sprachen': { text: 'Ich spreche drei Sprachen', lang: 'de-DE' },
+            'i-speak-languages': { text: 'I speak three languages', lang: 'en-US' },
+            'yo-hablo-idiomas': { text: 'Yo hablo tres idiomas', lang: 'es-ES' },
+            'speaking-clearly-helps-en': { text: 'Speaking clearly helps communication', lang: 'en-US' },
+            'hablar-claro-ayuda-es': { text: 'Hablar claro ayuda la comunicación', lang: 'es-ES' },
+            'klar-sprechen-hilft-de': { text: 'Klar sprechen hilft der Kommunikation', lang: 'de-DE' }
+        };
+
+        function updatePage() {
+            const data = verbData[currentPage];
+            
+            // Update header
+            document.querySelector('.verb-title').innerHTML = `${data.emoji} ${data.verb}`;
+            document.querySelector('.verb-meaning').textContent = data.meaning;
+            
+            // Update main sentences
+            const cards = document.querySelectorAll('.pronoun-section .sentence-card');
+            cards[0].innerHTML = `
+                <div>
+                    <span class="flag">🇩🇪</span>
+                    ${data.mainSentences.german.text}
+                </div>
+                <button class="audio-btn">🔊</button>
+            `;
+            cards[0].onclick = () => playAudio(data.mainSentences.german.audio);
+            
+            cards[1].innerHTML = `
+                <div>
+                    <span class="flag">🇺🇸</span>
+                    ${data.mainSentences.english.text}
+                </div>
+                <button class="audio-btn">🔊</button>
+            `;
+            cards[1].onclick = () => playAudio(data.mainSentences.english.audio);
+            
+            cards[2].innerHTML = `
+                <div>
+                    <span class="flag">🇪🇸</span>
+                    ${data.mainSentences.spanish.text}
+                </div>
+                <button class="audio-btn">🔊</button>
+            `;
+            cards[2].onclick = () => playAudio(data.mainSentences.spanish.audio);
+            
+            // Update practice sentences
+            document.querySelector('.section-title').textContent = data.practiceTitle;
+            const practiceCards = document.querySelectorAll('.additional-sentences .sentence-card');
+            
+            data.practiceSentences.forEach((sentence, index) => {
+                practiceCards[index].className = `sentence-card ${sentence.lang}`;
+                practiceCards[index].innerHTML = `
+                    <div>
+                        <span class="flag">${sentence.flag}</span>
+                        ${sentence.text}
+                    </div>
+                    <button class="audio-btn">🔊</button>
+                `;
+                practiceCards[index].onclick = () => playAudio(sentence.audio);
+            });
+            
+            // Update page indicator
+            document.querySelector('.page-indicator').textContent = `${currentPage + 1} / ${totalPages}`;
+            
+            // Update URL
+            document.querySelector('.url-bar').textContent = `giomont.github.io/lang/${data.verb}.html`;
+            
+            // Update navigation buttons
+            document.querySelector('.nav-btn:first-child').disabled = currentPage === 0;
+            document.querySelector('.nav-btn:last-child').disabled = currentPage === totalPages - 1;
+        }
+
+        function playAudio(textId) {
+            console.log('Playing audio for:', textId);
+            
+            if (audioTexts[textId] && 'speechSynthesis' in window) {
+                // Stop any current speech
+                speechSynthesis.cancel();
+                
+                // Wait a moment for voices to load
+                const speak = () => {
+                    const utterance = new SpeechSynthesisUtterance(audioTexts[textId].text);
+                    utterance.lang = audioTexts[textId].lang;
+                    utterance.rate = 0.9;
+                    utterance.pitch = 1;
+                    utterance.volume = 1;
+                    
+                    // Get available voices
+                    const voices = speechSynthesis.getVoices();
+                    const targetLang = audioTexts[textId].lang;
+                    
+                    // Find a voice for the target language
+                    const voice = voices.find(v => v.lang.startsWith(targetLang.split('-')[0]));
+                    if (voice) {
+                        utterance.voice = voice;
+                    }
+                    
+                    console.log('Speaking:', audioTexts[textId].text, 'in', targetLang);
+                    speechSynthesis.speak(utterance);
+                };
+                
+                // If voices aren't loaded yet, wait for them
+                if (speechSynthesis.getVoices().length === 0) {
+                    speechSynthesis.onvoiceschanged = () => {
+                        speak();
+                        speechSynthesis.onvoiceschanged = null;
+                    };
+                } else {
+                    speak();
+                }
+            } else {
+                console.log('Speech synthesis not available, using fallback');
+                // Enhanced fallback audio feedback
+                try {
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    
+                    // Create a pleasant notification sound
+                    const oscillator1 = audioContext.createOscillator();
+                    const oscillator2 = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+                    
+                    oscillator1.connect(gainNode);
+                    oscillator2.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+                    
+                    // Create a chord-like sound
+                    oscillator1.frequency.setValueAtTime(523.25, audioContext.currentTime); // C5
+                    oscillator2.frequency.setValueAtTime(659.25, audioContext.currentTime); // E5
+                    
+                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.01, audioContext.currentTime + 0.3);
+                    
+                    oscillator1.start();
+                    oscillator2.start();
+                    oscillator1.stop(audioContext.currentTime + 0.3);
+                    oscillator2.stop(audioContext.currentTime + 0.3);
+                    
+                    console.log('Played fallback audio');
+                } catch (error) {
+                    console.log('Audio not available:', error);
+                    // Visual feedback if no audio at all
+                    const btn = event.target.closest('.sentence-card');
+                    if (btn) {
+                        btn.style.backgroundColor = '#ffeb3b';
+                        setTimeout(() => {
+                            btn.style.backgroundColor = '';
+                        }, 200);
+                    }
+                }
+            }
+        }
+
+        function previousPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                updatePage();
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                updatePage();
+            }
+        }
+
+        // Initialize the page and voices
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load voices
+            if ('speechSynthesis' in window) {
+                // Trigger voice loading
+                speechSynthesis.getVoices();
+                
+                // Add a user interaction requirement for audio
+                let audioEnabled = false;
+                const enableAudio = () => {
+                    if (!audioEnabled) {
+                        // Create a dummy utterance to initialize speech synthesis
+                        const dummy = new SpeechSynthesisUtterance('');
+                        dummy.volume = 0;
+                        speechSynthesis.speak(dummy);
+                        audioEnabled = true;
+                        console.log('Audio enabled');
+                    }
+                };
+                
+                // Enable audio on first user interaction
+                document.addEventListener('click', enableAudio, { once: true });
+                document.addEventListener('touchstart', enableAudio, { once: true });
+            }
+            
+            updatePage();
+        });
+
+        // Add click sound effect
+        document.querySelectorAll('.sentence-card, .nav-btn').forEach(element => {
+            element.addEventListener('click', function() {
+                this.style.transform = 'scale(0.98)';
+                setTimeout(() => {
+                    this.style.transform = '';
+                }, 100);
+            });
+        });
+    </script>
+</body>
+</html>
