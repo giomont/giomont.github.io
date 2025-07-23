@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Essen – To Eat (Enhanced Slider)</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #ff9a56 0%, #ff6b95 100%);
+      margin: 0;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+    }
+
+    h2 {
+      color: white;
+      font-size: 2.5rem;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+      margin-bottom: 30px;
+    }
+
+    .slider {
+      width: 90%;
+      max-width: 700px;
+      background: white;
+      border-radius: 20px;
+      padding: 40px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+      text-align: center;
+      position: relative;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255,255,255,0.2);
+    }
+
+    .slide {
+      display: none;
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .slide.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .pronoun {
+      font-size: 2rem;
+      font-weight: bold;
+      color: #4a5568;
+      margin-bottom: 20px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    .sentence {
+      margin: 15px 0;
+      padding: 15px;
+      border-radius: 12px;
+      font-size: 1.4rem;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    .sentence:hover {
+      transform: scale(1.02);
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .german {
+      background: linear-gradient(135deg, #ff9a9e 0%, #fecfef 100%);
+      color: #2d3748;
+    }
+
+    .english {
+      background: linear-gradient(135deg, #a8edea 0%, #fed6e3 100%);
+      color: #2d3748;
+    }
+
+    .spanish {
+      background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+      color: #2d3748;
+    }
+
+    .flags {
+      font-size: 1.8rem;
+      margin-right: 10px;
+    }
+
+    .audio-btn {
+      position: absolute;
+      right: 15px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.8);
+      border: none;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      font-size: 1.2rem;
+      cursor: pointer;
+      transition: all 0.3s ease;
+    }
+
+    .audio-btn:hover {
+      background: rgba(255,255,255,1);
+      transform: translateY(-50%) scale(1.1);
+    }
+
+    .navigation {
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 15px;
+    }
+
+    .nav-button {
+      padding: 15px 25px;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #ff9a56 0%, #ff6b95 100%);
+      color: white;
+      cursor: pointer;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .nav-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .nav-button:active {
+      transform: translateY(0);
+    }
+
+    .link-button {
+      background: linear-gradient(135deg, #ff6b6b 0%, #ee5a24 100%);
+      padding: 12px 20px;
+      font-size: 1rem;
+      text-decoration: none;
+      color: white;
+      border-radius: 10px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    .link-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+      text-decoration: none;
+      color: white;
+    }
+
+    .slide-counter {
+      background: rgba(255, 154, 86, 0.1);
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: bold;
+      color: #4a5568;
+    }
+
+    @media (max-width: 600px) {
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .slider {
+        padding: 25px;
+      }
+      
+      .sentence {
+        font-size: 1.2rem;
+      }
+      
+      .pronoun {
+        font-size: 1.5rem;
+      }
+      
+      .navigation {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <h2>🍽️ <i>essen</i> – to eat</h2>
+
+  <div class="slider">
+
+    <div class="slide active">
+      <div class="pronoun">ich</div>
+      <div class="sentence german" onclick="speak('Ich esse einen Apfel', 'de-DE')">
+        <span class="flags">🇩🇪</span>Ich esse einen Apfel.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Ich esse einen Apfel', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('I eat an apple', 'en-US')">
+        <span class="flags">🇺🇸</span>I eat an apple.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('I eat an apple', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Yo como una manzana', 'es-ES')">
+        <span class="flags">🇪🇸</span>Yo como una manzana.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Yo como una manzana', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">du</div>
+      <div class="sentence german" onclick="speak('Du isst einen Apfel', 'de-DE')">
+        <span class="flags">🇩🇪</span>Du isst einen Apfel.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Du isst einen Apfel', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('You eat an apple', 'en-US')">
+        <span class="flags">🇺🇸</span>You eat an apple.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('You eat an apple', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Tú comes una manzana', 'es-ES')">
+        <span class="flags">🇪🇸</span>Tú comes una manzana.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Tú comes una manzana', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">er/sie/es</div>
+      <div class="sentence german" onclick="speak('Er isst einen Apfel', 'de-DE')">
+        <span class="flags">🇩🇪</span>Er isst einen Apfel.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Er isst einen Apfel', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('He eats an apple', 'en-US')">
+        <span class="flags">🇺🇸</span>He eats an apple.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('He eats an apple', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Él come una manzana', 'es-ES')">
+        <span class="flags">🇪🇸</span>Él come una manzana.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Él come una manzana', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">wir</div>
+      <div class="sentence german" onclick="speak('Wir essen Äpfel', 'de-DE')">
+        <span class="flags">🇩🇪</span>Wir essen Äpfel.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Wir essen Äpfel', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('We eat apples', 'en-US')">
+        <span class="flags">🇺🇸</span>We eat apples.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('We eat apples', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Nosotros comemos manzanas', 'es-ES')">
+        <span class="flags">🇪🇸</span>Nosotros comemos manzanas.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Nosotros comemos manzanas', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">ihr</div>
+      <div class="sentence german" onclick="speak('Ihr esst Äpfel', 'de-DE')">
+        <span class="flags">🇩🇪</span>Ihr esst Äpfel.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Ihr esst Äpfel', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('You all eat apples', 'en-US')">
+        <span class="flags">🇺🇸</span>You all eat apples.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('You all eat apples', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Ustedes comen manzanas', 'es-ES')">
+        <span class="flags">🇪🇸</span>Ustedes comen manzanas.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Ustedes comen manzanas', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="slide">
+      <div class="pronoun">sie</div>
+      <div class="sentence german" onclick="speak('Sie essen Äpfel', 'de-DE')">
+        <span class="flags">🇩🇪</span>Sie essen Äpfel.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Sie essen Äpfel', 'de-DE')">▶️</button>
+      </div>
+      <div class="sentence english" onclick="speak('They eat apples', 'en-US')">
+        <span class="flags">🇺🇸</span>They eat apples.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('They eat apples', 'en-US')">▶️</button>
+      </div>
+      <div class="sentence spanish" onclick="speak('Ellos comen manzanas', 'es-ES')">
+        <span class="flags">🇪🇸</span>Ellos comen manzanas.
+        <button class="audio-btn" onclick="event.stopPropagation(); speak('Ellos comen manzanas', 'es-ES')">▶️</button>
+      </div>
+    </div>
+
+    <div class="navigation">
+      <button class="nav-button" onclick="prevSlide()">⬅️ Anterior</button>
+      <div class="slide-counter">
+        <span id="current-slide">1</span> / <span id="total-slides">6</span>
+      </div>
+      <button class="nav-button" onclick="nextSlide()">Siguiente ➡️</button>
+    </div>
+
+    <div style="margin-top: 20px;">
+      <a href="https://giomont.github.io/lang/essen.html" target="_blank" class="link-button">
+        🌐 giomont.github.io/lang/essen.html
+      </a>
+    </div>
+
+  </div>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll('.slide');
+    const totalSlides = slides.length;
+
+    function showSlide(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+      });
+      document.getElementById('current-slide').textContent = index + 1;
+    }
+
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+      showSlide(currentSlide);
+    }
+
+    function speak(text, lang) {
+      if ('speechSynthesis' in window) {
+        // Stop any current speech
+        speechSynthesis.cancel();
+        
+        const utterance = new SpeechSynthesisUtterance(text);
+        utterance.lang = lang;
+        utterance.rate = 0.8; // Slightly slower for better comprehension
+        utterance.volume = 0.8;
+        
+        // Add a slight delay to ensure previous speech is cancelled
+        setTimeout(() => {
+          speechSynthesis.speak(utterance);
+        }, 100);
+      } else {
+        alert('Speech synthesis not supported in this browser');
+      }
+    }
+
+    // Initialize slide counter
+    document.getElementById('total-slides').textContent = totalSlides;
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'ArrowRight' || e.key === ' ') {
+        e.preventDefault();
+        nextSlide();
+      }
+      if (e.key === 'ArrowLeft') {
+        e.preventDefault();
+        prevSlide();
+      }
+    });
+
+    // Initialize
+    showSlide(0);
+  </script>
+
+</body>
+</html>
