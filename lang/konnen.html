@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>German Verb Learning - Können</title>
+    <style>
+        :root {
+            --primary-gradient-start: #667eea;
+            --primary-gradient-end: #764ba2;
+            --header-bg: rgba(255, 255, 255, 0.15);
+            --header-border: rgba(255, 255, 255, 0.1);
+            --text-color-dark: #333;
+            --text-color-light: white;
+            --shadow-light: rgba(0,0,0,0.4);
+            --card-bg-light: rgba(255, 255, 255, 0.95);
+            --card-shadow: rgba(0,0,0,0.15);
+            --card-border: rgba(255, 255, 255, 0.2);
+            --accent-color: #4c51bf;
+            --accent-gradient-start: #a78bfa;
+            --accent-gradient-end: #c084fc;
+            --english-gradient-start: #60a5fa;
+            --english-gradient-end: #3b82f6;
+            --spanish-gradient-start: #fbbf24;
+            --spanish-gradient-end: #f59e0b;
+            --audio-btn-bg: rgba(255, 255, 255, 0.9);
+            --audio-btn-color: #4c51bf;
+            --audio-btn-shadow: rgba(0,0,0,0.1);
+            --nav-btn-shadow: rgba(76, 81, 191, 0.3);
+            --nav-btn-disabled: #9ca3af;
+            --page-indicator-bg: rgba(255, 255, 255, 0.95);
+            --url-bar-bg: rgba(255, 255, 255, 0.2);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--text-color-dark);
+        }
+
+        .header {
+            background: var(--header-bg);
+            padding: 20px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border-bottom: 1px solid var(--header-border);
+        }
+
+        .verb-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            color: var(--text-color-light);
+            text-shadow: 0 3px 6px var(--shadow-light);
+            margin-bottom: 10px;
+        }
+
+        .verb-meaning {
+            font-size: 1.6rem;
+            color: rgba(255, 255, 255, 0.95);
+            font-weight: 300;
+        }
+
+        .main-content {
+            flex: 1;
+            padding: 35px 20px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .pronoun-section,
+        .additional-sentences {
+            background: var(--card-bg-light);
+            border-radius: 25px;
+            padding: 35px;
+            box-shadow: 0 15px 40px var(--card-shadow);
+            margin-bottom: 35px;
+            border: 1px solid var(--card-border);
+        }
+
+        .pronoun-title,
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: bold;
+            margin-bottom: 35px;
+            color: var(--accent-color);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .section-title {
+            font-size: 1.7rem;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+
+        .sentence-card {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 25px;
+            margin-bottom: 18px;
+            border-radius: 18px;
+            font-size: 1.4rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid transparent;
+        }
+
+        .sentence-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px var(--card-shadow);
+            border-color: rgba(255, 255, 255, 0.3);
+        }
+
+        .german { 
+            background: linear-gradient(135deg, var(--accent-gradient-start), var(--accent-gradient-end));
+            color: var(--text-color-light);
+        }
+        .english { 
+            background: linear-gradient(135deg, var(--english-gradient-start), var(--english-gradient-end));
+            color: var(--text-color-light);
+        }
+        .spanish { 
+            background: linear-gradient(135deg, var(--spanish-gradient-start), var(--spanish-gradient-end));
+            color: var(--text-color-light);
+        }
+
+        .flag {
+            font-size: 1.8rem;
+            margin-right: 18px;
+        }
+
+        .audio-btn {
+            background: var(--audio-btn-bg);
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            color: var(--audio-btn-color);
+            font-size: 1.3rem;
+            box-shadow: 0 4px 15px var(--audio-btn-shadow);
+            flex-shrink: 0; /* Prevent button from shrinking */
+        }
+
+        .audio-btn:hover {
+            background: var(--accent-color);
+            color: var(--text-color-light);
+            transform: scale(1.15);
+            box-shadow: 0 6px 20px rgba(76, 81, 191, 0.3);
+        }
+
+        .audio-btn:active {
+            background: #10b981; /* A distinct active color */
+            transform: scale(1.05);
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 25px;
+        }
+
+        .nav-btn {
+            background: linear-gradient(135deg, var(--accent-color), var(--primary-gradient-start));
+            color: var(--text-color-light);
+            border: none;
+            padding: 18px 30px;
+            border-radius: 30px;
+            font-size: 1.2rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 6px 20px var(--nav-btn-shadow);
+        }
+
+        .nav-btn:hover {
+            background: linear-gradient(135deg, var(--primary-gradient-start), var(--primary-gradient-end));
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(76, 81, 191, 0.4);
+        }
+
+        .nav-btn:disabled {
+            background: var(--nav-btn-disabled);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .page-indicator {
+            background: var(--page-indicator-bg);
+            padding: 12px 25px;
+            border-radius: 25px;
+            font-weight: bold;
+            color: var(--accent-color);
+            box-shadow: 0 4px 15px var(--audio-btn-shadow);
+            font-size: 1.1rem;
+        }
+
+        .url-bar {
+            background: var(--url-bar-bg);
+            padding: 15px 25px;
+            border-radius: 25px;
+            font-size: 1.1rem;
+            color: var(--text-color-light);
+            text-align: center;
+            margin-top: 20px;
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--header-border);
+        }
+
+        @media (max-width: 480px) {
+            .verb-title { font-size: 2.2rem; }
+            .pronoun-title { font-size: 1.8rem; }
+            .sentence-card { font-size: 1.2rem; padding: 20px; }
+            .main-content { padding: 25px 15px; }
+            .pronoun-section, .additional-sentences { padding: 25px; }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="verb-title">💪 können</div>
+        <div class="verb-meaning">– can / to be able to</div>
+    </div>
+
+    <div class="main-content">
+        <div class="pronoun-section">
+            <div class="pronoun-title" id="pronoun-display">ICH</div>
+            
+            <div class="sentence-card german" id="german-sentence-card">
+                <div>
+                    <span class="flag">🇩🇪</span>
+                    <span class="sentence-text">Ich kann schwimmen.</span>
+                </div>
+                <button class="audio-btn" aria-label="Play German sentence">🔊</button>
+            </div>
+
+            <div class="sentence-card english" id="english-sentence-card">
+                <div>
+                    <span class="flag">🇺🇸</span>
+                    <span class="sentence-text">I can swim.</span>
+                </div>
+                <button class="audio-btn" aria-label="Play English sentence">🔊</button>
+            </div>
+
+            <div class="sentence-card spanish" id="spanish-sentence-card">
+                <div>
+                    <span class="flag">🇪🇸</span>
+                    <span class="sentence-text">Yo sé nadar.</span>
+                </div>
+                <button class="audio-btn" aria-label="Play Spanish sentence">🔊</button>
+            </div>
+        </div>
+
+        <div class="additional-sentences">
+            <div class="section-title">Ability & Possibility (General Examples)</div>
+            
+            <div class="sentence-card english" onclick="playAudio('being-able-help-en')">
+                <div>
+                    <span class="flag">🇺🇸</span>
+                    Being able to help others feels good.
+                </div>
+                <button class="audio-btn" aria-label="Play English example sentence">🔊</button>
+            </div>
+
+            <div class="sentence-card spanish" onclick="playAudio('poder-ayudar-se-siente-bien-es')">
+                <div>
+                    <span class="flag">🇪🇸</span>
+                    Poder ayudar a otros se siente bien.
+                </div>
+                <button class="audio-btn" aria-label="Play Spanish example sentence">🔊</button>
+            </div>
+
+            <div class="sentence-card german" onclick="playAudio('anderen-helfen-koennen-fuehlt-sich-gut-an-de')">
+                <div>
+                    <span class="flag">🇩🇪</span>
+                    Anderen helfen können fühlt sich gut an.
+                </div>
+                <button class="audio-btn" aria-label="Play German example sentence">🔊</button>
+            </div>
+        </div>
+
+        <div class="navigation">
+            <button class="nav-btn" onclick="previousPage()">⬅️ Anterior</button>
+            <div class="page-indicator">1 / 6</div>
+            <button class="nav-btn" onclick="nextPage()">Siguiente ➡️</button>
+        </div>
+
+        <div class="url-bar">giomont.github.io/lang/koennen.html</div>
+    </div>
+
+    <script>
+        // Conjugation data for können with all 6 pronouns
+        const conjugationData = [
+            {
+                pronoun: "ICH",
+                german: { text: "Ich kann schwimmen.", audioId: "ich-kann-schwimmen" },
+                english: { text: "I can swim.", audioId: "i-can-swim" },
+                spanish: { text: "Yo sé nadar.", audioId: "yo-se-nadar" }
+            },
+            {
+                pronoun: "DU",
+                german: { text: "Du kannst kochen.", audioId: "du-kannst-kochen" },
+                english: { text: "You can cook.", audioId: "you-can-cook" },
+                spanish: { text: "Tú sabes cocinar.", audioId: "tu-sabes-cocinar" }
+            },
+            {
+                pronoun: "ER/SIE/ES",
+                german: { text: "Sie kann tanzen.", audioId: "sie-kann-tanzen" },
+                english: { text: "She can dance.", audioId: "she-can-dance" },
+                spanish: { text: "Ella sabe bailar.", audioId: "ella-sabe-bailar" }
+            },
+            {
+                pronoun: "WIR",
+                german: { text: "Wir können helfen.", audioId: "wir-koennen-helfen" },
+                english: { text: "We can help.", audioId: "we-can-help" },
+                spanish: { text: "Nosotros podemos ayudar.", audioId: "nosotros-podemos-ayudar" }
+            },
+            {
+                pronoun: "IHR",
+                german: { text: "Ihr könnt spielen.", audioId: "ihr-koennt-spielen" },
+                english: { text: "You all can play.", audioId: "you-all-can-play" },
+                spanish: { text: "Vosotros podéis jugar.", audioId: "vosotros-podeis-jugar" }
+            },
+            {
+                pronoun: "SIE", // (plural - formal Sie and plural sie share conjugation here)
+                german: { text: "Sie können arbeiten.", audioId: "sie-koennen-arbeiten" },
+                english: { text: "They can work.", audioId: "they-can-work" },
+                spanish: { text: "Ellos pueden trabajar.", audioId: "ellos-pueden-trabajar" }
+            }
+        ];
+
+        let currentPage = 0;
+        const totalPages = conjugationData.length;
+
+        // Audio texts and languages for all phrases
+        const audioTexts = {
+            // ICH
+            'ich-kann-schwimmen': { text: 'Ich kann schwimmen.', lang: 'de-DE' },
+            'i-can-swim': { text: 'I can swim.', lang: 'en-US' },
+            'yo-se-nadar': { text: 'Yo sé nadar.', lang: 'es-ES' },
+            
+            // DU
+            'du-kannst-kochen': { text: 'Du kannst kochen.', lang: 'de-DE' },
+            'you-can-cook': { text: 'You can cook.', lang: 'en-US' },
+            'tu-sabes-cocinar': { text: 'Tú sabes cocinar.', lang: 'es-ES' },
+            
+            // ER/SIE/ES
+            'sie-kann-tanzen': { text: 'Sie kann tanzen.', lang: 'de-DE' }, // Female "she" example
+            'she-can-dance': { text: 'She can dance.', lang: 'en-US' },
+            'ella-sabe-bailar': { text: 'Ella sabe bailar.', lang: 'es-ES' },
+            
+            // WIR
+            'wir-koennen-helfen': { text: 'Wir können helfen.', lang: 'de-DE' },
+            'we-can-help': { text: 'We can help.', lang: 'en-US' },
+            'nosotros-podemos-ayudar': { text: 'Nosotros podemos ayudar.', lang: 'es-ES' },
+            
+            // IHR
+            'ihr-koennt-spielen': { text: 'Ihr könnt spielen.', lang: 'de-DE' },
+            'you-all-can-play': { text: 'You all can play.', lang: 'en-US' },
+            'vosotros-podeis-jugar': { text: 'Vosotros podéis jugar.', lang: 'es-ES' },
+            
+            // SIE (plural)
+            'sie-koennen-arbeiten': { text: 'Sie können arbeiten.', lang: 'de-DE' },
+            'they-can-work': { text: 'They can work.', lang: 'en-US' },
+            'ellos-pueden-trabajar': { text: 'Ellos pueden trabajar.', lang: 'es-ES' },
+            
+            // Practice sentences (general examples, not pronoun-specific)
+            'being-able-help-en': { text: 'Being able to help others feels good.', lang: 'en-US' },
+            'poder-ayudar-se-siente-bien-es': { text: 'Poder ayudar a otros se siente bien.', lang: 'es-ES' },
+            'anderen-helfen-koennen-fuehlt-sich-gut-an-de': { text: 'Anderen helfen können fühlt sich gut an.', lang: 'de-DE' }
+        };
+
+        // DOM elements cache
+        const pronounDisplay = document.getElementById('pronoun-display');
+        const germanSentenceCard = document.getElementById('german-sentence-card');
+        const englishSentenceCard = document.getElementById('english-sentence-card');
+        const spanishSentenceCard = document.getElementById('spanish-sentence-card');
+        const pageIndicator = document.querySelector('.page-indicator');
+        const prevBtn = document.querySelector('.nav-btn:first-child');
+        const nextBtn = document.querySelector('.nav-btn:last-child');
+
+        function updatePage() {
+            const data = conjugationData[currentPage];
+            
+            // Update pronoun title
+            pronounDisplay.textContent = data.pronoun;
+            
+            // Update main sentences and attach audio handlers
+            // German card
+            germanSentenceCard.querySelector('.sentence-text').textContent = data.german.text;
+            germanSentenceCard.querySelector('.audio-btn').onclick = () => playAudio(data.german.audioId);
+            germanSentenceCard.querySelector('.audio-btn').setAttribute('aria-label', `Play German: ${data.german.text}`);
+
+            // English card
+            englishSentenceCard.querySelector('.sentence-text').textContent = data.english.text;
+            englishSentenceCard.querySelector('.audio-btn').onclick = () => playAudio(data.english.audioId);
+            englishSentenceCard.querySelector('.audio-btn').setAttribute('aria-label', `Play English: ${data.english.text}`);
+
+            // Spanish card
+            spanishSentenceCard.querySelector('.sentence-text').textContent = data.spanish.text;
+            spanishSentenceCard.querySelector('.audio-btn').onclick = () => playAudio(data.spanish.audioId);
+            spanishSentenceCard.querySelector('.audio-btn').setAttribute('aria-label', `Play Spanish: ${data.spanish.text}`);
+            
+            // Update page indicator
+            pageIndicator.textContent = `${currentPage + 1} / ${totalPages}`;
+            
+            // Update navigation buttons
+            prevBtn.disabled = currentPage === 0;
+            nextBtn.disabled = currentPage === totalPages - 1;
+        }
+
+        // Voice cache to prevent repeated fetching
+        let voicesLoaded = false;
+        let availableVoices = [];
+
+        function loadVoices() {
+            availableVoices = speechSynthesis.getVoices();
+            if (availableVoices.length > 0) {
+                voicesLoaded = true;
+                console.log('Voices loaded successfully.');
+                // Remove the event listener once voices are loaded
+                speechSynthesis.onvoiceschanged = null; 
+            } else {
+                console.log('Still waiting for voices to load...');
+            }
+        }
+
+        if ('speechSynthesis' in window) {
+            // Event listener for when voices are loaded/changed
+            speechSynthesis.onvoiceschanged = loadVoices;
+            // Attempt to load voices immediately if they are already available
+            loadVoices(); 
+
+            // Important: This dummy speak helps to 'wake up' the speech synthesis engine
+            // and often forces voice loading, especially in Chrome/Safari.
+            // It must be triggered by a user gesture.
+            let audioInitiated = false;
+            const initSpeechSynthesis = () => {
+                if (!audioInitiated && voicesLoaded) { // Only run if voices are loaded and not yet initiated
+                    const dummyUtterance = new SpeechSynthesisUtterance('');
+                    dummyUtterance.volume = 0; // Silent
+                    speechSynthesis.speak(dummyUtterance);
+                    audioInitiated = true;
+                    console.log('Speech Synthesis initiated by user gesture.');
+                    // Remove listeners after initiation
+                    document.removeEventListener('click', initSpeechSynthesis);
+                    document.removeEventListener('touchstart', initSpeechSynthesis);
+                }
+            };
+            document.addEventListener('click', initSpeechSynthesis, { once: true });
+            document.addEventListener('touchstart', initSpeechSynthesis, { once: true });
+
+        } else {
+            console.warn('Speech Synthesis not supported in this browser.');
+            // Provide a visual hint if audio isn't supported
+            document.querySelectorAll('.audio-btn').forEach(btn => {
+                btn.style.opacity = 0.5;
+                btn.style.cursor = 'not-allowed';
+                btn.title = 'Audio not supported';
+            });
+        }
+
+
+        function playAudio(audioId) {
+            console.log('Attempting to play audio for ID:', audioId);
+            const audioData = audioTexts[audioId];
+
+            if (!audioData) {
+                console.error('Audio data not found for ID:', audioId);
+                return;
+            }
+
+            if ('speechSynthesis' in window && voicesLoaded) {
+                speechSynthesis.cancel(); // Stop any currently speaking utterance
+
+                const utterance = new SpeechSynthesisUtterance(audioData.text);
+                utterance.lang = audioData.lang;
+                utterance.rate = 0.9; // Slightly slower for clarity
+                utterance.pitch = 1;
+                utterance.volume = 1;
+
+                // Find a specific voice for the target language
+                const targetLangPrefix = audioData.lang.split('-')[0]; // e.g., 'en' from 'en-US'
+                const voice = availableVoices.find(v => v.lang.startsWith(targetLangPrefix) && v.localService);
+                
+                if (voice) {
+                    utterance.voice = voice;
+                    console.log(`Using voice: ${voice.name} (${voice.lang}) for "${audioData.text}"`);
+                } else {
+                    console.warn(`No suitable local voice found for ${audioData.lang}. Using default.`);
+                }
+                
+                utterance.onend = () => {
+                    console.log('Speech finished for:', audioData.text);
+                };
+                utterance.onerror = (event) => {
+                    console.error('Speech synthesis error:', event.error);
+                };
+
+                speechSynthesis.speak(utterance);
+            } else {
+                console.warn('Speech synthesis not available or voices not loaded. Playing fallback sound.');
+                try {
+                    // Fallback: A simple audio context "click" sound
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const oscillator = audioContext.createOscillator();
+                    const gainNode = audioContext.createGain();
+
+                    oscillator.connect(gainNode);
+                    gainNode.connect(audioContext.destination);
+
+                    oscillator.type = 'sine';
+                    oscillator.frequency.setValueAtTime(440, audioContext.currentTime); // A4
+                    gainNode.gain.setValueAtTime(0.1, audioContext.currentTime);
+                    gainNode.gain.exponentialRampToValueAtTime(0.001, audioContext.currentTime + 0.1);
+
+                    oscillator.start(audioContext.currentTime);
+                    oscillator.stop(audioContext.currentTime + 0.1);
+                } catch (error) {
+                    console.error('Failed to play fallback audio:', error);
+                }
+            }
+        }
+
+        function previousPage() {
+            if (currentPage > 0) {
+                currentPage--;
+                updatePage();
+            }
+        }
+
+        function nextPage() {
+            if (currentPage < totalPages - 1) {
+                currentPage++;
+                updatePage();
+            }
+        }
+
+        // Initialize on DOM load
+        document.addEventListener('DOMContentLoaded', function() {
+            updatePage(); // Initialize the first page content
+        });
+
+        // Add click animations
+        document.querySelectorAll('.sentence-card, .nav-btn').forEach(element => {
+            element.addEventListener('click', function() {
+                // Ensure animation only applies if not disabled (for nav buttons)
+                if (!this.disabled) {
+                    this.style.transform = 'scale(0.97)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
