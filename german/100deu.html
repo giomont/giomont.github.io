@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Deutsch im Parque Arví</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --verde-bosque: #1E3A2B;
+    --verde-musgo: #2D5A3D;
+    --verde-claro: #5A8C6A;
+    --dorado: #C8A84B;
+    --crema: #F5F0E8;
+    --blanco: #FDFCFA;
+    --gris: #6B7280;
+    --negro: #111813;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--crema);
+    color: var(--negro);
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--verde-bosque);
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 0%, rgba(200,168,75,0.12) 0%, transparent 65%);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dorado);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 52px);
+    color: var(--blanco);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .hero h1 span { color: var(--dorado); }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .badge-count {
+    display: inline-block;
+    background: var(--dorado);
+    color: var(--verde-bosque);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  /* FILTROS */
+  .filters {
+    padding: 20px 16px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .filter-btn {
+    border: 1.5px solid transparent;
+    background: var(--blanco);
+    color: var(--gris);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.3px;
+  }
+  .filter-btn:hover { border-color: var(--verde-claro); color: var(--verde-bosque); }
+  .filter-btn.active {
+    background: var(--verde-bosque);
+    color: var(--blanco);
+    border-color: var(--verde-bosque);
+  }
+
+  /* BÚSQUEDA */
+  .search-wrap {
+    max-width: 480px;
+    margin: 16px auto 0;
+    padding: 0 16px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1.5px solid #DDD6CC;
+    border-radius: 24px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    background: var(--blanco);
+    color: var(--negro);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus { border-color: var(--verde-claro); }
+  .search-input::placeholder { color: #AAA; }
+
+  /* CATEGORÍAS */
+  .content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+
+  .category {
+    margin-bottom: 32px;
+  }
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--verde-bosque);
+  }
+  .category-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--verde-bosque);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: var(--verde-bosque);
+  }
+  .category-subtitle {
+    font-size: 11px;
+    color: var(--gris);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-left: auto;
+    font-weight: 500;
+  }
+
+  /* TARJETAS */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 10px;
+  }
+  .card {
+    background: var(--blanco);
+    border-radius: 10px;
+    padding: 14px 16px;
+    border: 1px solid #E8E2D8;
+    transition: box-shadow 0.2s, transform 0.15s;
+    cursor: default;
+    position: relative;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(30,58,43,0.1);
+    transform: translateY(-1px);
+  }
+  .card-num {
+    font-size: 10px;
+    color: var(--dorado);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .card-de {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+  .card-es {
+    font-size: 12px;
+    color: var(--gris);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  /* BOTONES DE ACCIÓN */
+  .card-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  .audio-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--verde-bosque);
+    color: var(--blanco);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    flex-shrink: 0;
+  }
+  .audio-btn:hover { background: var(--verde-musgo); }
+  .audio-btn:active { transform: scale(0.95); }
+  .audio-btn.playing {
+    background: var(--dorado);
+    color: var(--verde-bosque);
+  }
+  .audio-btn svg {
+    width: 11px;
+    height: 11px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+  .copy-btn {
+    background: none;
+    border: 1px solid #DDD6CC;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 11px;
+    color: var(--gris);
+    padding: 5px 10px;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .copy-btn:hover { border-color: var(--verde-claro); color: var(--verde-bosque); }
+
+  /* Barra de velocidad */
+  .speed-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    padding: 10px 16px 4px;
+    font-size: 11px;
+    color: var(--gris);
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .speed-btn {
+    background: var(--blanco);
+    border: 1.5px solid #DDD6CC;
+    border-radius: 12px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--gris);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+  }
+  .speed-btn.active { background: var(--verde-bosque); color: var(--blanco); border-color: var(--verde-bosque); }
+
+  /* Indicador de soporte TTS */
+  .tts-notice {
+    text-align: center;
+    font-size: 11px;
+    color: #AAA;
+    padding: 6px 16px 0;
+  }
+
+  /* EMPTY STATE */
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gris);
+    font-size: 14px;
+    display: none;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gris);
+    padding: 12px 16px 0;
+  }
+  .stats-bar span { color: var(--verde-bosque); font-weight: 600; }
+
+  .hidden { display: none !important; }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(60px);
+    background: var(--verde-bosque);
+    color: var(--blanco);
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    z-index: 999;
+    pointer-events: none;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 500px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .category-subtitle { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Guía turístico · Parque Arví · Medellín</div>
+  <h1>Deutsch im<br><span>Parque Arví</span></h1>
+  <p class="hero-sub">100 frases en alemán para guías de ecoturismo · 5 categorías</p>
+  <span class="badge-count">100 FRASES</span>
+</div>
+
+<div class="filters" id="filters">
+  <button class="filter-btn active" data-cat="all">Todas</button>
+  <button class="filter-btn" data-cat="bienvenida">🌿 Bienvenida</button>
+  <button class="filter-btn" data-cat="natura">🦋 Naturaleza</button>
+  <button class="filter-btn" data-cat="cultura">🎭 Cultura</button>
+  <button class="filter-btn" data-cat="seguridad">🛡️ Seguridad</button>
+  <button class="filter-btn" data-cat="servicios">🗺️ Servicios</button>
+</div>
+
+<div class="search-wrap">
+  <input type="text" class="search-input" id="searchInput" placeholder="Buscar frase en alemán o español...">
+</div>
+
+<div class="stats-bar" id="statsBar">Mostrando <span id="visibleCount">100</span> frases</div>
+
+<div class="speed-wrap">
+  <span>Velocidad:</span>
+  <button class="speed-btn" data-speed="0.7">Lenta</button>
+  <button class="speed-btn active" data-speed="1.0">Normal</button>
+  <button class="speed-btn" data-speed="1.3">Rápida</button>
+</div>
+<div class="tts-notice" id="ttsNotice"></div>
+
+<div class="content" id="content"></div>
+
+<div class="toast" id="toast">📋 Copiado al portapapeles</div>
+
+<script>
+const data = [
+  // BIENVENIDA (20)
+  { cat: 'bienvenida', de: 'Herzlich willkommen im Parque Arví!', es: '¡Bienvenidos al Parque Arví!' },
+  { cat: 'bienvenida', de: 'Mein Name ist [Name] und ich bin Ihr Reiseführer heute.', es: 'Mi nombre es [Nombre] y soy su guía de hoy.' },
+  { cat: 'bienvenida', de: 'Wir befinden uns auf einer Höhe von etwa 2.550 Metern über dem Meeresspiegel.', es: 'Nos encontramos a una altura de aproximadamente 2.550 metros sobre el nivel del mar.' },
+  { cat: 'bienvenida', de: 'Der Parque Arví ist ein Naturschutzgebiet im Departement Antioquia.', es: 'El Parque Arví es una reserva natural en el departamento de Antioquia.' },
+  { cat: 'bienvenida', de: 'Haben Sie alle Ihre Sachen dabei?', es: '¿Tienen todas sus cosas consigo?' },
+  { cat: 'bienvenida', de: 'Bitte folgen Sie mir und bleiben Sie in der Gruppe.', es: 'Por favor síganme y permanezcan en el grupo.' },
+  { cat: 'bienvenida', de: 'Heute haben wir herrliches Wetter für unsere Wanderung.', es: 'Hoy tenemos un clima maravilloso para nuestra caminata.' },
+  { cat: 'bienvenida', de: 'Der Bus fährt um 17 Uhr ab – bitte seien Sie pünktlich!', es: 'El bus sale a las 5 p.m. – ¡por favor sean puntuales!' },
+  { cat: 'bienvenida', de: 'Unsere Tour dauert ungefähr drei Stunden.', es: 'Nuestro recorrido dura aproximadamente tres horas.' },
+  { cat: 'bienvenida', de: 'Hat jemand Fragen, bevor wir beginnen?', es: '¿Alguien tiene preguntas antes de comenzar?' },
+  { cat: 'bienvenida', de: 'Bitte benutzen Sie Sonnenschutzmittel und trinken Sie genug Wasser.', es: 'Por favor usen bloqueador solar y beban suficiente agua.' },
+  { cat: 'bienvenida', de: 'In diesem Park leben über 400 Vogelarten.', es: 'En este parque viven más de 400 especies de aves.' },
+  { cat: 'bienvenida', de: 'Der Park ist ein Biokorridor zwischen Medellín und dem Río Magdalena.', es: 'El parque es un corredor biológico entre Medellín y el Río Magdalena.' },
+  { cat: 'bienvenida', de: 'Bitte machen Sie Fotos, aber respektieren Sie die Natur.', es: 'Por favor tomen fotos, pero respeten la naturaleza.' },
+  { cat: 'bienvenida', de: 'Willkommen in einem der grünsten Stadtparks Lateinamerikas!', es: '¡Bienvenidos a uno de los parques urbanos más verdes de Latinoamérica!' },
+  { cat: 'bienvenida', de: 'Sprechen Sie Deutsch? Sehr gut – ich auch!', es: '¿Hablan alemán? ¡Muy bien, yo también!' },
+  { cat: 'bienvenida', de: 'Ist das Ihr erster Besuch in Kolumbien?', es: '¿Es su primera visita a Colombia?' },
+  { cat: 'bienvenida', de: 'Wir starten unsere Wanderung in fünf Minuten.', es: 'Comenzamos nuestra caminata en cinco minutos.' },
+  { cat: 'bienvenida', de: 'Bitte vergessen Sie nicht Ihre Regenkleidung.', es: 'Por favor no olviden su ropa impermeable.' },
+  { cat: 'bienvenida', de: 'Ich freue mich sehr, Sie heute durch diesen wunderschönen Park zu führen.', es: 'Me alegra mucho guiarles hoy por este hermoso parque.' },
+
+  // NATURALEZA (20)
+  { cat: 'natura', de: 'Schauen Sie nach links – das ist ein Kolibri!', es: 'Miren a la izquierda – ¡eso es un colibrí!' },
+  { cat: 'natura', de: 'Dieser Baum ist ein Cecropia – eine wichtige Nahrungsquelle für Affen.', es: 'Este árbol es un Cecropia – una fuente importante de alimento para monos.' },
+  { cat: 'natura', de: 'Bitte berühren Sie keine Pilze – einige sind giftig.', es: 'Por favor no toquen los hongos – algunos son venenosos.' },
+  { cat: 'natura', de: 'Der Nebel hier entsteht durch den Unterschied zwischen warmer und kalter Luft.', es: 'La neblina aquí se forma por la diferencia entre el aire cálido y frío.' },
+  { cat: 'natura', de: 'Das ist eine Passionsblume – Passiflora auf Latein.', es: 'Esta es una flor de la pasión – Passiflora en latín.' },
+  { cat: 'natura', de: 'Hier gibt es über 1.000 Pflanzenarten.', es: 'Aquí existen más de 1.000 especies de plantas.' },
+  { cat: 'natura', de: 'Dieser Wald heißt "Nublado" – Nebelwald.', es: 'Este bosque se llama "Nublado" – bosque de niebla.' },
+  { cat: 'natura', de: 'Hören Sie die Vögel? Das ist ein Tukan!', es: '¿Escuchan las aves? ¡Ese es un tucán!' },
+  { cat: 'natura', de: 'Das Wasser dieses Baches ist trinkbar – aber bitte filtern Sie es zuerst.', es: 'El agua de este arroyo es potable – pero por favor fíltrenla primero.' },
+  { cat: 'natura', de: 'Diese Orchidee blüht nur zweimal im Jahr.', es: 'Esta orquídea florece solo dos veces al año.' },
+  { cat: 'natura', de: 'Der Park hat drei verschiedene Ökosysteme.', es: 'El parque tiene tres ecosistemas diferentes.' },
+  { cat: 'natura', de: 'Bitte verlassen Sie den markierten Weg nicht.', es: 'Por favor no abandonen el sendero señalizado.' },
+  { cat: 'natura', de: 'Diese Schmetterlinge wandern bis nach Mexiko.', es: 'Estas mariposas migran hasta México.' },
+  { cat: 'natura', de: 'Hier lebt die gefährdete Spectacled Bear – der Andenbär.', es: 'Aquí vive el oso de anteojos, en peligro de extinción.' },
+  { cat: 'natura', de: 'Das Moos wächst hier wegen der hohen Luftfeuchtigkeit.', es: 'El musgo crece aquí debido a la alta humedad.' },
+  { cat: 'natura', de: 'Dieser Wasserfall ist im Regenmonat Oktober am stärksten.', es: 'Esta cascada es más fuerte en octubre, el mes más lluvioso.' },
+  { cat: 'natura', de: 'Die Erde hier ist sehr fruchtbar wegen des vulkanischen Ursprungs.', es: 'La tierra aquí es muy fértil debido al origen volcánico.' },
+  { cat: 'natura', de: 'Bitte machen Sie keinen Lärm – wir könnten Tiere erschrecken.', es: 'Por favor no hagan ruido – podríamos asustar a los animales.' },
+  { cat: 'natura', de: 'Das ist Farn – einer der ältesten Pflanzen der Erde.', es: 'Esto es helecho – una de las plantas más antiguas de la Tierra.' },
+  { cat: 'natura', de: 'Kolumbien hat 10% aller Arten der Welt auf nur 1% der Landfläche.', es: 'Colombia tiene el 10% de todas las especies del mundo en solo el 1% de su superficie terrestre.' },
+
+  // CULTURA (20)
+  { cat: 'cultura', de: 'Die Comunidad Arví war hier lange vor den Europäern.', es: 'La comunidad Arví estuvo aquí mucho antes que los europeos.' },
+  { cat: 'cultura', de: 'Diese Keramikstücke sind Repliken der präkolumbischen Kultur.', es: 'Estas piezas de cerámica son réplicas de la cultura precolombina.' },
+  { cat: 'cultura', de: 'Der Name „Arví" kommt aus der Sprache der indigenen Völker dieser Region.', es: 'El nombre "Arví" proviene del idioma de los pueblos indígenas de esta región.' },
+  { cat: 'cultura', de: 'Hier finden jeden Sonntag lokale Märkte statt.', es: 'Aquí se realizan mercados locales todos los domingos.' },
+  { cat: 'cultura', de: 'Die Bauern dieser Region bauen Kaffee, Obst und Gemüse an.', es: 'Los campesinos de esta región cultivan café, frutas y verduras.' },
+  { cat: 'cultura', de: 'Möchten Sie frischen Kaffee aus der Region probieren?', es: '¿Les gustaría probar café fresco de la región?' },
+  { cat: 'cultura', de: 'Diese Kunsthandwerke sind von lokalen Kunsthandwerkern handgemacht.', es: 'Estas artesanías son hechas a mano por artesanos locales.' },
+  { cat: 'cultura', de: 'Das Metrocable verbindet die ärmsten Viertel mit dem Stadtzentrum – ein Symbol des Wandels.', es: 'El metrocable conecta los barrios más humildes con el centro – símbolo de transformación.' },
+  { cat: 'cultura', de: 'Medellín wurde zum innovativsten Stadtentwicklungsprojekt weltweit ernannt.', es: 'Medellín fue nombrada el proyecto de desarrollo urbano más innovador del mundo.' },
+  { cat: 'cultura', de: 'Hier sehen Sie eine Darstellung der traditionellen Tänze Antioquias.', es: 'Aquí verán una representación de las danzas tradicionales de Antioquia.' },
+  { cat: 'cultura', de: 'Die Paisa-Kultur ist bekannt für ihre Gastfreundschaft und ihren Kaffee.', es: 'La cultura paisa es conocida por su hospitalidad y su café.' },
+  { cat: 'cultura', de: 'Dieses Dorf existiert seit dem 19. Jahrhundert.', es: 'Este pueblo existe desde el siglo XIX.' },
+  { cat: 'cultura', de: 'Bitte respektieren Sie die lokalen Traditionen und Gewohnheiten.', es: 'Por favor respeten las tradiciones y costumbres locales.' },
+  { cat: 'cultura', de: 'Die Feria de las Flores ist das größte Blumenfest Kolumbiens – jedes Jahr im August in Medellín.', es: 'La Feria de las Flores es el festival de flores más grande de Colombia – cada año en agosto en Medellín.' },
+  { cat: 'cultura', de: 'Hier wird noch immer mit traditionellen Methoden Heilkräuter angebaut.', es: 'Aquí se siguen cultivando plantas medicinales con métodos tradicionales.' },
+  { cat: 'cultura', de: 'Kolumbianische Musik verbindet afrikanische, indigene und europäische Einflüsse.', es: 'La música colombiana fusiona influencias africanas, indígenas y europeas.' },
+  { cat: 'cultura', de: 'Möchten Sie die lokale Küche probieren? Ich empfehle den Sancocho.', es: '¿Quieren probar la cocina local? Recomiendo el sancocho.' },
+  { cat: 'cultura', de: 'Die Region Antioquia ist Heimat der reichsten Biodiversität Kolumbiens.', es: 'La región de Antioquia alberga la mayor biodiversidad de Colombia.' },
+  { cat: 'cultura', de: 'In diesem Dorf leben etwa 3.000 Menschen, die hauptsächlich vom Tourismus leben.', es: 'En este pueblo viven aproximadamente 3.000 personas que viven principalmente del turismo.' },
+  { cat: 'cultura', de: 'Das ist eine Mochila – eine traditionelle Tasche, die von Hand gewoben wird.', es: 'Esta es una mochila – una bolsa tradicional tejida a mano.' },
+
+  // SEGURIDAD (20)
+  { cat: 'seguridad', de: 'Bitte verlassen Sie den markierten Pfad nicht.', es: 'Por favor no salgan del camino señalizado.' },
+  { cat: 'seguridad', de: 'Wenn Sie sich unwohl fühlen, sagen Sie es mir sofort.', es: 'Si se sienten mal, díganmelo de inmediato.' },
+  { cat: 'seguridad', de: 'Notfallnummer in Kolumbien: 123.', es: 'Número de emergencias en Colombia: 123.' },
+  { cat: 'seguridad', de: 'Bitte tragen Sie festes Schuhwerk – der Weg kann rutschig sein.', es: 'Por favor usen calzado firme – el camino puede ser resbaladizo.' },
+  { cat: 'seguridad', de: 'Das Wetter kann sich schnell ändern – haben Sie eine Jacke dabei?', es: 'El clima puede cambiar rápidamente – ¿tienen una chaqueta?' },
+  { cat: 'seguridad', de: 'Bitte gehen Sie nicht alleine – bleiben Sie immer bei der Gruppe.', es: 'Por favor no vayan solos – quédense siempre con el grupo.' },
+  { cat: 'seguridad', de: 'Werfen Sie keinen Abfall in den Wald – wir tragen alles zurück.', es: 'No arrojen basura en el bosque – llevamos todo de regreso.' },
+  { cat: 'seguridad', de: 'Hier ist ein erster Hilfe Set – bitte informieren Sie mich bei Verletzungen.', es: 'Aquí hay un botiquín de primeros auxilios – por favor infórmenme si hay heridas.' },
+  { cat: 'seguridad', de: 'Trinken Sie ausreichend Wasser – die Höhe kann Schwindel verursachen.', es: 'Beban suficiente agua – la altitud puede causar mareos.' },
+  { cat: 'seguridad', de: 'Bitte fotografieren Sie keine unbekannten Personen ohne Erlaubnis.', es: 'Por favor no fotografíen personas desconocidas sin permiso.' },
+  { cat: 'seguridad', de: 'Lassen Sie keine Wertsachen unbeaufsichtigt.', es: 'No dejen objetos de valor sin vigilancia.' 
