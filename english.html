@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>English for Travelers</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;900&family=Inter:wght@300;400;500;600&display=swap');
+
+  :root {
+    --verde-bosque: #1E3A2B;
+    --verde-musgo: #2D5A3D;
+    --verde-claro: #5A8C6A;
+    --dorado: #C8A84B;
+    --crema: #F5F0E8;
+    --blanco: #FDFCFA;
+    --gris: #6B7280;
+    --negro: #111813;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    font-family: 'Inter', sans-serif;
+    background: var(--crema);
+    color: var(--negro);
+    min-height: 100vh;
+  }
+
+  /* HERO */
+  .hero {
+    background: var(--verde-bosque);
+    padding: 48px 24px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 60% 0%, rgba(200,168,75,0.12) 0%, transparent 65%);
+  }
+  .hero-eyebrow {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--dorado);
+    margin-bottom: 12px;
+    font-weight: 600;
+  }
+  .hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(28px, 6vw, 52px);
+    color: var(--blanco);
+    line-height: 1.1;
+    margin-bottom: 10px;
+  }
+  .hero h1 span { color: var(--dorado); }
+  .hero-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.55);
+    font-weight: 300;
+    margin-bottom: 28px;
+  }
+  .badge-count {
+    display: inline-block;
+    background: var(--dorado);
+    color: var(--verde-bosque);
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    padding: 5px 14px;
+    border-radius: 20px;
+  }
+
+  /* FILTROS */
+  .filters {
+    padding: 20px 16px 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    max-width: 780px;
+    margin: 0 auto;
+  }
+  .filter-btn {
+    border: 1.5px solid transparent;
+    background: var(--blanco);
+    color: var(--gris);
+    font-size: 12px;
+    font-weight: 500;
+    padding: 7px 14px;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.3px;
+  }
+  .filter-btn:hover { border-color: var(--verde-claro); color: var(--verde-bosque); }
+  .filter-btn.active {
+    background: var(--verde-bosque);
+    color: var(--blanco);
+    border-color: var(--verde-bosque);
+  }
+
+  /* BÚSQUEDA */
+  .search-wrap {
+    max-width: 480px;
+    margin: 16px auto 0;
+    padding: 0 16px;
+  }
+  .search-input {
+    width: 100%;
+    padding: 10px 16px;
+    border: 1.5px solid #DDD6CC;
+    border-radius: 24px;
+    font-size: 13px;
+    font-family: 'Inter', sans-serif;
+    background: var(--blanco);
+    color: var(--negro);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .search-input:focus { border-color: var(--verde-claro); }
+  .search-input::placeholder { color: #AAA; }
+
+  /* CATEGORÍAS */
+  .content {
+    max-width: 820px;
+    margin: 0 auto;
+    padding: 24px 16px 48px;
+  }
+
+  .category {
+    margin-bottom: 32px;
+  }
+  .category-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid var(--verde-bosque);
+  }
+  .category-icon {
+    width: 36px;
+    height: 36px;
+    background: var(--verde-bosque);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 17px;
+    flex-shrink: 0;
+  }
+  .category-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 19px;
+    color: var(--verde-bosque);
+  }
+  .category-subtitle {
+    font-size: 11px;
+    color: var(--gris);
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-left: auto;
+    font-weight: 500;
+  }
+
+  /* TARJETAS */
+  .cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+    gap: 10px;
+  }
+  .card {
+    background: var(--blanco);
+    border-radius: 10px;
+    padding: 14px 16px;
+    border: 1px solid #E8E2D8;
+    transition: box-shadow 0.2s, transform 0.15s;
+    cursor: default;
+    position: relative;
+  }
+  .card:hover {
+    box-shadow: 0 4px 16px rgba(30,58,43,0.1);
+    transform: translateY(-1px);
+  }
+  .card-num {
+    font-size: 10px;
+    color: var(--dorado);
+    font-weight: 700;
+    letter-spacing: 1px;
+    margin-bottom: 4px;
+  }
+  .card-de {
+    font-size: 14px;
+    font-weight: 600;
+    color: var(--negro);
+    margin-bottom: 5px;
+    line-height: 1.4;
+  }
+  .card-es {
+    font-size: 12px;
+    color: var(--gris);
+    font-weight: 400;
+    line-height: 1.4;
+  }
+  /* BOTONES DE ACCIÓN */
+  .card-actions {
+    display: flex;
+    gap: 6px;
+    margin-top: 10px;
+    align-items: center;
+  }
+  .audio-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: var(--verde-bosque);
+    color: var(--blanco);
+    border: none;
+    border-radius: 20px;
+    padding: 5px 12px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.5px;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.1s;
+    flex-shrink: 0;
+  }
+  .audio-btn:hover { background: var(--verde-musgo); }
+  .audio-btn:active { transform: scale(0.95); }
+  .audio-btn.playing {
+    background: var(--dorado);
+    color: var(--verde-bosque);
+  }
+  .audio-btn svg {
+    width: 11px;
+    height: 11px;
+    fill: currentColor;
+    flex-shrink: 0;
+  }
+  .copy-btn {
+    background: none;
+    border: 1px solid #DDD6CC;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 11px;
+    color: var(--gris);
+    padding: 5px 10px;
+    transition: all 0.2s;
+    font-family: 'Inter', sans-serif;
+  }
+  .copy-btn:hover { border-color: var(--verde-claro); color: var(--verde-bosque); }
+
+  /* Barra de velocidad */
+  .speed-wrap {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    justify-content: center;
+    padding: 10px 16px 4px;
+    font-size: 11px;
+    color: var(--gris);
+    max-width: 820px;
+    margin: 0 auto;
+  }
+  .speed-btn {
+    background: var(--blanco);
+    border: 1.5px solid #DDD6CC;
+    border-radius: 12px;
+    padding: 3px 10px;
+    font-size: 11px;
+    font-weight: 600;
+    cursor: pointer;
+    color: var(--gris);
+    font-family: 'Inter', sans-serif;
+    transition: all 0.2s;
+  }
+  .speed-btn.active { background: var(--verde-bosque); color: var(--blanco); border-color: var(--verde-bosque); }
+
+  /* Indicador de soporte TTS */
+  .tts-notice {
+    text-align: center;
+    font-size: 11px;
+    color: #AAA;
+    padding: 6px 16px 0;
+  }
+
+  /* EMPTY STATE */
+  .empty-state {
+    text-align: center;
+    padding: 40px 20px;
+    color: var(--gris);
+    font-size: 14px;
+    display: none;
+  }
+
+  /* STATS BAR */
+  .stats-bar {
+    text-align: center;
+    font-size: 12px;
+    color: var(--gris);
+    padding: 12px 16px 0;
+  }
+  .stats-bar span { color: var(--verde-bosque); font-weight: 600; }
+
+  .hidden { display: none !important; }
+
+  /* TOAST */
+  .toast {
+    position: fixed;
+    bottom: 24px;
+    left: 50%;
+    transform: translateX(-50%) translateY(60px);
+    background: var(--verde-bosque);
+    color: var(--blanco);
+    font-size: 13px;
+    padding: 10px 20px;
+    border-radius: 20px;
+    transition: transform 0.3s;
+    z-index: 999;
+    pointer-events: none;
+  }
+  .toast.show { transform: translateX(-50%) translateY(0); }
+
+  @media (max-width: 500px) {
+    .cards-grid { grid-template-columns: 1fr; }
+    .category-subtitle { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<div class="hero">
+  <div class="hero-eyebrow">Essential English · Travel Guide</div>
+  <h1>English for<br><span>Travelers</span></h1>
+  <p class="hero-sub">100 frases útiles en inglés para turistas · 5 categorías esenciales</p>
+  <span class="badge-count">100 PHRASES</span>
+</div>
+
+<div class="filters" id="filters">
+  <button class="filter-btn active" data-cat="all">Todas</button>
+  <button class="filter-btn" data-cat="conversacion">💬 Conversación</button>
+  <button class="filter-btn" data-cat="transporte">🚇 Transporte</button>
+  <button class="filter-btn" data-cat="alojamiento">🏨 Hotel y Tiendas</button>
+  <button class="filter-btn" data-cat="restaurante">🍽️ Comida</button>
+  <button class="filter-btn" data-cat="emergencias">🚨 Emergencias</button>
+</div>
+
+<div class="search-wrap">
+  <input type="text" class="search-input" id="searchInput" placeholder="Buscar frase en inglés o español...">
+</div>
+
+<div class="stats-bar" id="statsBar">Mostrando <span id="visibleCount">100</span> frases</div>
+
+<div class="speed-wrap">
+  <span>Velocidad:</span>
+  <button class="speed-btn" data-speed="0.7">Lenta</button>
+  <button class="speed-btn active" data-speed="1.0">Normal</button>
+  <button class="speed-btn" data-speed="1.3">Rápida</button>
+</div>
+<div class="tts-notice" id="ttsNotice"></div>
+
+<div class="content" id="content"></div>
+
+<div class="toast" id="toast">📋 Copiado al portapapeles</div>
+
+<script>
+const data = [
+  // CONVERSACIÓN GENERAL (20)
+  { cat: 'conversacion', de: 'Hello, good morning! How are you?', es: '¡Hola, buenos días! ¿Cómo está?' },
+  { cat: 'conversacion', de: 'Excuse me, could you help me, please?', es: 'Disculpe, ¿podría ayudarme, por favor?' },
+  { cat: 'conversacion', de: 'Thank you very much for your help.', es: 'Muchas gracias por su ayuda.' },
+  { cat: 'conversacion', de: 'You are welcome! Have a nice day.', es: '¡De nada! Que tenga un buen día.' },
+  { cat: 'conversacion', de: 'I am sorry, I do not understand.', es: 'Lo siento, no entiendo.' },
+  { cat: 'conversacion', de: 'Could you speak more slowly, please?', es: '¿Podría hablar más despacio, por favor?' },
+  { cat: 'conversacion', de: 'Could you repeat that, please?', es: '¿Podría repetir eso, por favor?' },
+  { cat: 'conversacion', de: 'Do you speak Spanish?', es: '¿Habla español?' },
+  { cat: 'conversacion', de: 'My English is not very good.', es: 'Mi inglés no es muy bueno.' },
+  { cat: 'conversacion', de: 'How do you say this in English?', es: '¿Cómo se dice esto en inglés?' },
+  { cat: 'conversacion', de: 'Where are you from?', es: '¿De dónde es usted?' },
+  { cat: 'conversacion', de: 'I am from Colombia.', es: 'Soy de Colombia.' },
+  { cat: 'conversacion', de: 'Can you write it down for me, please?', es: '¿Puede escribírmelo, por favor?' },
+  { cat: 'conversacion', de: 'Nice to meet you.', es: 'Gusto en conocerlo.' },
+  { cat: 'conversacion', de: 'See you later! Take care.', es: '¡Nos vemos luego! Cuídese.' },
+  { cat: 'conversacion', de: 'Where can I find a tourist information office?', es: '¿Dónde puedo encontrar una oficina de información turística?' },
+  { cat: 'conversacion', de: 'Is there free Wi-Fi here?', es: '¿Hay Wi-Fi gratis aquí?' },
+  { cat: 'conversacion', de: 'What is the Wi-Fi password?', es: '¿Cuál es la contraseña del Wi-Fi?' },
+  { cat: 'conversacion', de: 'Can I take a photo here?', es: '¿Puedo tomar una foto aquí?' },
+  { cat: 'conversacion', de: 'Could you take a photo of us, please?', es: '¿Podría tomarnos una foto, por favor?' },
+
+  // DIRECCIONES Y TRANSPORTE (20)
+  { cat: 'transporte', de: 'Where is the nearest subway station?', es: '¿Dónde está la estación de metro más cercana?' },
+  { cat: 'transporte', de: 'Where can I catch a taxi?', es: '¿Dónde puedo tomar un taxi?' },
+  { cat: 'transporte', de: 'How can I get to this address?', es: '¿Cómo puedo llegar a esta dirección?' },
+  { cat: 'transporte', de: 'Is it far from here?', es: '¿Está lejos de aquí?' },
+  { cat: 'transporte', de: 'Can I walk there?', es: '¿Puedo ir caminando allá?' },
+  { cat: 'transporte', de: 'Where is the bus stop?', es: '¿Dónde está la parada de autobús?' },
+  { cat: 'transporte', de: 'Which bus goes to the city center?', es: '¿Cuál autobús va al centro de la ciudad?' },
+  { cat: 'transporte', de: 'How much is a ticket to the airport?', es: '¿Cuánto cuesta un boleto al aeropuerto?' },
+  { cat: 'transporte', de: 'Where can I buy a transit card?', es: '¿Dónde puedo comprar una tarjeta de transporte?' },
+  { cat: 'transporte', de: 'Does this train stop at the main station?', es: '¿Este tren para en la estación principal?' },
+  { cat: 'transporte', de: 'What time does the next bus leave?', es: '¿A qué hora sale el próximo autobús?' },
+  { cat: 'transporte', de: 'Please take me to this hotel.', es: 'Por favor, lléveme a este hotel.' },
+  { cat: 'transporte', de: 'How much will the taxi ride cost?', es: '¿Cuánto costará el viaje en taxi?' },
+  { cat: 'transporte', de: 'Stop here, please.', es: 'Pare aquí, por favor.' },
+  { cat: 'transporte', de: 'Keep the change.', es: 'Quédese con el cambio.' },
+  { cat: 'transporte', de: 'Where can I rent a car or a bicycle?', es: '¿Dónde puedo rentar un auto o una bicicleta?' },
+  { cat: 'transporte', de: 'Go straight and then turn right.', es: 'Siga derecho y luego gire a la derecha.' },
+  { cat: 'transporte', de: 'Turn left at the next corner.', es: 'Gire a la izquierda en la siguiente esquina.' },
+  { cat: 'transporte', de: 'Is this the right platform for the train?', es: '¿Es esta la plataforma correcta para el tren?' },
+  { cat: 'transporte', de: 'Excuse me, I am lost.', es: 'Disculpe, estoy perdido.' },
+
+  // ALOJAMIENTO Y COMPRAS (20)
+  { cat: 'alojamiento', de: 'I have a reservation under the name of Giovanni.', es: 'Tengo una reservación a nombre de Giovanni.' },
+  { cat: 'alojamiento', de: 'What time is check-in and check-out?', es: '¿A qué hora es el ingreso y la salida?' },
+  { cat: 'alojamiento', de: 'Is breakfast included in the price?', es: '¿El desayuno está incluido en el precio?' },
+  { cat: 'alojamiento', de: 'Could I have an extra blanket and towel, please?', es: '¿Podría darme una cobija y una toalla extra, por favor?' },
+  { cat: 'alojamiento', de: 'The air conditioning in my room does not work.', es: 'El aire acondicionado de mi habitación no funciona.' },
+  { cat: 'alojamiento', de: 'Can I leave my luggage here until this afternoon?', es: '¿Puedo dejar mi equipaje aquí hasta esta tarde?' },
+  { cat: 'alojamiento', de: 'Where is the elevator?', es: '¿Dónde está el ascensor?' },
+  { cat: 'alojamiento', de: 'How much does this cost?', es: '¿Cuánto cuesta esto?' },
+  { cat: 'alojamiento', de: 'Do you accept credit cards or cash only?', es: '¿Aceptan tarjetas de crédito o solo efectivo?' },
+  { cat: 'alojamiento', de: 'I am just looking, thank you.', es: 'Solo estoy mirando, gracias.' },
+  { cat: 'alojamiento', de: 'Can I try this on?', es: '¿Me puedo probar esto?' },
+  { cat: 'alojamiento', de: 'Where are the fitting rooms?', es: '¿Dónde están los probadores?' },
+  { cat: 'alojamiento', de: 'Do you have this in a larger or smaller size?', es: '¿Tiene esto en una talla más grande o más pequeña?' },
+  { cat: 'alojamiento', de: 'It is too expensive. Is there a discount?', es: 'Está muy caro. ¿Hay algún descuento?' },
+  { cat: 'alojamiento', de: 'I will take it, thank you.', es: 'Me lo llevaré, gracias.' },
+  { cat: 'alojamiento', de: 'Can I have a receipt, please?', es: '¿Me da un recibo, por favor?' },
+  { cat: 'alojamiento', de: 'Where is the nearest ATM?', es: '¿Dónde está el cajero automático más cercano?' },
+  { cat: 'alojamiento', de: 'Where can I exchange some currency?', es: '¿Dónde puedo cambiar dinero?' },
+  { cat: 'alojamiento', de: 'What time do you close?', es: '¿A qué hora cierran?' },
+  { cat: 'alojamiento', de: 'Can I pay by phone?', es: '¿Puedo pagar con el teléfono?' },
+
+  // RESTAURANTE Y COMIDA (20)
+  { cat: 'restaurante', de: 'A table for two, please.', es: 'Una mesa para dos, por favor.' },
+  { cat: 'restaurante', de: 'Could we see the menu, please?', es: '¿Podríamos ver el menú, por favor?' },
+  { cat: 'restaurante', de: 'What do you recommend?', es: '¿Qué nos recomienda?' },
+  { cat: 'restaurante', de: 'I would like to order a cold beer, please.', es: 'Me gustaría pedir una cerveza fría, por favor.' },
+  { cat: 'restaurante', de: 'A glass of tap water, please.', es: 'Un vaso de agua del grifo, por favor.' },
+  { cat: 'restaurante', de: 'I am a vegetarian / vegan.', es: 'Soy vegetariano / vegano.' },
+  { cat: 'restaurante', de: 'I am allergic to nuts and seafood.', es: 'Soy alérgico a las nueces y a los mariscos.' },
+  { cat: 'restaurante', de: 'Is this dish spicy?', es: '¿Este plato es picante?' },
+  { cat: 'restaurante', de: 'Can I have it without onions, please?', es: '¿Puede ser sin cebolla, por favor?' },
+  { cat: 'restaurante', de: 'Enjoy your meal!', es: '¡Buen provecho!' },
+  { cat: 'restaurante', de: 'Everything is delicious, thank you.', es: 'Todo está delicioso, gracias.' },
+  { cat: 'restaurante', de: 'Excuse me, this is not what I ordered.', es: 'Disculpe, esto no es lo que pedí.' },
+  { cat: 'restaurante', de: 'Could we have some more napkins?', es: '¿Nos podría dar más servilletas?' },
+  { cat: 'restaurante', de: 'Where are the restrooms?', es: '¿Dónde están los baños?' },
+  { cat: 'restaurante', de: 'Can we have the bill, please?', es: '¿Nos trae la cuenta, por favor?' },
+  { cat: 'restaurante', de: 'Is service included in the bill?', es: '¿El servicio está incluido en la cuenta?' },
+  { cat: 'restaurante', de: 'Can we pay separately?', es: '¿Podemos pagar por separado?' },
+  { cat: 'restaurante', de: 'To go, please.', es: 'Para llevar, por favor.' },
+  { cat: 'restaurante', de: 'Where is a good coffee shop nearby?', es: '¿Dónde hay una buena cafetería cerca?' },
+  { cat: 'restaurante', de: 'Do you have a high chair for kids?', es: '¿Tienen una silla alta para niños?' },
+
+  // EMERGENCIAS Y SALUD (20)
+  { cat: 'emergencias', de: 'Help me, please!', es: '¡Ayúdeme, por favor!' },
+  { cat: 'emergencias', de: 'Call an ambulance immediately!', es: '¡Llame a una ambulancia de inmediato!' },
+  { cat: 'emergencias', de: 'Call the police!', es: '¡Llame a la policía!' },
+  { cat: 'emergencias', de: 'I need a doctor.', es: 'Necesito un médico.' },
+  { cat: 'emergencias', de: 'Where is the nearest hospital?', es: '¿Dónde está el hospital más cercano?' },
+  { cat: 'emergencias', de: 'Where is the nearest pharmacy?', es: '¿Dónde está la farmacia más cercana?' },
+  { cat: 'emergencias', de: 'I feel very sick.', es: 'Me siento muy enfermo.' },
+  { cat: 'emergencias', de: 'My head and stomach hurt.', es: 'Me duelen la cabeza y el estómago.' },
+  { cat: 'emergencias', de: 'I am diabetic and I need my medicine.', es: 'Soy diabético y necesito mi medicina.' },
+  { cat: 'emergencias', de: 'I lost my passport and my wallet.', es: 'Perdí mi pasaporte y mi billetera.' },
+  { cat: 'emergencias', de: 'Someone stole my bag!', es: '¡Alguien robó mi bolso!' },
+  { cat: 'emergencias', de: 'Where is the Colombian embassy?', es: '¿Dónde está la embajada de Colombia?' },
+  { cat: 'emergencias', de: 'Please leave me alone.', es: 'Por favor, déjeme en paz.' },
+  { cat: 'emergencias', de: 'Fire! Get out of here!', es: '¡Fuego! ¡Salgan de aquí!' },
+  { cat: 'emergencias', de: 'Is it safe to walk around here at night?', es: '¿Es seguro caminar por aquí de noche?' },
+  { cat: 'emergencias', de: 'I cannot find my hotel.', es: 'No puedo encontrar mi hotel.' },
+  { cat: 'emergencias', de: 'My phone is dead.', es: 'Mi teléfono se quedó sin batería.' },
+  { cat: 'emergencias', de: 'Can I use your phone for an emergency call?', es: '¿Puedo usar su teléfono para una llamada de emergencia?' },
+  { cat: 'emergencias', de: 'Are there any dangerous areas nearby?', es: '¿Hay zonas peligrosas cerca?' },
+  { cat: 'emergencias', de: 'Don\'t worry, everything is okay.', es: 'No se preocupe, todo está bien.' },
+];
+
+const catConfig = {
+  conversacion: { icon: '💬', label: 'Conversación General', color: '#1E3A2B' },
+  transporte:  { icon: '🚇', label: 'Direcciones & Transporte', color: '#2D5A3D' },
+  alojamiento: { icon: '🏨', label: 'Alojamiento & Tiendas', color: '#1E3A2B' },
+  restaurante: { icon: '🍽️', label: 'Restaurante & Comida', color: '#2D5A3D' },
+  emergencias: { icon: '🚨', label: 'Emergencias & Salud', color: '#1E3A2B' },
+};
+
+const catOrd
