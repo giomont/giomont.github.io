@@ -1,0 +1,857 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wegweiser · Nachrichten & Aktuelles</title>
+<style>
+  :root{
+    --bg:#141210;
+    --panel:#1d1a17;
+    --amber:#e0a458;
+    --red:#c1443a;
+    --green:#8aab6c;
+    --text:#f2ece2;
+    --muted:#9a8f82;
+    --border:#2c2822;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    -webkit-tap-highlight-color:transparent;
+  }
+  header{
+    padding:16px 16px 8px;
+    border-bottom:1px solid var(--border);
+  }
+  h1{
+    font-size:1.1rem;
+    margin:0 0 4px;
+    letter-spacing:.02em;
+  }
+  h1 span{color:var(--amber);}
+  .sub{color:var(--muted);font-size:.8rem;margin:0;}
+
+  .progress-wrap{
+    padding:10px 16px 0;
+    max-width:640px;
+    width:100%;
+    margin:0 auto;
+  }
+  .progress-bar{
+    height:6px;
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:4px;
+    overflow:hidden;
+  }
+  .progress-fill{
+    height:100%;
+    background:var(--amber);
+    width:0%;
+    transition:width .3s;
+  }
+  .progress-label{
+    color:var(--muted);
+    font-size:.72rem;
+    margin-top:4px;
+    text-align:right;
+  }
+
+  .controls{
+    display:flex;
+    gap:8px;
+    padding:12px 16px;
+    flex-wrap:wrap;
+    justify-content:center;
+    max-width:640px;
+    width:100%;
+    margin:0 auto;
+  }
+  select, button{
+    background:var(--panel);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:9px 12px;
+    font-size:.85rem;
+  }
+  button{
+    cursor:pointer;
+    transition:border-color .15s;
+  }
+  #playAllBtn.active, #vocabBtn.active{
+    border-color:var(--red);
+    color:var(--red);
+  }
+
+  /* ---------- Vokabelspiel ---------- */
+  .game-slide{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .game-counter{
+    color:var(--muted);
+    font-size:.75rem;
+    margin:0 0 14px;
+  }
+  .game-sentence{
+    margin-bottom:18px;
+  }
+  .game-sub{
+    color:var(--muted);
+    font-size:.85rem;
+    margin:0;
+  }
+  .game-word-label{
+    color:var(--muted);
+    font-size:.8rem;
+    margin:14px 0 10px;
+  }
+  .game-word-label strong{color:var(--amber);}
+  .game-actions{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+  }
+  .game-answer{
+    width:100%;
+    border-top:1px solid var(--border);
+    margin-top:18px;
+    padding-top:16px;
+  }
+  .rate-buttons{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:6px;
+  }
+  .rate-btn{font-size:.8rem;}
+  .rate-btn.again{border-color:var(--red);color:var(--red);}
+  .rate-btn.hard{border-color:var(--muted);color:var(--muted);}
+  .rate-btn.good{border-color:var(--amber);color:var(--amber);}
+  .rate-btn.easy{border-color:var(--green);color:var(--green);}
+  .rate-btn:active{opacity:.7;}
+
+  .speed-wrap{
+    display:flex;
+    align-items:center;
+    gap:6px;
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:8px;
+    padding:6px 12px;
+    font-size:.78rem;
+    color:var(--muted);
+  }
+  .speed-wrap input[type=range]{
+    width:80px;
+    accent-color:var(--amber);
+  }
+
+  main{
+    flex:1;
+    padding:8px 16px 24px;
+    max-width:640px;
+    width:100%;
+    margin:0 auto;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+  }
+
+  .slide{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:16px;
+    text-align:center;
+    padding:36px 20px;
+    touch-action:pan-y;
+    user-select:none;
+  }
+  .slide.playing{
+    border-color:var(--amber);
+  }
+  .cat-tag{
+    display:inline-block;
+    font-size:.7rem;
+    color:var(--amber);
+    border:1px solid var(--amber);
+    border-radius:12px;
+    padding:2px 10px;
+    margin-bottom:14px;
+    letter-spacing:.03em;
+  }
+  .slide .de{font-size:1.4rem;font-weight:700;margin-bottom:16px;line-height:1.4;transition:background .2s,padding .2s;}
+  .slide .en{font-size:1rem;color:var(--amber);margin-bottom:6px;transition:background .2s,padding .2s;}
+  .slide .es{font-size:1rem;color:var(--muted);transition:background .2s,padding .2s;}
+
+  .slide .lang-active{
+    background:rgba(224,164,88,.14);
+    border-radius:10px;
+    padding:8px 10px;
+    color:var(--text)!important;
+  }
+
+  .word{display:inline;}
+  .word.karaoke{
+    background:var(--red);
+    color:var(--text);
+    border-radius:4px;
+    padding:0 2px;
+  }
+
+  .blank{
+    display:inline-block;
+    min-width:2.2em;
+    border-bottom:2px solid var(--red);
+    color:var(--red);
+    cursor:pointer;
+    padding:0 2px;
+  }
+  .blank.revealed{
+    border-bottom:2px solid transparent;
+    color:inherit;
+    cursor:default;
+  }
+
+  .slide-nav{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:18px;
+    flex-wrap:wrap;
+  }
+  .speak-btn{
+    border-radius:50%;
+    width:44px;height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-color:var(--red);
+    color:var(--red);
+    font-size:1.1rem;
+  }
+  .speak-btn:active{background:var(--red);color:var(--bg);}
+
+  .counter{
+    text-align:center;
+    color:var(--muted);
+    font-size:.8rem;
+    margin-top:10px;
+  }
+
+  .hint{
+    text-align:center;
+    color:var(--muted);
+    font-size:.72rem;
+    margin-top:2px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Weg<span>weiser</span> · Nachrichten & Aktuelles</h1>
+  <p class="sub">20 einfache Nachrichten · 20 noticias en alemán sencillo</p>
+</header>
+
+<div class="controls">
+  <select id="categorySelect"></select>
+  <select id="langSelect"></select>
+  <div class="speed-wrap">
+    <span>Tempo</span>
+    <input type="range" id="speedSlider" min="0.7" max="1.2" step="0.05" value="0.95">
+    <span id="speedLabel">0.95x</span>
+  </div>
+  <button id="vocabBtn">🎮 Wortspiel</button>
+  <button id="playAllBtn">▶ Alle abspielen</button>
+  <button id="updateBtn">🔄 Update</button>
+</div>
+
+<main>
+  <div id="slideContainer"></div>
+  <div id="gameContainer" style="display:none;"></div>
+  <div class="slide-nav" id="slideNav">
+    <button id="repeatBtn">🔁 3x</button>
+    <button id="speakSlideBtn" class="speak-btn">🔊</button>
+  </div>
+  <p class="counter" id="counter"></p>
+  <p class="hint" id="hint">Wische nach links/rechts, um zu blättern · Deslizá para cambiar de tarjeta</p>
+</main>
+
+<script>
+// Las noticias se cargan desde noticias.json (mismo directorio que index.html).
+// Si ese archivo falla o no existe, se usa este pequeño respaldo de emergencia.
+let allPhrases = [
+  {de:"Die Fußball-WM hat der FIFA rund 15 Milliarden Dollar eingebracht. Das ist ein neuer Rekord.", en:"The soccer World Cup brought FIFA around 15 billion dollars. That's a new record.", es:"El Mundial de fútbol le generó a la FIFA unos 15 mil millones de dólares. Es un nuevo récord.", cat:"Sport"}
+];
+
+const NOTICIAS_JSON_URL = "noticias.json";
+
+async function loadPhrasesFromJson(){
+  try{
+    const resp = await fetch(NOTICIAS_JSON_URL, { cache: "no-store" });
+    if(!resp.ok) throw new Error("HTTP " + resp.status);
+    const arr = await resp.json();
+    if(Array.isArray(arr) && arr.length > 0){
+      allPhrases = arr;
+      return true;
+    }
+  }catch(e){
+    console.error("No se pudo cargar noticias.json, usando respaldo:", e);
+  }
+  return false;
+}
+
+const STORAGE_KEY = "wegweiser-nachrichten-progress";
+let data = allPhrases.slice();
+let voices = [];
+let currentIndex = 0;
+let isPlayingAll = false;
+let playAllIndex = 0;
+let studied = new Set();
+let currentSpeed = 0.95;
+
+// ---------- Idiomas ----------
+const langMeta = {
+  de: { code:"de-DE", label:"Deutsch" },
+  en: { code:"en-US", label:"English" },
+  es: { code:"es-ES", label:"Español" }
+};
+let currentLang = "de";
+
+// ---------- Storage (progress) ----------
+// Nota: window.storage solo existe dentro de artifacts de Claude.ai.
+// En un sitio real (GitHub Pages) usamos localStorage del navegador.
+async function loadProgress(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      studied = new Set(JSON.parse(raw));
+    }
+  }catch(e){
+    studied = new Set();
+  }
+  updateProgressBar();
+}
+
+async function saveProgress(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...studied]));
+  }catch(e){
+    console.error("No se pudo guardar el progreso", e);
+  }
+}
+
+function markStudied(phrase){
+  const key = phrase.de;
+  if(!studied.has(key)){
+    studied.add(key);
+    saveProgress();
+    updateProgressBar();
+  }
+}
+
+function updateProgressBar(){
+  // Barra de progreso eliminada de la UI; se deja el cálculo por si se
+  // reactiva más adelante, pero no toca el DOM si los elementos no existen.
+  const fill = document.getElementById("progressFill");
+  const label = document.getElementById("progressLabel");
+  if(!fill && !label) return;
+  const total = allPhrases.length;
+  let count = 0;
+  allPhrases.forEach(p => { if(studied.has(p.de)) count++; });
+  const pct = Math.round((count/total)*100);
+  if(fill) fill.style.width = pct + "%";
+  if(label) label.textContent = `${count} / ${total} gelernt`;
+}
+
+// ---------- Categories ----------
+function setupCategories(){
+  const cats = ["Alle", ...new Set(allPhrases.map(p => p.cat))];
+  const sel = document.getElementById("categorySelect");
+  sel.innerHTML = "";
+  cats.forEach(c => {
+    const opt = document.createElement("option");
+    opt.value = c;
+    opt.textContent = c;
+    sel.appendChild(opt);
+  });
+  sel.addEventListener("change", () => {
+    stopPlayAll();
+    const val = sel.value;
+    data = (val === "Alle") ? allPhrases.slice() : allPhrases.filter(p => p.cat === val);
+    currentIndex = 0;
+    renderSlide();
+  });
+}
+
+// ---------- Voices ----------
+function loadVoices(){
+  voices = speechSynthesis.getVoices();
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+
+function pickVoiceFor(lang){
+  const match = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith(lang));
+  return match[0] || null;
+}
+
+// ---------- Selector de idioma ----------
+function setupLangSelect(){
+  const sel = document.getElementById("langSelect");
+  sel.innerHTML = "";
+  Object.keys(langMeta).forEach(code => {
+    const opt = document.createElement("option");
+    opt.value = code;
+    opt.textContent = langMeta[code].label;
+    sel.appendChild(opt);
+  });
+  sel.value = currentLang;
+  sel.addEventListener("change", () => {
+    stopPlayAll();
+    currentLang = sel.value;
+    renderSlide();
+  });
+}
+
+// ---------- Speed ----------
+document.getElementById("speedSlider").addEventListener("input", (e) => {
+  currentSpeed = parseFloat(e.target.value);
+  document.getElementById("speedLabel").textContent = currentSpeed.toFixed(2) + "x";
+});
+
+// ---------- Speak ----------
+function highlightWordAt(lang, charIndex){
+  const block = document.querySelector(`.slide .${lang}`);
+  if(!block) return;
+  block.querySelectorAll(".word").forEach(w => {
+    const s = parseInt(w.dataset.start, 10);
+    const e = parseInt(w.dataset.end, 10);
+    if(charIndex >= s && charIndex < e){
+      w.classList.add("karaoke");
+    } else {
+      w.classList.remove("karaoke");
+    }
+  });
+}
+
+function clearHighlight(lang){
+  const block = document.querySelector(`.slide .${lang}`);
+  if(block) block.querySelectorAll(".word").forEach(w => w.classList.remove("karaoke"));
+}
+
+function speak(text, lang, onEnd){
+  lang = lang || currentLang;
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = langMeta[lang] ? langMeta[lang].code : "de-DE";
+  const voice = pickVoiceFor(lang);
+  if(voice) utter.voice = voice;
+  utter.rate = currentSpeed;
+  utter.onboundary = (e) => {
+    if(e.name === "word" || e.name === undefined){
+      highlightWordAt(lang, e.charIndex);
+    }
+  };
+  utter.onend = () => {
+    clearHighlight(lang);
+    if(onEnd) onEnd();
+  };
+  speechSynthesis.cancel();
+  speechSynthesis.speak(utter);
+}
+
+function stopPlayAll(){
+  isPlayingAll = false;
+  speechSynthesis.cancel();
+  document.getElementById("playAllBtn").textContent = "▶ Alle abspielen";
+  document.getElementById("playAllBtn").classList.remove("active");
+  const s = document.querySelector(".slide");
+  if(s) s.classList.remove("playing");
+  clearHighlight(currentLang);
+}
+
+// ---------- Quiz (blank keywords) ----------
+function renderWords(text){
+  const tokens = [...text.matchAll(/\S+/g)];
+  let html = "";
+  let cursor = 0;
+  tokens.forEach((m) => {
+    const start = m.index;
+    html += text.slice(cursor, start); // espacios/preservar formato original
+    const raw = m[0];
+    const end = start + raw.length;
+    html += `<span class="word" data-start="${start}" data-end="${end}">${raw}</span>`;
+    cursor = end;
+  });
+  html += text.slice(cursor);
+  return html;
+}
+
+// ---------- Slide render ----------
+function renderSlide(){
+  if(data.length === 0){
+    document.getElementById("slideContainer").innerHTML = `<div class="slide"><div class="de">Keine Nachrichten in dieser Kategorie.</div></div>`;
+    document.getElementById("counter").textContent = "";
+    return;
+  }
+  const p = data[currentIndex];
+  const container = document.getElementById("slideContainer");
+  const active = (lang) => lang === currentLang ? " lang-active" : "";
+  container.innerHTML = `
+    <div class="slide">
+      <span class="cat-tag">${p.cat}</span>
+      <div class="de${active("de")}">${renderWords(p.de)}</div>
+      <div class="en${active("en")}">${renderWords(p.en)}</div>
+      <div class="es${active("es")}">${renderWords(p.es)}</div>
+    </div>
+  `;
+  document.getElementById("counter").textContent = `${currentIndex+1} / ${data.length}`;
+  markStudied(p);
+}
+
+// ---------- Play all ----------
+function playAllStep(){
+  if(!isPlayingAll) return;
+  if(playAllIndex >= data.length){
+    stopPlayAll();
+    return;
+  }
+  currentIndex = playAllIndex;
+  renderSlide();
+  const s = document.querySelector(".slide");
+  if(s) s.classList.add("playing");
+
+  speak(data[playAllIndex][currentLang], currentLang, () => {
+    if(!isPlayingAll) return;
+    playAllIndex++;
+    setTimeout(playAllStep, 400);
+  });
+}
+
+function startPlayAll(){
+  isPlayingAll = true;
+  playAllIndex = 0;
+  document.getElementById("playAllBtn").textContent = "■ Stopp";
+  document.getElementById("playAllBtn").classList.add("active");
+  playAllStep();
+}
+
+// ---------- Repeat 3x (shadowing) ----------
+function repeatThreeTimes(){
+  stopPlayAll();
+  let count = 0;
+  function step(){
+    if(count >= 3) return;
+    count++;
+    speak(data[currentIndex][currentLang], currentLang, () => setTimeout(step, 500));
+  }
+  step();
+}
+
+// ---------- Navigation ----------
+function goPrev(){
+  stopPlayAll();
+  currentIndex = (currentIndex - 1 + data.length) % data.length;
+  renderSlide();
+}
+function goNext(){
+  stopPlayAll();
+  currentIndex = (currentIndex + 1) % data.length;
+  renderSlide();
+}
+
+document.getElementById("repeatBtn").addEventListener("click", repeatThreeTimes);
+
+document.getElementById("speakSlideBtn").addEventListener("click", () => {
+  stopPlayAll();
+  speak(data[currentIndex][currentLang], currentLang);
+});
+
+document.getElementById("playAllBtn").addEventListener("click", () => {
+  if(isPlayingAll){
+    stopPlayAll();
+  } else {
+    startPlayAll();
+  }
+});
+
+// ---------- Vokabelspiel (repetición espaciada, meta: 20 Wörter/Tag) ----------
+// Principios usados:
+// - Recuerdo activo / "testing effect" (Roediger & Karpicke): primero intentás
+//   recordar el significado, recién después ves la respuesta.
+// - Repetición espaciada tipo Leitner (curva del olvido de Ebbinghaus): lo que
+//   marcás "Nochmal" vuelve pronto; lo que dominás, cada vez más lejos en el tiempo.
+// - Insumo comprensible (Krashen): la palabra siempre se ve dentro de su
+//   oración/contexto real de la noticia, nunca aislada.
+// - Tope diario fijo (evita sobrecarga cognitiva): nunca más de DAILY_GOAL
+//   palabras nuevas o de repaso en la misma sesión.
+const SRS_KEY = "wegweiser-vocab-srs";
+const DAILY_GOAL = 20;
+const BOX_DAYS = [0, 1, 3, 7, 16, 35]; // días hasta el próximo repaso por "caja"
+
+let srsState = {};
+let gameMode = false;
+let gameQueue = [];
+let gameIndex = 0;
+let gameStats = { seen: 0, again: 0, good: 0 };
+
+function loadSRS(){
+  try{
+    const raw = localStorage.getItem(SRS_KEY);
+    srsState = raw ? JSON.parse(raw) : {};
+  }catch(e){
+    srsState = {};
+  }
+}
+function saveSRS(){
+  try{
+    localStorage.setItem(SRS_KEY, JSON.stringify(srsState));
+  }catch(e){
+    console.error("No se pudo guardar el progreso del juego", e);
+  }
+}
+function todayStr(){ return new Date().toISOString().slice(0, 10); }
+
+function extractKeyword(text){
+  const words = text.split(/\s+/).map(w => w.replace(/[.,!?;:„“”"]/g, ""));
+  const candidates = words.filter(w => w.length > 5 && !/^\d+$/.test(w));
+  if(candidates.length === 0) return words[0] || "";
+  return candidates.reduce((a, b) => (b.length > a.length ? b : a));
+}
+
+function buildVocabPool(){
+  return allPhrases.map((p, i) => ({
+    word: extractKeyword(p.de),
+    de: p.de, en: p.en, es: p.es, cat: p.cat, idx: i
+  }));
+}
+
+function getCard(word){
+  if(!srsState[word]) srsState[word] = { box: 0, due: todayStr(), seen: 0, correct: 0 };
+  return srsState[word];
+}
+
+function rateCard(word, rating){
+  // rating: 0 = Nochmal, 1 = Schwer, 2 = Gut, 3 = Leicht
+  const card = getCard(word);
+  card.seen++;
+  if(rating === 0){
+    card.box = 0;
+  } else {
+    card.correct++;
+    const step = rating === 1 ? 1 : rating === 2 ? 2 : 3;
+    card.box = Math.min(BOX_DAYS.length - 1, card.box + step - 1);
+  }
+  const due = new Date();
+  due.setDate(due.getDate() + BOX_DAYS[card.box]);
+  card.due = due.toISOString().slice(0, 10);
+  saveSRS();
+}
+
+function buildTodayQueue(){
+  const pool = buildVocabPool();
+  const today = todayStr();
+  const due = [];
+  const brandNew = [];
+  pool.forEach(item => {
+    const s = srsState[item.word];
+    if(s){
+      if(s.due <= today) due.push(item);
+    } else {
+      brandNew.push(item);
+    }
+  });
+  due.sort(() => Math.random() - 0.5);
+  brandNew.sort(() => Math.random() - 0.5);
+  // Prioridad: primero repasos pendientes, después palabras nuevas, tope diario fijo.
+  let queue = due.slice(0, DAILY_GOAL);
+  if(queue.length < DAILY_GOAL){
+    queue = queue.concat(brandNew.slice(0, DAILY_GOAL - queue.length));
+  }
+  return queue;
+}
+
+function maskWord(sentence, word){
+  const safe = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(safe, "i");
+  const mask = "▁".repeat(Math.min(Math.max(word.length, 3), 10));
+  return sentence.replace(re, `<span class="blank">${mask}</span>`);
+}
+
+function enterGameMode(){
+  stopPlayAll();
+  gameMode = true;
+  loadSRS();
+  gameQueue = buildTodayQueue();
+  gameIndex = 0;
+  gameStats = { seen: 0, again: 0, good: 0 };
+  document.getElementById("slideContainer").style.display = "none";
+  document.getElementById("slideNav").style.display = "none";
+  document.getElementById("counter").textContent = "";
+  document.getElementById("hint").style.display = "none";
+  document.getElementById("gameContainer").style.display = "block";
+  renderGameCard();
+}
+
+function exitGameMode(){
+  gameMode = false;
+  document.getElementById("vocabBtn").classList.remove("active");
+  document.getElementById("gameContainer").style.display = "none";
+  document.getElementById("slideContainer").style.display = "";
+  document.getElementById("slideNav").style.display = "";
+  document.getElementById("hint").style.display = "";
+  renderSlide();
+}
+
+function renderGameCard(){
+  const container = document.getElementById("gameContainer");
+
+  if(gameQueue.length === 0){
+    container.innerHTML = `
+      <div class="slide game-slide">
+        <div class="de">🎉 Heute keine neuen Wörter.</div>
+        <p class="game-sub">Ya repasaste todo lo que tocaba por hoy. ¡Volvé mañana!</p>
+        <button id="exitGameBtn" style="margin-top:16px;">‹ Zurück zu den Nachrichten</button>
+      </div>`;
+    document.getElementById("exitGameBtn").addEventListener("click", exitGameMode);
+    return;
+  }
+
+  if(gameIndex >= gameQueue.length){
+    container.innerHTML = `
+      <div class="slide game-slide">
+        <span class="cat-tag">Fertig!</span>
+        <div class="de">${gameQueue.length} von ${DAILY_GOAL} Wörtern heute.</div>
+        <p class="game-sub">Bien: ${gameStats.good} · Para repasar de nuevo: ${gameStats.again}</p>
+        <button id="exitGameBtn" style="margin-top:16px;">‹ Zurück zu den Nachrichten</button>
+      </div>`;
+    document.getElementById("exitGameBtn").addEventListener("click", exitGameMode);
+    return;
+  }
+
+  const item = gameQueue[gameIndex];
+  container.innerHTML = `
+    <div class="slide game-slide">
+      <span class="cat-tag">${item.cat}</span>
+      <p class="game-counter">Wort ${gameIndex + 1} / ${gameQueue.length} heute</p>
+      <div class="de game-sentence">${maskWord(item.de, item.word)}</div>
+      <div class="game-actions">
+        <button id="gameSpeakBtn" class="speak-btn">🔊</button>
+        <button id="gameShowBtn">Antwort zeigen</button>
+      </div>
+      <div id="gameAnswer" class="game-answer" style="display:none;">
+        <div class="de">${item.de}</div>
+        <div class="en">${item.en}</div>
+        <div class="es">${item.es}</div>
+        <p class="game-word-label">Wort: <strong>${item.word}</strong></p>
+        <div class="rate-buttons">
+          <button class="rate-btn again" data-r="0">🔁 Nochmal</button>
+          <button class="rate-btn hard" data-r="1">😐 Schwer</button>
+          <button class="rate-btn good" data-r="2">🙂 Gut</button>
+          <button class="rate-btn easy" data-r="3">😄 Leicht</button>
+        </div>
+      </div>
+    </div>`;
+
+  document.getElementById("gameSpeakBtn").addEventListener("click", () => speak(item.de, "de"));
+  document.getElementById("gameShowBtn").addEventListener("click", () => {
+    document.getElementById("gameAnswer").style.display = "block";
+    document.getElementById("gameShowBtn").style.display = "none";
+    speak(item.de, "de");
+  });
+  container.querySelectorAll(".rate-btn").forEach(btn => {
+    btn.addEventListener("click", () => {
+      const r = parseInt(btn.dataset.r, 10);
+      rateCard(item.word, r);
+      gameStats.seen++;
+      if(r === 0) gameStats.again++; else gameStats.good++;
+      gameIndex++;
+      renderGameCard();
+    });
+  });
+}
+
+document.getElementById("vocabBtn").addEventListener("click", () => {
+  if(gameMode){
+    exitGameMode();
+  } else {
+    enterGameMode();
+    document.getElementById("vocabBtn").classList.add("active");
+  }
+});
+
+// ---------- Swipe gestures ----------
+let touchStartX = 0;
+document.addEventListener("touchstart", (e) => {
+  touchStartX = e.changedTouches[0].screenX;
+}, {passive:true});
+document.addEventListener("touchend", (e) => {
+  if(gameMode) return; // en el juego se navega con botones, no con swipe
+  const touchEndX = e.changedTouches[0].screenX;
+  const diff = touchEndX - touchStartX;
+  if(Math.abs(diff) > 50){
+    if(diff < 0) goNext(); else goPrev();
+  }
+}, {passive:true});
+
+// ---------- Update (recarga noticias.json) ----------
+async function updateNewsFromJson(){
+  const btn = document.getElementById("updateBtn");
+  const originalText = "🔄 Update";
+  btn.disabled = true;
+  btn.textContent = "⏳ Aktualisiere...";
+
+  try{
+    const ok = await loadPhrasesFromJson();
+    if(!ok) throw new Error("No se pudo leer noticias.json");
+
+    data = allPhrases.slice();
+    currentIndex = 0;
+
+    setupCategories();
+    updateProgressBar();
+    renderSlide();
+
+    btn.textContent = "✅ Aktualisiert!";
+  }catch(e){
+    console.error("Update fehlgeschlagen:", e);
+    btn.textContent = "❌ Fehler";
+    alert("No se pudo actualizar: " + e.message);
+  }finally{
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }, 2500);
+  }
+}
+
+document.getElementById("updateBtn").addEventListener("click", updateNewsFromJson);
+
+
+// ---------- Init ----------
+async function init(){
+  await loadPhrasesFromJson();
+  data = allPhrases.slice();
+  setupCategories();
+  setupLangSelect();
+  await loadProgress();
+  renderSlide();
+}
+init();
+</script>
+
+</body>
+</html>
