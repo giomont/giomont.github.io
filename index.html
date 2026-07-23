@@ -141,33 +141,6 @@
   .rate-btn.easy{border-color:var(--green);color:var(--green);}
   .rate-btn:active{opacity:.7;}
 
-  /* ---------- Gamificación: header, badges, combo ---------- */
-  .game-header{
-    display:flex;
-    justify-content:center;
-    gap:10px;
-    margin-bottom:16px;
-    flex-wrap:wrap;
-  }
-  .streak-badge, .xp-badge, .combo-badge{
-    font-size:.75rem;
-    padding:4px 10px;
-    border-radius:999px;
-    border:1px solid var(--border);
-    color:var(--muted);
-  }
-  .streak-badge{border-color:var(--red);color:var(--red);}
-  .xp-badge{border-color:var(--amber);color:var(--amber);}
-  .combo-badge{
-    border-color:var(--green);color:var(--green);
-    animation:pulse .5s ease;
-  }
-  @keyframes pulse{
-    0%{transform:scale(1);}
-    40%{transform:scale(1.15);}
-    100%{transform:scale(1);}
-  }
-
   /* ---------- Opción múltiple ---------- */
   .choice-grid{
     display:grid;
@@ -210,22 +183,6 @@
   @keyframes flashRed{0%{background:rgba(193,68,58,.18);}100%{background:transparent;}}
   #gameContainer.flash-correct{animation:flashGreen .4s ease;}
   #gameContainer.flash-wrong{animation:flashRed .4s ease;}
-
-  .speed-wrap{
-    display:flex;
-    align-items:center;
-    gap:6px;
-    background:var(--panel);
-    border:1px solid var(--border);
-    border-radius:8px;
-    padding:6px 12px;
-    font-size:.78rem;
-    color:var(--muted);
-  }
-  .speed-wrap input[type=range]{
-    width:80px;
-    accent-color:var(--amber);
-  }
 
   main{
     flex:1;
@@ -370,11 +327,6 @@
 <div class="controls">
   <select id="categorySelect"></select>
   <select id="langSelect"></select>
-  <div class="speed-wrap">
-    <span>Tempo</span>
-    <input type="range" id="speedSlider" min="0.7" max="1.2" step="0.05" value="0.95">
-    <span id="speedLabel">0.95x</span>
-  </div>
   <button id="vocabBtn">🎮 Wortspiel</button>
   <button id="playAllBtn">▶ Alle abspielen</button>
   <button id="updateBtn">🔄 Update</button>
@@ -530,10 +482,6 @@ function setupLangSelect(){
 }
 
 // ---------- Speed ----------
-document.getElementById("speedSlider").addEventListener("input", (e) => {
-  currentSpeed = parseFloat(e.target.value);
-  document.getElementById("speedLabel").textContent = currentSpeed.toFixed(2) + "x";
-});
 
 // ---------- Speak ----------
 function highlightWordAt(lang, charIndex){
@@ -750,22 +698,17 @@ document.getElementById("playAllBtn").addEventListener("click", () => {
 // - Repetición espaciada tipo Leitner (curva del olvido de Ebbinghaus).
 // - Insumo comprensible (Krashen): la palabra siempre aparece en su oración real.
 // - Interleaving + variabilidad: el tipo de ejercicio cambia entre tarjetas.
-// - Refuerzo inmediato + gamificación (dopamina/motivación): racha diaria,
-//   puntos XP, combo de aciertos consecutivos, sonido y color de feedback.
 // - Tope diario fijo (evita sobrecarga cognitiva): nunca más de DAILY_GOAL
 //   palabras nuevas o de repaso en la misma sesión.
 const SRS_KEY = "wegweiser-vocab-srs";
-const META_KEY = "wegweiser-vocab-meta";
 const DAILY_GOAL = 20;
 const BOX_DAYS = [0, 1, 3, 7, 16, 35]; // días hasta el próximo repaso por "caja"
 
 let srsState = {};
-let vocabMeta = { xp: 0, streak: 0, bestStreak: 0, lastDate: null };
 let gameMode = false;
 let gameQueue = [];
 let gameIndex = 0;
 let gameStats = { seen: 0, again: 0, good: 0 };
-let combo = 0;
 let cardStartTime = 0;
 
 function loadSRS(){
@@ -784,31 +727,6 @@ function saveSRS(){
   }
 }
 function todayStr(){ return new Date().toISOString().slice(0, 10); }
-
-function loadMeta(){
-  try{
-    const raw = localStorage.getItem(META_KEY);
-    vocabMeta = raw ? JSON.parse(raw) : { xp: 0, streak: 0, bestStreak: 0, lastDate: null };
-  }catch(e){
-    vocabMeta = { xp: 0, streak: 0, bestStreak: 0, lastDate: null };
-  }
-}
-function saveMeta(){
-  try{
-    localStorage.setItem(META_KEY, JSON.stringify(vocabMeta));
-  }catch(e){
-    console.error("No se pudo guardar la racha/XP", e);
-  }
-}
-function touchStreak(){
-  const today = todayStr();
-  if(vocabMeta.lastDate === today) return; // ya contó hoy
-  const yesterday = new Date(Date.now() - 86400000).toISOString().slice(0, 10);
-  vocabMeta.streak = (vocabMeta.lastDate === yesterday) ? vocabMeta.streak + 1 : 1;
-  vocabMeta.bestStreak = Math.max(vocabMeta.bestStreak, vocabMeta.streak);
-  vocabMeta.lastDate = today;
-  saveMeta();
-}
 
 // ---------- Sonido de feedback (Web Audio, sin archivos) ----------
 let audioCtx = null;
@@ -934,16 +852,6 @@ function pickExerciseType(box){
   return Math.random() < 0.65 ? "type" : "choice";
 }
 
-function updateGameHeader(){
-  const header = document.getElementById("gameHeader");
-  if(!header) return;
-  header.innerHTML = `
-    <span class="streak-badge">🔥 ${vocabMeta.streak}</span>
-    <span class="xp-badge">⭐ ${vocabMeta.xp} XP</span>
-    ${combo >= 2 ? `<span class="combo-badge">⚡ Combo x${combo}</span>` : ""}
-  `;
-}
-
 function flashFeedback(correct){
   const el = document.getElementById("gameContainer");
   if(!el) return;
@@ -956,11 +864,8 @@ function enterGameMode(){
   stopPlayAll();
   gameMode = true;
   loadSRS();
-  loadMeta();
-  touchStreak();
   gameQueue = buildTodayQueue();
   gameIndex = 0;
-  combo = 0;
   gameStats = { seen: 0, again: 0, good: 0 };
   document.getElementById("slideContainer").style.display = "none";
   document.getElementById("slideNav").style.display = "none";
@@ -981,12 +886,10 @@ function exitGameMode(){
 }
 
 function resolveAnswer(item, rating, wasCorrect){
-  const elapsed = (Date.now() - cardStartTime) / 1000;
   rateCard(item.word, rating);
   gameStats.seen++;
   if(rating === 0){
     gameStats.again++;
-    combo = 0;
     soundWrong();
     flashFeedback(false);
     // Repetición expandida DENTRO de la misma sesión (retrieval practice /
@@ -998,12 +901,6 @@ function resolveAnswer(item, rating, wasCorrect){
     gameQueue.splice(reinsertPos, 0, {...item, isNew:false, _studied:true, _retries: retries});
   }else{
     gameStats.good++;
-    combo++;
-    let gained = 10;
-    if(elapsed < 3) gained += 5;      // bonus por velocidad
-    if(combo >= 3) gained += 5;       // bonus por combo
-    vocabMeta.xp += gained;
-    saveMeta();
     soundCorrect();
     flashFeedback(true);
   }
@@ -1020,7 +917,6 @@ function renderStudyCard(item){
   const safe = item.word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
   const highlighted = item.de.replace(new RegExp(safe, "i"), `<strong style="color:var(--amber)">${item.word}</strong>`);
   container.innerHTML = `
-    <div class="game-header" id="gameHeader"></div>
     <div class="slide game-slide">
       <span class="study-tag">✨ Neues Wort</span>
       <p class="game-counter">Wort ${gameIndex + 1} / ${gameQueue.length} heute</p>
@@ -1030,7 +926,6 @@ function renderStudyCard(item){
       <div class="game-actions"><button id="gameSpeakBtn" class="speak-btn">🔊</button></div>
       <button id="continueStudyBtn" style="margin-top:16px;">Weiter ›</button>
     </div>`;
-  updateGameHeader();
   document.getElementById("gameSpeakBtn").addEventListener("click", () => speak(item.de, "de"));
   speak(item.de, "de");
   document.getElementById("continueStudyBtn").addEventListener("click", () => {
@@ -1047,29 +942,24 @@ function renderGameCard(){
 
   if(gameQueue.length === 0){
     container.innerHTML = `
-      <div class="game-header" id="gameHeader"></div>
-      <div class="slide game-slide">
+        <div class="slide game-slide">
         <div class="de">🎉 Heute keine neuen Wörter.</div>
         <p class="game-sub">Ya repasaste todo lo que tocaba por hoy. ¡Volvé mañana!</p>
         <button id="exitGameBtn" style="margin-top:16px;">‹ Zurück zu den Nachrichten</button>
       </div>`;
-    updateGameHeader();
-    document.getElementById("exitGameBtn").addEventListener("click", exitGameMode);
+      document.getElementById("exitGameBtn").addEventListener("click", exitGameMode);
     return;
   }
 
   if(gameIndex >= gameQueue.length){
     container.innerHTML = `
-      <div class="game-header" id="gameHeader"></div>
-      <div class="slide game-slide">
+        <div class="slide game-slide">
         <span class="cat-tag">Fertig!</span>
         <div class="de">${gameQueue.length} von ${DAILY_GOAL} Wörtern heute.</div>
         <p class="game-sub">Bien: ${gameStats.good} · Para repasar de nuevo: ${gameStats.again}</p>
-        <p class="game-sub">Racha: 🔥 ${vocabMeta.streak} días · Total: ⭐ ${vocabMeta.xp} XP</p>
         <button id="exitGameBtn" style="margin-top:16px;">‹ Zurück zu den Nachrichten</button>
       </div>`;
-    updateGameHeader();
-    document.getElementById("exitGameBtn").addEventListener("click", exitGameMode);
+      document.getElementById("exitGameBtn").addEventListener("click", exitGameMode);
     return;
   }
 
@@ -1087,8 +977,7 @@ function renderGameCard(){
   if(exType === "choice"){
     const options = buildDistractors(item.word, pool, 3).concat([item.word]).sort(() => Math.random() - 0.5);
     container.innerHTML = `
-      <div class="game-header" id="gameHeader"></div>
-      <div class="slide game-slide">
+        <div class="slide game-slide">
         <span class="cat-tag">${item.cat}</span>
         <p class="game-counter">Wort ${gameIndex + 1} / ${gameQueue.length} heute</p>
         <div class="de game-sentence">${maskWord(item.de, item.word)}</div>
@@ -1098,8 +987,7 @@ function renderGameCard(){
           ${options.map((w, i) => `<button class="choice-btn" data-idx="${i}">${w}</button>`).join("")}
         </div>
       </div>`;
-    updateGameHeader();
-    document.getElementById("gameSpeakBtn").addEventListener("click", () => speak(item.de, "de"));
+      document.getElementById("gameSpeakBtn").addEventListener("click", () => speak(item.de, "de"));
     container.querySelectorAll(".choice-btn").forEach((btn, i) => {
       btn.addEventListener("click", () => {
         if(container.dataset.locked) return;
@@ -1122,8 +1010,7 @@ function renderGameCard(){
   } else {
     // Ejercicio de producción: el usuario ESCRIBE la palabra alemana.
     container.innerHTML = `
-      <div class="game-header" id="gameHeader"></div>
-      <div class="slide game-slide">
+        <div class="slide game-slide">
         <span class="cat-tag">${item.cat}</span>
         <p class="game-counter">Wort ${gameIndex + 1} / ${gameQueue.length} heute</p>
         <div class="de game-sentence">${maskWord(item.de, item.word)}</div>
@@ -1134,8 +1021,7 @@ function renderGameCard(){
         <input type="text" id="typeInput" class="type-input" placeholder="Schreib das deutsche Wort…" autocomplete="off" autocapitalize="off">
         <button id="submitTypeBtn" style="margin-top:10px;">Prüfen</button>
       </div>`;
-    updateGameHeader();
-    document.getElementById("gameSpeakBtn").addEventListener("click", () => speak(item.de, "de"));
+      document.getElementById("gameSpeakBtn").addEventListener("click", () => speak(item.de, "de"));
     const input = document.getElementById("typeInput");
     input.focus();
     const submit = () => {
@@ -1166,18 +1052,36 @@ document.getElementById("vocabBtn").addEventListener("click", () => {
 });
 
 // ---------- Swipe gestures ----------
-let touchStartX = 0;
-document.addEventListener("touchstart", (e) => {
-  touchStartX = e.changedTouches[0].screenX;
-}, {passive:true});
-document.addEventListener("touchend", (e) => {
+// Se usa Pointer Events en vez de touchstart/touchend: en Chrome, cuando el
+// gesto es horizontal sobre un elemento con touch-action:pan-y, el navegador
+// puede cancelar la secuencia táctil (sin disparar touchend), por lo que el
+// swipe no funcionaba. Pointer Events no tienen ese problema.
+let pointerStartX = null;
+let pointerStartY = null;
+
+document.addEventListener("pointerdown", (e) => {
+  if(e.pointerType === "mouse") return; // el swipe es solo para dedo/lápiz
+  pointerStartX = e.clientX;
+  pointerStartY = e.clientY;
+});
+
+document.addEventListener("pointerup", (e) => {
   if(gameMode) return; // en el juego se navega con botones, no con swipe
-  const touchEndX = e.changedTouches[0].screenX;
-  const diff = touchEndX - touchStartX;
-  if(Math.abs(diff) > 50){
-    if(diff < 0) goNext(); else goPrev();
+  if(pointerStartX === null) return;
+  const diffX = e.clientX - pointerStartX;
+  const diffY = e.clientY - pointerStartY;
+  pointerStartX = null;
+  pointerStartY = null;
+  // Ignorar gestos más verticales que horizontales (scroll de la página).
+  if(Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)){
+    if(diffX < 0) goNext(); else goPrev();
   }
-}, {passive:true});
+});
+
+document.addEventListener("pointercancel", () => {
+  pointerStartX = null;
+  pointerStartY = null;
+});
 
 
 // ---------- Modo Gris / Nocturno ----------
