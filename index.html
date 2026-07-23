@@ -555,28 +555,77 @@ function clearHighlight(lang){
   if(block) block.querySelectorAll(".word").forEach(w => w.classList.remove("karaoke"));
 }
 
+// ---------- Karaoke: resaltado por palabra ----------
+// Chrome (a diferencia de Firefox) suele NO disparar "boundary" por palabra
+// con muchas voces —especialmente las de alemán, que suelen ser de red—.
+// Por eso, si no llega ningún evento útil en los primeros ~250ms, se activa
+// un resaltado "sintético" calculado por tiempo estimado por palabra, para
+// que el karaoke funcione igual aunque el navegador no avise nada.
+let speakToken = 0;
+
+function estimateWordTimings(text, rate){
+  const charsPerSecond = 13 * (rate || 1); // ritmo aproximado de habla TTS
+  const tokens = [...text.matchAll(/\S+/g)];
+  return tokens.map(m => ({
+    start: m.index,
+    dur: Math.max(0.12, m[0].length / charsPerSecond)
+  }));
+}
+
+function runSyntheticKaraoke(text, lang, rate, myToken){
+  const words = estimateWordTimings(text, rate);
+  let i = 0;
+  function step(){
+    if(myToken !== speakToken) return; // se canceló o empezó otro speak
+    if(i >= words.length) return;
+    highlightWordAt(lang, words[i].start);
+    setTimeout(step, words[i].dur * 1000);
+    i++;
+  }
+  step();
+}
+
 function speak(text, lang, onEnd){
   lang = lang || currentLang;
+  const myToken = ++speakToken;
   const utter = new SpeechSynthesisUtterance(text);
   utter.lang = langMeta[lang] ? langMeta[lang].code : "de-DE";
   const voice = pickVoiceFor(lang);
   if(voice) utter.voice = voice;
   utter.rate = currentSpeed;
+
+  let boundaryOk = false;
+  let fallbackTimer = setTimeout(() => {
+    if(!boundaryOk) runSyntheticKaraoke(text, lang, currentSpeed, myToken);
+  }, 250);
+
   utter.onboundary = (e) => {
     if(e.name === "word" || e.name === undefined){
+      boundaryOk = true;
+      if(fallbackTimer){ clearTimeout(fallbackTimer); fallbackTimer = null; }
       highlightWordAt(lang, e.charIndex);
     }
   };
   utter.onend = () => {
+    if(fallbackTimer) clearTimeout(fallbackTimer);
+    if(myToken === speakToken) speakToken++; // invalida cualquier timer sintético colgado
     clearHighlight(lang);
     if(onEnd) onEnd();
   };
+  utter.onerror = () => {
+    if(fallbackTimer) clearTimeout(fallbackTimer);
+    clearHighlight(lang);
+  };
+
   speechSynthesis.cancel();
-  speechSynthesis.speak(utter);
+  // Chrome: llamar speak() en el mismo tick que cancel() a veces rompe la
+  // nueva utterance. Un tick de diferencia lo evita.
+  setTimeout(() => speechSynthesis.speak(utter), 0);
 }
 
 function stopPlayAll(){
   isPlayingAll = false;
+  speakToken++; // invalida cualquier resaltado sintético en curso
   speechSynthesis.cancel();
   document.getElementById("playAllBtn").textContent = "▶ Alle abspielen";
   document.getElementById("playAllBtn").classList.remove("active");
