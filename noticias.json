@@ -1,122 +1,122 @@
 [
   {
-    "id": 1,
-    "category": "Wirtschaft",
-    "text_de": "Buddhistische Gruppen: Manipulation in Buddhas Namen?",
-    "text_es": "Grupos budistas: ¿Manipulación en nombre de Buda?"
+    "de": "Buddhistische Gruppen: Manipulation in Buddhas Namen?",
+    "en": "Buddhist groups: manipulation in Buddha's name?",
+    "es": "Grupos budistas: ¿Manipulación en nombre de Buda?",
+    "cat": "Welt"
   },
   {
-    "id": 2,
-    "category": "Wirtschaft",
-    "text_de": "Klimakrise: Was kostet das Nichtstun?",
-    "text_es": "Crisis climática: ¿Cuánto cuesta no hacer nada?"
+    "de": "Klimakrise: Was kostet das Nichtstun?",
+    "en": "Climate crisis: How much does it cost to do nothing?",
+    "es": "Crisis climática: ¿Cuánto cuesta no hacer nada?",
+    "cat": "Wissenschaft"
   },
   {
-    "id": 3,
-    "category": "Wirtschaft",
-    "text_de": "Bundesverfassungsgericht urteilt über Abgeordnetenrechte",
-    "text_es": "El Tribunal Constitucional Federal dictamina sobre los derechos de los diputados"
+    "de": "Bundesverfassungsgericht urteilt über Abgeordnetenrechte",
+    "en": "Federal Constitutional Court rules on deputies' rights",
+    "es": "El Tribunal Constitucional Federal dictamina sobre los derechos de los diputados",
+    "cat": "Politik"
   },
   {
-    "id": 4,
-    "category": "Wirtschaft",
-    "text_de": "Neue US-Angriffe gegen den Iran",
-    "text_es": "Nuevos ataques de Estados Unidos contra Irán"
+    "de": "Neue US-Angriffe gegen Iran",
+    "en": "New US attacks against Iran",
+    "es": "Nuevos ataques de Estados Unidos contra Irán",
+    "cat": "Welt"
   },
   {
-    "id": 5,
-    "category": "Wirtschaft",
-    "text_de": "USA und Saudi-Arabien: Atomabkommen in Washington unterzeichnet",
-    "text_es": "Estados Unidos y Arabia Saudita firman acuerdo nuclear en Washington"
+    "de": "USA und Saudi-Arabien: Atomabkommen in Washington unterzeichnet",
+    "en": "US and Saudi Arabia: nuclear agreement signed in Washington",
+    "es": "Estados Unidos y Arabia Saudita firman acuerdo nuclear en Washington",
+    "cat": "Welt"
   },
   {
-    "id": 6,
-    "category": "Wirtschaft",
-    "text_de": "Aktuelle Dürre in Europa durch Klimawandel verursacht",
-    "text_es": "Sequía actual en Europa causada por el cambio climático"
+    "de": "Aktuelle Dürre in Europa durch Klimawandel verursacht",
+    "en": "Current drought in Europe caused by climate change",
+    "es": "Sequía actual en Europa causada por el cambio climático",
+    "cat": "Wirtschaft"
   },
   {
-    "id": 7,
-    "category": "Wirtschaft",
-    "text_de": "Porsche-Aufsichtsrat unterstützt Sparpaket",
-    "text_es": "El Consejo de Supervisión de Porsche apoya el paquete de ahorro"
+    "de": "Porsche-Aufsichtsrat unterstützt Sparpaket",
+    "en": "Porsche Supervisory Board supports savings package",
+    "es": "El Consejo de Supervisión de Porsche apoya el paquete de ahorro",
+    "cat": "Welt"
   },
   {
-    "id": 8,
-    "category": "Wirtschaft",
-    "text_de": "EU-Kommission billigt Warner-Übernahme durch Paramount",
-    "text_es": "La Comisión Europea aprueba la adquisición de Warner por Paramount"
+    "de": "EU-Kommission billigt Warner-Übernahme durch Paramount",
+    "en": "EU Commission approves Warner acquisition by Paramount",
+    "es": "La Comisión Europea aprueba la adquisición de Warner por Paramount",
+    "cat": "Welt"
   },
   {
-    "id": 9,
-    "category": "Wirtschaft",
-    "text_de": "Prozess gegen Nicolás Maduro soll am 1. Juni 2027 beginnen",
-    "text_es": "El juicio contra Nicolás Maduro debe comenzar el 1 de junio de 2027"
+    "de": "Prozess gegen Nicolás Maduro soll am 1. Juni 2027 beginnen",
+    "en": "Trial of Nicolás Maduro to begin on June 1, 2027",
+    "es": "El juicio contra Nicolás Maduro debe comenzar el 1 de junio de 2027",
+    "cat": "Welt"
   },
   {
-    "id": 10,
-    "category": "Wirtschaft",
-    "text_de": "Experte zu KI-Hackerangriff: \"Hochgefährlich für die globale Cybersicherheit\"",
-    "text_es": "Experto en hackeo de IA: \"Altamente peligroso para la ciberseguridad global\""
+    "de": "Experte zu KI-Hackerangriff: \"Hochgefährlich für die globale Cybersicherheit\"",
+    "en": "Expert on AI hacker attack: \"Highly dangerous for global cybersecurity\"",
+    "es": "Experto en hackeo de IA: \"Altamente peligroso para la ciberseguridad global\"",
+    "cat": "Welt"
   },
   {
-    "id": 11,
-    "category": "Wirtschaft",
-    "text_de": "Waldbrände in Südeuropa: Der komplexe Kampf gegen das Feuer",
-    "text_es": "Incendios forestales en el sur de Europa: la compleja lucha contra el fuego"
+    "de": "Waldbrände in Südeuropa: Der komplexe Kampf gegen das Feuer",
+    "en": "Forest fires in southern Europe: the complex fight against fire",
+    "es": "Incendios forestales en el sur de Europa: la compleja lucha contra el fuego",
+    "cat": "Wirtschaft"
   },
   {
-    "id": 12,
-    "category": "Wirtschaft",
-    "text_de": "Mychajlo Drapatyj: Ein Hoffnungsträger an der Spitze der ukrainischen Armee",
-    "text_es": "Mykhailo Drapatyj: un faro de esperanza al frente del ejército ucraniano"
+    "de": "Mychajlo Drapatyj: Ein Hoffnungsträger an der Spitze der ukrainischen Armee",
+    "en": "Mykhaylo Drapatyj: A bearer of hope at the head of the Ukrainian army",
+    "es": "Mykhailo Drapatyj: un faro de esperanza al frente del ejército ucraniano",
+    "cat": "Welt"
   },
   {
-    "id": 13,
-    "category": "Wirtschaft",
-    "text_de": "Ukrainische Armee mit neuer Führung: \"Eine schlechte Nachricht für Russland\"",
-    "text_es": "Ejército ucraniano con nuevo liderazgo: \"Una mala noticia para Rusia\""
+    "de": "Ukrainische Armee mit neuer Führung: \"Eine schlechte Nachricht für Russland\"",
+    "en": "Ukrainian army with new leadership: \"Bad news for Russia\"",
+    "es": "Ejército ucraniano con nuevo liderazgo: \"Una mala noticia para Rusia\"",
+    "cat": "Welt"
   },
   {
-    "id": 14,
-    "category": "Wirtschaft",
-    "text_de": "Trump droht Iran bei Angriffen auf Schiffe mit Vergeltung",
-    "text_es": "Trump amenaza a Irán con represalias en ataques a barcos"
+    "de": "Trump droht Iran bei Angriffen auf Schiffe mit Vergeltung",
+    "en": "Trump threatens Iran with retaliation for attacks on ships",
+    "es": "Trump amenaza a Irán con represalias en ataques a barcos",
+    "cat": "Welt"
   },
   {
-    "id": 15,
-    "category": "Wirtschaft",
-    "text_de": "Thorsten Frei: Bürgermeister, Kanzleramtschef, Fraktionsvorsitz?",
-    "text_es": "Thorsten Frei: ¿Alcalde, jefe de la Cancillería, presidente de grupo?"
+    "de": "Thorsten Frei: Bürgermeister, Kanzleramtschef, Fraktionsvorsitz?",
+    "en": "Thorsten Frei: Mayor, head of the Chancellery, group chair?",
+    "es": "Thorsten Frei: ¿Alcalde, jefe de la Cancillería, presidente de grupo?",
+    "cat": "Politik"
   },
   {
-    "id": 16,
-    "category": "Wirtschaft",
-    "text_de": "Gedenken an Attentat im Olympia-Einkaufszentrum",
-    "text_es": "Conmemoración del atentado en el centro comercial Olympia"
+    "de": "Gedenken an Attentat im Olympia-Einkaufszentrum",
+    "en": "Commemoration of the Olympic Shopping Mall Assassination",
+    "es": "Conmemoración del atentado en el centro comercial Olympia",
+    "cat": "Sport"
   },
   {
-    "id": 17,
-    "category": "Wirtschaft",
-    "text_de": "Marktbericht: DAX macht Boden gut",
-    "text_es": "Informe de mercado: Dax hace que el suelo sea bueno"
+    "de": "Marktbericht: DAX macht Boden gut",
+    "en": "Market Report: DAX Makes Up Ground",
+    "es": "Informe de mercado: Dax hace que el suelo sea bueno",
+    "cat": "Wirtschaft"
   },
   {
-    "id": 18,
-    "category": "Wirtschaft",
-    "text_de": "Frei als Fraktionschef: Stühlerücken für mehr Stabilität in der Union?",
-    "text_es": "Libre como jefe de grupo: ¿sillas para una mayor estabilidad en la Unión?"
+    "de": "Frei als Fraktionschef: Stühlerücken für mehr Stabilität in der Union?",
+    "en": "Free as leader of the parliamentary group: backs of chairs for more stability in the Union?",
+    "es": "Libre como jefe de grupo: ¿sillas para una mayor estabilidad en la Unión?",
+    "cat": "Politik"
   },
   {
-    "id": 19,
-    "category": "Wirtschaft",
-    "text_de": "Mutmaßlicher Epstein-Komplize tot aufgefunden",
-    "text_es": "Presunto cómplice de Epstein encontrado muerto"
+    "de": "Mutmaßlicher Epstein-Komplize tot aufgefunden",
+    "en": "Alleged Epstein accomplice found dead",
+    "es": "Presunto cómplice de Epstein encontrado muerto",
+    "cat": "Welt"
   },
   {
-    "id": 20,
-    "category": "Wirtschaft",
-    "text_de": "EU will \"Chatkontrollen\" teilweise wieder ermöglichen",
-    "text_es": "La UE quiere volver a habilitar parcialmente los \"controles de chat\""
+    "de": "EU will \"Chatkontrollen\" teilweise wieder ermöglichen",
+    "en": "EU wants to partially enable \"chat controls\" again",
+    "es": "La UE quiere volver a habilitar parcialmente los \"controles de chat\"",
+    "cat": "Welt"
   }
 ]
