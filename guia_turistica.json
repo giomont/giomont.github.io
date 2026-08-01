@@ -1,0 +1,142 @@
+[
+  {
+    "de": "Entschuldigung, wo ist der Bahnhof?",
+    "en": "Entschuldigung, wo ist der Bahnhof?",
+    "es": "Entschuldigung, wo ist der Bahnhof?",
+    "fr": "Entschuldigung, wo ist der Bahnhof?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Ich hätte gerne ein Zimmer für zwei Nächte.",
+    "en": "Ich hätte gerne ein Zimmer für zwei Nächte.",
+    "es": "Ich hätte gerne ein Zimmer für zwei Nächte.",
+    "fr": "Ich hätte gerne ein Zimmer für zwei Nächte.",
+    "cat": "Hotel"
+  },
+  {
+    "de": "Können Sie mir den Weg zum Museum zeigen?",
+    "en": "Können Sie mir den Weg zum Museum zeigen?",
+    "es": "Können Sie mir den Weg zum Museum zeigen?",
+    "fr": "Können Sie mir den Weg zum Museum zeigen?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Die Rechnung, bitte.",
+    "en": "Die Rechnung, bitte.",
+    "es": "Die Rechnung, bitte.",
+    "fr": "Die Rechnung, bitte.",
+    "cat": "Restaurant"
+  },
+  {
+    "de": "Haben Sie eine Speisekarte auf Englisch?",
+    "en": "Haben Sie eine Speisekarte auf Englisch?",
+    "es": "Haben Sie eine Speisekarte auf Englisch?",
+    "fr": "Haben Sie eine Speisekarte auf Englisch?",
+    "cat": "Restaurant"
+  },
+  {
+    "de": "Wie viel kostet ein Ticket für die U-Bahn?",
+    "en": "Wie viel kostet ein Ticket für die U-Bahn?",
+    "es": "Wie viel kostet ein Ticket für die U-Bahn?",
+    "fr": "Wie viel kostet ein Ticket für die U-Bahn?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Ich brauche einen Arzt.",
+    "en": "Ich brauche einen Arzt.",
+    "es": "Ich brauche einen Arzt.",
+    "fr": "Ich brauche einen Arzt.",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Sprechen Sie Englisch?",
+    "en": "Sprechen Sie Englisch?",
+    "es": "Sprechen Sie Englisch?",
+    "fr": "Sprechen Sie Englisch?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Könnten Sie das bitte wiederholen?",
+    "en": "Könnten Sie das bitte wiederholen?",
+    "es": "Könnten Sie das bitte wiederholen?",
+    "fr": "Könnten Sie das bitte wiederholen?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Wo kann ich Geld wechseln?",
+    "en": "Wo kann ich Geld wechseln?",
+    "es": "Wo kann ich Geld wechseln?",
+    "fr": "Wo kann ich Geld wechseln?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Ist das WLAN kostenlos?",
+    "en": "Ist das WLAN kostenlos?",
+    "es": "Ist das WLAN kostenlos?",
+    "fr": "Ist das WLAN kostenlos?",
+    "cat": "Hotel"
+  },
+  {
+    "de": "Um wie viel Uhr öffnet das Museum?",
+    "en": "Um wie viel Uhr öffnet das Museum?",
+    "es": "Um wie viel Uhr öffnet das Museum?",
+    "fr": "Um wie viel Uhr öffnet das Museum?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Ich bin allergisch gegen Nüsse.",
+    "en": "Ich bin allergisch gegen Nüsse.",
+    "es": "Ich bin allergisch gegen Nüsse.",
+    "fr": "Ich bin allergisch gegen Nüsse.",
+    "cat": "Restaurant"
+  },
+  {
+    "de": "Können Sie mir ein Taxi rufen?",
+    "en": "Können Sie mir ein Taxi rufen?",
+    "es": "Können Sie mir ein Taxi rufen?",
+    "fr": "Können Sie mir ein Taxi rufen?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Wo ist die nächste Apotheke?",
+    "en": "Wo ist die nächste Apotheke?",
+    "es": "Wo ist die nächste Apotheke?",
+    "fr": "Wo ist die nächste Apotheke?",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Ich möchte eine Stadtführung buchen.",
+    "en": "Ich möchte eine Stadtführung buchen.",
+    "es": "Ich möchte eine Stadtführung buchen.",
+    "fr": "Ich möchte eine Stadtführung buchen.",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Haben Sie vegetarische Gerichte?",
+    "en": "Haben Sie vegetarische Gerichte?",
+    "es": "Haben Sie vegetarische Gerichte?",
+    "fr": "Haben Sie vegetarische Gerichte?",
+    "cat": "Restaurant"
+  },
+  {
+    "de": "Wie komme ich zum Flughafen?",
+    "en": "Wie komme ich zum Flughafen?",
+    "es": "Wie komme ich zum Flughafen?",
+    "fr": "Wie komme ich zum Flughafen?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Könnten Sie langsamer sprechen, bitte?",
+    "en": "Könnten Sie langsamer sprechen, bitte?",
+    "es": "Könnten Sie langsamer sprechen, bitte?",
+    "fr": "Könnten Sie langsamer sprechen, bitte?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Vielen Dank für Ihre Hilfe!",
+    "en": "Vielen Dank für Ihre Hilfe!",
+    "es": "Vielen Dank für Ihre Hilfe!",
+    "fr": "Vielen Dank für Ihre Hilfe!",
+    "cat": "Kommunikation"
+  }
+]

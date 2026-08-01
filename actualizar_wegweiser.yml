@@ -1,0 +1,34 @@
+name: Actualizar datos Wegweiser
+
+# Se puede disparar manualmente (Actions > Run workflow) o desde el botón
+# del index.html vía la API de GitHub (ver worker.js).
+on:
+  workflow_dispatch: {}
+  schedule:
+    - cron: "0 8 * * *"   # opcional: corre solo cada día a las 8:00 UTC
+
+permissions:
+  contents: write
+
+jobs:
+  actualizar:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Clonar repo
+        uses: actions/checkout@v4
+
+      - name: Configurar Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Ejecutar generar.py
+        run: python3 generar.py all
+
+      - name: Subir JSON actualizados
+        run: |
+          git config user.name "wegweiser-bot"
+          git config user.email "bot@giomont.github.io"
+          git add noticias.json arvi.json colombia_diversidad.json guia_turistica.json aleman_basico.json
+          git diff --quiet --cached || git commit -m "Actualización automática de datos (generar.py)"
+          git push
