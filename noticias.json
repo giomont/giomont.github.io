@@ -1,9 +1,23 @@
 [
   {
-    "de": "Innenausschuss zum Berliner CSD: Zentrale Fragen bleiben ungeklärt",
-    "en": "Internal Committee on the Berlin CSD: Central questions remain unresolved",
-    "es": "Comité de Interior sobre la CDs de Berlín: las cuestiones centrales siguen sin resolverse",
-    "fr": "Comité interne de la CSD berlinoise : les questions centrales restent en suspens",
+    "de": "Wie ein chinesischer Essenslieferant einen wichtigen Literaturpreis gewann",
+    "en": "How a Chinese food supplier won a major literature prize",
+    "es": "Cómo un proveedor de comida chino ganó un importante premio literario",
+    "fr": "Comment un fournisseur de nourriture chinois a remporté un prix littéraire important",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Angriff auf Gemüsehändler: Ukraine wirft Moskau \"Drohnen-Safari\" vor",
+    "en": "Attack on vegetable merchants: Ukraine accuses Moscow of \"drone safari\"",
+    "es": "Ataque a un verdulero: Ucrania acusa a Moscú de \"safari con drones\"",
+    "fr": "Attaque contre les marchands de légumes : l'Ukraine accuse Moscou de « safari de drones »",
+    "cat": "Sport"
+  },
+  {
+    "de": "Innenausschuss zum CSD-Anschlag: Zentrale Fragen bleiben ungeklärt",
+    "en": "Internal Committee on the CSD attack: Key issues remain unresolved",
+    "es": "Comité interno sobre el ataque de CSD: las cuestiones centrales siguen sin resolverse",
+    "fr": "Commission interne sur l'attentat du CSD : les questions centrales restent en suspens",
     "cat": "Welt"
   },
   {
@@ -124,19 +138,5 @@
     "es": "Modelo más pequeño homologado de la gama Boeing 737 Max",
     "fr": "Le plus petit modèle de la gamme Boeing 737 Max approuvé",
     "cat": "Welt"
-  },
-  {
-    "de": "Zahl der Erdbebenopfer in Venezuela steigt auf mehr als 6.000",
-    "en": "The number of earthquake victims in Venezuela rises to more than 6,000",
-    "es": "El número de víctimas del terremoto en Venezuela asciende a más de 6.000",
-    "fr": "Le nombre de victimes du tremblement de terre au Venezuela s'élève à plus de 6 000",
-    "cat": "Welt"
-  },
-  {
-    "de": "Waldbrand in den Niederlanden - Warnung vor Brandrauch in NRW",
-    "en": "Forest fire in the Netherlands - Fire smoke warning in North Rhine-Westphalia",
-    "es": "Incendio forestal en los Países Bajos: advertencia de humo de incendio en Renania del Norte-Westfalia",
-    "fr": "Incendie de forêt aux Pays-Bas - Avertissement de fumée d'incendie en Rhénanie-du-Nord-Westphalie",
-    "cat": "Umwelt"
   }
 ]
