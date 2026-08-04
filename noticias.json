@@ -1,5 +1,19 @@
 [
   {
+    "de": "EU-Innenminister zu Ceuta: \"Natürlich\" Solidarität mit Spanien",
+    "en": "EU Interior Minister on Ceuta: \"Of course\" Solidarity with Spain",
+    "es": "Ministro del Interior de la UE sobre Ceuta: \"Por supuesto\" solidaridad con España",
+    "fr": "Le ministre de l'Intérieur de l'UE à propos de Ceuta : solidarité « naturelle » avec l'Espagne",
+    "cat": "Politik"
+  },
+  {
+    "de": "Hitze, Dürre, Waldbrände: Rufe nach Reaktion der Bundesregierung",
+    "en": "Heat, drought, forest fires: calls for a response from the federal government",
+    "es": "Calor, sequía, incendios forestales: llamadas a la reacción del gobierno federal",
+    "fr": "Chaleur, sécheresse, incendies de forêt : appel à la réaction du gouvernement fédéral",
+    "cat": "Politik"
+  },
+  {
     "de": "Marktbericht: Anleger hieven DAX wieder auf ein Allzeithoch",
     "en": "Market report: Investors lift DAX back to an all-time high",
     "es": "Informe de mercado: Los inversores vuelven a situar el Dax en un máximo histórico",
@@ -123,20 +137,6 @@
     "en": "US data company Palantir increases sales by more than 90 percent",
     "es": "La empresa estadounidense de datos Palantir aumenta sus ventas en más de un 90 por ciento",
     "fr": "La société de données américaine Palantir augmente son chiffre d'affaires de plus de 90 %",
-    "cat": "Welt"
-  },
-  {
-    "de": "USA: Waldbrände um Spokane wüten weiter - Verdächtiger festgenommen",
-    "en": "USA: Forest fires continue to rage around Spokane - Suspect arrested",
-    "es": "EE.UU.: Continúan los incendios forestales en torno a Spokane - Sospechoso detenido",
-    "fr": "États-Unis : les feux de forêt autour de Spokane continuent de faire rage - suspect arrêté",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Russland meldet mehrere Tote durch ukrainische Drohnenangriffe",
-    "en": "Russia reports multiple deaths from Ukrainian drone strikes",
-    "es": "Rusia informa de varias muertes por ataques con drones ucranianos",
-    "fr": "La Russie signale plusieurs morts dans les frappes de drones ukrainiens",
     "cat": "Welt"
   }
 ]
