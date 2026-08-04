@@ -1,5 +1,47 @@
 [
   {
+    "de": "Marktbericht: Anleger hieven DAX wieder auf ein Allzeithoch",
+    "en": "Market report: Investors lift DAX back to an all-time high",
+    "es": "Informe de mercado: Los inversores vuelven a situar el Dax en un máximo histórico",
+    "fr": "Rapport sur le marché : les investisseurs soulèvent à nouveau le DAX à un niveau record",
+    "cat": "Welt"
+  },
+  {
+    "de": "Zahl der Asylerstanträge im Juli auf 4.311 gesunken",
+    "en": "Number of asylum applications decreased to 4,311 in July",
+    "es": "El número de solicitudes de asilo se redujo a 4.311 en julio",
+    "fr": "Le nombre de demandes constantes d'asile est tombé à 4 311 en juillet",
+    "cat": "Welt"
+  },
+  {
+    "de": "Kommentar zu Ceuta: Die EU hat diesen Test nicht bestanden",
+    "en": "Comment on Ceuta: The EU failed this test",
+    "es": "Comentario en Ceuta: La UE no ha superado esta prueba",
+    "fr": "Commentaire sur Ceuta : L'UE n'a pas réussi ce test",
+    "cat": "Welt"
+  },
+  {
+    "de": "Kommentar zur Entwaffnung der Hamas: Ein Deal, der keiner ist",
+    "en": "Hamas Disarmament Commentary: A Deal That's Not",
+    "es": "Comentario sobre el desarme de Hamas: un acuerdo que no lo es",
+    "fr": "Commentaire sur le désarmement du Hamas : un accord qui n'en est pas un",
+    "cat": "Welt"
+  },
+  {
+    "de": "Diplomatische Bemühungen: Naht eine Lösung für die Straße von Hormus?",
+    "en": "Diplomatic efforts: Is a solution for the Strait of Hormuz approaching?",
+    "es": "Esfuerzos diplomáticos: ¿Se acerca una solución para el Estrecho de Ormuz?",
+    "fr": "Efforts diplomatiques : coud une solution pour le détroit d'Ormuz ?",
+    "cat": "Sport"
+  },
+  {
+    "de": "Stromnetz auf Kuba am Montag erneut landesweit zusammengebrochen",
+    "en": "Electricity grid in Cuba collapsed again nationwide on Monday",
+    "es": "La red eléctrica en Cuba colapsó de nuevo el lunes en todo el país",
+    "fr": "Le réseau électrique de Cuba s'est à nouveau effondré lundi dans tout le pays",
+    "cat": "Welt"
+  },
+  {
     "de": "Migration in spanischer Exklave: Was lernen EU und Spanien aus Ceuta?",
     "en": "Migration in the Spanish exclave: What do the EU and Spain learn from Ceuta?",
     "es": "Migración en un enclave español: ¿qué aprenden la UE y España de Ceuta?",
@@ -70,13 +112,6 @@
     "cat": "Welt"
   },
   {
-    "de": "Marktbericht: DAX markiert neue Rekordstände",
-    "en": "Market report: DAX marks new record levels",
-    "es": "Informe de mercado: Dax marca nuevos récords",
-    "fr": "Rapport de marché : le DAX marque de nouveaux records",
-    "cat": "Welt"
-  },
-  {
     "de": "Waldbrand in den Niederlanden - Warnung vor Brandrauch in NRW",
     "en": "Forest fire in the Netherlands - Fire smoke warning in North Rhine-Westphalia",
     "es": "Incendio forestal en los Países Bajos: advertencia de humo de incendio en Renania del Norte-Westfalia",
@@ -103,40 +138,5 @@
     "es": "Rusia informa de varias muertes por ataques con drones ucranianos",
     "fr": "La Russie signale plusieurs morts dans les frappes de drones ukrainiens",
     "cat": "Welt"
-  },
-  {
-    "de": "25 Demokratische US-Bundesstaaten klagen gegen Trumps neue Zölle",
-    "en": "25 Democratic US states file suit against Trump's new tariffs",
-    "es": "25 estados demócratas de EE. UU. demandan los nuevos aranceles de Trump",
-    "fr": "25 États démocratiques américains portent plainte contre les nouveaux droits de douane de Trump",
-    "cat": "Sport"
-  },
-  {
-    "de": "Vier Verletzte nach Schüssen in Köln",
-    "en": "Four injured after shots fired in Cologne",
-    "es": "Cuatro heridos tras disparos en Colonia",
-    "fr": "Quatre blessés après des tirs à Cologne",
-    "cat": "Welt"
-  },
-  {
-    "de": "Interview zu Krise in Ceuta: \"Die Schuld Spanien zu geben, war irrational\"",
-    "en": "Interview on Ceuta crisis: \"Blaming Spain was irrational\"",
-    "es": "Entrevista sobre la crisis en Ceuta: \"Culpar a España fue irracional\"",
-    "fr": "Interview sur la crise à Ceuta : « Donner la faute à l'Espagne était irrationnel »",
-    "cat": "Welt"
-  },
-  {
-    "de": "Ceuta-Krise: EU-Innenminister beraten über Konsequenzen",
-    "en": "Ceuta crisis: EU interior ministers discuss consequences",
-    "es": "Crisis de Ceuta: los ministros del Interior de la UE debaten las consecuencias",
-    "fr": "Crise de Ceuta : les ministres de l'Intérieur de l'UE discutent des conséquences",
-    "cat": "Politik"
-  },
-  {
-    "de": "Bundesregierung erarbeitet Pläne für Zivildienst",
-    "en": "Federal Government draws up plans for civilian service",
-    "es": "El Gobierno Federal elabora planes para el servicio civil",
-    "fr": "Le gouvernement fédéral élabore des plans pour le service civil",
-    "cat": "Politik"
   }
 ]
