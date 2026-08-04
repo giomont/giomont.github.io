@@ -1,5 +1,12 @@
 [
   {
+    "de": "Debatte um Frühverrentung: Frei sieht keinen Spielraum für Verhandlungen",
+    "en": "Debate on early retirement: Frei sees no room for negotiation",
+    "es": "Debate sobre la jubilación anticipada: Frei no ve margen para las negociaciones",
+    "fr": "Débat sur la retraite anticipée : Frei ne voit aucune marge de négociation",
+    "cat": "Sport"
+  },
+  {
     "de": "Wirtschaftsexperte: \"Niedrigwasser ist ein Kostentreiber\"",
     "en": "Economic expert: \"Low water is a cost driver\"",
     "es": "Experto económico: \"El agua baja es un motor de costes\"",
@@ -131,12 +138,5 @@
     "es": "FAQ: ¿Qué pasa con la pensión anticipada sin descuento?",
     "fr": "FAQ : Qu'adviendra-t-il de la retraite anticipée sans escompte ?",
     "cat": "Welt"
-  },
-  {
-    "de": "DWD warnt vor Hitze und Gewitter in weiten teilen Deutschlands",
-    "en": "DWD warns of heat and thunderstorms in large parts of Germany",
-    "es": "DWD advierte sobre el calor y las tormentas eléctricas en gran parte de Alemania",
-    "fr": "DWD met en garde contre la chaleur et les orages dans une grande partie de l'Allemagne",
-    "cat": "Umwelt"
   }
 ]
