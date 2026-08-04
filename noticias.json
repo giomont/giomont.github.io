@@ -1,5 +1,26 @@
 [
   {
+    "de": "Hohe Kerosinpreise: Lufthansa-Gewinn bricht stark ein",
+    "en": "High kerosene prices: Lufthansa profits plummet",
+    "es": "Altos precios del queroseno: los beneficios de Lufthansa se desploman",
+    "fr": "Prix élevés du kérosène : les bénéfices de Lufthansa s'effondrent fortement",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Flüsse erreichen neue Tiefststände durch Niedrigwasser",
+    "en": "Rivers reach new lows due to low water",
+    "es": "Los ríos alcanzan nuevos mínimos debido a las aguas bajas",
+    "fr": "Les rivières atteignent de nouveaux plus bas en raison des basses eaux",
+    "cat": "Welt"
+  },
+  {
+    "de": "Ärger nach Sanierung: Pfusch am \"Reflecting Pool\" spaltet das Weiße Haus",
+    "en": "Trouble after renovation: Mess at the \"Reflecting Pool\" splits the White House",
+    "es": "Problemas después de la reurbanización: la chapuza en la \"piscina reflectante\" divide la Casa Blanca",
+    "fr": "Problèmes après la rénovation : le « Reflecting Pool » divise la Maison Blanche",
+    "cat": "Welt"
+  },
+  {
     "de": "Verletzte, Schäden und Verkehrsprobleme durch Unwetter",
     "en": "Injury, damage and traffic problems due to severe weather",
     "es": "Lesiones, daños y problemas de tráfico por condiciones meteorológicas adversas",
@@ -84,10 +105,10 @@
     "cat": "Politik"
   },
   {
-    "de": "Medienbericht: Bundesregierung erarbeitet Pläne für Zivildienst",
-    "en": "Media report: Federal Government draws up plans for civilian service",
-    "es": "Informe de los medios de comunicación: El Gobierno Federal elabora planes para el servicio civil",
-    "fr": "Rapport des médias : le gouvernement fédéral élabore des plans pour le service civil",
+    "de": "Bundesregierung erarbeitet Pläne für Zivildienst",
+    "en": "Federal Government draws up plans for civilian service",
+    "es": "El Gobierno Federal elabora planes para el servicio civil",
+    "fr": "Le gouvernement fédéral élabore des plans pour le service civil",
     "cat": "Politik"
   },
   {
@@ -117,26 +138,5 @@
     "es": "Negociaciones de Estados Unidos con Irán: Trump dice que se hablará de nuevo",
     "fr": "Négociations américaines avec l'Iran : Trump dit que l'on parle à nouveau",
     "cat": "Welt"
-  },
-  {
-    "de": "Selenskyj hofft auf Kriegsende bis Herbst",
-    "en": "Zelensky hopes for the end of the war by autumn",
-    "es": "Zelensky espera que la guerra termine en otoño",
-    "fr": "Zelensky espère la fin de la guerre d'ici l'automne",
-    "cat": "Welt"
-  },
-  {
-    "de": "Unbekanntes Virus bei Rindern in Süddeutschland nachgewiesen",
-    "en": "Unknown virus detected in cattle in southern Germany",
-    "es": "Virus desconocido detectado en ganado en el sur de Alemania",
-    "fr": "Virus inconnu détecté chez les bovins dans le sud de l'Allemagne",
-    "cat": "Welt"
-  },
-  {
-    "de": "Elf statt vier Monate: In Dänemark startet verlängerte Wehrpflicht",
-    "en": "Eleven months instead of four: Extended compulsory military service starts in Denmark",
-    "es": "Once meses en lugar de cuatro: comienza el servicio militar obligatorio prolongado en Dinamarca",
-    "fr": "Onze mois au lieu de quatre : au Danemark, la conscription prolongée commence",
-    "cat": "Sport"
   }
 ]
