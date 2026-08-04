@@ -1,5 +1,47 @@
 [
   {
+    "de": "Verletzte, Schäden und Verkehrsprobleme durch Unwetter",
+    "en": "Injury, damage and traffic problems due to severe weather",
+    "es": "Lesiones, daños y problemas de tráfico por condiciones meteorológicas adversas",
+    "fr": "Blessés, dommages et problèmes de circulation dus aux intempéries",
+    "cat": "Sport"
+  },
+  {
+    "de": "Kleinstes Modell von Boeings 737-Max-Reihe zugelassen",
+    "en": "Smallest model of Boeing's 737 Max range approved",
+    "es": "Modelo más pequeño homologado de la gama Boeing 737 Max",
+    "fr": "Le plus petit modèle de la gamme Boeing 737 Max approuvé",
+    "cat": "Welt"
+  },
+  {
+    "de": "Zahl der Erdbebenopfer in Venezuela steigt auf mehr als 6.000",
+    "en": "The number of earthquake victims in Venezuela rises to more than 6,000",
+    "es": "El número de víctimas del terremoto en Venezuela asciende a más de 6.000",
+    "fr": "Le nombre de victimes du tremblement de terre au Venezuela s'élève à plus de 6 000",
+    "cat": "Welt"
+  },
+  {
+    "de": "Marktbericht: DAX markiert neue Rekordstände",
+    "en": "Market report: DAX marks new record levels",
+    "es": "Informe de mercado: Dax marca nuevos récords",
+    "fr": "Rapport de marché : le DAX marque de nouveaux records",
+    "cat": "Welt"
+  },
+  {
+    "de": "Waldbrand in den Niederlanden - Warnung vor Brandrauch in NRW",
+    "en": "Forest fire in the Netherlands - Fire smoke warning in North Rhine-Westphalia",
+    "es": "Incendio forestal en los Países Bajos: advertencia de humo de incendio en Renania del Norte-Westfalia",
+    "fr": "Incendie de forêt aux Pays-Bas - Avertissement de fumée d'incendie en Rhénanie-du-Nord-Westphalie",
+    "cat": "Umwelt"
+  },
+  {
+    "de": "US-Datenfirma Palantir steigert Umsatz um mehr als 90 Prozent",
+    "en": "US data company Palantir increases sales by more than 90 percent",
+    "es": "La empresa estadounidense de datos Palantir aumenta sus ventas en más de un 90 por ciento",
+    "fr": "La société de données américaine Palantir augmente son chiffre d'affaires de plus de 90 %",
+    "cat": "Welt"
+  },
+  {
     "de": "USA: Waldbrände um Spokane wüten weiter - Verdächtiger festgenommen",
     "en": "USA: Forest fires continue to rage around Spokane - Suspect arrested",
     "es": "EE.UU.: Continúan los incendios forestales en torno a Spokane - Sospechoso detenido",
@@ -11,13 +53,6 @@
     "en": "Russia reports multiple deaths from Ukrainian drone strikes",
     "es": "Rusia informa de varias muertes por ataques con drones ucranianos",
     "fr": "La Russie signale plusieurs morts dans les frappes de drones ukrainiens",
-    "cat": "Welt"
-  },
-  {
-    "de": "Marktbericht: Anleger in Rekordlaune",
-    "en": "Market report: Investors in record mood",
-    "es": "Informe de mercado: inversores en un estado de ánimo récord",
-    "fr": "Rapport sur le marché : les investisseurs dans une humeur record",
     "cat": "Welt"
   },
   {
@@ -103,40 +138,5 @@
     "es": "Once meses en lugar de cuatro: comienza el servicio militar obligatorio prolongado en Dinamarca",
     "fr": "Onze mois au lieu de quatre : au Danemark, la conscription prolongée commence",
     "cat": "Sport"
-  },
-  {
-    "de": "Marktbericht: DAX auf Rekordfahrt",
-    "en": "Market report: DAX on record run",
-    "es": "Informe de mercado: Dax en marcha récord",
-    "fr": "Rapport de marché : le DAX bat des records",
-    "cat": "Welt"
-  },
-  {
-    "de": "Neue Angriffe im Gazastreifen: Hoffnung weicht Resignation",
-    "en": "New attacks in Gaza: Hope gives way to resignation",
-    "es": "Nuevos ataques en la Franja de Gaza: la esperanza da paso a la resignación",
-    "fr": "Nouvelles attaques dans la bande de Gaza : l'espoir cède la place à la résignation",
-    "cat": "Welt"
-  },
-  {
-    "de": "Stromkrise durch Niedrigwasser der Donau - Rumänien sprengt Felsen",
-    "en": "Electricity crisis due to low water of the Danube - Romania explodes rocks",
-    "es": "Crisis de electricidad por la marea baja del Danubio - Rumania explota rocas",
-    "fr": "Crise électrique due aux basses eaux du Danube - la Roumanie fait exploser des roches",
-    "cat": "Welt"
-  },
-  {
-    "de": "Nach Andrang in Ceuta fordert Von der Leyen stärkeren EU-Grenzschutz",
-    "en": "After rush in Ceuta, Von der Leyen calls for stronger EU border protection",
-    "es": "Después de la afluencia en Ceuta, Von der Leyen exige una mayor protección de las fronteras de la UE",
-    "fr": "Après l'affluence à Ceuta, Von der Leyen demande une protection renforcée des frontières de l'UE",
-    "cat": "Welt"
-  },
-  {
-    "de": "Longevity in China - der Traum vom langen Leben",
-    "en": "Longevity in China - the dream of a long life",
-    "es": "Longevidad en China: el sueño de una larga vida",
-    "fr": "La longévité en Chine - le rêve d'une longue vie",
-    "cat": "Welt"
   }
 ]
