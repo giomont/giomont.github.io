@@ -1,5 +1,47 @@
 [
   {
+    "de": "USA: Waldbrände um Spokane wüten weiter - Verdächtiger festgenommen",
+    "en": "USA: Forest fires continue to rage around Spokane - Suspect arrested",
+    "es": "EE.UU.: Continúan los incendios forestales en torno a Spokane - Sospechoso detenido",
+    "fr": "États-Unis : les feux de forêt autour de Spokane continuent de faire rage - suspect arrêté",
+    "cat": "Umwelt"
+  },
+  {
+    "de": "Russland meldet mehrere Tote durch ukrainische Drohnenangriffe",
+    "en": "Russia reports multiple deaths from Ukrainian drone strikes",
+    "es": "Rusia informa de varias muertes por ataques con drones ucranianos",
+    "fr": "La Russie signale plusieurs morts dans les frappes de drones ukrainiens",
+    "cat": "Welt"
+  },
+  {
+    "de": "Marktbericht: Anleger in Rekordlaune",
+    "en": "Market report: Investors in record mood",
+    "es": "Informe de mercado: inversores en un estado de ánimo récord",
+    "fr": "Rapport sur le marché : les investisseurs dans une humeur record",
+    "cat": "Welt"
+  },
+  {
+    "de": "25 Demokratische US-Bundesstaaten klagen gegen Trumps neue Zölle",
+    "en": "25 Democratic US states file suit against Trump's new tariffs",
+    "es": "25 estados demócratas de EE. UU. demandan los nuevos aranceles de Trump",
+    "fr": "25 États démocratiques américains portent plainte contre les nouveaux droits de douane de Trump",
+    "cat": "Sport"
+  },
+  {
+    "de": "Vier Verletzte nach Schüssen in Köln",
+    "en": "Four injured after shots fired in Cologne",
+    "es": "Cuatro heridos tras disparos en Colonia",
+    "fr": "Quatre blessés après des tirs à Cologne",
+    "cat": "Welt"
+  },
+  {
+    "de": "Interview zu Krise in Ceuta: \"Die Schuld Spanien zu geben, war irrational\"",
+    "en": "Interview on Ceuta crisis: \"Blaming Spain was irrational\"",
+    "es": "Entrevista sobre la crisis en Ceuta: \"Culpar a España fue irracional\"",
+    "fr": "Interview sur la crise à Ceuta : « Donner la faute à l'Espagne était irrationnel »",
+    "cat": "Welt"
+  },
+  {
     "de": "Ceuta-Krise: EU-Innenminister beraten über Konsequenzen",
     "en": "Ceuta crisis: EU interior ministers discuss consequences",
     "es": "Crisis de Ceuta: los ministros del Interior de la UE debaten las consecuencias",
@@ -95,48 +137,6 @@
     "en": "Longevity in China - the dream of a long life",
     "es": "Longevidad en China: el sueño de una larga vida",
     "fr": "La longévité en Chine - le rêve d'une longue vie",
-    "cat": "Welt"
-  },
-  {
-    "de": "Aufruf in offenem Brief: Mehr als 1.000 Juristen für AfD-Verbot",
-    "en": "Call in open letter: More than 1,000 lawyers for AfD ban",
-    "es": "Llamada en carta abierta: más de 1.000 abogados a favor de la prohibición de AfD",
-    "fr": "Appel dans une lettre ouverte : plus de 1 000 avocats pour l'interdiction de l'AfD",
-    "cat": "Politik"
-  },
-  {
-    "de": "Deutsch-französische Kooperation: Wie soll die atomare Abschreckung aussehen?",
-    "en": "Franco-German cooperation: What should nuclear deterrence look like?",
-    "es": "Cooperación franco-alemana: ¿cómo debe ser la disuasión nuclear?",
-    "fr": "Coopération franco-allemande : à quoi devrait ressembler la dissuasion nucléaire ?",
-    "cat": "Welt"
-  },
-  {
-    "de": "Einzelhandel erzielt Umsatzplus trotz Kaufzurückhaltung",
-    "en": "Retailers achieve sales growth despite reluctance to buy",
-    "es": "El comercio minorista logra un aumento en las ventas a pesar de la renuencia a comprar",
-    "fr": "Le commerce de détail augmente son chiffre d'affaires malgré la réticence à l'achat",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Niedrigwassser am Rhein: Bilger lädt zu Krisentreffen",
-    "en": "Low water on the Rhine: Bilger invites you to crisis meetings",
-    "es": "Aguas bajas en el Rin: Bilger invita a reuniones de crisis",
-    "fr": "Basses eaux sur le Rhin : Bilger invite à des réunions de crise",
-    "cat": "Welt"
-  },
-  {
-    "de": "Hunderte Häuser bei Waldbränden im US-Staat Washington zerstört",
-    "en": "Hundreds of homes destroyed in wildfires in Washington state",
-    "es": "Cientos de casas destruidas por incendios forestales en el estado de Washington",
-    "fr": "Des centaines de maisons détruites lors d'incendies de forêt dans l'État américain de Washington",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Ceuta: Marokko gibt Sozialen Medien Schuld an Tragödie",
-    "en": "Ceuta: Morocco blames social media for tragedy",
-    "es": "Ceuta: Marruecos culpa de la tragedia a las redes sociales",
-    "fr": "Ceuta : Le Maroc blâme les médias sociaux pour la tragédie",
     "cat": "Welt"
   }
 ]
