@@ -1,5 +1,54 @@
 [
   {
+    "de": "Behörden: \"Sehr ernster Sicherheitsvorfall\" am Flughafen Leipzig/Halle",
+    "en": "Authorities: \"Very serious security incident\" at Leipzig/Halle Airport",
+    "es": "Autoridades: \"Incidente de seguridad muy grave\" en el aeropuerto de Leipzig/Halle",
+    "fr": "Autorités : « Incident de sécurité très grave » à l'aéroport de Leipzig/Halle",
+    "cat": "Welt"
+  },
+  {
+    "de": "Neue Männlichkeit in Sportserien: Ted Lasso und Co.",
+    "en": "New masculinity in sports series: Ted Lasso and Co.",
+    "es": "Nueva masculinidad en series deportivas: Ted Lasso and Co.",
+    "fr": "Nouvelle masculinité dans les séries sportives : Ted Lasso et Cie.",
+    "cat": "Sport"
+  },
+  {
+    "de": "Einschränkungen bei der Bewässerung bedrohen Ernten von Landwirten",
+    "en": "Restrictions on irrigation threaten farmers' harvests",
+    "es": "Las restricciones en el riego amenazan las cosechas de los agricultores",
+    "fr": "Les restrictions d'irrigation menacent les récoltes des agriculteurs",
+    "cat": "Welt"
+  },
+  {
+    "de": "Flüsse im Trockenstress - Ökosystem fehlt die Lebensgrundlage",
+    "en": "Rivers in drought stress - ecosystem lacks livelihood",
+    "es": "Ríos en el estrés de la sequía: el ecosistema carece de medios de subsistencia",
+    "fr": "Les rivières en période de stress dû à la sécheresse - l'écosystème manque de moyens de subsistance",
+    "cat": "Sport"
+  },
+  {
+    "de": "Manöver: Taiwan übt Abwehr eines potenziellen Angriff Chinas",
+    "en": "Maneuver: Taiwan exercises defense against a potential attack by China",
+    "es": "Maniobra: Taiwán practica la defensa contra un posible ataque a China",
+    "fr": "Manœuvre : Taïwan s'entraîne à repousser une attaque potentielle de la Chine",
+    "cat": "Welt"
+  },
+  {
+    "de": "Deutschlands KI-Hoffnung: Infineon scheitert an hohen Erwartungen",
+    "en": "Germany's AI hope: Infineon fails due to high expectations",
+    "es": "La esperanza de IA de Alemania: Infineon fracasa debido a las altas expectativas",
+    "fr": "L'espoir de l'Allemagne en matière d'IA : Infineon échoue en raison des attentes élevées",
+    "cat": "Welt"
+  },
+  {
+    "de": "Ifo Institut: Autoindustrie zeigt sich wieder optimistischer",
+    "en": "Ifo Institute: Automotive industry is more optimistic again",
+    "es": "Instituto IFO: la industria automotriz vuelve a ser más optimista",
+    "fr": "Institut IFO : l'industrie automobile se montre à nouveau plus optimiste",
+    "cat": "Welt"
+  },
+  {
     "de": "Fördergeschäft der KfW steigt im ersten Halbjahr auf Rekordwert",
     "en": "KfW's promotional business rises to a record level in the first half of the year",
     "es": "El negocio de fomento de KfW alcanza un valor récord en el primer semestre",
@@ -28,10 +77,10 @@
     "cat": "Umwelt"
   },
   {
-    "de": "Flughafen Leipzig/Halle: Ermittler entdecken \"unbekannte Masse\" und mutmaßlichen Zünder an Drohne",
-    "en": "Leipzig/Halle Airport: Investigators discover \"unknown mass\" and suspected detonators on drone",
-    "es": "Aeropuerto de Leipzig/Halle: los investigadores descubren \"masa desconocida\" y presunto detonador de un dron",
-    "fr": "Aéroport de Leipzig/Halle : les enquêteurs découvrent une « masse inconnue » et un détonateur présumé sur un drone",
+    "de": "Drohnenfund am Flughafen Leipzig/Halle: Mutmaßlicher Sprengstoff und Zünder entdeckt",
+    "en": "Drone find at Leipzig/Halle Airport: Suspected explosive and detonator discovered",
+    "es": "Descubrimiento de drones en el aeropuerto de Leipzig/Halle: se descubrió un presunto explosivo y detonador",
+    "fr": "Découverte de drones à l'aéroport de Leipzig/Halle : découverte présumée d'explosifs et de détonateurs",
     "cat": "Welt"
   },
   {
@@ -89,54 +138,5 @@
     "es": "\"Jubilación a los 63 años\": quién la utiliza y quién disputa por ella",
     "fr": "« Retraite à 63 ans » : qui l'utilise - et qui se dispute à ce sujet",
     "cat": "Welt"
-  },
-  {
-    "de": "Kiew wieder unter russischem Raketenbeschuss",
-    "en": "Kiev again under Russian rocket fire",
-    "es": "Kiev de nuevo bajo el fuego de misiles rusos",
-    "fr": "Kiev à nouveau sous le feu de missiles russes",
-    "cat": "Sport"
-  },
-  {
-    "de": "Prozess erst im März: Warner-Übernahme durch Paramount verzögert",
-    "en": "Process delayed until March: Warner acquisition by Paramount",
-    "es": "Juicio en marzo: la adquisición de Warner por Paramount se retrasa",
-    "fr": "Processus seulement en mars : reprise de Warner retardée par Paramount",
-    "cat": "Welt"
-  },
-  {
-    "de": "Welternährungsprogramm: Hungerkrise in Afghanistan spitzt sich zu",
-    "en": "World Food Programme: The hunger crisis in Afghanistan is worsening",
-    "es": "Programa Mundial de Alimentos: La crisis del hambre en Afganistán se agrava",
-    "fr": "Programme alimentaire mondial : la crise de la faim en Afghanistan s'aggrave",
-    "cat": "Welt"
-  },
-  {
-    "de": "Wie ein chinesischer Essenslieferant einen wichtigen Literaturpreis gewann",
-    "en": "How a Chinese food supplier won a major literature prize",
-    "es": "Cómo un proveedor de comida chino ganó un importante premio literario",
-    "fr": "Comment un fournisseur de nourriture chinois a remporté un prix littéraire important",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Angriff auf Gemüsehändler: Ukraine wirft Moskau \"Drohnen-Safari\" vor",
-    "en": "Attack on vegetable merchants: Ukraine accuses Moscow of \"drone safari\"",
-    "es": "Ataque a un verdulero: Ucrania acusa a Moscú de \"safari con drones\"",
-    "fr": "Attaque contre les marchands de légumes : l'Ukraine accuse Moscou de « safari de drones »",
-    "cat": "Sport"
-  },
-  {
-    "de": "Innenausschuss zum CSD-Anschlag: Zentrale Fragen bleiben ungeklärt",
-    "en": "Internal Committee on the CSD attack: Key issues remain unresolved",
-    "es": "Comité interno sobre el ataque de CSD: las cuestiones centrales siguen sin resolverse",
-    "fr": "Commission interne sur l'attentat du CSD : les questions centrales restent en suspens",
-    "cat": "Welt"
-  },
-  {
-    "de": "EU-Innenminister zu Ceuta: \"Natürlich\" Solidarität mit Spanien",
-    "en": "EU Interior Minister on Ceuta: \"Of course\" Solidarity with Spain",
-    "es": "Ministro del Interior de la UE sobre Ceuta: \"Por supuesto\" solidaridad con España",
-    "fr": "Le ministre de l'Intérieur de l'UE à propos de Ceuta : solidarité « naturelle » avec l'Espagne",
-    "cat": "Politik"
   }
 ]
