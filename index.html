@@ -352,6 +352,7 @@
   .slide .de{font-size:1.65rem;font-weight:700;margin-bottom:16px;line-height:1.4;transition:background .2s,padding .2s;}
   .slide .en{font-size:1.15rem;color:var(--amber);transition:background .2s,padding .2s;}
   .slide .fr{font-size:1.15rem;color:var(--green);margin-top:6px;transition:background .2s,padding .2s;}
+  .slide .es{font-size:1.15rem;color:#e0715a;margin-top:6px;transition:background .2s,padding .2s;}
 
   .slide .lang-active{
     background:rgba(224,164,88,.14);
@@ -554,6 +555,7 @@ let currentSpeed = 0.95;
 const langMeta = {
   de: { code:"de-DE", label:"Deutsch", icon:"🇩🇪" },
   en: { code:"en-US", label:"English", icon:"🇬🇧" },
+  es: { code:"es-ES", label:"Español", icon:"🇪🇸" },
   fr: { code:"fr-FR", label:"Français", icon:"🇫🇷" }
 };
 let currentLang = "de";
@@ -781,7 +783,7 @@ function stopPlayAll(){
   document.getElementById("playAllLangsBtn").classList.remove("active");
   const s = document.querySelector(".slide");
   if(s) s.classList.remove("playing");
-  ["de", "en", "fr"].forEach(l => clearHighlight(l));
+  ["de", "en", "es", "fr"].forEach(l => clearHighlight(l));
 }
 
 // ---------- Quiz (blank keywords) ----------
@@ -816,6 +818,7 @@ function renderSlide(){
       <span class="cat-tag">${p.cat}</span>
       <div class="de${active("de")}">${renderWords(p.de)}</div>
       <div class="en${active("en")}">${renderWords(p.en)}</div>
+      <div class="es${active("es")}">${renderWords(p.es || "")}</div>
       <div class="fr${active("fr")}">${renderWords(p.fr || "")}</div>
     </div>
   `;
@@ -852,12 +855,12 @@ function startPlayAll(){
 }
 
 // ---------- Play all (los 3 idiomas: EN → DE → FR, por cada frase) ----------
-const PLAY_ALL_LANGS_SEQUENCE = ["en", "de", "fr"];
+const PLAY_ALL_LANGS_SEQUENCE = ["en", "de", "es", "fr"];
 let playAllLangsIndex = 0;
 let playAllLangsSubIndex = 0;
 
 function setActiveLangBlock(lang){
-  document.querySelectorAll(".slide .de, .slide .en, .slide .fr").forEach(el => el.classList.remove("lang-active"));
+  document.querySelectorAll(".slide .de, .slide .en, .slide .es, .slide .fr").forEach(el => el.classList.remove("lang-active"));
   document.querySelector(`.slide .${lang}`)?.classList.add("lang-active");
 }
 
@@ -1274,7 +1277,7 @@ function renderStudyCard(item){
       <div class="de game-sentence">${highlighted}</div>
       <div class="study-word">${item.word}</div>
       <div id="studyDefSlot"></div>
-      <p class="game-sub">${item.en} · ${item.fr || ""}</p>
+      <p class="game-sub">${item.en} · ${item.es || ""} · ${item.fr || ""}</p>
       <div class="game-actions"><button id="gameSpeakBtn" class="speak-btn">🔊</button></div>
       <button id="continueStudyBtn" style="margin-top:16px;">Weiter ›</button>
     </div>`;
@@ -1334,7 +1337,7 @@ function renderGameCard(){
         <span class="cat-tag">${item.cat}</span>
         <p class="game-counter">Wort ${gameIndex + 1} / ${gameQueue.length} heute</p>
         <div class="de game-sentence">${maskWord(item.de, item.word)}</div>
-        <p class="game-sub">${item.en} · ${item.fr || ""}</p>
+        <p class="game-sub">${item.en} · ${item.es || ""} · ${item.fr || ""}</p>
         <div class="game-actions"><button id="gameSpeakBtn" class="speak-btn">🔊</button></div>
         <div class="choice-grid">
           ${options.map((w, i) => `<button class="choice-btn" data-idx="${i}">${w}</button>`).join("")}
@@ -1371,7 +1374,7 @@ function renderGameCard(){
         <span class="cat-tag">${item.cat}</span>
         <p class="game-counter">Wort ${gameIndex + 1} / ${gameQueue.length} heute</p>
         <div class="de game-sentence">${maskWord(item.de, item.word)}</div>
-        <p class="game-word-label">Übersetzung: <strong>${item.en}</strong> · ${item.fr || ""}</p>
+        <p class="game-word-label">Übersetzung: <strong>${item.en}</strong> · ${item.es || ""} · ${item.fr || ""}</p>
         <div class="game-actions">
           <button id="gameSpeakBtn" class="speak-btn">🔊</button>
         </div>
