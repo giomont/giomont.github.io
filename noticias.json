@@ -1,5 +1,12 @@
 [
   {
+    "de": "Fördergeschäft der KfW steigt im ersten Halbjahr auf Rekordwert",
+    "en": "KfW's promotional business rises to a record level in the first half of the year",
+    "es": "El negocio de fomento de KfW alcanza un valor récord en el primer semestre",
+    "fr": "Les activités de promotion de la KfW atteignent un niveau record au premier semestre",
+    "cat": "Welt"
+  },
+  {
     "de": "Queere Gemeinschaft fühlt sich nach CSD-Anschlag im Stich gelassen",
     "en": "Queer community feels let down after CSD attack",
     "es": "La comunidad queer se siente abandonada tras el ataque de la CDs",
@@ -21,10 +28,10 @@
     "cat": "Umwelt"
   },
   {
-    "de": "Flughafen Leipzig: Ermittler entdecken \"unbekannte Masse\" und mutmaßlichen Zünder an Drohne",
-    "en": "Leipzig Airport: Investigators discover \"unknown mass\" and suspected detonator on drone",
-    "es": "Aeropuerto de Leipzig: Investigadores descubren \"masa desconocida\" y presunto detonador de un dron",
-    "fr": "Aéroport de Leipzig : les enquêteurs découvrent une « masse inconnue » et un détonateur présumé attaché à un drone",
+    "de": "Flughafen Leipzig/Halle: Ermittler entdecken \"unbekannte Masse\" und mutmaßlichen Zünder an Drohne",
+    "en": "Leipzig/Halle Airport: Investigators discover \"unknown mass\" and suspected detonators on drone",
+    "es": "Aeropuerto de Leipzig/Halle: los investigadores descubren \"masa desconocida\" y presunto detonador de un dron",
+    "fr": "Aéroport de Leipzig/Halle : les enquêteurs découvrent une « masse inconnue » et un détonateur présumé sur un drone",
     "cat": "Welt"
   },
   {
@@ -130,13 +137,6 @@
     "en": "EU Interior Minister on Ceuta: \"Of course\" Solidarity with Spain",
     "es": "Ministro del Interior de la UE sobre Ceuta: \"Por supuesto\" solidaridad con España",
     "fr": "Le ministre de l'Intérieur de l'UE à propos de Ceuta : solidarité « naturelle » avec l'Espagne",
-    "cat": "Politik"
-  },
-  {
-    "de": "Hitze, Dürre, Waldbrände: Rufe nach Reaktion der Bundesregierung",
-    "en": "Heat, drought, forest fires: calls for a response from the federal government",
-    "es": "Calor, sequía, incendios forestales: llamadas a la reacción del gobierno federal",
-    "fr": "Chaleur, sécheresse, incendies de forêt : appel à la réaction du gouvernement fédéral",
     "cat": "Politik"
   }
 ]
