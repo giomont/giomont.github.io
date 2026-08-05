@@ -1,5 +1,19 @@
 [
   {
+    "de": "Cyclospora-Parasit: Mehr als 10.000 Durchfall-Fälle in den USA bestätigt",
+    "en": "Cyclospora parasite: More than 10,000 diarrhea cases confirmed in the US",
+    "es": "Parásito de Cyclospora: se confirman más de 10.000 casos de diarrea en Estados Unidos",
+    "fr": "Parasite cyclosporique : plus de 10 000 cas de diarrhée confirmés aux États-Unis",
+    "cat": "Welt"
+  },
+  {
+    "de": "SpaceX mit Verlust im ersten Quartal an der Börse",
+    "en": "SpaceX at a loss in the first quarter on the stock exchange",
+    "es": "SpaceX con pérdidas en el primer trimestre en Bolsa",
+    "fr": "SpaceX à perte en Bourse au premier trimestre",
+    "cat": "Wirtschaft"
+  },
+  {
     "de": "Verhaltene Reaktionen von Sozialverbänden auf Zivildienstpläne",
     "en": "Behavioral reactions of social associations to community service plans",
     "es": "Reacciones conductuales de las organizaciones sociales a los horarios de servicio a la comunidad",
@@ -35,11 +49,11 @@
     "cat": "Welt"
   },
   {
-    "de": "Russische Angriffe: Kiew wieder unter Raketenbeschuss",
-    "en": "Russian attacks: Kiev again under missile fire",
-    "es": "Ataques rusos: Kiev de nuevo bajo el fuego de misiles",
-    "fr": "Attaques russes : Kiev de nouveau sous les tirs de roquettes",
-    "cat": "Welt"
+    "de": "Kiew wieder unter russischem Raketenbeschuss",
+    "en": "Kiev again under Russian rocket fire",
+    "es": "Kiev de nuevo bajo el fuego de misiles rusos",
+    "fr": "Kiev à nouveau sous le feu de missiles russes",
+    "cat": "Sport"
   },
   {
     "de": "Prozess erst im März: Warner-Übernahme durch Paramount verzögert",
@@ -124,19 +138,5 @@
     "es": "Esfuerzos diplomáticos: ¿Se acerca una solución para el Estrecho de Ormuz?",
     "fr": "Efforts diplomatiques : coud une solution pour le détroit d'Ormuz ?",
     "cat": "Sport"
-  },
-  {
-    "de": "Stromnetz auf Kuba am Montag erneut landesweit zusammengebrochen",
-    "en": "Electricity grid in Cuba collapsed again nationwide on Monday",
-    "es": "La red eléctrica en Cuba colapsó de nuevo el lunes en todo el país",
-    "fr": "Le réseau électrique de Cuba s'est à nouveau effondré lundi dans tout le pays",
-    "cat": "Welt"
-  },
-  {
-    "de": "Migration in spanischer Exklave: Was lernen EU und Spanien aus Ceuta?",
-    "en": "Migration in the Spanish exclave: What do the EU and Spain learn from Ceuta?",
-    "es": "Migración en un enclave español: ¿qué aprenden la UE y España de Ceuta?",
-    "fr": "Migration dans l'exclave espagnole : qu'apprennent l'UE et l'Espagne de Ceuta ?",
-    "cat": "Welt"
   }
 ]
