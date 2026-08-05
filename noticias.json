@@ -1,5 +1,26 @@
 [
   {
+    "de": "Queere Gemeinschaft fühlt sich nach CSD-Anschlag im Stich gelassen",
+    "en": "Queer community feels let down after CSD attack",
+    "es": "La comunidad queer se siente abandonada tras el ataque de la CDs",
+    "fr": "La communauté queer se sent abandonnée après l'attentat du CSD",
+    "cat": "Sport"
+  },
+  {
+    "de": "Israel lehnt Trumps Plan zur Hamas-Entwaffnung im Gazastreifen ab",
+    "en": "Israel rejects Trump's plan to disarm Hamas in Gaza",
+    "es": "Israel rechaza el plan de Trump para desarmar a Hamas en la Franja de Gaza",
+    "fr": "Israël rejette le plan de désarmement du Hamas par Trump dans la bande de Gaza",
+    "cat": "Welt"
+  },
+  {
+    "de": "Schiitische Wallfahrt in den Irak: Zwischen Glaube, Politik und Hitze",
+    "en": "Shia Pilgrimage to Iraq: Between Faith, Politics and Heat",
+    "es": "Peregrinación chiíta a Irak: entre la fe, la política y el calor",
+    "fr": "Pèlerinage chiite en Irak : entre foi, politique et chaleur",
+    "cat": "Umwelt"
+  },
+  {
     "de": "Flughafen Leipzig: Ermittler entdecken \"unbekannte Masse\" und mutmaßlichen Zünder an Drohne",
     "en": "Leipzig Airport: Investigators discover \"unknown mass\" and suspected detonator on drone",
     "es": "Aeropuerto de Leipzig: Investigadores descubren \"masa desconocida\" y presunto detonador de un dron",
@@ -117,26 +138,5 @@
     "es": "Calor, sequía, incendios forestales: llamadas a la reacción del gobierno federal",
     "fr": "Chaleur, sécheresse, incendies de forêt : appel à la réaction du gouvernement fédéral",
     "cat": "Politik"
-  },
-  {
-    "de": "Marktbericht: Anleger hieven DAX wieder auf ein Allzeithoch",
-    "en": "Market report: Investors lift DAX back to an all-time high",
-    "es": "Informe de mercado: Los inversores vuelven a situar el Dax en un máximo histórico",
-    "fr": "Rapport sur le marché : les investisseurs soulèvent à nouveau le DAX à un niveau record",
-    "cat": "Welt"
-  },
-  {
-    "de": "Zahl der Asylerstanträge im Juli auf 4.311 gesunken",
-    "en": "Number of asylum applications decreased to 4,311 in July",
-    "es": "El número de solicitudes de asilo se redujo a 4.311 en julio",
-    "fr": "Le nombre de demandes constantes d'asile est tombé à 4 311 en juillet",
-    "cat": "Welt"
-  },
-  {
-    "de": "Kommentar zu Ceuta: Die EU hat diesen Test nicht bestanden",
-    "en": "Comment on Ceuta: The EU failed this test",
-    "es": "Comentario en Ceuta: La UE no ha superado esta prueba",
-    "fr": "Commentaire sur Ceuta : L'UE n'a pas réussi ce test",
-    "cat": "Welt"
   }
 ]
