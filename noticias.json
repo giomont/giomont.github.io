@@ -1,9 +1,30 @@
 [
   {
-    "de": "Cyclospora-Parasit: Mehr als 10.000 Durchfall-Fälle in den USA bestätigt",
-    "en": "Cyclospora parasite: More than 10,000 diarrhea cases confirmed in the US",
-    "es": "Parásito de Cyclospora: se confirman más de 10.000 casos de diarrea en Estados Unidos",
-    "fr": "Parasite cyclosporique : plus de 10 000 cas de diarrhée confirmés aux États-Unis",
+    "de": "Flughafen Leipzig: Ermittler entdecken \"unbekannte Masse\" und mutmaßlichen Zünder an Drohne",
+    "en": "Leipzig Airport: Investigators discover \"unknown mass\" and suspected detonator on drone",
+    "es": "Aeropuerto de Leipzig: Investigadores descubren \"masa desconocida\" y presunto detonador de un dron",
+    "fr": "Aéroport de Leipzig : les enquêteurs découvrent une « masse inconnue » et un détonateur présumé attaché à un drone",
+    "cat": "Welt"
+  },
+  {
+    "de": "Marktbericht: DAX setzt Klettertour fort",
+    "en": "Market report: DAX continues climbing tour",
+    "es": "Informe de mercado: Dax continúa escalando",
+    "fr": "Rapport de marché : le DAX poursuit son ascension",
+    "cat": "Welt"
+  },
+  {
+    "de": "Schwache Konjunktur: Mittelstand steckt in der Kreditklemme",
+    "en": "Weak economy: SMEs are in a credit crunch",
+    "es": "Débil coyuntura: las pequeñas y medianas empresas se encuentran en una crisis crediticia",
+    "fr": "Une conjoncture faible : les PME sont confrontées à un resserrement du crédit",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Cyclospora-Parasit: Mehr als 10.000 Durchfall-Infektionen in den USA",
+    "en": "Cyclospora parasite: More than 10,000 diarrheal infections in the US",
+    "es": "Parásito de Cyclospora: más de 10.000 infecciones de diarrea en los EE.",
+    "fr": "Parasite cyclosporique : plus de 10 000 infections diarrhéiques aux États-Unis",
     "cat": "Welt"
   },
   {
@@ -21,13 +42,6 @@
     "cat": "Welt"
   },
   {
-    "de": "Marktbericht: DAX bleibt auf Rekordkurs",
-    "en": "Market report: DAX remains on record course",
-    "es": "Informe de mercado: el Dax sigue batiendo récords",
-    "fr": "Rapport de marché : le DAX reste sur une trajectoire record",
-    "cat": "Welt"
-  },
-  {
     "de": "Arbeitgeber kritisieren Widerstand gegen Ende der \"Rente mit 63\"",
     "en": "Employers criticize resistance towards the end of the \"pension at 63\"",
     "es": "Los empleadores critican la oposición al final de la \"jubilación a los 63 años\"",
@@ -35,10 +49,10 @@
     "cat": "Welt"
   },
   {
-    "de": "Hunderte Menschen nach Vulkanausbruch in Guatemala evakuiert",
-    "en": "Hundreds evacuated after volcanic eruption in Guatemala",
-    "es": "Cientos de personas evacuadas tras erupción volcánica en Guatemala",
-    "fr": "Des centaines de personnes évacuées après une éruption volcanique au Guatemala",
+    "de": "Erste Dörfer nach Vulkanausbruch in Guatemala evakuiert",
+    "en": "First villages evacuated after volcanic eruption in Guatemala",
+    "es": "Primeros pueblos evacuados tras erupción volcánica en Guatemala",
+    "fr": "Premiers villages évacués après une éruption volcanique au Guatemala",
     "cat": "Sport"
   },
   {
@@ -124,19 +138,5 @@
     "es": "Comentario en Ceuta: La UE no ha superado esta prueba",
     "fr": "Commentaire sur Ceuta : L'UE n'a pas réussi ce test",
     "cat": "Welt"
-  },
-  {
-    "de": "Kommentar zur Entwaffnung der Hamas: Ein Deal, der keiner ist",
-    "en": "Hamas Disarmament Commentary: A Deal That's Not",
-    "es": "Comentario sobre el desarme de Hamas: un acuerdo que no lo es",
-    "fr": "Commentaire sur le désarmement du Hamas : un accord qui n'en est pas un",
-    "cat": "Welt"
-  },
-  {
-    "de": "Diplomatische Bemühungen: Naht eine Lösung für die Straße von Hormus?",
-    "en": "Diplomatic efforts: Is a solution for the Strait of Hormuz approaching?",
-    "es": "Esfuerzos diplomáticos: ¿Se acerca una solución para el Estrecho de Ormuz?",
-    "fr": "Efforts diplomatiques : coud une solution pour le détroit d'Ormuz ?",
-    "cat": "Sport"
   }
 ]
