@@ -1,5 +1,33 @@
 [
   {
+    "de": "Niedrigwasser: Nur \"begrenzte Alternativen zur Binnenschifffahrt\"",
+    "en": "Low water: Only \"limited alternatives to inland navigation\"",
+    "es": "Aguas bajas: solo \"alternativas limitadas a la navegación interior\"",
+    "fr": "Basses eaux : uniquement des « alternatives limitées à la navigation intérieure »",
+    "cat": "Welt"
+  },
+  {
+    "de": "Krisentreffen zu Niedrigwasser: Wenn die Wasserstraßen versiegen",
+    "en": "Low water crisis meeting: When waterways dry up",
+    "es": "Reunión de crisis en aguas bajas: cuando las vías fluviales se secan",
+    "fr": "Réunion de crise sur les basses eaux : quand les cours d'eau s'assèchent",
+    "cat": "Sport"
+  },
+  {
+    "de": "Rüstungskonzerne: Wer vom Geschäft mit Drohnen und KI profitiert",
+    "en": "Defence companies: who benefits from the business with drones and AI",
+    "es": "Empresas de defensa: quién se beneficia del negocio de los drones y la IA",
+    "fr": "Entreprises de l'armement : qui profite du commerce des drones et de l'IA",
+    "cat": "Welt"
+  },
+  {
+    "de": "Halbjahresbilanz: Commerzbank macht Gewinnsprung",
+    "en": "Half-year balance sheet: Commerzbank makes a profit jump",
+    "es": "Balance semestral: Commerzbank da un salto en los beneficios",
+    "fr": "Bilan semestriel : Commerzbank fait un bond en avant",
+    "cat": "Wirtschaft"
+  },
+  {
     "de": "Rufe nach einer Bundespräsidentin werden lauter",
     "en": "Calls for a female president are getting louder",
     "es": "Las llamadas a un presidente federal se hacen más fuertes",
@@ -110,33 +138,5 @@
     "es": "El SPD discrepa sobre la abolición de la pensión a los 63",
     "fr": "SPD en désaccord sur la suppression de la retraite à 63 ans",
     "cat": "Politik"
-  },
-  {
-    "de": "Behörden: \"Sehr ernster Sicherheitsvorfall\" am Flughafen Leipzig/Halle",
-    "en": "Authorities: \"Very serious security incident\" at Leipzig/Halle Airport",
-    "es": "Autoridades: \"Incidente de seguridad muy grave\" en el aeropuerto de Leipzig/Halle",
-    "fr": "Autorités : « Incident de sécurité très grave » à l'aéroport de Leipzig/Halle",
-    "cat": "Welt"
-  },
-  {
-    "de": "Neue Männlichkeit in Sportserien: Ted Lasso und Co.",
-    "en": "New masculinity in sports series: Ted Lasso and Co.",
-    "es": "Nueva masculinidad en series deportivas: Ted Lasso and Co.",
-    "fr": "Nouvelle masculinité dans les séries sportives : Ted Lasso et Cie.",
-    "cat": "Sport"
-  },
-  {
-    "de": "Einschränkungen bei der Bewässerung bedrohen Ernten von Landwirten",
-    "en": "Restrictions on irrigation threaten farmers' harvests",
-    "es": "Las restricciones en el riego amenazan las cosechas de los agricultores",
-    "fr": "Les restrictions d'irrigation menacent les récoltes des agriculteurs",
-    "cat": "Welt"
-  },
-  {
-    "de": "Flüsse im Trockenstress - Ökosystem fehlt die Lebensgrundlage",
-    "en": "Rivers in drought stress - ecosystem lacks livelihood",
-    "es": "Ríos en el estrés de la sequía: el ecosistema carece de medios de subsistencia",
-    "fr": "Les rivières en période de stress dû à la sécheresse - l'écosystème manque de moyens de subsistance",
-    "cat": "Sport"
   }
 ]
