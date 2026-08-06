@@ -1,5 +1,19 @@
 [
   {
+    "de": "Sondervermögen - wo das Geld verbaut wird",
+    "en": "Special assets - where the money is stored",
+    "es": "Patrimonio especial - donde se instala el dinero",
+    "fr": "Fonds spécial - où l'argent est installé",
+    "cat": "Welt"
+  },
+  {
+    "de": "Unionsfraktionschef Frei fordert von Bas Tempo bei Rentenreform",
+    "en": "Union leader Frei demands from Bas Tempo on pension reform",
+    "es": "El líder del grupo parlamentario de la Unión, Frei, exige velocidad a Bas en la reforma de las pensiones",
+    "fr": "Le chef du groupe parlementaire de l'Union, Frei, exige de Bas qu'il accélère la réforme des retraites",
+    "cat": "Sport"
+  },
+  {
     "de": "Island verweist Walfang-Gegner des Landes",
     "en": "Iceland rejects the country's whaling opponents",
     "es": "Islandia remite a los opositores a la caza de ballenas del país",
@@ -123,20 +137,6 @@
     "en": "KfW's promotional business rises to a record level in the first half of the year",
     "es": "El negocio de fomento de KfW alcanza un valor récord en el primer semestre",
     "fr": "Les activités de promotion de la KfW atteignent un niveau record au premier semestre",
-    "cat": "Welt"
-  },
-  {
-    "de": "Queere Gemeinschaft fühlt sich nach CSD-Anschlag im Stich gelassen",
-    "en": "Queer community feels let down after CSD attack",
-    "es": "La comunidad queer se siente abandonada tras el ataque de la CDs",
-    "fr": "La communauté queer se sent abandonnée après l'attentat du CSD",
-    "cat": "Sport"
-  },
-  {
-    "de": "Israel lehnt Trumps Plan zur Hamas-Entwaffnung im Gazastreifen ab",
-    "en": "Israel rejects Trump's plan to disarm Hamas in Gaza",
-    "es": "Israel rechaza el plan de Trump para desarmar a Hamas en la Franja de Gaza",
-    "fr": "Israël rejette le plan de désarmement du Hamas par Trump dans la bande de Gaza",
     "cat": "Welt"
   }
 ]
