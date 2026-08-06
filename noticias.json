@@ -1,5 +1,26 @@
 [
   {
+    "de": "Kaum Ermittlungen wegen Preisverstößen an Tankstellen",
+    "en": "Hardly any investigations for price violations at petrol stations",
+    "es": "Pocas investigaciones por infracciones de precios en las gasolineras",
+    "fr": "Peu d'enquêtes sur les violations des prix dans les stations-service",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Israel bestätigt Tod zweier Soldaten im Libanon",
+    "en": "Israel confirms death of two soldiers in Lebanon",
+    "es": "Israel confirma la muerte de dos soldados en Líbano",
+    "fr": "Israël confirme la mort de deux soldats au Liban",
+    "cat": "Welt"
+  },
+  {
+    "de": "Marktbericht: Trotz vieler Bilanzen keine frischen Impulse",
+    "en": "Market report: Despite many balance sheets, no fresh impetus",
+    "es": "Informe de mercado: a pesar de muchos balances, no hay nuevos impulsos",
+    "fr": "Rapport sur le marché : malgré de nombreux bilans, aucune impulsion nouvelle",
+    "cat": "Welt"
+  },
+  {
     "de": "Niedrigwasser: Nur \"begrenzte Alternativen zur Binnenschifffahrt\"",
     "en": "Low water: Only \"limited alternatives to inland navigation\"",
     "es": "Aguas bajas: solo \"alternativas limitadas a la navegación interior\"",
@@ -33,13 +54,6 @@
     "es": "Las llamadas a un presidente federal se hacen más fuertes",
     "fr": "Les appels à une présidente de la Confédération s'intensifient",
     "cat": "Politik"
-  },
-  {
-    "de": "Marktbericht: DAX-Bilanzflut dürfte den Handelstag bestimmen",
-    "en": "Market report: DAX balance sheet flood likely to determine trading day",
-    "es": "Informe de mercado: la inundación del balance del Dax debería determinar el día de negociación",
-    "fr": "Rapport de marché : l'inondation du bilan du DAX devrait déterminer le jour de négociation",
-    "cat": "Wirtschaft"
   },
   {
     "de": "Warum Landflucht die Waldbrandgefahr erhöhen kann",
@@ -124,19 +138,5 @@
     "es": "Informe de mercado: el Dax finaliza la escalada",
     "fr": "Rapport sur le marché : le DAX met fin à l'escalade",
     "cat": "Welt"
-  },
-  {
-    "de": "Senats-Vorwahl in Michigan: El-Sayed sichert sich Kandidatur für Demokraten",
-    "en": "Michigan Senate Primary: El-Sayed secures Democratic candidacy",
-    "es": "Primarias del Senado en Michigan: El-Sayed asegura la candidatura demócrata",
-    "fr": "Primaire sénatoriale au Michigan : El-Sayed remporte la candidature démocrate",
-    "cat": "Politik"
-  },
-  {
-    "de": "SPD uneins über Abschaffung der Rente mit 63",
-    "en": "SPD disagrees about abolishing the pension with 63",
-    "es": "El SPD discrepa sobre la abolición de la pensión a los 63",
-    "fr": "SPD en désaccord sur la suppression de la retraite à 63 ans",
-    "cat": "Politik"
   }
 ]
