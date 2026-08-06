@@ -1,5 +1,54 @@
 [
   {
+    "de": "Warum George R. R. Martin seine Fans warten lässt",
+    "en": "Why George R. R. Martin keeps his fans waiting",
+    "es": "Por qué George R. R. Martin hace esperar a sus fans",
+    "fr": "Pourquoi George R. R. Martin fait attendre ses fans",
+    "cat": "Welt"
+  },
+  {
+    "de": "Unterstützung für die Ukraine: Jede Hilfslieferung ist eine Botschaft",
+    "en": "Support for Ukraine: Every aid delivery is a message",
+    "es": "Apoyo a Ucrania: cada envío de ayuda es un mensaje",
+    "fr": "Soutien à l'Ukraine : chaque livraison d'aide est un message",
+    "cat": "Welt"
+  },
+  {
+    "de": "Telekom überrascht die Anleger",
+    "en": "Telekom surprises investors",
+    "es": "Telecom sorprende a los inversores",
+    "fr": "Telekom surprend les investisseurs",
+    "cat": "Welt"
+  },
+  {
+    "de": "Bundesverfassungsgericht ermahnt Bundestag zu zeitnaher Wahlprüfung",
+    "en": "Federal Constitutional Court urges the Bundestag to conduct a timely election review",
+    "es": "El Tribunal Constitucional Federal exhorta al Bundestag a una revisión electoral oportuna",
+    "fr": "La Cour constitutionnelle fédérale exhorte le Bundestag à examiner rapidement les élections",
+    "cat": "Politik"
+  },
+  {
+    "de": "Holt Meloni die Atomkraft zurück nach Italien?",
+    "en": "Will Meloni bring nuclear power back to Italy?",
+    "es": "¿Traerá Meloni la energía nuclear de vuelta a Italia?",
+    "fr": "Meloni ramène-t-il l'énergie nucléaire en Italie ?",
+    "cat": "Welt"
+  },
+  {
+    "de": "Deutlich mehr Badetote in Deutschland",
+    "en": "Significantly more bath deaths in Germany",
+    "es": "Significativamente más muertes por baño en Alemania",
+    "fr": "Beaucoup plus de morts au bain en Allemagne",
+    "cat": "Welt"
+  },
+  {
+    "de": "Abkommen zwischen Oman und Iran?: Was eine Einigung für die Straße von Hormus bedeuten würde",
+    "en": "Agreement between Oman and Iran?: What an agreement would mean for the Strait of Hormuz",
+    "es": "¿Acuerdo entre Omán e Irán?: Lo que significaría un acuerdo para el Estrecho de Ormuz",
+    "fr": "Accord entre Oman et l'Iran ? : Ce qu'un accord signifierait pour le détroit d'Ormuz",
+    "cat": "Welt"
+  },
+  {
     "de": "Sicherheitsdebatte nach Drohnenfund am Flughafen Leipzig/Halle",
     "en": "Security debate after drone discovery at Leipzig/Halle Airport",
     "es": "Debate de seguridad tras el hallazgo del dron en el aeropuerto de Leipzig/Halle",
@@ -89,54 +138,5 @@
     "es": "Balance semestral: Commerzbank da un salto en los beneficios",
     "fr": "Bilan semestriel : Commerzbank fait un bond en avant",
     "cat": "Wirtschaft"
-  },
-  {
-    "de": "Rufe nach einer Bundespräsidentin werden lauter",
-    "en": "Calls for a female president are getting louder",
-    "es": "Las llamadas a un presidente federal se hacen más fuertes",
-    "fr": "Les appels à une présidente de la Confédération s'intensifient",
-    "cat": "Politik"
-  },
-  {
-    "de": "Warum Landflucht die Waldbrandgefahr erhöhen kann",
-    "en": "Why rural exodus can increase the risk of forest fire",
-    "es": "Por qué el éxodo rural puede aumentar el riesgo de incendios forestales",
-    "fr": "Pourquoi l'exode rural peut augmenter le risque d'incendie de forêt",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Krankenkassen: Weitere Millionenverluste durch fragwürdige Anlagen",
-    "en": "Health insurers: Further losses of millions due to questionable investments",
-    "es": "Seguros de salud: más pérdidas millonarias debido a inversiones cuestionables",
-    "fr": "Caisses d'assurance maladie : d'autres millions de pertes dues à des placements douteux",
-    "cat": "Welt"
-  },
-  {
-    "de": "Sondervermögen - wo das Geld verbaut wird",
-    "en": "Special assets - where the money is stored",
-    "es": "Patrimonio especial - donde se instala el dinero",
-    "fr": "Fonds spécial - où l'argent est installé",
-    "cat": "Welt"
-  },
-  {
-    "de": "Unionsfraktionschef Frei fordert von Bas Tempo bei Rentenreform",
-    "en": "Union leader Frei demands from Bas Tempo on pension reform",
-    "es": "El líder del grupo parlamentario de la Unión, Frei, exige velocidad a Bas en la reforma de las pensiones",
-    "fr": "Le chef du groupe parlementaire de l'Union, Frei, exige de Bas qu'il accélère la réforme des retraites",
-    "cat": "Sport"
-  },
-  {
-    "de": "Island verweist Walfang-Gegner des Landes",
-    "en": "Iceland rejects the country's whaling opponents",
-    "es": "Islandia remite a los opositores a la caza de ballenas del país",
-    "fr": "L'Islande expulse les opposants à la chasse à la baleine du pays",
-    "cat": "Welt"
-  },
-  {
-    "de": "WHO: Studien zu Ebola-Medikamenten und Impfstoffen starten",
-    "en": "Who: Start studies on Ebola drugs and vaccines",
-    "es": "OMS: Comienzan los estudios sobre medicamentos y vacunas contra el ébola",
-    "fr": "OMS : Lancer des études sur les médicaments et les vaccins contre Ebola",
-    "cat": "Welt"
   }
 ]
