@@ -1,5 +1,33 @@
 [
   {
+    "de": "Rufe nach einer Bundespräsidentin werden lauter",
+    "en": "Calls for a female president are getting louder",
+    "es": "Las llamadas a un presidente federal se hacen más fuertes",
+    "fr": "Les appels à une présidente de la Confédération s'intensifient",
+    "cat": "Politik"
+  },
+  {
+    "de": "Marktbericht: DAX-Bilanzflut dürfte den Handelstag bestimmen",
+    "en": "Market report: DAX balance sheet flood likely to determine trading day",
+    "es": "Informe de mercado: la inundación del balance del Dax debería determinar el día de negociación",
+    "fr": "Rapport de marché : l'inondation du bilan du DAX devrait déterminer le jour de négociation",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Warum Landflucht die Waldbrandgefahr erhöhen kann",
+    "en": "Why rural exodus can increase the risk of forest fire",
+    "es": "Por qué el éxodo rural puede aumentar el riesgo de incendios forestales",
+    "fr": "Pourquoi l'exode rural peut augmenter le risque d'incendie de forêt",
+    "cat": "Umwelt"
+  },
+  {
+    "de": "Krankenkassen: Weitere Millionenverluste durch fragwürdige Anlagen",
+    "en": "Health insurers: Further losses of millions due to questionable investments",
+    "es": "Seguros de salud: más pérdidas millonarias debido a inversiones cuestionables",
+    "fr": "Caisses d'assurance maladie : d'autres millions de pertes dues à des placements douteux",
+    "cat": "Welt"
+  },
+  {
     "de": "Sondervermögen - wo das Geld verbaut wird",
     "en": "Special assets - where the money is stored",
     "es": "Patrimonio especial - donde se instala el dinero",
@@ -110,33 +138,5 @@
     "es": "Ríos en el estrés de la sequía: el ecosistema carece de medios de subsistencia",
     "fr": "Les rivières en période de stress dû à la sécheresse - l'écosystème manque de moyens de subsistance",
     "cat": "Sport"
-  },
-  {
-    "de": "Manöver: Taiwan übt Abwehr eines potenziellen Angriff Chinas",
-    "en": "Maneuver: Taiwan exercises defense against a potential attack by China",
-    "es": "Maniobra: Taiwán practica la defensa contra un posible ataque a China",
-    "fr": "Manœuvre : Taïwan s'entraîne à repousser une attaque potentielle de la Chine",
-    "cat": "Welt"
-  },
-  {
-    "de": "Deutschlands KI-Hoffnung: Infineon scheitert an hohen Erwartungen",
-    "en": "Germany's AI hope: Infineon fails due to high expectations",
-    "es": "La esperanza de IA de Alemania: Infineon fracasa debido a las altas expectativas",
-    "fr": "L'espoir de l'Allemagne en matière d'IA : Infineon échoue en raison des attentes élevées",
-    "cat": "Welt"
-  },
-  {
-    "de": "Ifo Institut: Autoindustrie zeigt sich wieder optimistischer",
-    "en": "Ifo Institute: Automotive industry is more optimistic again",
-    "es": "Instituto IFO: la industria automotriz vuelve a ser más optimista",
-    "fr": "Institut IFO : l'industrie automobile se montre à nouveau plus optimiste",
-    "cat": "Welt"
-  },
-  {
-    "de": "Fördergeschäft der KfW steigt im ersten Halbjahr auf Rekordwert",
-    "en": "KfW's promotional business rises to a record level in the first half of the year",
-    "es": "El negocio de fomento de KfW alcanza un valor récord en el primer semestre",
-    "fr": "Les activités de promotion de la KfW atteignent un niveau record au premier semestre",
-    "cat": "Welt"
   }
 ]
