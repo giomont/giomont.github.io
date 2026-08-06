@@ -1,5 +1,12 @@
 [
   {
+    "de": "Oman: Gestrandeter Öltanker könnte Umweltkatastrophe verursachen",
+    "en": "Oman: Stranded oil tanker could cause environmental disaster",
+    "es": "Omán: El petrolero varado podría causar un desastre ambiental",
+    "fr": "Oman : un pétrolier échoué pourrait provoquer une catastrophe environnementale",
+    "cat": "Umwelt"
+  },
+  {
     "de": "Flughafen Leipzig/Halle: Bundesanwaltschaft ermittelt zu Sprengstoff-Drohne",
     "en": "Leipzig/Halle Airport: Federal Prosecutor's Office investigates explosive drone",
     "es": "Aeropuerto de Leipzig/Halle: la Fiscalía Federal investiga el dron explosivo",
@@ -130,13 +137,6 @@
     "en": "Significantly more bath deaths in Germany",
     "es": "Significativamente más muertes por baño en Alemania",
     "fr": "Beaucoup plus de morts au bain en Allemagne",
-    "cat": "Welt"
-  },
-  {
-    "de": "Abkommen zwischen Oman und Iran?: Was eine Einigung für die Straße von Hormus bedeuten würde",
-    "en": "Agreement between Oman and Iran?: What an agreement would mean for the Strait of Hormuz",
-    "es": "¿Acuerdo entre Omán e Irán?: Lo que significaría un acuerdo para el Estrecho de Ormuz",
-    "fr": "Accord entre Oman et l'Iran ? : Ce qu'un accord signifierait pour le détroit d'Ormuz",
     "cat": "Welt"
   }
 ]
