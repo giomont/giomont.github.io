@@ -1,5 +1,96 @@
 [
   {
+    "de": "Flughafen Leipzig/Halle: Bundesanwaltschaft ermittelt zu Sprengstoff-Drohne",
+    "en": "Leipzig/Halle Airport: Federal Prosecutor's Office investigates explosive drone",
+    "es": "Aeropuerto de Leipzig/Halle: la Fiscalía Federal investiga el dron explosivo",
+    "fr": "Aéroport de Leipzig/Halle : le procureur fédéral enquête sur un drone explosif",
+    "cat": "Welt"
+  },
+  {
+    "de": "US-Arzneimittelbehörde lässt neuen mRNA-Impfstoff gegen Grippe zu",
+    "en": "U.S. Drug Enforcement Agency Approves New mRNA Vaccine for Flu",
+    "es": "La Agencia de Medicamentos de los Estados Unidos aprueba una nueva vacuna de ARNm contra la gripe",
+    "fr": "L'Agence américaine des médicaments autorise le nouveau vaccin à ARNm contre la grippe",
+    "cat": "Welt"
+  },
+  {
+    "de": "Strategiepapier zeigt Infantinos Zukunftsvision für die FIFA",
+    "en": "Strategy paper shows Infantino's vision of the future for FIFA",
+    "es": "El documento de estrategia muestra la visión de futuro de Infantino para la FIFA",
+    "fr": "Le document stratégique montre la vision d'Infantino pour l'avenir de la FIFA",
+    "cat": "Welt"
+  },
+  {
+    "de": "Marktbericht: Zahlenflut lässt Anleger weitestgehend kalt",
+    "en": "Market report: Flood of numbers leaves investors largely cold",
+    "es": "Informe de mercado: la avalancha de números deja a los inversores lo más fríos posible",
+    "fr": "Rapport sur le marché : l'afflux de chiffres laisse les investisseurs aussi froids que possible",
+    "cat": "Umwelt"
+  },
+  {
+    "de": "ARD-DeutschlandTrend: AfD legt zu, Union verliert weiter",
+    "en": "ARD-GermanyTrend: AfD increases, Union continues to lose",
+    "es": "Tendencia de la ARD en Alemania: la AfD va en aumento, la Unión sigue perdiendo",
+    "fr": "ARD-DeutschlandTrend : L'AfD progresse, l'Union continue de perdre",
+    "cat": "Politik"
+  },
+  {
+    "de": "Reform des Gewaltschutzgesetzes: Was können Fußfesseln leisten?",
+    "en": "Reform of the Violence Protection Act: What can ankle restraints do?",
+    "es": "Reforma de la Ley de Protección contra la Violencia: ¿Qué pueden hacer los grilletes de los pies?",
+    "fr": "Réforme de la loi sur la protection contre la violence : que peuvent faire les entraves aux pieds ?",
+    "cat": "Politik"
+  },
+  {
+    "de": "Keine Infos zum Netzwerk des Abdul B.: Das Schweigen des BND",
+    "en": "No information about the network of Abdul B.: The silence of the BND",
+    "es": "No hay información sobre la red de Abdul B.: El silencio del BND",
+    "fr": "Aucune information sur le réseau d'Abdul B. : le silence du BND",
+    "cat": "Welt"
+  },
+  {
+    "de": "Extrem-Niedrigwasser: Bilger will Sonntagsfahrverbot für Lkw lockern",
+    "en": "Extremely low water: Bilger wants to relax Sunday driving ban for trucks",
+    "es": "Aguas extremadamente bajas: Bilger quiere relajar la prohibición de conducir camiones los domingos",
+    "fr": "Eaux extrêmement basses : Bilger veut assouplir l'interdiction de circuler le dimanche pour les camions",
+    "cat": "Sport"
+  },
+  {
+    "de": "Israel klagt Siedler wegen Tötung eines Palästinensers an",
+    "en": "Israel accuses settlers of killing a Palestinian",
+    "es": "Israel acusa a los colonos de matar a un palestino",
+    "fr": "Israël accuse les colons d'avoir tué un Palestinien",
+    "cat": "Welt"
+  },
+  {
+    "de": "Zwei Straßenbahnen kollidiert - viele Verletzte in Gelsenkirchen",
+    "en": "Two trams collide - many injured in Gelsenkirchen",
+    "es": "Dos tranvías chocan: muchos heridos en Gelsenkirchen",
+    "fr": "Deux tramways entrent en collision - de nombreux blessés à Gelsenkirchen",
+    "cat": "Welt"
+  },
+  {
+    "de": "Was Sie jetzt zur Wahl in Sachsen-Anhalt wissen müssen",
+    "en": "What you need to know now about the election in Saxony-Anhalt",
+    "es": "Lo que necesita saber ahora sobre las elecciones en Sajonia-Anhalt",
+    "fr": "Ce que vous devez savoir maintenant sur les élections en Saxe-Anhalt",
+    "cat": "Politik"
+  },
+  {
+    "de": "BGH bestätigt Urteil wegen Kriegsverbrechen in Syrien",
+    "en": "BGH confirms sentence for war crimes in Syria",
+    "es": "BGH confirma sentencia por crímenes de guerra en Siria",
+    "fr": "La Cour fédérale de justice confirme le jugement pour crimes de guerre en Syrie",
+    "cat": "Welt"
+  },
+  {
+    "de": "Ifo-Chef spricht sich für einheitlichen Mehrwertsteuersatz aus",
+    "en": "Ifo boss calls for uniform VAT rate",
+    "es": "El jefe de IFO aboga por un tipo de IVA uniforme",
+    "fr": "Le patron de l'Ifo se prononce en faveur d'un taux de TVA uniforme",
+    "cat": "Wirtschaft"
+  },
+  {
     "de": "Warum George R. R. Martin seine Fans warten lässt",
     "en": "Why George R. R. Martin keeps his fans waiting",
     "es": "Por qué George R. R. Martin hace esperar a sus fans",
@@ -47,96 +138,5 @@
     "es": "¿Acuerdo entre Omán e Irán?: Lo que significaría un acuerdo para el Estrecho de Ormuz",
     "fr": "Accord entre Oman et l'Iran ? : Ce qu'un accord signifierait pour le détroit d'Ormuz",
     "cat": "Welt"
-  },
-  {
-    "de": "Sicherheitsdebatte nach Drohnenfund am Flughafen Leipzig/Halle",
-    "en": "Security debate after drone discovery at Leipzig/Halle Airport",
-    "es": "Debate de seguridad tras el hallazgo del dron en el aeropuerto de Leipzig/Halle",
-    "fr": "Débat sur la sécurité après la découverte de drones à l'aéroport de Leipzig/Halle",
-    "cat": "Welt"
-  },
-  {
-    "de": "Leipzig: Flugzeug neben Sprengstoff-Drohne war mit Munition beladen",
-    "en": "Leipzig: Plane next to explosive drone was loaded with ammunition",
-    "es": "Leipzig: el avión junto al dron explosivo estaba cargado de municiones",
-    "fr": "Leipzig : l'avion à côté du drone explosif était chargé de munitions",
-    "cat": "Welt"
-  },
-  {
-    "de": "Russisches Haus in Berlin: Tarnung für russische Geheimdienste?",
-    "en": "Russian house in Berlin: camouflage for Russian intelligence services?",
-    "es": "Casa rusa en Berlín: ¿camuflaje para los servicios secretos rusos?",
-    "fr": "Maison russe à Berlin : un camouflage pour les services secrets russes ?",
-    "cat": "Welt"
-  },
-  {
-    "de": "Robert Koch-Institut: Zahl der Hitzetoten höher als angenommen",
-    "en": "Robert Koch Institute: Number of heat deaths higher than assumed",
-    "es": "Instituto Robert Koch: el número de muertes por calor es mayor de lo esperado",
-    "fr": "Institut Robert Koch : le nombre de décès dus à la chaleur est plus élevé que prévu",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Lebenslange Haft nach Auto-Anschlag auf ver.di-Demo in München",
-    "en": "Lifetime imprisonment after car attack on ver.di demo in Munich",
-    "es": "Cadena perpetua tras el atentado en la manifestación de ver.di en Múnich",
-    "fr": "Prison à vie après l'attentat à la voiture piégée contre la manifestation ver.di à Munich",
-    "cat": "Sport"
-  },
-  {
-    "de": "Industrie überrascht dank Großaufträgen mit kräftigem Auftragsplus",
-    "en": "Industry surprises with strong order growth thanks to large orders",
-    "es": "La industria sorprende gracias a los grandes pedidos con un fuerte aumento de pedidos",
-    "fr": "L'industrie surprend avec une forte augmentation des commandes grâce aux grosses commandes",
-    "cat": "Sport"
-  },
-  {
-    "de": "Kaum Ermittlungen wegen Preisverstößen an Tankstellen",
-    "en": "Hardly any investigations for price violations at petrol stations",
-    "es": "Pocas investigaciones por infracciones de precios en las gasolineras",
-    "fr": "Peu d'enquêtes sur les violations des prix dans les stations-service",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Israel bestätigt Tod zweier Soldaten im Libanon",
-    "en": "Israel confirms death of two soldiers in Lebanon",
-    "es": "Israel confirma la muerte de dos soldados en Líbano",
-    "fr": "Israël confirme la mort de deux soldats au Liban",
-    "cat": "Welt"
-  },
-  {
-    "de": "Marktbericht: Trotz vieler Bilanzen keine frischen Impulse",
-    "en": "Market report: Despite many balance sheets, no fresh impetus",
-    "es": "Informe de mercado: a pesar de muchos balances, no hay nuevos impulsos",
-    "fr": "Rapport sur le marché : malgré de nombreux bilans, aucune impulsion nouvelle",
-    "cat": "Welt"
-  },
-  {
-    "de": "Niedrigwasser: Nur \"begrenzte Alternativen zur Binnenschifffahrt\"",
-    "en": "Low water: Only \"limited alternatives to inland navigation\"",
-    "es": "Aguas bajas: solo \"alternativas limitadas a la navegación interior\"",
-    "fr": "Basses eaux : uniquement des « alternatives limitées à la navigation intérieure »",
-    "cat": "Welt"
-  },
-  {
-    "de": "Krisentreffen zu Niedrigwasser: Wenn die Wasserstraßen versiegen",
-    "en": "Low water crisis meeting: When waterways dry up",
-    "es": "Reunión de crisis en aguas bajas: cuando las vías fluviales se secan",
-    "fr": "Réunion de crise sur les basses eaux : quand les cours d'eau s'assèchent",
-    "cat": "Sport"
-  },
-  {
-    "de": "Rüstungskonzerne: Wer vom Geschäft mit Drohnen und KI profitiert",
-    "en": "Defence companies: who benefits from the business with drones and AI",
-    "es": "Empresas de defensa: quién se beneficia del negocio de los drones y la IA",
-    "fr": "Entreprises de l'armement : qui profite du commerce des drones et de l'IA",
-    "cat": "Welt"
-  },
-  {
-    "de": "Halbjahresbilanz: Commerzbank macht Gewinnsprung",
-    "en": "Half-year balance sheet: Commerzbank makes a profit jump",
-    "es": "Balance semestral: Commerzbank da un salto en los beneficios",
-    "fr": "Bilan semestriel : Commerzbank fait un bond en avant",
-    "cat": "Wirtschaft"
   }
 ]
