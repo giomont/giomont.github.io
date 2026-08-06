@@ -1,5 +1,12 @@
 [
   {
+    "de": "Sicherheitsdebatte nach Drohnenfund am Flughafen Leipzig/Halle",
+    "en": "Security debate after drone discovery at Leipzig/Halle Airport",
+    "es": "Debate de seguridad tras el hallazgo del dron en el aeropuerto de Leipzig/Halle",
+    "fr": "Débat sur la sécurité après la découverte de drones à l'aéroport de Leipzig/Halle",
+    "cat": "Welt"
+  },
+  {
     "de": "Leipzig: Flugzeug neben Sprengstoff-Drohne war mit Munition beladen",
     "en": "Leipzig: Plane next to explosive drone was loaded with ammunition",
     "es": "Leipzig: el avión junto al dron explosivo estaba cargado de municiones",
@@ -130,13 +137,6 @@
     "en": "Who: Start studies on Ebola drugs and vaccines",
     "es": "OMS: Comienzan los estudios sobre medicamentos y vacunas contra el ébola",
     "fr": "OMS : Lancer des études sur les médicaments et les vaccins contre Ebola",
-    "cat": "Welt"
-  },
-  {
-    "de": "Drohne am Flughafen Leipzig/Halle: Dobrindt sieht \"hybrides Anschlagsszenario\"",
-    "en": "Drone at Leipzig/Halle Airport: Dobrindt sees \"hybrid attack scenario\"",
-    "es": "Drone en el aeropuerto de Leipzig/Halle: Dobrindt ve un \"escenario de ataque híbrido\"",
-    "fr": "Drone à l'aéroport de Leipzig/Halle : Dobrindt voit un « scénario d'attaque hybride »",
     "cat": "Welt"
   }
 ]
