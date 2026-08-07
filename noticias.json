@@ -1,5 +1,26 @@
 [
   {
+    "de": "Kommunen fordern \"Kraftakt\" für Hitzeschutz und Wasserversorgung",
+    "en": "Municipalities call for \"vigorous action\" for heat protection and water supply",
+    "es": "Los municipios exigen \"fuerza\" para la protección contra el calor y el suministro de agua",
+    "fr": "Les municipalités exigent un « tour de force » pour la protection contre la chaleur et l'approvisionnement en eau",
+    "cat": "Umwelt"
+  },
+  {
+    "de": "Kommentar: Klimaschutz muss Chefsache werden",
+    "en": "Comment: Climate protection must be a top priority",
+    "es": "Comentario: La protección del clima debe ser asunto principal",
+    "fr": "Commentaire : La protection du climat doit devenir une affaire de chef",
+    "cat": "Umwelt"
+  },
+  {
+    "de": "Marktbericht: Gute Wirtschaftsdaten helfen DAX auf die Sprünge",
+    "en": "Market report: Good economic data help DAX take off",
+    "es": "Informe de mercado: Los buenos datos económicos ayudan al Dax a recuperarse",
+    "fr": "Rapport sur le marché : de bonnes données économiques aident DAX à se lancer",
+    "cat": "Wirtschaft"
+  },
+  {
     "de": "Wie sich einige Jugendliche in Ostdeutschland schleichend radikalisieren",
     "en": "How some young people in East Germany are gradually becoming radicalised",
     "es": "Cómo algunos jóvenes en el este de Alemania se radicalizan lentamente",
@@ -35,17 +56,10 @@
     "cat": "Welt"
   },
   {
-    "de": "Mindestens sieben Tote bei Schüssen an Schule in Thailand",
-    "en": "At least seven dead in school shootings in Thailand",
-    "es": "Al menos siete muertos por disparos en escuela en Tailandia",
-    "fr": "Au moins sept morts dans des tirs à l'école en Thaïlande",
-    "cat": "Welt"
-  },
-  {
-    "de": "Marktbericht: Anleger vor US-Jobdaten zurückhaltend",
-    "en": "Market report: Investors cautious about US job data",
-    "es": "Informe de mercado: los inversores se muestran reacios a los datos de empleo de EE. UU.",
-    "fr": "Rapport sur le marché : les investisseurs sont réticents aux données d'emploi américaines",
+    "de": "Mehrere Tote bei Schüssen an Schule in Thailand",
+    "en": "Several dead in school shootings in Thailand",
+    "es": "Varios muertos por disparos en escuela tailandesa",
+    "fr": "Plusieurs morts dans une fusillade à l'école en Thaïlande",
     "cat": "Welt"
   },
   {
@@ -124,19 +138,5 @@
     "es": "Informe de mercado: la avalancha de números deja a los inversores lo más fríos posible",
     "fr": "Rapport sur le marché : l'afflux de chiffres laisse les investisseurs aussi froids que possible",
     "cat": "Umwelt"
-  },
-  {
-    "de": "ARD-DeutschlandTrend: AfD legt zu, Union verliert weiter",
-    "en": "ARD-GermanyTrend: AfD increases, Union continues to lose",
-    "es": "Tendencia de la ARD en Alemania: la AfD va en aumento, la Unión sigue perdiendo",
-    "fr": "ARD-DeutschlandTrend : L'AfD progresse, l'Union continue de perdre",
-    "cat": "Politik"
-  },
-  {
-    "de": "Reform des Gewaltschutzgesetzes: Was können Fußfesseln leisten?",
-    "en": "Reform of the Violence Protection Act: What can ankle restraints do?",
-    "es": "Reforma de la Ley de Protección contra la Violencia: ¿Qué pueden hacer los grilletes de los pies?",
-    "fr": "Réforme de la loi sur la protection contre la violence : que peuvent faire les entraves aux pieds ?",
-    "cat": "Politik"
   }
 ]
