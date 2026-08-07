@@ -1,7 +1,49 @@
 [
   {
-    "de": "Kündigungen wegen Iran-Krieg: \"Schlechte Stimmung in der US-Truppe\"",
-    "en": "Resignations due to Iran war: \"Bad mood in the US troop\"",
+    "de": "Warum die Pläne für die Pflegereform auf Kritik stoßen",
+    "en": "Why Nursing Reform Plans Face Criticism",
+    "es": "Por qué los planes para la reforma de la enfermería reciben críticas",
+    "fr": "Pourquoi les projets de réforme des soins infirmiers suscitent des critiques",
+    "cat": "Welt"
+  },
+  {
+    "de": "Mindestens sieben Tote bei Schüssen an Schule in Thailand",
+    "en": "At least seven dead in school shootings in Thailand",
+    "es": "Al menos siete muertos por disparos en escuela en Tailandia",
+    "fr": "Au moins sept morts dans des tirs à l'école en Thaïlande",
+    "cat": "Welt"
+  },
+  {
+    "de": "Marktbericht: Anleger vor US-Jobdaten zurückhaltend",
+    "en": "Market report: Investors cautious about US job data",
+    "es": "Informe de mercado: los inversores se muestran reacios a los datos de empleo de EE. UU.",
+    "fr": "Rapport sur le marché : les investisseurs sont réticents aux données d'emploi américaines",
+    "cat": "Welt"
+  },
+  {
+    "de": "Abrissarbeiten an Bonner Nordbrücke beginnen",
+    "en": "Start demolition work on Bonn North Bridge",
+    "es": "Comienzan los trabajos de demolición en el puente norte de Bonn",
+    "fr": "Commencer les travaux de démolition sur le pont nord de Bonn",
+    "cat": "Welt"
+  },
+  {
+    "de": "Kolumbiens neuer Präsident: Zurück zur harten Linie gegen Banden",
+    "en": "Colombia's new president: Back to the hard line against gangs",
+    "es": "El nuevo presidente de Colombia: volver a la línea dura contra las pandillas",
+    "fr": "Le nouveau président colombien : retour à la ligne dure contre les gangs",
+    "cat": "Welt"
+  },
+  {
+    "de": "Hoffnungsschimmer für die deutsche Industrie?",
+    "en": "A glimmer of hope for German industry?",
+    "es": "¿Un rayo de esperanza para la industria alemana?",
+    "fr": "Une lueur d'espoir pour l'industrie allemande ?",
+    "cat": "Welt"
+  },
+  {
+    "de": "Kündigungen wegen des Iran-Kriegs: \"Schlechte Stimmung in der US-Truppe\"",
+    "en": "Resignations due to the Iran War: \"Bad mood in the US troop\"",
     "es": "Despidos por la guerra de Irán: \"Mal humor en las tropas estadounidenses\"",
     "fr": "Licenciements en raison de la guerre en Iran : « Mauvaise humeur dans la troupe américaine »",
     "cat": "Welt"
@@ -14,11 +56,11 @@
     "cat": "Welt"
   },
   {
-    "de": "Trotz Supreme Court-Niederlage: Trump schränkt erneut Geburtsrecht ein",
-    "en": "Despite Supreme Court defeat: Trump restricts birthright again",
-    "es": "A pesar de la derrota de la Corte Suprema: Trump vuelve a limitar el derecho de nacimiento",
-    "fr": "Malgré la défaite de la Cour suprême : Trump restreint à nouveau le droit de naissance",
-    "cat": "Sport"
+    "de": "Trump unternimmt neuen Vorstoß für Beschränkung von US-Geburtsrecht",
+    "en": "Trump makes new push for US birthright restriction",
+    "es": "Trump emprende un nuevo impulso para restringir el derecho de nacimiento en Estados Unidos",
+    "fr": "Trump prend une nouvelle initiative pour restreindre le droit de naissance américain",
+    "cat": "Welt"
   },
   {
     "de": "Oman: Gestrandeter Öltanker könnte Umweltkatastrophe verursachen",
@@ -95,48 +137,6 @@
     "en": "Two trams collide - many injured in Gelsenkirchen",
     "es": "Dos tranvías chocan: muchos heridos en Gelsenkirchen",
     "fr": "Deux tramways entrent en collision - de nombreux blessés à Gelsenkirchen",
-    "cat": "Welt"
-  },
-  {
-    "de": "Was Sie jetzt zur Wahl in Sachsen-Anhalt wissen müssen",
-    "en": "What you need to know now about the election in Saxony-Anhalt",
-    "es": "Lo que necesita saber ahora sobre las elecciones en Sajonia-Anhalt",
-    "fr": "Ce que vous devez savoir maintenant sur les élections en Saxe-Anhalt",
-    "cat": "Politik"
-  },
-  {
-    "de": "BGH bestätigt Urteil wegen Kriegsverbrechen in Syrien",
-    "en": "BGH confirms sentence for war crimes in Syria",
-    "es": "BGH confirma sentencia por crímenes de guerra en Siria",
-    "fr": "La Cour fédérale de justice confirme le jugement pour crimes de guerre en Syrie",
-    "cat": "Welt"
-  },
-  {
-    "de": "Ifo-Chef spricht sich für einheitlichen Mehrwertsteuersatz aus",
-    "en": "Ifo boss calls for uniform VAT rate",
-    "es": "El jefe de IFO aboga por un tipo de IVA uniforme",
-    "fr": "Le patron de l'Ifo se prononce en faveur d'un taux de TVA uniforme",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Warum George R. R. Martin seine Fans warten lässt",
-    "en": "Why George R. R. Martin keeps his fans waiting",
-    "es": "Por qué George R. R. Martin hace esperar a sus fans",
-    "fr": "Pourquoi George R. R. Martin fait attendre ses fans",
-    "cat": "Welt"
-  },
-  {
-    "de": "Unterstützung für die Ukraine: Jede Hilfslieferung ist eine Botschaft",
-    "en": "Support for Ukraine: Every aid delivery is a message",
-    "es": "Apoyo a Ucrania: cada envío de ayuda es un mensaje",
-    "fr": "Soutien à l'Ukraine : chaque livraison d'aide est un message",
-    "cat": "Welt"
-  },
-  {
-    "de": "Telekom überrascht die Anleger",
-    "en": "Telekom surprises investors",
-    "es": "Telecom sorprende a los inversores",
-    "fr": "Telekom surprend les investisseurs",
     "cat": "Welt"
   }
 ]
