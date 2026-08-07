@@ -1,5 +1,33 @@
 [
   {
+    "de": "Dürre in Deutschland: Agrarminister sieht keinen akuten Handlungsbedarf",
+    "en": "Drought in Germany: Agriculture Minister sees no urgent need for action",
+    "es": "Sequía en Alemania: el Ministro de Agricultura no ve la necesidad urgente de actuar",
+    "fr": "Sécheresse en Allemagne : le ministre de l'Agriculture ne voit pas de nécessité urgente d'agir",
+    "cat": "Politik"
+  },
+  {
+    "de": "Starkregen und Schlammlawinen im Westen Österreichs",
+    "en": "Heavy rain and mud avalanches in western Austria",
+    "es": "Fuertes lluvias y deslizamientos de lodo en el oeste de Austria",
+    "fr": "Fortes pluies et coulées de boue dans l'ouest de l'Autriche",
+    "cat": "Welt"
+  },
+  {
+    "de": "Nationaler Sicherheitsrat tagt zu Vorfall mit Sprengstoff-Drohne",
+    "en": "National Security Council meets on explosive drone incident",
+    "es": "El Consejo de Seguridad Nacional se reúne sobre el incidente con el dron explosivo",
+    "fr": "Le Conseil national de sécurité se réunit à propos d'un incident impliquant un drone explosif",
+    "cat": "Welt"
+  },
+  {
+    "de": "Wie gut ist Deutschland vor Drohnen geschützt?",
+    "en": "How well is Germany protected against drones?",
+    "es": "¿Qué tan bien está Alemania protegida contra los drones?",
+    "fr": "Dans quelle mesure l'Allemagne est-elle protégée contre les drones ?",
+    "cat": "Welt"
+  },
+  {
     "de": "Kommunen fordern \"Kraftakt\" für Hitzeschutz und Wasserversorgung",
     "en": "Municipalities call for \"vigorous action\" for heat protection and water supply",
     "es": "Los municipios exigen \"fuerza\" para la protección contra el calor y el suministro de agua",
@@ -109,34 +137,6 @@
     "en": "Oman: Stranded oil tanker could cause environmental disaster",
     "es": "Omán: El petrolero varado podría causar un desastre ambiental",
     "fr": "Oman : un pétrolier échoué pourrait provoquer une catastrophe environnementale",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Flughafen Leipzig/Halle: Bundesanwaltschaft ermittelt zu Sprengstoff-Drohne",
-    "en": "Leipzig/Halle Airport: Federal Prosecutor's Office investigates explosive drone",
-    "es": "Aeropuerto de Leipzig/Halle: la Fiscalía Federal investiga el dron explosivo",
-    "fr": "Aéroport de Leipzig/Halle : le procureur fédéral enquête sur un drone explosif",
-    "cat": "Welt"
-  },
-  {
-    "de": "US-Arzneimittelbehörde lässt neuen mRNA-Impfstoff gegen Grippe zu",
-    "en": "U.S. Drug Enforcement Agency Approves New mRNA Vaccine for Flu",
-    "es": "La Agencia de Medicamentos de los Estados Unidos aprueba una nueva vacuna de ARNm contra la gripe",
-    "fr": "L'Agence américaine des médicaments autorise le nouveau vaccin à ARNm contre la grippe",
-    "cat": "Welt"
-  },
-  {
-    "de": "Strategiepapier zeigt Infantinos Zukunftsvision für die FIFA",
-    "en": "Strategy paper shows Infantino's vision of the future for FIFA",
-    "es": "El documento de estrategia muestra la visión de futuro de Infantino para la FIFA",
-    "fr": "Le document stratégique montre la vision d'Infantino pour l'avenir de la FIFA",
-    "cat": "Welt"
-  },
-  {
-    "de": "Marktbericht: Zahlenflut lässt Anleger weitestgehend kalt",
-    "en": "Market report: Flood of numbers leaves investors largely cold",
-    "es": "Informe de mercado: la avalancha de números deja a los inversores lo más fríos posible",
-    "fr": "Rapport sur le marché : l'afflux de chiffres laisse les investisseurs aussi froids que possible",
     "cat": "Umwelt"
   }
 ]
