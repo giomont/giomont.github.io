@@ -1,5 +1,33 @@
 [
   {
+    "de": "Wie sich einige Jugendliche in Ostdeutschland schleichend radikalisieren",
+    "en": "How some young people in East Germany are gradually becoming radicalised",
+    "es": "Cómo algunos jóvenes en el este de Alemania se radicalizan lentamente",
+    "fr": "Comment certains jeunes d'Allemagne de l'Est se radicalisent insidieusement",
+    "cat": "Welt"
+  },
+  {
+    "de": "Ungarn schaltet Licht an Wahrzeichen wegen Energiekrise ab",
+    "en": "Hungary turns off lights at landmarks due to energy crisis",
+    "es": "Hungría apaga las luces en los puntos de referencia debido a la crisis energética",
+    "fr": "La Hongrie éteint les lumières des points de repère en raison de la crise énergétique",
+    "cat": "Welt"
+  },
+  {
+    "de": "Erneuter Anstieg: Deutsche Exporte klettern im Juni auf Rekordwert",
+    "en": "Rising again: German exports climb to record levels in June",
+    "es": "Nuevo aumento: las exportaciones alemanas alcanzan un valor récord en junio",
+    "fr": "Nouvelle hausse : les exportations allemandes atteignent un niveau record en juin",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Für Windkraft-Stopp: Trump-Regierung zahlt RWE 1,2 Milliarden Dollar",
+    "en": "For wind power stop: Trump administration pays RWE 1.2 billion dollars",
+    "es": "Para detener la energía eólica: el gobierno de Trump paga a RWE 1.200 millones de dólares",
+    "fr": "Pour l'arrêt de l'énergie éolienne : l'administration Trump paie 1,2 milliard de dollars à RWE",
+    "cat": "Politik"
+  },
+  {
     "de": "Warum die Pläne für die Pflegereform auf Kritik stoßen",
     "en": "Why Nursing Reform Plans Face Criticism",
     "es": "Por qué los planes para la reforma de la enfermería reciben críticas",
@@ -110,33 +138,5 @@
     "es": "Reforma de la Ley de Protección contra la Violencia: ¿Qué pueden hacer los grilletes de los pies?",
     "fr": "Réforme de la loi sur la protection contre la violence : que peuvent faire les entraves aux pieds ?",
     "cat": "Politik"
-  },
-  {
-    "de": "Keine Infos zum Netzwerk des Abdul B.: Das Schweigen des BND",
-    "en": "No information about the network of Abdul B.: The silence of the BND",
-    "es": "No hay información sobre la red de Abdul B.: El silencio del BND",
-    "fr": "Aucune information sur le réseau d'Abdul B. : le silence du BND",
-    "cat": "Welt"
-  },
-  {
-    "de": "Extrem-Niedrigwasser: Bilger will Sonntagsfahrverbot für Lkw lockern",
-    "en": "Extremely low water: Bilger wants to relax Sunday driving ban for trucks",
-    "es": "Aguas extremadamente bajas: Bilger quiere relajar la prohibición de conducir camiones los domingos",
-    "fr": "Eaux extrêmement basses : Bilger veut assouplir l'interdiction de circuler le dimanche pour les camions",
-    "cat": "Sport"
-  },
-  {
-    "de": "Israel klagt Siedler wegen Tötung eines Palästinensers an",
-    "en": "Israel accuses settlers of killing a Palestinian",
-    "es": "Israel acusa a los colonos de matar a un palestino",
-    "fr": "Israël accuse les colons d'avoir tué un Palestinien",
-    "cat": "Welt"
-  },
-  {
-    "de": "Zwei Straßenbahnen kollidiert - viele Verletzte in Gelsenkirchen",
-    "en": "Two trams collide - many injured in Gelsenkirchen",
-    "es": "Dos tranvías chocan: muchos heridos en Gelsenkirchen",
-    "fr": "Deux tramways entrent en collision - de nombreux blessés à Gelsenkirchen",
-    "cat": "Welt"
   }
 ]
