@@ -1,5 +1,12 @@
 [
   {
+    "de": "Pride-Parade in Prag unter verschärften Sicherheitsvorkehrungen",
+    "en": "Pride parade in Prague under tightened security measures",
+    "es": "Desfile del Orgullo en Praga bajo medidas de seguridad reforzadas",
+    "fr": "Défilé de la fierté à Prague avec des mesures de sécurité renforcées",
+    "cat": "Welt"
+  },
+  {
     "de": "Streit mit Italien über Ceuta - Spanien führt Grenzkontrollen ein",
     "en": "Dispute with Italy over Ceuta - Spain introduces border controls",
     "es": "Disputa con Italia por Ceuta - España establece controles fronterizos",
@@ -131,12 +138,5 @@
     "es": "Sequía en Alemania: el Ministro de Agricultura no ve la necesidad urgente de actuar",
     "fr": "Sécheresse en Allemagne : le ministre de l'Agriculture ne voit pas de nécessité urgente d'agir",
     "cat": "Politik"
-  },
-  {
-    "de": "Starkregen und Schlammlawinen im Westen Österreichs",
-    "en": "Heavy rain and mud avalanches in western Austria",
-    "es": "Fuertes lluvias y deslizamientos de lodo en el oeste de Austria",
-    "fr": "Fortes pluies et coulées de boue dans l'ouest de l'Autriche",
-    "cat": "Welt"
   }
 ]
