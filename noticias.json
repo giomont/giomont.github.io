@@ -1,5 +1,12 @@
 [
   {
+    "de": "Restaurants geben reduzierte Mehrwertsteuer kaum weiter",
+    "en": "Restaurants hardly pass on reduced VAT",
+    "es": "Los restaurantes apenas pagan el IVA reducido",
+    "fr": "Les restaurants ne répercutent pratiquement pas la TVA réduite",
+    "cat": "Wirtschaft"
+  },
+  {
     "de": "OpenAI pausiert teils Entwicklung von KI-Modell wegen Sicherheitsbedenken",
     "en": "OpenAI pauses development of AI model due to security concerns",
     "es": "OpenAI detiene parcialmente el desarrollo del modelo de IA debido a problemas de seguridad",
@@ -130,13 +137,6 @@
     "en": "Allianz and Münchener Rück firmly on course for profit",
     "es": "Allianz y Munich Re firmemente en el curso ganador",
     "fr": "Allianz et Munich reviennent fermes sur le cours gagnant",
-    "cat": "Welt"
-  },
-  {
-    "de": "Mehr als sieben Millionen Fahrzeuge mit \"Heimatkennzeichen\" unterwegs",
-    "en": "More than seven million vehicles with \"home license plates\" on the road",
-    "es": "Más de siete millones de vehículos con \"matrícula nacional\" en la carretera",
-    "fr": "Plus de sept millions de véhicules avec des « plaques d'immatriculation » sur la route",
     "cat": "Welt"
   }
 ]
