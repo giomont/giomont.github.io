@@ -1,5 +1,12 @@
 [
   {
+    "de": "OpenAI pausiert teils Entwicklung von KI-Modell wegen Sicherheitsbedenken",
+    "en": "OpenAI pauses development of AI model due to security concerns",
+    "es": "OpenAI detiene parcialmente el desarrollo del modelo de IA debido a problemas de seguridad",
+    "fr": "OpenAI suspend partiellement le développement du modèle d'IA en raison de problèmes de sécurité",
+    "cat": "Welt"
+  },
+  {
     "de": "Pride-Parade in Prag unter verschärften Sicherheitsvorkehrungen",
     "en": "Pride parade in Prague under tightened security measures",
     "es": "Desfile del Orgullo en Praga bajo medidas de seguridad reforzadas",
@@ -131,12 +138,5 @@
     "es": "Más de siete millones de vehículos con \"matrícula nacional\" en la carretera",
     "fr": "Plus de sept millions de véhicules avec des « plaques d'immatriculation » sur la route",
     "cat": "Welt"
-  },
-  {
-    "de": "Dürre in Deutschland: Agrarminister sieht keinen akuten Handlungsbedarf",
-    "en": "Drought in Germany: Agriculture Minister sees no urgent need for action",
-    "es": "Sequía en Alemania: el Ministro de Agricultura no ve la necesidad urgente de actuar",
-    "fr": "Sécheresse en Allemagne : le ministre de l'Agriculture ne voit pas de nécessité urgente d'agir",
-    "cat": "Politik"
   }
 ]
