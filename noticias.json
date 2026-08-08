@@ -1,5 +1,40 @@
 [
   {
+    "de": "Ukraine meldet Tote bei Luftangriffen auf Vorort von Kiew",
+    "en": "Ukraine reports dead in airstrikes on Kiev suburb",
+    "es": "Ucrania informa de muertos en ataques aéreos en las afueras de Kiev",
+    "fr": "L'Ukraine signale des morts dans des frappes aériennes sur la banlieue de Kiev",
+    "cat": "Welt"
+  },
+  {
+    "de": "Sprengstoff-Drohne in Leipzig/Halle: Ein Angriff \"fremder Mächte\" - oder Russlands?",
+    "en": "Explosive drone in Leipzig/Halle: An attack by \"foreign powers\" - or Russia?",
+    "es": "Drone explosivo en Leipzig/Halle: ¿un ataque de \"potencias extranjeras\" o de Rusia?",
+    "fr": "Drone explosif à Leipzig/Halle : une attaque de « puissances étrangères » - ou de la Russie ?",
+    "cat": "Sport"
+  },
+  {
+    "de": "Niedrigwasser der Donau legt Knochen und Wracks frei",
+    "en": "Low water of the Danube exposes bones and wrecks",
+    "es": "Aguas bajas del Danubio exponen huesos y restos de naufragios",
+    "fr": "Les basses eaux du Danube exposent les os et les épaves",
+    "cat": "Welt"
+  },
+  {
+    "de": "Ceuta: EU fordert Meta und TikTok zum Vorgehen gegen Fakes auf",
+    "en": "Ceuta: EU urges Meta and TikTok to crack down on fakes",
+    "es": "Ceuta: la UE pide a Meta y TikTok que actúen contra las falsificaciones",
+    "fr": "Ceuta : l'UE demande à Meta et TikTok de lutter contre les contrefaçons",
+    "cat": "Welt"
+  },
+  {
+    "de": "Vor 70 Jahren: Das Unglück von Marcinelle veränderte Europa",
+    "en": "70 years ago: The misfortune of Marcinelle changed Europe",
+    "es": "Hace 70 años: la desgracia de Marcinelle cambió Europa",
+    "fr": "Il y a 70 ans : l'accident de Marcinelle changeait l'Europe",
+    "cat": "Wirtschaft"
+  },
+  {
     "de": "Rotes Meer: Wie die Huthi den Iran-Krieg verändern",
     "en": "Red Sea: How the Houthis are changing the Iran War",
     "es": "Mar Rojo: Cómo los hutíes están cambiando la guerra de Irán",
@@ -103,40 +138,5 @@
     "es": "Varios estados federales están relajando la prohibición de conducir camiones los domingos",
     "fr": "Plusieurs Länder assouplissent l'interdiction de conduire des camions le dimanche",
     "cat": "Welt"
-  },
-  {
-    "de": "Ukraine greift erneut russischen Onlinehändler Wildberries an",
-    "en": "Ukraine attacks Russian online retailer Wildberries again",
-    "es": "Ucrania ataca de nuevo al minorista en línea ruso Wildberries",
-    "fr": "L'Ukraine attaque à nouveau le détaillant en ligne russe Wildberries",
-    "cat": "Welt"
-  },
-  {
-    "de": "Verdächtiger Drohnenflug über \"Patriot-Werft\"",
-    "en": "Suspicious drone flight over \"Patriot Shipyard\"",
-    "es": "Vuelo sospechoso de un dron sobre el \"Astillero Patriot\"",
-    "fr": "Vol de drone suspect au-dessus du « chantier naval Patriot »",
-    "cat": "Welt"
-  },
-  {
-    "de": "Ceuta-Krise - Madrid droht Rom im Streit um Grenzkontrollen",
-    "en": "Ceuta crisis - Madrid threatens Rome in border control dispute",
-    "es": "Crisis de Ceuta - Madrid amenaza a Roma en disputa por controles fronterizos",
-    "fr": "Crise de Ceuta - Madrid menace Rome dans le différend sur les contrôles aux frontières",
-    "cat": "Welt"
-  },
-  {
-    "de": "Ebolavirus in DR Kongo verbreitet sich schneller als je zuvor",
-    "en": "Ebola virus spreads faster than ever in DR Congo",
-    "es": "El virus del Ébola en la República Democrática del Congo se propaga más rápido que nunca",
-    "fr": "Le virus Ebola en RDC se propage plus vite que jamais",
-    "cat": "Welt"
-  },
-  {
-    "de": "ICE Berlin-Paris fällt wegen technischer Probleme vorerst aus",
-    "en": "ICE Berlin-Paris will be cancelled for the time being due to technical problems",
-    "es": "ICE Berlín-París se suspende por el momento por problemas técnicos",
-    "fr": "ICE Berlin-Paris est temporairement indisponible en raison de problèmes techniques",
-    "cat": "Sport"
   }
 ]
