@@ -1,5 +1,19 @@
 [
   {
+    "de": "Himalaya: Fünf vermisste Bergsteiger tot in Nepal gefunden",
+    "en": "Himalayas: Five missing mountaineers found dead in Nepal",
+    "es": "Himalaya: cinco alpinistas desaparecidos encontrados muertos en Nepal",
+    "fr": "Himalaya : cinq alpinistes disparus retrouvés morts au Népal",
+    "cat": "Welt"
+  },
+  {
+    "de": "BUND kritisiert Lockerung des Sonntagsfahrverbots für Lkw",
+    "en": "FEDERAL GOVERNMENT criticises relaxation of the Sunday driving ban for trucks",
+    "es": "LA CONFEDERACIÓN critica la relajación de la prohibición de conducir camiones los domingos",
+    "fr": "LA CONFÉDÉRATION critique l'assouplissement de l'interdiction de circuler le dimanche pour les camions",
+    "cat": "Welt"
+  },
+  {
     "de": "Kann der neue britische Premier Burnham Obdachlosigkeit beenden?",
     "en": "Can the new British Prime Minister Burnham end homelessness?",
     "es": "¿Puede el nuevo primer ministro británico acabar con la falta de vivienda en Burnham?",
@@ -7,10 +21,10 @@
     "cat": "Sport"
   },
   {
-    "de": "Mehr als 200 Menschen vor Waldbrand am Gardasee in Sicherheit gebracht",
-    "en": "More than 200 people evacuated from forest fire on Lake Garda",
-    "es": "Más de 200 personas a salvo de un incendio forestal en el lago de Garda",
-    "fr": "Plus de 200 personnes mises à l'abri d'un incendie de forêt sur le lac de Garde",
+    "de": "Italien: Waldbrand am Westufer des Gardasees ausgebrochen",
+    "en": "Italy: Forest fire breaks out on the western shore of Lake Garda",
+    "es": "Italia: estalló un incendio forestal en la orilla oeste del lago de Garda",
+    "fr": "Italie : un incendie de forêt s'est déclaré sur la rive ouest du lac de Garde",
     "cat": "Umwelt"
   },
   {
@@ -124,19 +138,5 @@
     "es": "Disputa con Italia por Ceuta - España establece controles fronterizos",
     "fr": "Litige avec l'Italie sur Ceuta - L'Espagne met en place des contrôles aux frontières",
     "cat": "Welt"
-  },
-  {
-    "de": "US-Senat beschließt verschärfte Russland-Sanktionen",
-    "en": "US Senate adopts tougher Russia sanctions",
-    "es": "El Senado de Estados Unidos aprueba endurecer las sanciones contra Rusia",
-    "fr": "Le Sénat américain adopte des sanctions plus sévères contre la Russie",
-    "cat": "Welt"
-  },
-  {
-    "de": "Hitzewelle im Gazastreifen: \"Die Zelte sind wie stickige Backöfen\"",
-    "en": "Heatwave in Gaza: \"The tents are like stuffy ovens\"",
-    "es": "Ola de calor en la Franja de Gaza: \"Las tiendas de campaña son como hornos asfixiantes\"",
-    "fr": "Vague de chaleur dans la bande de Gaza : « Les tentes sont comme des fours étouffants »",
-    "cat": "Umwelt"
   }
 ]
