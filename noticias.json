@@ -1,5 +1,26 @@
 [
   {
+    "de": "Pentagon ruft Rüstungsindustrie zu schnellerer Waffenproduktion auf",
+    "en": "Pentagon calls for arms industry to produce weapons faster",
+    "es": "El Pentágono pide a la industria armamentística que acelere la producción de armas",
+    "fr": "Le Pentagone appelle l'industrie de l'armement à accélérer la production d'armes",
+    "cat": "Welt"
+  },
+  {
+    "de": "Selenskyj droht mit \"angemessener Antwort\" auf russische Angriffe",
+    "en": "Zelensky threatens with \"adequate response\" to Russian attacks",
+    "es": "Zelensky amenaza con una \"respuesta adecuada\" a los ataques rusos",
+    "fr": "Zelensky menace d'une « réponse appropriée » aux attaques russes",
+    "cat": "Sport"
+  },
+  {
+    "de": "Linken-Chef Pantisano schließt Unterstützung für CDU in Sachsen-Anhalt nicht aus",
+    "en": "Left Party leader Pantisano does not rule out support for the CDU in Saxony-Anhalt",
+    "es": "El líder de La Izquierda Pantisano no excluye el apoyo a la CDU en Sajonia-Anhalt",
+    "fr": "Le chef de la gauche Pantisano n'exclut pas le soutien à la CDU en Saxe-Anhalt",
+    "cat": "Politik"
+  },
+  {
     "de": "SPD kritisiert Härtefallregel bei Familiennachzug als viel zu streng",
     "en": "SPD criticises hardship rule for family reunification as much too strict",
     "es": "El SPD critica la regla de los casos difíciles en la reagrupación familiar como demasiado estricta",
@@ -117,26 +138,5 @@
     "es": "La provincia canadiense de Columbia Británica declara estado de emergencia por incendios forestales",
     "fr": "La province canadienne de la Colombie-Britannique déclare l'état d'urgence en raison d'incendies de forêt",
     "cat": "Umwelt"
-  },
-  {
-    "de": "Niedrigwasser: Was die Lockerung des Lkw-Fahrverbots bedeutet",
-    "en": "Low water: What the loosening of the truck ban means",
-    "es": "Aguas bajas: lo que significa relajar la prohibición de conducir camiones",
-    "fr": "Marée basse : ce que signifie l'assouplissement de l'interdiction de circulation des camions",
-    "cat": "Welt"
-  },
-  {
-    "de": "Paris führt Helmpflicht für E-Roller-Fahrer ein",
-    "en": "Paris introduces helmet requirement for e-scooter riders",
-    "es": "París introduce la obligatoriedad de casco para los conductores de scooters eléctricos",
-    "fr": "Paris introduit le casque obligatoire pour les conducteurs de scooters électriques",
-    "cat": "Welt"
-  },
-  {
-    "de": "Mutmaßlich ukrainische Drohne explodiert in Bulgarien",
-    "en": "Alleged Ukrainian drone explodes in Bulgaria",
-    "es": "Presunto dron ucraniano explota en Bulgaria",
-    "fr": "Un drone ukrainien aurait explosé en Bulgarie",
-    "cat": "Welt"
   }
 ]
