@@ -1,54 +1,5 @@
 [
   {
-    "de": "Die Anfahrt mit der Seilbahn bietet einen Blick über die Stadt.",
-    "en": "The journey by cable car offers a view over the city.",
-    "es": "El acceso en teleférico ofrece vistas de la ciudad.",
-    "fr": "L'accès en téléphérique offre une vue sur la ville.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Am Wochenende ist die Seilbahn oft sehr voll.",
-    "en": "On weekends, the cable car is often very full.",
-    "es": "Los fines de semana, el teleférico suele estar muy concurrido.",
-    "fr": "Le week-end, le téléphérique est souvent très fréquenté.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Der Park arbeitet mit lokalen Gemeinden am Naturschutz.",
-    "en": "The park works with local communities on conservation.",
-    "es": "El parque colabora con las comunidades locales en la protección de la naturaleza.",
-    "fr": "Le parc travaille avec les communautés locales sur la protection de la nature.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Besucher werden gebeten, ihren Müll mitzunehmen.",
-    "en": "Visitors are asked to take their rubbish with them.",
-    "es": "Se ruega a los visitantes que lleven su basura.",
-    "fr": "Les visiteurs sont priés de prendre leurs ordures avec eux.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Es gibt Programme zur Wiederaufforstung im Park.",
-    "en": "There are reforestation programs in the park.",
-    "es": "Hay programas de reforestación en el parque.",
-    "fr": "Il existe des programmes de reboisement dans le parc.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Freiwillige helfen bei der Pflege der Wanderwege.",
-    "en": "Volunteers help with the maintenance of the hiking trails.",
-    "es": "Los voluntarios ayudan en el mantenimiento de los senderos.",
-    "fr": "Des bénévoles aident à entretenir les sentiers de randonnée.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Der Park schützt bedrohte Pflanzen- und Tierarten.",
-    "en": "The park protects endangered plant and animal species.",
-    "es": "El parque protege especies de plantas y animales en peligro de extinción.",
-    "fr": "Le parc protège les espèces végétales et animales menacées.",
-    "cat": "Arví"
-  },
-  {
     "de": "Lokale Handwerker verkaufen Kunsthandwerk im Park.",
     "en": "Local craftsmen sell handicrafts in the park.",
     "es": "Los artesanos locales venden artesanías en el parque.",
@@ -137,6 +88,55 @@
     "en": "A first aid kit is available at the Visitor Centre.",
     "es": "Un botiquín de primeros auxilios está disponible en el centro de visitantes.",
     "fr": "Une trousse de premiers soins est disponible au centre des visiteurs.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Die Parkwächter helfen bei Notfällen.",
+    "en": "The parking attendants help in emergencies.",
+    "es": "Los vigilantes del parque ayudan en caso de emergencias.",
+    "fr": "Les gardiens du parking aident en cas d'urgence.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Am besten besucht man den Park früh am Morgen.",
+    "en": "The best time to visit the park is early in the morning.",
+    "es": "Lo mejor es visitar el parque a primera hora de la mañana.",
+    "fr": "Il est préférable de visiter le parc tôt le matin.",
+    "cat": "Arví"
+  },
+  {
+    "de": "An Wochentagen ist weniger los als am Wochenende.",
+    "en": "Weekdays are less busy than weekends.",
+    "es": "Los días laborables son menos concurridos que los fines de semana.",
+    "fr": "Il se passe moins de choses en semaine que le week-end.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Eine Wasserflasche sollte man immer dabeihaben.",
+    "en": "You should always have a water bottle with you.",
+    "es": "Siempre hay que llevar una botella de agua.",
+    "fr": "Vous devriez toujours avoir une bouteille d'eau avec vous.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Sonnencreme wird trotz des Nebels empfohlen.",
+    "en": "Sunscreen is recommended despite the fog.",
+    "es": "Se recomienda protector solar a pesar de la niebla.",
+    "fr": "La crème solaire est recommandée malgré le brouillard.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Ein Fernglas ist ideal für die Vogelbeobachtung.",
+    "en": "Binoculars are ideal for bird watching.",
+    "es": "Unos prismáticos son ideales para el avistamiento de aves.",
+    "fr": "Les jumelles sont idéales pour l'observation des oiseaux.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Vor der spanischen Kolonialzeit lebten dort indigene Gemeinschaften.",
+    "en": "Before the Spanish colonial period, indigenous communities lived there.",
+    "es": "Antes de la época colonial española, las comunidades indígenas vivían allí.",
+    "fr": "Avant l'époque coloniale espagnole, des communautés autochtones y vivaient.",
     "cat": "Arví"
   }
 ]

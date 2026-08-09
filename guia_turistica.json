@@ -1,54 +1,5 @@
 [
   {
-    "de": "Gibt es eine direkte Verbindung zum Flughafen?",
-    "en": "Is there a direct connection to the airport?",
-    "es": "¿Hay conexión directa con el aeropuerto?",
-    "fr": "Existe-t-il une liaison directe avec l'aéroport ?",
-    "cat": "Transport"
-  },
-  {
-    "de": "Ist dieser Sitzplatz noch frei?",
-    "en": "Is this seat still available?",
-    "es": "¿Está libre este puesto?",
-    "fr": "Ce siège est-il encore disponible ?",
-    "cat": "Transport"
-  },
-  {
-    "de": "Wie lange dauert die Fahrt bis zur Küste?",
-    "en": "How long does it take to get to the coast?",
-    "es": "¿Cuánto dura el trayecto hasta la costa?",
-    "fr": "Combien de temps dure le trajet jusqu'à la côte ?",
-    "cat": "Transport"
-  },
-  {
-    "de": "Kann ich das Ticket im Voraus reservieren?",
-    "en": "Can I reserve the ticket in advance?",
-    "es": "¿Puedo reservar la entrada con antelación?",
-    "fr": "Puis-je réserver le billet à l'avance ?",
-    "cat": "Transport"
-  },
-  {
-    "de": "Fährt dieser Bus zum Stadtzentrum?",
-    "en": "Is this bus going to the city centre?",
-    "es": "¿Este autobús va al centro de la ciudad?",
-    "fr": "Ce bus va-t-il au centre-ville ?",
-    "cat": "Transport"
-  },
-  {
-    "de": "Wo finde ich einen Taxistand?",
-    "en": "Where can I find a taxi rank?",
-    "es": "¿Dónde puedo encontrar una parada de taxis?",
-    "fr": "Où puis-je trouver une station de taxis ?",
-    "cat": "Transport"
-  },
-  {
-    "de": "Gibt es einen Fahrradverleih in der Nähe?",
-    "en": "Is there a bike rental nearby?",
-    "es": "¿Hay un servicio de alquiler de bicicletas cerca?",
-    "fr": "Y a-t-il un service de location de vélos à proximité ?",
-    "cat": "Transport"
-  },
-  {
     "de": "Muss ich hier umsteigen?",
     "en": "Do I have to change here?",
     "es": "¿Tengo que hacer un trasbordo?",
@@ -137,6 +88,55 @@
     "en": "Can you write that down please?",
     "es": "¿Puede escribirlo, por favor?",
     "fr": "Pouvez-vous l'écrire s'il vous plait ?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Wie sagt man das auf Spanisch?",
+    "en": "How do you say that in Spanish?",
+    "es": "¿Cómo se dice en español?",
+    "fr": "Comment dit-on cela en espagnol ?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Können Sie das für mich übersetzen?",
+    "en": "Can you translate that for me?",
+    "es": "¿Puede traducirlo para mí?",
+    "fr": "Pouvez-vous éventuellement traduire ceci pour moi ?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Ich brauche einen Moment, um zu antworten.",
+    "en": "I need a moment to respond.",
+    "es": "Necesito un momento para responder.",
+    "fr": "J'ai besoin d'un moment pour répondre.",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Bitte sprechen Sie etwas langsamer.",
+    "en": "Please speak more slowly.",
+    "es": "Por favor, hable un poco más despacio.",
+    "fr": "Veuillez parler un peu plus lentement.",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Können Sie das Wort buchstabieren?",
+    "en": "Can you spell the word?",
+    "es": "¿Puede deletrear la palabra?",
+    "fr": "Pouvez-vous épeler le mot ?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Ich habe eine Frage zu unserer Route.",
+    "en": "I have a question about our route.",
+    "es": "Tengo una pregunta sobre nuestra ruta.",
+    "fr": "J'ai une question sur notre itinéraire.",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Verzeihung, ich habe das nicht verstanden.",
+    "en": "Excuse me, I didn't get that.",
+    "es": "Lo siento, no lo entendí.",
+    "fr": "Excusez-moi, je n'ai pas compris.",
     "cat": "Kommunikation"
   }
 ]

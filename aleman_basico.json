@@ -1,54 +1,5 @@
 [
   {
-    "de": "Hier können Sie Fotos machen.",
-    "en": "“Can you take pictures?”",
-    "es": "Aquí puedes hacer fotos.",
-    "fr": "Ici, vous pouvez prendre des photos.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Bitte berühren Sie die Pflanzen nicht.",
-    "en": "Please do not touch the plants.",
-    "es": "Por favor, no toque las plantas.",
-    "fr": "Veuillez ne pas toucher les plantes.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Wir gehen jetzt weiter zum nächsten Punkt.",
-    "en": "We now move on to the next point.",
-    "es": "Pasemos ahora al siguiente punto.",
-    "fr": "Nous passons maintenant au point suivant.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Bitte bleiben Sie auf dem markierten Weg.",
-    "en": "Please stay on the marked path.",
-    "es": "Por favor, permanezca en el camino marcado.",
-    "fr": "Veuillez rester sur le chemin balisé.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Halten Sie sich bitte am Geländer fest.",
-    "en": "Please hold on to the railing.",
-    "es": "Por favor, agárrese a la barandilla.",
-    "fr": "Veuillez vous accrocher à la balustrade.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Wir warten hier auf die restliche Gruppe.",
-    "en": "We're waiting here for the rest of the group.",
-    "es": "Estamos esperando al resto del grupo.",
-    "fr": "Nous attendons ici le reste du groupe.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Haben alle ihre Wasserflasche dabei?",
-    "en": "Does everyone have their water bottle with them?",
-    "es": "¿Todos tienen su botella de agua?",
-    "fr": "Tout le monde a sa bouteille d'eau avec lui ?",
-    "cat": "Grundlagen"
-  },
-  {
     "de": "Fühlt sich jemand nicht gut?",
     "en": "Is anyone not feeling well?",
     "es": "¿Alguien no se siente bien?",
@@ -137,6 +88,55 @@
     "en": "Please let us know if anything is missing.",
     "es": "Por favor, póngase en contacto si falta algo.",
     "fr": "Veuillez nous contacter si quelque chose manque.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Achten Sie bitte auf Ihre persönlichen Sachen.",
+    "en": "Please pay attention to your personal belongings.",
+    "es": "Preste atención a sus pertenencias personales.",
+    "fr": "Veuillez faire attention à vos effets personnels.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Wenn Sie sich verlaufen, bleiben Sie an Ort und Stelle.",
+    "en": "If you get lost, stay in place.",
+    "es": "Si te pierdes, quédate en su sitio.",
+    "fr": "Si vous vous perdez, restez en place.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Ich habe immer ein Erste-Hilfe-Set dabei.",
+    "en": "I always have a first aid kit with me.",
+    "es": "Siempre llevo conmigo un botiquín de primeros auxilios.",
+    "fr": "J'ai toujours une trousse de premiers soins avec moi.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Bitte informieren Sie mich über Allergien.",
+    "en": "I would like to know more about:",
+    "es": "Por favor, infórmenme sobre las alergias.",
+    "fr": "Veuillez m'informer des allergies.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Woher kommen Sie?",
+    "en": "Where do you come from?",
+    "es": "¿De dónde viene?",
+    "fr": "D'où venez-vous ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Ist das Ihr erster Besuch in Kolumbien?",
+    "en": "Is this your first visit to Colombia?",
+    "es": "¿Es tu primera visita a Colombia?",
+    "fr": "Est-ce votre première visite en Colombie ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Wie gefällt Ihnen die Reise bisher?",
+    "en": "How do you like the trip so far?",
+    "es": "¿Qué te ha parecido el viaje hasta ahora?",
+    "fr": "Que pensez-vous du voyage jusqu'à présent ?",
     "cat": "Grundlagen"
   }
 ]
