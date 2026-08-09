@@ -3,15 +3,19 @@
 server_local.py
 ----------------
 Mini-servidor local para correr en Termux junto a Wegweiser.
-Expone un endpoint que ejecuta `python3 generar.py all` cuando
-el botón "Actualizar (local)" del index.html lo llama.
+Expone un endpoint que ejecuta `python3 generar.py <modo>` cuando
+alguno de los botones de actualización del index.html lo llama.
 
 Uso:
     python3 server_local.py
     (deja esta ventana/tmux corriendo mientras usas la app)
 
-El botón del index.html debe apuntar a:
-    http://localhost:8765/generar
+El botón del index.html llama a:
+    http://localhost:8765/generar?modo=all       (noticias + listas)
+    http://localhost:8765/generar?modo=noticias  (solo noticias.json)
+    http://localhost:8765/generar?modo=listas    (arví + colombia + guía + básico)
+
+Si no se manda `modo`, se usa "all" por defecto.
 
 Nota: si abres index.html desde el navegador del teléfono con
 file:// puede que el navegador bloquee el fetch a localhost por
@@ -25,9 +29,11 @@ import json
 import subprocess
 import sys
 from http.server import BaseHTTPRequestHandler, HTTPServer
+from urllib.parse import urlparse, parse_qs
 
 PORT = 8765
 GENERAR_SCRIPT = "generar.py"   # debe estar en la misma carpeta donde corres esto
+MODOS_VALIDOS = {"all", "noticias", "listas"}
 
 
 class Handler(BaseHTTPRequestHandler):
@@ -44,17 +50,21 @@ class Handler(BaseHTTPRequestHandler):
 
     def do_GET(self):
         if self.path.startswith("/generar"):
-            self.ejecutar_generar()
+            query = parse_qs(urlparse(self.path).query)
+            modo = query.get("modo", ["all"])[0]
+            if modo not in MODOS_VALIDOS:
+                modo = "all"
+            self.ejecutar_generar(modo)
         else:
             self.send_response(404)
             self._cors()
             self.end_headers()
 
-    def ejecutar_generar(self):
-        print("→ Ejecutando generar.py all ...")
+    def ejecutar_generar(self, modo="all"):
+        print(f"→ Ejecutando generar.py {modo} ...")
         try:
             resultado = subprocess.run(
-                [sys.executable, GENERAR_SCRIPT, "all"],
+                [sys.executable, GENERAR_SCRIPT, modo],
                 capture_output=True, text=True, timeout=600,
             )
             ok = resultado.returncode == 0
@@ -71,7 +81,7 @@ class Handler(BaseHTTPRequestHandler):
         self.send_header("Content-Type", "application/json")
         self.end_headers()
         self.wfile.write(json.dumps(payload).encode("utf-8"))
-        print("✓ Listo" if payload["ok"] else f"✗ Error: {payload['error']}")
+        print(f"✓ Listo ({modo})" if payload["ok"] else f"✗ Error: {payload['error']}")
 
 
 if __name__ == "__main__":

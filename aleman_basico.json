@@ -1,142 +1,142 @@
 [
   {
-    "de": "Guten Tag! Wie kann ich Ihnen helfen?",
-    "en": "Hello how can I help you?",
-    "es": "¡Buenas tardes! ¿En qué puedo ayudarle?",
-    "fr": "Bonjour, puis-je vous aider ?",
+    "de": "Hier können Sie Fotos machen.",
+    "en": "“Can you take pictures?”",
+    "es": "Aquí puedes hacer fotos.",
+    "fr": "Ici, vous pouvez prendre des photos.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Ich heiße Giovanni und bin Ihr Reiseführer.",
-    "en": "My name is Giovanni and I am your guide.",
-    "es": "Me llamo Giovanni y soy su guía.",
-    "fr": "Je m'appelle Giovanni et je suis votre guide.",
+    "de": "Bitte berühren Sie die Pflanzen nicht.",
+    "en": "Please do not touch the plants.",
+    "es": "Por favor, no toque las plantas.",
+    "fr": "Veuillez ne pas toucher les plantes.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Willkommen in Kolumbien!",
-    "en": "Welcome to Colombia!",
-    "es": "¡Bienvenido a Colombia!",
-    "fr": "Bienvenue en Colombie !",
+    "de": "Wir gehen jetzt weiter zum nächsten Punkt.",
+    "en": "We now move on to the next point.",
+    "es": "Pasemos ahora al siguiente punto.",
+    "fr": "Nous passons maintenant au point suivant.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Wie viel kostet das?",
-    "en": "How much is it?",
-    "es": "¿Cuánto cuesta eso?",
-    "fr": "Combien cela coûte-t-il ?",
+    "de": "Bitte bleiben Sie auf dem markierten Weg.",
+    "en": "Please stay on the marked path.",
+    "es": "Por favor, permanezca en el camino marcado.",
+    "fr": "Veuillez rester sur le chemin balisé.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Wo ist die Toilette, bitte?",
-    "en": "Where is the toilet, please?",
-    "es": "¿Dónde está el baño, por favor?",
-    "fr": "Où sont les toilettes, s'il vous plaît ?",
+    "de": "Halten Sie sich bitte am Geländer fest.",
+    "en": "Please hold on to the railing.",
+    "es": "Por favor, agárrese a la barandilla.",
+    "fr": "Veuillez vous accrocher à la balustrade.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Ich verstehe nicht, können Sie das wiederholen?",
-    "en": "I don't understand, can you repeat that?",
-    "es": "No entiendo, ¿puede repetirlo?",
-    "fr": "Je ne comprends pas, pouvez-vous le répéter ?",
+    "de": "Wir warten hier auf die restliche Gruppe.",
+    "en": "We're waiting here for the rest of the group.",
+    "es": "Estamos esperando al resto del grupo.",
+    "fr": "Nous attendons ici le reste du groupe.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Bitte folgen Sie mir.",
-    "en": "Please follow me.",
-    "es": "Por favor, síganme.",
-    "fr": "Veuillez me suivre.",
+    "de": "Haben alle ihre Wasserflasche dabei?",
+    "en": "Does everyone have their water bottle with them?",
+    "es": "¿Todos tienen su botella de agua?",
+    "fr": "Tout le monde a sa bouteille d'eau avec lui ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Wir treffen uns um neun Uhr.",
-    "en": "We'll meet at 3:00 p.m.",
-    "es": "Juntémonos a las 3:00 p.m.",
-    "fr": "Rendez-vous à 9h.",
+    "de": "Fühlt sich jemand nicht gut?",
+    "en": "Is anyone not feeling well?",
+    "es": "¿Alguien no se siente bien?",
+    "fr": "Quelqu'un ne se sent pas bien ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Das Wetter ist heute sehr schön.",
-    "en": "The #weather# is very beautiful today.",
-    "es": "El #tiempo# hoy es muy agradable.",
-    "fr": "La #météo# est très belle aujourd'hui.",
+    "de": "Möchten Sie eine Pause machen?",
+    "en": "Would you like to take a break?",
+    "es": "¿Quieres tomarte un descanso?",
+    "fr": "Envie de faire une pause ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Haben Sie Fragen?",
-    "en": "Do you have any questions?",
-    "es": "¿Tienes preguntas?",
-    "fr": "Vous avez des questions ?",
+    "de": "Ist die Route für Sie zu anstrengend?",
+    "en": "Is the route too strenuous for you?",
+    "es": "¿La ruta es demasiado exigente para ti?",
+    "fr": "L'itinéraire est-il trop fatigant pour vous ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Der Ausflug dauert drei Stunden.",
-    "en": "The tour lasts three hours.",
-    "es": "La excursión dura tres horas.",
-    "fr": "L'excursion dure trois heures.",
+    "de": "Haben Sie noch Fragen zur Tour?",
+    "en": "Do you have any further questions?",
+    "es": "¿Tienes alguna pregunta?",
+    "fr": "Vous avez d’autres questions ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Bitte trinken Sie viel Wasser.",
-    "en": "Drink plenty of water.",
-    "es": "Por favor, beba mucha agua.",
-    "fr": "Veuillez boire beaucoup d'eau.",
+    "de": "Möchten Sie mehr über diese Pflanze erfahren?",
+    "en": "Want to know more about this plant?",
+    "es": "¿Quieres saber más sobre esta planta?",
+    "fr": "Vous souhaitez en savoir plus sur cette plante ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Vorsicht, der Weg ist steil!",
-    "en": "Be careful, the path is steep!",
-    "es": "¡Cuidado, el camino es empinado!",
-    "fr": "Attention, le chemin est raide !",
+    "de": "Gefällt Ihnen die Aussicht?",
+    "en": "Do you like the view?",
+    "es": "¿Te gustan las vistas?",
+    "fr": "Aimez-vous la vue ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Es tut mir leid, ich spreche wenig Deutsch.",
-    "en": "I'm sorry, I don't speak much German.",
-    "es": "Lo siento, no hablo mucho alemán.",
-    "fr": "Je suis désolé, je parle peu allemand.",
+    "de": "Sind Sie bereit für den nächsten Abschnitt?",
+    "en": "Are you ready for the next section?",
+    "es": "¿Listo para la siguiente etapa?",
+    "fr": "Êtes-vous prêt pour la section suivante ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Vielen Dank für Ihren Besuch!",
-    "en": "Thank you for paying us a visit!",
-    "es": "¡Gracias por tu visita!",
-    "fr": "Merci beaucoup de votre visite !",
+    "de": "Brauchen Sie eine Pause zum Fotografieren?",
+    "en": "Need a break to take pictures?",
+    "es": "¿Necesitas un descanso para hacer fotos?",
+    "fr": "Besoin d'une pause pour prendre des photos ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Mein Name ist Giovanni. Wie heißen Sie?",
-    "en": "My name is Giovanni. What is your name?",
-    "es": "Me llamo Giovanni. ¿Cuál es su nombre?",
-    "fr": "Je m'appelle Giovanni. Quel est votre nom ?",
+    "de": "Ist allen warm genug angezogen?",
+    "en": "Is everyone dressed warmly enough?",
+    "es": "¿Todos están lo suficientemente abrigados?",
+    "fr": "Est-ce que tout le monde est habillé assez chaudement ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Zählen wir zusammen: eins, zwei, drei.",
-    "en": "Let's add together: one, two, three.",
-    "es": "Cuentemos juntos: uno, dos, tres.",
-    "fr": "Comptons ensemble : un, deux, trois.",
+    "de": "Bleiben Sie bitte ruhig, alles ist unter Kontrolle.",
+    "en": "Please stay calm, everything is under control.",
+    "es": "Por favor, mantenga la calma, todo está bajo control.",
+    "fr": "Restez calme, tout est sous contrôle.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Links ist der Eingang, rechts ist der Ausgang.",
-    "en": "On the left is the entrance, on the right is the exit.",
-    "es": "A la izquierda está la entrada, a la derecha está la salida.",
-    "fr": "L'entrée est à gauche, la sortie est à droite.",
+    "de": "Im Notfall folgen Sie bitte meinen Anweisungen.",
+    "en": "In case of emergency, please follow my instructions.",
+    "es": "En caso de emergencia, siga mis instrucciones.",
+    "fr": "En cas d'urgence, veuillez suivre mes instructions.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Wir fahren jetzt mit der Seilbahn.",
-    "en": "We are now taking the cable car.",
-    "es": "Ahora cogeremos el teleférico.",
-    "fr": "Nous prenons maintenant le téléphérique.",
+    "de": "Der Notausgang ist dort drüben.",
+    "en": "The emergency exit is over there.",
+    "es": "La salida de emergencia está por allí.",
+    "fr": "La sortie de secours est là-bas.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Bis bald und gute Reise!",
-    "en": "See you soon and have a nice trip!",
-    "es": "¡Hasta pronto y buen viaje!",
-    "fr": "À bientôt et bon voyage !",
+    "de": "Bitte melden Sie sich, wenn etwas fehlt.",
+    "en": "Please let us know if anything is missing.",
+    "es": "Por favor, póngase en contacto si falta algo.",
+    "fr": "Veuillez nous contacter si quelque chose manque.",
     "cat": "Grundlagen"
   }
 ]

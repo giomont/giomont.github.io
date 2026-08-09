@@ -1,0 +1,1609 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wegweiser · Nachrichten & Aktuelles</title>
+<style>
+  :root{
+    --bg:#141210;
+    --panel:#1d1a17;
+    --amber:#e0a458;
+    --red:#c1443a;
+    --green:#8aab6c;
+    --text:#f2ece2;
+    --muted:#9a8f82;
+    --border:#2c2822;
+  }
+  *{box-sizing:border-box;}
+  body{
+    margin:0;
+    font-family:-apple-system,Segoe UI,Roboto,sans-serif;
+    background:var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    -webkit-tap-highlight-color:transparent;
+  }
+  header{
+    padding:16px 20px 10px;
+    border-bottom:1px solid var(--border);
+    flex-shrink:0;
+  }
+  h1{
+    font-size:1.15rem;
+    margin:0 0 4px;
+    letter-spacing:.02em;
+  }
+  h1 span{color:var(--amber);}
+  .sub{color:var(--muted);font-size:.8rem;margin:0;}
+
+  /* Layout mobile-first: contenido + controles abajo; desktop = 80% + sidebar */
+  .layout{
+    flex:1;
+    display:flex;
+    flex-direction:column;
+    min-height:0;
+    width:100%;
+    margin:0 auto;
+  }
+  .main-content{
+    flex:1 1 auto;
+    width:100%;
+    padding:12px 16px 16px;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    min-width:0;
+    min-height:0;
+  }
+  .main-content > #slideContainer,
+  .main-content > #gameContainer{
+    width:100%;
+    max-width:560px;
+  }
+  .sidebar{
+    flex:0 0 auto;
+    width:100%;
+    border-top:1px solid var(--border);
+    background:var(--panel);
+    padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+    display:flex;
+    flex-direction:row;
+    flex-wrap:wrap;
+    gap:8px;
+    align-items:center;
+    justify-content:center;
+  }
+  .sidebar .ctrl-group{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    justify-content:center;
+    align-items:center;
+  }
+  .sidebar .ctrl-label{
+    display:none;
+  }
+
+  select, button{
+    background:var(--panel);
+    color:var(--text);
+    border:1px solid var(--border);
+    border-radius:8px;
+    font-size:1rem;
+    cursor:pointer;
+  }
+  select{
+    padding:9px 8px;
+    max-width:52px;
+    text-align:center;
+    text-align-last:center;
+  }
+  .sidebar select{
+    background:var(--bg);
+  }
+  .sidebar button{
+    transition:border-color .15s;
+    width:44px;height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-radius:50%;
+    font-size:1.15rem;
+    background:var(--bg);
+  }
+  #playAllBtn.active, #playAllLangsBtn.active, #vocabBtn.active{
+    border-color:var(--red);
+    color:var(--red);
+  }
+  .speed-group{
+    display:flex;
+    gap:4px;
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:3px;
+    background:var(--bg);
+  }
+  .speed-btn{
+    border:none;
+    width:36px;height:36px;
+    font-size:1rem;
+    border-radius:50%;
+    background:transparent;
+  }
+  .speed-btn.active{
+    background:var(--amber);
+    color:var(--bg);
+  }
+  .ctrl-sep{
+    display:none;
+  }
+
+  /* Footer tono papel / gris */
+  footer{
+    flex-shrink:0;
+    background:#2a2620;
+    border-top:1px solid var(--border);
+    padding:12px 16px;
+    text-align:center;
+    color:var(--muted);
+    font-size:.78rem;
+  }
+  footer a{color:var(--amber);text-decoration:none;}
+  footer .paper-tone{
+    background:linear-gradient(180deg,#2e2a24 0%,#25211c 100%);
+  }
+
+  /* Desktop: panel lateral derecho (~20%) + contenido 80% */
+  @media (min-width:900px){
+    .layout{
+      flex-direction:row;
+      max-width:1100px;
+    }
+    .main-content{
+      flex:1 1 80%;
+      max-width:none;
+      padding:24px 28px;
+    }
+    .main-content > #slideContainer,
+    .main-content > #gameContainer{
+      max-width:640px;
+    }
+    .sidebar{
+      flex:0 0 200px;
+      width:200px;
+      border-top:none;
+      border-left:1px solid var(--border);
+      flex-direction:column;
+      flex-wrap:nowrap;
+      justify-content:flex-start;
+      align-items:center;
+      padding:20px 14px;
+      gap:10px;
+      overflow-y:auto;
+    }
+    .sidebar .ctrl-group{
+      width:100%;
+    }
+    .sidebar .ctrl-label{
+      display:block;
+      font-size:.7rem;
+      color:var(--muted);
+      text-align:center;
+      width:100%;
+      margin:2px 0 0;
+    }
+    .ctrl-sep{
+      display:block;
+      width:80%;
+      height:1px;
+      background:var(--border);
+      margin:4px 0;
+    }
+  }
+
+  /* ---------- Vokabelspiel ---------- */
+  .game-slide{
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+  }
+  .game-counter{
+    color:var(--muted);
+    font-size:.75rem;
+    margin:0 0 14px;
+  }
+  .game-sentence{
+    margin-bottom:18px;
+  }
+  .game-sub{
+    color:var(--muted);
+    font-size:.85rem;
+    margin:0;
+  }
+  .game-word-label{
+    color:var(--muted);
+    font-size:.8rem;
+    margin:14px 0 10px;
+  }
+  .game-word-label strong{color:var(--amber);}
+  .word-def{
+    margin:12px 0 4px;
+    padding:12px 14px;
+    border-radius:12px;
+    border:1px solid var(--border);
+    background:rgba(224,164,88,.08);
+    text-align:left;
+    width:100%;
+  }
+  .word-def .def-label{
+    font-size:.7rem;
+    color:var(--amber);
+    letter-spacing:.04em;
+    text-transform:uppercase;
+    margin:0 0 4px;
+  }
+  .word-def .def-en{
+    font-size:1.05rem;
+    color:var(--text);
+    font-weight:600;
+    margin:0 0 4px;
+  }
+  .word-def .def-meaning{
+    font-size:.85rem;
+    color:var(--muted);
+    margin:0;
+    line-height:1.4;
+  }
+  .word-def.loading .def-en{color:var(--muted);font-weight:400;}
+  .game-actions{
+    display:flex;
+    gap:10px;
+    justify-content:center;
+  }
+  .game-answer{
+    width:100%;
+    border-top:1px solid var(--border);
+    margin-top:18px;
+    padding-top:16px;
+  }
+  .rate-buttons{
+    display:flex;
+    gap:8px;
+    justify-content:center;
+    flex-wrap:wrap;
+    margin-top:6px;
+  }
+  .rate-btn{font-size:.8rem;}
+  .rate-btn.again{border-color:var(--red);color:var(--red);}
+  .rate-btn.hard{border-color:var(--muted);color:var(--muted);}
+  .rate-btn.good{border-color:var(--amber);color:var(--amber);}
+  .rate-btn.easy{border-color:var(--green);color:var(--green);}
+  .rate-btn:active{opacity:.7;}
+
+  /* ---------- Opción múltiple ---------- */
+  .choice-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:10px;
+    width:100%;
+    margin-top:6px;
+  }
+  .choice-btn{
+    font-size:.9rem;
+    padding:12px 8px;
+    white-space:normal;
+    word-break:break-word;
+  }
+  .choice-btn.correct{border-color:var(--green);color:var(--green);background:rgba(138,171,108,.12);}
+  .choice-btn.wrong{border-color:var(--red);color:var(--red);background:rgba(193,68,58,.12);}
+
+  /* ---------- Escribir la palabra ---------- */
+  .type-input{
+    width:100%;
+    margin-top:8px;
+    padding:12px;
+    border-radius:10px;
+    border:1px solid var(--border);
+    background:transparent;
+    color:inherit;
+    font-size:1rem;
+    text-align:center;
+  }
+  .type-input.correct{border-color:var(--green);color:var(--green);}
+  .type-input.wrong{border-color:var(--red);color:var(--red);}
+  .feedback-msg{
+    margin-top:12px;
+    font-size:.85rem;
+    color:var(--amber);
+  }
+
+  /* ---------- Flash de acierto/error en toda la tarjeta ---------- */
+  @keyframes flashGreen{0%{background:rgba(138,171,108,.18);}100%{background:transparent;}}
+  @keyframes flashRed{0%{background:rgba(193,68,58,.18);}100%{background:transparent;}}
+  #gameContainer.flash-correct{animation:flashGreen .4s ease;}
+  #gameContainer.flash-wrong{animation:flashRed .4s ease;}
+
+  .slide{
+    background:var(--panel);
+    border:1px solid var(--border);
+    border-radius:16px;
+    text-align:center;
+    padding:36px 20px;
+    touch-action:pan-y;
+  }
+  .slide.playing{
+    border-color:var(--amber);
+  }
+  .cat-tag{
+    display:inline-block;
+    font-size:.7rem;
+    color:var(--amber);
+    border:1px solid var(--amber);
+    border-radius:12px;
+    padding:2px 10px;
+    margin-bottom:14px;
+    letter-spacing:.03em;
+  }
+  .slide .de{font-size:1.65rem;font-weight:700;margin-bottom:16px;line-height:1.4;transition:background .2s,padding .2s;}
+  .slide .en{font-size:1.15rem;color:var(--amber);transition:background .2s,padding .2s;}
+  .slide .fr{font-size:1.15rem;color:var(--green);margin-top:6px;transition:background .2s,padding .2s;}
+  .slide .es{font-size:1.15rem;color:#e0715a;margin-top:6px;transition:background .2s,padding .2s;}
+
+  .slide .lang-active{
+    background:rgba(224,164,88,.14);
+    border-radius:10px;
+    padding:8px 10px;
+    color:var(--text)!important;
+  }
+
+  .word{display:inline;}
+  .word.karaoke{
+    background:var(--red);
+    color:var(--text);
+    border-radius:4px;
+    padding:0 2px;
+  }
+
+  .blank{
+    display:inline-block;
+    min-width:2.2em;
+    border-bottom:2px solid var(--red);
+    color:var(--red);
+    cursor:pointer;
+    padding:0 2px;
+  }
+  .blank.revealed{
+    border-bottom:2px solid transparent;
+    color:inherit;
+    cursor:default;
+  }
+
+  .slide-nav{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:10px;
+    margin-top:18px;
+    flex-wrap:wrap;
+  }
+  .speak-btn{
+    border-radius:50%;
+    width:44px;height:44px;
+    padding:0;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    border-color:var(--red);
+    color:var(--red);
+    font-size:1.1rem;
+  }
+  .speak-btn:active{background:var(--red);color:var(--bg);}
+
+  .counter{
+    text-align:center;
+    color:var(--muted);
+    font-size:.8rem;
+    margin-top:10px;
+  }
+
+  .hint{
+    text-align:center;
+    color:var(--muted);
+    font-size:.72rem;
+    margin-top:2px;
+  }
+
+  /* ---------- Modo Gris / Nocturno ----------
+     Reduce estimulación visual (menos color = menos búsqueda de dopamina,
+     útil para estudiar antes de dormir sin interferir con la consolidación
+     de memoria durante el sueño). Se aplica con filtro CSS sobre todo body. */
+  body.gray-mode{
+    filter:grayscale(1) brightness(.92) contrast(1.05);
+  }
+  #grayBtn.active{
+    border-color:var(--muted);
+    color:var(--text);
+    background:rgba(154,143,130,.18);
+  }
+
+  /* ---------- Tarjeta de exposición (primera vez que aparece la palabra) ---------- */
+  .study-tag{
+    display:inline-block;
+    font-size:.7rem;
+    color:var(--green);
+    border:1px solid var(--green);
+    border-radius:12px;
+    padding:2px 10px;
+    margin-bottom:14px;
+    letter-spacing:.03em;
+  }
+  .study-word{
+    font-size:1.6rem;
+    font-weight:800;
+    color:var(--amber);
+    margin:10px 0 4px;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Weg<span>weiser</span> · Nachrichten & Aktuelles</h1>
+  <p class="sub">Einfache Nachrichten · Frases útiles</p>
+</header>
+
+<div class="layout">
+  <div class="main-content">
+    <div id="slideContainer"></div>
+    <div id="gameContainer" style="display:none;"></div>
+    <p class="counter" id="counter"></p>
+    <p class="hint" id="hint">Wische nach links/rechts, um zu blättern</p>
+  </div>
+
+  <aside class="sidebar">
+    <p class="ctrl-label">Quelle · Kategorie · Sprache</p>
+    <div class="ctrl-group">
+      <select id="sourceSelect" title="Quelle">
+        <option value="noticias.json" title="Noticias">📰</option>
+        <option value="aleman_basico.json" title="Alemán Básico">🇩🇪</option>
+        <option value="arvi.json" title="Arví">🌳</option>
+        <option value="colombia_diversidad.json" title="Diversidad Colombia">🌈</option>
+        <option value="guia_turistica.json" title="Guía Turística">🧳</option>
+      </select>
+      <select id="categorySelect" title="Kategorie"></select>
+      <select id="langSelect" title="Sprache"></select>
+    </div>
+
+    <div class="ctrl-sep"></div>
+    <p class="ctrl-label">Audio</p>
+    <div class="ctrl-group">
+      <button id="speakSlideBtn" class="speak-btn" title="Vorlesen">🔊</button>
+      <button id="repeatBtn" title="3x wiederholen">🔁³</button>
+      <button id="playAllBtn" title="Alle abspielen">▶</button>
+      <button id="playAllLangsBtn" title="Alle Sprachen: EN → DE → FR">🌐</button>
+    </div>
+
+    <div class="ctrl-sep"></div>
+    <p class="ctrl-label">Tempo</p>
+    <div class="ctrl-group">
+      <div class="speed-group" id="speedGroup" title="Geschwindigkeit">
+        <button class="speed-btn" data-speed="0.7" title="Langsam">🐢</button>
+        <button class="speed-btn" data-speed="0.95" title="Normal">🚶</button>
+        <button class="speed-btn" data-speed="1.25" title="Schnell">🐇</button>
+      </div>
+    </div>
+
+    <div class="ctrl-sep"></div>
+    <p class="ctrl-label">Extras</p>
+    <div class="ctrl-group">
+      <button id="vocabBtn" title="Wortspiel">🎮</button>
+      <button id="updateBtn" title="Aktualisieren">🔄</button>
+      <select id="regenModeSelect" title="Was aktualisieren?">
+        <option value="all">🔄 Todo</option>
+        <option value="noticias">📰 Noticias</option>
+        <option value="listas">📚 Listas</option>
+      </select>
+      <button id="regenLocalBtn" title="generar.py ausführen (lokal, Termux)">🖥️🔄</button>
+      <button id="regenOnlineBtn" title="generar.py ausführen (online, GitHub Actions)">☁️🔄</button>
+      <button id="grayBtn" title="Graumodus">🌓</button>
+    </div>
+  </aside>
+</div>
+
+<footer>
+  <div class="paper-tone">Wegweiser · Lernen mit echten Nachrichten &amp; Reisefrasen</div>
+</footer>
+
+<script>
+// Las noticias se cargan desde noticias.json (mismo directorio que index.html).
+// Si ese archivo falla o no existe, se usa este pequeño respaldo de emergencia.
+let allPhrases = [
+  {de:"Die Fußball-WM hat der FIFA rund 15 Milliarden Dollar eingebracht. Das ist ein neuer Rekord.", en:"The soccer World Cup brought FIFA around 15 billion dollars. That's a new record.", es:"El Mundial de fútbol le generó a la FIFA unos 15 mil millones de dólares. Es un nuevo récord.", cat:"Sport"}
+];
+
+let currentSource = "noticias.json";
+
+async function loadPhrasesFromJson(url){
+  url = url || currentSource;
+  try{
+    // Se agrega ?t= con la hora actual para evitar que la CDN de GitHub
+    // Pages devuelva una copia vieja cacheada del archivo.
+    const resp = await fetch(url + "?t=" + Date.now(), { cache: "no-store" });
+    if(!resp.ok) throw new Error("HTTP " + resp.status);
+    const arr = await resp.json();
+    if(Array.isArray(arr) && arr.length > 0){
+      allPhrases = arr;
+      return true;
+    }
+  }catch(e){
+    console.error("No se pudo cargar " + url + ", usando respaldo:", e);
+  }
+  return false;
+}
+
+const STORAGE_KEY = "wegweiser-nachrichten-progress";
+let data = allPhrases.slice();
+let voices = [];
+let currentIndex = 0;
+let isPlayingAll = false;
+let playAllIndex = 0;
+let isPlayingAllLangs = false;
+let studied = new Set();
+let currentSpeed = 0.95;
+
+// ---------- Idiomas ----------
+const langMeta = {
+  de: { code:"de-DE", label:"Deutsch", icon:"🇩🇪" },
+  en: { code:"en-US", label:"English", icon:"🇬🇧" },
+  es: { code:"es-ES", label:"Español", icon:"🇪🇸" },
+  fr: { code:"fr-FR", label:"Français", icon:"🇫🇷" }
+};
+let currentLang = "de";
+
+// ---------- Storage (progress) ----------
+// Nota: window.storage solo existe dentro de artifacts de Claude.ai.
+// En un sitio real (GitHub Pages) usamos localStorage del navegador.
+async function loadProgress(){
+  try{
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if(raw){
+      studied = new Set(JSON.parse(raw));
+    }
+  }catch(e){
+    studied = new Set();
+  }
+  updateProgressBar();
+}
+
+async function saveProgress(){
+  try{
+    localStorage.setItem(STORAGE_KEY, JSON.stringify([...studied]));
+  }catch(e){
+    console.error("No se pudo guardar el progreso", e);
+  }
+}
+
+function markStudied(phrase){
+  const key = phrase.de;
+  if(!studied.has(key)){
+    studied.add(key);
+    saveProgress();
+    updateProgressBar();
+  }
+}
+
+function updateProgressBar(){
+  // Barra de progreso eliminada de la UI; se deja el cálculo por si se
+  // reactiva más adelante, pero no toca el DOM si los elementos no existen.
+  const fill = document.getElementById("progressFill");
+  const label = document.getElementById("progressLabel");
+  if(!fill && !label) return;
+  const total = allPhrases.length;
+  let count = 0;
+  allPhrases.forEach(p => { if(studied.has(p.de)) count++; });
+  const pct = Math.round((count/total)*100);
+  if(fill) fill.style.width = pct + "%";
+  if(label) label.textContent = `${count} / ${total} gelernt`;
+}
+
+// ---------- Categories ----------
+const CATEGORY_ICONS = {
+  Alle:"⭐", Politik:"🏛️", Welt:"🌍", Wirtschaft:"💰", Sport:"⚽",
+  Umwelt:"🌱", Grundlagen:"🇩🇪", Arví:"🌳", Kolumbien:"🌈",
+  Orientierung:"🧭", Hotel:"🏨", Restaurant:"🍽️", Transport:"🚌",
+  Notfälle:"🆘", Kommunikation:"💬", Geld:"💶", Sehenswürdigkeiten:"🗺️",
+  Tourismus:"🧳", Reisen:"✈️"
+};
+function setupCategories(){
+  const cats = ["Alle", ...new Set(allPhrases.map(p => p.cat))];
+  const sel = document.getElementById("categorySelect");
+  sel.innerHTML = "";
+  cats.forEach(c => {
+    const opt = document.createElement("option");
+    opt.value = c;
+    opt.title = c;
+    opt.textContent = CATEGORY_ICONS[c] || "🏷️";
+    sel.appendChild(opt);
+  });
+  sel.addEventListener("change", () => {
+    stopPlayAll();
+    const val = sel.value;
+    data = (val === "Alle") ? allPhrases.slice() : allPhrases.filter(p => p.cat === val);
+    currentIndex = 0;
+    renderSlide();
+  });
+}
+
+// ---------- Voices ----------
+function loadVoices(){
+  voices = speechSynthesis.getVoices();
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+
+function pickVoiceFor(lang){
+  const match = voices.filter(v => v.lang && v.lang.toLowerCase().startsWith(lang));
+  return match[0] || null;
+}
+
+// ---------- Selector de idioma ----------
+function setupLangSelect(){
+  const sel = document.getElementById("langSelect");
+  sel.innerHTML = "";
+  Object.keys(langMeta).forEach(code => {
+    const opt = document.createElement("option");
+    opt.value = code;
+    opt.title = langMeta[code].label;
+    opt.textContent = langMeta[code].icon;
+    sel.appendChild(opt);
+  });
+  sel.value = currentLang;
+  sel.addEventListener("change", () => {
+    stopPlayAll();
+    currentLang = sel.value;
+    renderSlide();
+  });
+}
+
+// ---------- Speed ----------
+const SPEED_KEY = "wegweiser-speed";
+function initSpeedGroup(){
+  try{
+    const saved = parseFloat(localStorage.getItem(SPEED_KEY));
+    if(!isNaN(saved)) currentSpeed = saved;
+  }catch(e){}
+  const btns = document.querySelectorAll(".speed-btn");
+  btns.forEach(b => {
+    b.classList.toggle("active", parseFloat(b.dataset.speed) === currentSpeed);
+    b.addEventListener("click", () => {
+      currentSpeed = parseFloat(b.dataset.speed);
+      btns.forEach(x => x.classList.remove("active"));
+      b.classList.add("active");
+      try{ localStorage.setItem(SPEED_KEY, currentSpeed); }catch(e){}
+    });
+  });
+}
+
+// ---------- Speak ----------
+function highlightWordAt(lang, charIndex){
+  const block = document.querySelector(`.slide .${lang}`);
+  if(!block) return;
+  block.querySelectorAll(".word").forEach(w => {
+    const s = parseInt(w.dataset.start, 10);
+    const e = parseInt(w.dataset.end, 10);
+    if(charIndex >= s && charIndex < e){
+      w.classList.add("karaoke");
+    } else {
+      w.classList.remove("karaoke");
+    }
+  });
+}
+
+function clearHighlight(lang){
+  const block = document.querySelector(`.slide .${lang}`);
+  if(block) block.querySelectorAll(".word").forEach(w => w.classList.remove("karaoke"));
+}
+
+// ---------- Karaoke: resaltado por palabra ----------
+// Chrome (a diferencia de Firefox) suele NO disparar "boundary" por palabra
+// con muchas voces —especialmente las de alemán, que suelen ser de red—.
+// Por eso, si no llega ningún evento útil en los primeros ~250ms, se activa
+// un resaltado "sintético" calculado por tiempo estimado por palabra, para
+// que el karaoke funcione igual aunque el navegador no avise nada.
+let speakToken = 0;
+
+function estimateWordTimings(text, rate){
+  const charsPerSecond = 13 * (rate || 1); // ritmo aproximado de habla TTS
+  const tokens = [...text.matchAll(/\S+/g)];
+  return tokens.map(m => ({
+    start: m.index,
+    dur: Math.max(0.12, m[0].length / charsPerSecond)
+  }));
+}
+
+function runSyntheticKaraoke(text, lang, rate, myToken){
+  const words = estimateWordTimings(text, rate);
+  let i = 0;
+  function step(){
+    if(myToken !== speakToken) return; // se canceló o empezó otro speak
+    if(i >= words.length) return;
+    highlightWordAt(lang, words[i].start);
+    setTimeout(step, words[i].dur * 1000);
+    i++;
+  }
+  step();
+}
+
+function speak(text, lang, onEnd){
+  lang = lang || currentLang;
+  const myToken = ++speakToken;
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = langMeta[lang] ? langMeta[lang].code : "de-DE";
+  const voice = pickVoiceFor(lang);
+  if(voice) utter.voice = voice;
+  utter.rate = currentSpeed;
+
+  let boundaryOk = false;
+  let fallbackTimer = setTimeout(() => {
+    if(!boundaryOk) runSyntheticKaraoke(text, lang, currentSpeed, myToken);
+  }, 250);
+
+  utter.onboundary = (e) => {
+    if(e.name === "word" || e.name === undefined){
+      boundaryOk = true;
+      if(fallbackTimer){ clearTimeout(fallbackTimer); fallbackTimer = null; }
+      highlightWordAt(lang, e.charIndex);
+    }
+  };
+  utter.onend = () => {
+    if(fallbackTimer) clearTimeout(fallbackTimer);
+    if(myToken === speakToken) speakToken++; // invalida cualquier timer sintético colgado
+    clearHighlight(lang);
+    if(onEnd) onEnd();
+  };
+  utter.onerror = () => {
+    if(fallbackTimer) clearTimeout(fallbackTimer);
+    clearHighlight(lang);
+  };
+
+  speechSynthesis.cancel();
+  // Chrome: llamar speak() en el mismo tick que cancel() a veces rompe la
+  // nueva utterance. Un tick de diferencia lo evita.
+  setTimeout(() => speechSynthesis.speak(utter), 0);
+}
+
+function stopPlayAll(){
+  isPlayingAll = false;
+  isPlayingAllLangs = false;
+  speakToken++; // invalida cualquier resaltado sintético en curso
+  speechSynthesis.cancel();
+  document.getElementById("playAllBtn").textContent = "▶";
+  document.getElementById("playAllBtn").classList.remove("active");
+  document.getElementById("playAllLangsBtn").textContent = "🌐";
+  document.getElementById("playAllLangsBtn").classList.remove("active");
+  const s = document.querySelector(".slide");
+  if(s) s.classList.remove("playing");
+  ["de", "en", "es", "fr"].forEach(l => clearHighlight(l));
+}
+
+// ---------- Quiz (blank keywords) ----------
+function renderWords(text){
+  const tokens = [...text.matchAll(/\S+/g)];
+  let html = "";
+  let cursor = 0;
+  tokens.forEach((m) => {
+    const start = m.index;
+    html += text.slice(cursor, start); // espacios/preservar formato original
+    const raw = m[0];
+    const end = start + raw.length;
+    html += `<span class="word" data-start="${start}" data-end="${end}">${raw}</span>`;
+    cursor = end;
+  });
+  html += text.slice(cursor);
+  return html;
+}
+
+// ---------- Slide render ----------
+function renderSlide(){
+  if(data.length === 0){
+    document.getElementById("slideContainer").innerHTML = `<div class="slide"><div class="de">Keine Nachrichten in dieser Kategorie.</div></div>`;
+    document.getElementById("counter").textContent = "";
+    return;
+  }
+  const p = data[currentIndex];
+  const container = document.getElementById("slideContainer");
+  const active = (lang) => lang === currentLang ? " lang-active" : "";
+  container.innerHTML = `
+    <div class="slide">
+      <span class="cat-tag">${p.cat}</span>
+      <div class="de${active("de")}">${renderWords(p.de)}</div>
+      <div class="en${active("en")}">${renderWords(p.en)}</div>
+      <div class="es${active("es")}">${renderWords(p.es || "")}</div>
+      <div class="fr${active("fr")}">${renderWords(p.fr || "")}</div>
+    </div>
+  `;
+  document.getElementById("counter").textContent = `${currentIndex+1} / ${data.length}`;
+  markStudied(p);
+}
+
+// ---------- Play all ----------
+function playAllStep(){
+  if(!isPlayingAll) return;
+  if(playAllIndex >= data.length){
+    stopPlayAll();
+    return;
+  }
+  currentIndex = playAllIndex;
+  renderSlide();
+  const s = document.querySelector(".slide");
+  if(s) s.classList.add("playing");
+
+  speak(data[playAllIndex][currentLang], currentLang, () => {
+    if(!isPlayingAll) return;
+    playAllIndex++;
+    setTimeout(playAllStep, 400);
+  });
+}
+
+function startPlayAll(){
+  stopPlayAll();
+  isPlayingAll = true;
+  playAllIndex = 0;
+  document.getElementById("playAllBtn").textContent = "⏹";
+  document.getElementById("playAllBtn").classList.add("active");
+  playAllStep();
+}
+
+// ---------- Play all (los 3 idiomas: EN → DE → FR, por cada frase) ----------
+const PLAY_ALL_LANGS_SEQUENCE = ["en", "de", "es", "fr"];
+let playAllLangsIndex = 0;
+let playAllLangsSubIndex = 0;
+
+function setActiveLangBlock(lang){
+  document.querySelectorAll(".slide .de, .slide .en, .slide .es, .slide .fr").forEach(el => el.classList.remove("lang-active"));
+  document.querySelector(`.slide .${lang}`)?.classList.add("lang-active");
+}
+
+function advanceAllLangsStep(){
+  playAllLangsSubIndex++;
+  if(playAllLangsSubIndex >= PLAY_ALL_LANGS_SEQUENCE.length){
+    playAllLangsSubIndex = 0;
+    playAllLangsIndex++;
+  }
+  setTimeout(playAllLangsStep, 400);
+}
+
+function playAllLangsStep(){
+  if(!isPlayingAllLangs) return;
+  if(playAllLangsIndex >= data.length){
+    stopPlayAll();
+    return;
+  }
+  currentIndex = playAllLangsIndex;
+  renderSlide();
+  const s = document.querySelector(".slide");
+  if(s) s.classList.add("playing");
+
+  const lang = PLAY_ALL_LANGS_SEQUENCE[playAllLangsSubIndex];
+  const text = data[playAllLangsIndex][lang];
+
+  if(!text){
+    // p.ej. una frase sin traducción al francés: saltar ese idioma
+    advanceAllLangsStep();
+    return;
+  }
+
+  setActiveLangBlock(lang);
+  speak(text, lang, () => {
+    if(!isPlayingAllLangs) return;
+    advanceAllLangsStep();
+  });
+}
+
+function startPlayAllLangs(){
+  stopPlayAll();
+  isPlayingAllLangs = true;
+  playAllLangsIndex = 0;
+  playAllLangsSubIndex = 0;
+  document.getElementById("playAllLangsBtn").textContent = "⏹";
+  document.getElementById("playAllLangsBtn").classList.add("active");
+  playAllLangsStep();
+}
+
+// ---------- Repeat 3x (shadowing) ----------
+function repeatThreeTimes(){
+  stopPlayAll();
+  let count = 0;
+  function step(){
+    if(count >= 3) return;
+    count++;
+    speak(data[currentIndex][currentLang], currentLang, () => setTimeout(step, 500));
+  }
+  step();
+}
+
+// ---------- Navigation ----------
+function goPrev(){
+  stopPlayAll();
+  currentIndex = (currentIndex - 1 + data.length) % data.length;
+  renderSlide();
+}
+function goNext(){
+  stopPlayAll();
+  currentIndex = (currentIndex + 1) % data.length;
+  renderSlide();
+}
+
+document.getElementById("repeatBtn").addEventListener("click", repeatThreeTimes);
+
+document.getElementById("speakSlideBtn").addEventListener("click", () => {
+  stopPlayAll();
+  speak(data[currentIndex][currentLang], currentLang);
+});
+
+document.getElementById("playAllBtn").addEventListener("click", () => {
+  if(isPlayingAll){
+    stopPlayAll();
+  } else {
+    startPlayAll();
+  }
+});
+
+document.getElementById("playAllLangsBtn").addEventListener("click", () => {
+  if(isPlayingAllLangs){
+    stopPlayAll();
+  } else {
+    startPlayAllLangs();
+  }
+});
+
+// ---------- Vokabelspiel (repetición espaciada + recuerdo activo mixto) ----------
+// Principios usados:
+// - Efecto de generación (Bjork): a veces hay que ESCRIBIR la palabra, no solo
+//   reconocerla — producir cuesta más pero fija mucho mejor la memoria.
+// - Dificultad adaptativa (zona de desarrollo próximo): palabras nuevas se
+//   presentan como reconocimiento (opción múltiple); palabras ya vistas antes
+//   se piden escritas, que es más difícil.
+// - Codificación dual (Paivio): cada palabra combina texto + audio (TTS).
+// - Repetición espaciada tipo Leitner (curva del olvido de Ebbinghaus).
+// - Insumo comprensible (Krashen): la palabra siempre aparece en su oración real.
+// - Interleaving + variabilidad: el tipo de ejercicio cambia entre tarjetas.
+// - Tope diario fijo (evita sobrecarga cognitiva): nunca más de DAILY_GOAL
+//   palabras nuevas o de repaso en la misma sesión.
+const SRS_KEY = "wegweiser-vocab-srs";
+const DAILY_GOAL = 20;
+const BOX_DAYS = [0, 1, 3, 7, 16, 35]; // días hasta el próximo repaso por "caja"
+
+let srsState = {};
+let gameMode = false;
+let gameQueue = [];
+let gameIndex = 0;
+let gameStats = { seen: 0, again: 0, good: 0 };
+let cardStartTime = 0;
+
+function loadSRS(){
+  try{
+    const raw = localStorage.getItem(SRS_KEY);
+    srsState = raw ? JSON.parse(raw) : {};
+  }catch(e){
+    srsState = {};
+  }
+}
+function saveSRS(){
+  try{
+    localStorage.setItem(SRS_KEY, JSON.stringify(srsState));
+  }catch(e){
+    console.error("No se pudo guardar el progreso del juego", e);
+  }
+}
+function todayStr(){ return new Date().toISOString().slice(0, 10); }
+
+// ---------- Sonido de feedback (Web Audio, sin archivos) ----------
+let audioCtx = null;
+function playTone(freq, dur, type){
+  try{
+    audioCtx = audioCtx || new (window.AudioContext || window.webkitAudioContext)();
+    const osc = audioCtx.createOscillator();
+    const gain = audioCtx.createGain();
+    osc.type = type || "sine";
+    osc.frequency.value = freq;
+    gain.gain.value = 0.15;
+    osc.connect(gain); gain.connect(audioCtx.destination);
+    osc.start();
+    gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur);
+    osc.stop(audioCtx.currentTime + dur);
+  }catch(e){ /* silencioso si el navegador bloquea audio */ }
+}
+function soundCorrect(){ playTone(880, .12); setTimeout(() => playTone(1320, .15), 90); }
+function soundWrong(){ playTone(180, .25, "sawtooth"); }
+
+// Palabras vacías / muy frecuentes que no conviene fijar como "la palabra de la tarjeta":
+// en alemán los sustantivos van con mayúscula, así que un sustantivo capitalizado
+// es casi siempre más rentable de aprender que un adverbio o conjunción larga.
+const GERMAN_STOPWORDS = new Set([
+  "Diese","Dieser","Dieses","Diesen","Diesem","Diesbezüglich",
+  "Wegen","Nach","Über","Unter","Zwischen","Während","Trotzdem","Deshalb",
+  "Dennoch","Allerdings","Außerdem","Dadurch","Dabei","Damit","Danach",
+  "Bereits","Bislang","Insgesamt","Rund","Etwa","Mittlerweile","Zudem",
+  "Erneut","Weiterhin","Künftig","Zurzeit","Derzeit","Heute","Gestern",
+  "Morgen","Aktuell"
+]);
+
+function isUsableCandidate(w){
+  return w.length > 5 && !/^\d+$/.test(w) && !GERMAN_STOPWORDS.has(w);
+}
+
+// ---------- Glosario DE → EN (traducción + definición breve) ----------
+// Se cachea en localStorage para no repetir llamadas a APIs gratuitas.
+const GLOSS_KEY = "wegweiser-word-gloss";
+let glossCache = {};
+try{
+  glossCache = JSON.parse(localStorage.getItem(GLOSS_KEY) || "{}");
+}catch(e){ glossCache = {}; }
+
+function saveGlossCache(){
+  try{ localStorage.setItem(GLOSS_KEY, JSON.stringify(glossCache)); }catch(e){}
+}
+
+async function fetchWordGloss(deWord){
+  const key = deWord.toLowerCase();
+  if(glossCache[key] && glossCache[key].en) return glossCache[key];
+
+  let en = "";
+  let meaning = "";
+  try{
+    // 1) Traducción DE → EN con MyMemory (gratis, sin clave)
+    const tUrl = "https://api.mymemory.translated.net/get?q=" +
+      encodeURIComponent(deWord) + "&langpair=de|en";
+    const tResp = await fetch(tUrl);
+    if(tResp.ok){
+      const tData = await tResp.json();
+      en = (tData.responseData && tData.responseData.translatedText || "").trim();
+      // Evitar basura tipo "QUERY LENGTH LIMIT EXCEEDED"
+      if(/limit|exceeded|error/i.test(en)) en = "";
+    }
+  }catch(e){ /* offline o bloqueado */ }
+
+  if(en){
+    try{
+      // 2) Definición breve en inglés (Free Dictionary API)
+      const dUrl = "https://api.dictionaryapi.dev/api/v2/entries/en/" +
+        encodeURIComponent(en.split(/\s+/)[0].toLowerCase());
+      const dResp = await fetch(dUrl);
+      if(dResp.ok){
+        const dData = await dResp.json();
+        const entry = Array.isArray(dData) ? dData[0] : null;
+        if(entry && entry.meanings && entry.meanings[0]){
+          const m = entry.meanings[0];
+          const def = (m.definitions && m.definitions[0] && m.definitions[0].definition) || "";
+          const pos = m.partOfSpeech || "";
+          if(def) meaning = (pos ? "(" + pos + ") " : "") + def;
+        }
+      }
+    }catch(e){ /* definición opcional */ }
+  }
+
+  const result = { en: en || deWord, meaning: meaning };
+  glossCache[key] = result;
+  saveGlossCache();
+  return result;
+}
+
+function renderDefBox(containerSelector, deWord){
+  const host = typeof containerSelector === "string"
+    ? document.querySelector(containerSelector)
+    : containerSelector;
+  if(!host) return;
+  const box = document.createElement("div");
+  box.className = "word-def loading";
+  box.innerHTML = `
+    <p class="def-label">🇬🇧 English</p>
+    <p class="def-en">Loading…</p>
+    <p class="def-meaning"></p>`;
+  host.appendChild(box);
+
+  fetchWordGloss(deWord).then(g => {
+    box.classList.remove("loading");
+    box.querySelector(".def-en").textContent = g.en;
+    const mm = box.querySelector(".def-meaning");
+    if(g.meaning){
+      mm.textContent = g.meaning;
+    } else {
+      mm.style.display = "none";
+    }
+  }).catch(() => {
+    box.classList.remove("loading");
+    box.querySelector(".def-en").textContent = deWord;
+    box.querySelector(".def-meaning").style.display = "none";
+  });
+}
+
+function extractKeyword(text){
+  const words = text.split(/\s+/).map(w => w.replace(/[.,!?;:„“”"]/g, ""));
+  // 1) Preferir sustantivos: en alemán se escriben con mayúscula inicial.
+  //    Son el tipo de palabra con más "peso semántico" y más rentable de
+  //    memorizar primero (mayor valor comunicativo por palabra aprendida).
+  const nouns = words.filter(w => /^[A-ZÄÖÜ][a-zäöüßA-ZÄÖÜ]{4,}$/.test(w) && isUsableCandidate(w));
+  if(nouns.length > 0) return nouns.reduce((a, b) => (b.length > a.length ? b : a));
+  // 2) Si no hay sustantivo claro, usar la palabra de contenido más larga.
+  const candidates = words.filter(isUsableCandidate);
+  if(candidates.length === 0) return words[0] || "";
+  return candidates.reduce((a, b) => (b.length > a.length ? b : a));
+}
+
+function buildVocabPool(){
+  return allPhrases.map((p, i) => ({
+    word: extractKeyword(p.de),
+    de: p.de, en: p.en, es: p.es, fr: p.fr, cat: p.cat, idx: i
+  }));
+}
+
+function getCard(word){
+  if(!srsState[word]) srsState[word] = { box: 0, due: todayStr(), seen: 0, correct: 0 };
+  return srsState[word];
+}
+
+function rateCard(word, rating){
+  // rating: 0 = Nochmal, 1 = Schwer, 2 = Gut, 3 = Leicht
+  const card = getCard(word);
+  card.seen++;
+  if(rating === 0){
+    card.box = 0;
+  } else {
+    card.correct++;
+    const step = rating === 1 ? 1 : rating === 2 ? 2 : 3;
+    card.box = Math.min(BOX_DAYS.length - 1, card.box + step - 1);
+  }
+  const due = new Date();
+  due.setDate(due.getDate() + BOX_DAYS[card.box]);
+  card.due = due.toISOString().slice(0, 10);
+  saveSRS();
+}
+
+function buildTodayQueue(){
+  const pool = buildVocabPool();
+  const today = todayStr();
+  const due = [];
+  const brandNew = [];
+  pool.forEach(item => {
+    const s = srsState[item.word];
+    if(s){
+      if(s.due <= today) due.push({...item, box: s.box, isNew:false});
+    } else {
+      brandNew.push({...item, box: 0, isNew:true});
+    }
+  });
+  due.sort(() => Math.random() - 0.5);
+  brandNew.sort(() => Math.random() - 0.5);
+  // Prioridad: primero repasos pendientes, después palabras nuevas, tope diario fijo.
+  let queue = due.slice(0, DAILY_GOAL);
+  if(queue.length < DAILY_GOAL){
+    queue = queue.concat(brandNew.slice(0, DAILY_GOAL - queue.length));
+  }
+  return queue;
+}
+
+function maskWord(sentence, word){
+  const safe = word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const re = new RegExp(safe, "i");
+  const mask = "▁".repeat(Math.min(Math.max(word.length, 3), 10));
+  return sentence.replace(re, `<span class="blank">${mask}</span>`);
+}
+
+function normalize(s){
+  return s.toLowerCase().trim().replace(/[.,!?;:]/g, "");
+}
+
+function buildDistractors(correctWord, pool, n){
+  const others = pool.map(p => p.word).filter(w => w !== correctWord);
+  const shuffled = others.sort(() => Math.random() - 0.5);
+  return shuffled.slice(0, n);
+}
+
+function pickExerciseType(box){
+  // Caja baja / nueva → reconocimiento (opción múltiple).
+  // Caja ≥ 2 → producción (escribir la palabra), más exigente.
+  if(box >= 2) return "type";
+  return "choice";
+}
+
+function flashFeedback(correct){
+  const el = document.getElementById("gameContainer");
+  if(!el) return;
+  el.classList.remove("flash-correct", "flash-wrong");
+  el.classList.add(correct ? "flash-correct" : "flash-wrong");
+  setTimeout(() => el.classList.remove("flash-correct", "flash-wrong"), 400);
+}
+
+function enterGameMode(){
+  stopPlayAll();
+  gameMode = true;
+  loadSRS();
+  gameQueue = buildTodayQueue();
+  gameIndex = 0;
+  gameStats = { seen: 0, again: 0, good: 0 };
+  document.getElementById("slideContainer").style.display = "none";
+  document.getElementById("counter").textContent = "";
+  document.getElementById("hint").style.display = "none";
+  document.getElementById("gameContainer").style.display = "block";
+  renderGameCard();
+}
+
+function exitGameMode(){
+  gameMode = false;
+  document.getElementById("vocabBtn").classList.remove("active");
+  document.getElementById("gameContainer").style.display = "none";
+  document.getElementById("slideContainer").style.display = "";
+  document.getElementById("hint").style.display = "";
+  renderSlide();
+}
+
+function resolveAnswer(item, rating, wasCorrect){
+  rateCard(item.word, rating);
+  gameStats.seen++;
+  if(rating === 0){
+    gameStats.again++;
+    soundWrong();
+    flashFeedback(false);
+    // Repetición expandida DENTRO de la misma sesión (retrieval practice /
+    // expanding rehearsal): la palabra vuelve a aparecer pronto, no recién
+    // al día siguiente. El intervalo crece si se vuelve a fallar.
+    const retries = (item._retries || 0) + 1;
+    const offset = Math.min(3 + retries * 2, gameQueue.length);
+    const reinsertPos = Math.min(gameIndex + offset, gameQueue.length);
+    gameQueue.splice(reinsertPos, 0, {...item, isNew:false, _studied:true, _retries: retries});
+  }else{
+    gameStats.good++;
+    soundCorrect();
+    flashFeedback(true);
+  }
+  gameIndex++;
+  // Más tiempo para leer la definición EN antes de pasar a la siguiente tarjeta
+  setTimeout(renderGameCard, 1800);
+}
+
+// Fase de estudio antes de la primera prueba (encoding antes de retrieval).
+// Con material 100% nuevo, adivinar a ciegas genera errores que se fijan en
+// memoria (interferencia); mostrar la palabra una vez con audio+traducción
+// antes de testear reduce eso y aprovecha la codificación dual (Paivio).
+function renderStudyCard(item){
+  const container = document.getElementById("gameContainer");
+  const safe = item.word.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  const highlighted = item.de.replace(new RegExp(safe, "i"), `<strong style="color:var(--amber)">${item.word}</strong>`);
+  container.innerHTML = `
+    <div class="slide game-slide">
+      <span class="study-tag">✨ Neues Wort</span>
+      <p class="game-counter">Wort ${gameIndex + 1} / ${gameQueue.length} heute</p>
+      <div class="de game-sentence">${highlighted}</div>
+      <div class="study-word">${item.word}</div>
+      <div id="studyDefSlot"></div>
+      <p class="game-sub">${item.en} · ${item.es || ""} · ${item.fr || ""}</p>
+      <div class="game-actions"><button id="gameSpeakBtn" class="speak-btn">🔊</button></div>
+      <button id="continueStudyBtn" style="margin-top:16px;">Weiter ›</button>
+    </div>`;
+  renderDefBox("#studyDefSlot", item.word);
+  document.getElementById("gameSpeakBtn").addEventListener("click", () => speak(item.de, "de"));
+  speak(item.de, "de");
+  document.getElementById("continueStudyBtn").addEventListener("click", () => {
+    item._studied = true;
+    renderGameCard();
+  });
+}
+
+const CORRECT_MSGS = ["✅ Super!", "✅ Genau!", "✅ Sehr gut!", "✅ Klasse!"];
+const WRONG_MSGS = ["❌ Fast!", "❌ Weiter üben", "❌ Nächstes Mal!"];
+
+function renderGameCard(){
+  const container = document.getElementById("gameContainer");
+
+  if(gameQueue.length === 0){
+    container.innerHTML = `
+        <div class="slide game-slide">
+        <div class="de">🎉 Heute keine neuen Wörter.</div>
+        <p class="game-sub">Du hast heute schon alles wiederholt. Komm morgen wieder!</p>
+        <button id="exitGameBtn" style="margin-top:16px;">‹ Zurück zu den Nachrichten</button>
+      </div>`;
+      document.getElementById("exitGameBtn").addEventListener("click", exitGameMode);
+    return;
+  }
+
+  if(gameIndex >= gameQueue.length){
+    container.innerHTML = `
+        <div class="slide game-slide">
+        <span class="cat-tag">Fertig!</span>
+        <div class="de">${gameQueue.length} von ${DAILY_GOAL} Wörtern heute.</div>
+        <p class="game-sub">Gut: ${gameStats.good} · Nochmal üben: ${gameStats.again}</p>
+        <button id="exitGameBtn" style="margin-top:16px;">‹ Zurück zu den Nachrichten</button>
+      </div>`;
+      document.getElementById("exitGameBtn").addEventListener("click", exitGameMode);
+    return;
+  }
+
+  const item = gameQueue[gameIndex];
+
+  if(item.isNew && !item._studied){
+    renderStudyCard(item);
+    return;
+  }
+
+  const exType = pickExerciseType(item.box || 0);
+  const pool = buildVocabPool();
+  cardStartTime = Date.now();
+
+  if(exType === "choice"){
+    const options = buildDistractors(item.word, pool, 3).concat([item.word]).sort(() => Math.random() - 0.5);
+    container.innerHTML = `
+        <div class="slide game-slide">
+        <span class="cat-tag">${item.cat}</span>
+        <p class="game-counter">Wort ${gameIndex + 1} / ${gameQueue.length} heute</p>
+        <div class="de game-sentence">${maskWord(item.de, item.word)}</div>
+        <p class="game-sub">${item.en} · ${item.es || ""} · ${item.fr || ""}</p>
+        <div class="game-actions"><button id="gameSpeakBtn" class="speak-btn">🔊</button></div>
+        <div class="choice-grid">
+          ${options.map((w, i) => `<button class="choice-btn" data-idx="${i}">${w}</button>`).join("")}
+        </div>
+        <div id="gameDefSlot"></div>
+      </div>`;
+      document.getElementById("gameSpeakBtn").addEventListener("click", () => speak(item.de, "de"));
+    container.querySelectorAll(".choice-btn").forEach((btn, i) => {
+      btn.addEventListener("click", () => {
+        if(container.dataset.locked) return;
+        container.dataset.locked = "1";
+        const chosen = options[i];
+        const correct = chosen === item.word;
+        btn.classList.add(correct ? "correct" : "wrong");
+        if(!correct){
+          const correctIdx = options.indexOf(item.word);
+          container.querySelector(`.choice-btn[data-idx="${correctIdx}"]`)?.classList.add("correct");
+        }
+        container.querySelectorAll(".choice-btn").forEach(b => b.disabled = true);
+        speak(item.de, "de");
+        const msg = correct ? CORRECT_MSGS[Math.floor(Math.random()*CORRECT_MSGS.length)] : WRONG_MSGS[Math.floor(Math.random()*WRONG_MSGS.length)];
+        container.insertAdjacentHTML("beforeend", `<p class="feedback-msg">${msg}</p>`);
+        // Mostrar definición EN de la palabra correcta
+        const slot = document.getElementById("gameDefSlot");
+        if(slot) renderDefBox(slot, item.word);
+        delete container.dataset.locked;
+        resolveAnswer(item, correct ? 2 : 0, correct);
+      });
+    });
+  } else {
+    // Ejercicio de producción: el usuario ESCRIBE la palabra alemana.
+    container.innerHTML = `
+        <div class="slide game-slide">
+        <span class="cat-tag">${item.cat}</span>
+        <p class="game-counter">Wort ${gameIndex + 1} / ${gameQueue.length} heute</p>
+        <div class="de game-sentence">${maskWord(item.de, item.word)}</div>
+        <p class="game-word-label">Übersetzung: <strong>${item.en}</strong> · ${item.es || ""} · ${item.fr || ""}</p>
+        <div class="game-actions">
+          <button id="gameSpeakBtn" class="speak-btn">🔊</button>
+        </div>
+        <input type="text" id="typeInput" class="type-input" placeholder="Schreib das deutsche Wort…" autocomplete="off" autocapitalize="off">
+        <button id="submitTypeBtn" style="margin-top:10px;">Prüfen</button>
+        <div id="gameDefSlot"></div>
+      </div>`;
+      document.getElementById("gameSpeakBtn").addEventListener("click", () => speak(item.de, "de"));
+    const input = document.getElementById("typeInput");
+    input.focus();
+    const submit = () => {
+      const val = normalize(input.value);
+      const correct = val === normalize(item.word);
+      input.disabled = true;
+      document.getElementById("submitTypeBtn").disabled = true;
+      input.classList.add(correct ? "correct" : "wrong");
+      speak(item.de, "de");
+      const msg = correct
+        ? CORRECT_MSGS[Math.floor(Math.random()*CORRECT_MSGS.length)]
+        : `${WRONG_MSGS[Math.floor(Math.random()*WRONG_MSGS.length)]} · Richtig: ${item.word}`;
+      container.insertAdjacentHTML("beforeend", `<p class="feedback-msg">${msg}</p>`);
+      const slot = document.getElementById("gameDefSlot");
+      if(slot) renderDefBox(slot, item.word);
+      resolveAnswer(item, correct ? 3 : 0, correct); // escribir bien = "Leicht" (dominio más fuerte)
+    };
+    document.getElementById("submitTypeBtn").addEventListener("click", submit);
+    input.addEventListener("keydown", (e) => { if(e.key === "Enter") submit(); });
+  }
+}
+
+document.getElementById("vocabBtn").addEventListener("click", () => {
+  if(gameMode){
+    exitGameMode();
+  } else {
+    enterGameMode();
+    document.getElementById("vocabBtn").classList.add("active");
+  }
+});
+
+// ---------- Swipe gestures ----------
+// Se usa Pointer Events en vez de touchstart/touchend: en Chrome, cuando el
+// gesto es horizontal sobre un elemento con touch-action:pan-y, el navegador
+// puede cancelar la secuencia táctil (sin disparar touchend), por lo que el
+// swipe no funcionaba. Pointer Events no tienen ese problema.
+let pointerStartX = null;
+let pointerStartY = null;
+
+document.addEventListener("pointerdown", (e) => {
+  if(e.pointerType === "mouse") return; // el swipe es solo para dedo/lápiz
+  pointerStartX = e.clientX;
+  pointerStartY = e.clientY;
+});
+
+document.addEventListener("pointerup", (e) => {
+  if(gameMode) return; // en el juego se navega con botones, no con swipe
+  if(pointerStartX === null) return;
+  const diffX = e.clientX - pointerStartX;
+  const diffY = e.clientY - pointerStartY;
+  pointerStartX = null;
+  pointerStartY = null;
+  // Ignorar gestos más verticales que horizontales (scroll de la página).
+  if(Math.abs(diffX) > 50 && Math.abs(diffX) > Math.abs(diffY)){
+    if(diffX < 0) goNext(); else goPrev();
+  }
+});
+
+document.addEventListener("pointercancel", () => {
+  pointerStartX = null;
+  pointerStartY = null;
+});
+
+
+// ---------- Modo Gris / Nocturno ----------
+const GRAY_KEY = "wegweiser-gray-mode";
+function applyGrayMode(on){
+  document.body.classList.toggle("gray-mode", on);
+  document.getElementById("grayBtn").classList.toggle("active", on);
+}
+function initGrayMode(){
+  let on = false;
+  try{ on = localStorage.getItem(GRAY_KEY) === "1"; }catch(e){}
+  applyGrayMode(on);
+}
+document.getElementById("grayBtn").addEventListener("click", () => {
+  const on = !document.body.classList.contains("gray-mode");
+  applyGrayMode(on);
+  try{ localStorage.setItem(GRAY_KEY, on ? "1" : "0"); }catch(e){}
+});
+
+// ---------- Selector de fuente (noticias.json / guia_turistica.json / etc.) ----------
+const SOURCE_KEY = "wegweiser-source";
+function initSourceSelect(){
+  const sel = document.getElementById("sourceSelect");
+  try{
+    const saved = localStorage.getItem(SOURCE_KEY);
+    if(saved) currentSource = saved;
+  }catch(e){}
+  sel.value = currentSource;
+  sel.addEventListener("change", async () => {
+    currentSource = sel.value;
+    try{ localStorage.setItem(SOURCE_KEY, currentSource); }catch(e){}
+    await updateNewsFromJson();
+  });
+}
+
+// ---------- Update (recarga la fuente actual) ----------
+async function updateNewsFromJson(){
+  const btn = document.getElementById("updateBtn");
+  const originalText = "🔄";
+  btn.disabled = true;
+  btn.textContent = "⏳";
+
+  try{
+    const ok = await loadPhrasesFromJson(currentSource);
+    if(!ok) throw new Error("No se pudo leer " + currentSource);
+
+    data = allPhrases.slice();
+    currentIndex = 0;
+
+    setupCategories();
+    updateProgressBar();
+    renderSlide();
+
+    btn.textContent = "✅";
+  }catch(e){
+    console.error("Update fehlgeschlagen:", e);
+    btn.textContent = "❌";
+    alert("Aktualisierung fehlgeschlagen: " + e.message);
+  }finally{
+    setTimeout(() => {
+      btn.disabled = false;
+      btn.textContent = originalText;
+    }, 2500);
+  }
+}
+
+document.getElementById("updateBtn").addEventListener("click", updateNewsFromJson);
+
+
+// ---------- Init ----------
+async function init(){
+  initGrayMode();
+  initSpeedGroup();
+  initSourceSelect();
+  await loadPhrasesFromJson(currentSource);
+  data = allPhrases.slice();
+  setupCategories();
+  setupLangSelect();
+  await loadProgress();
+  renderSlide();
+}
+init();
+</script>
+
+<script>
+// ---------------------------------------------------------------------
+// Botones "Actualizar datos": corren generar.py sin que tengas que
+// entrar a Termux y escribir el comando a mano.
+//   🖥️🔄 Local    -> llama al server_local.py corriendo en Termux
+//   ☁️🔄 En línea -> llama al worker (val.town) que dispara el GitHub Action
+//   El selector "regenModeSelect" define QUÉ se actualiza:
+//     🔄 Todo      -> noticias + las cuatro listas (banco rotativo de 100)
+//     📰 Noticias  -> solo noticias.json (feed de Tagesschau)
+//     📚 Listas    -> arví + colombia + guía + básico (rotan según el día)
+// ---------------------------------------------------------------------
+
+const URL_SERVIDOR_LOCAL = "http://localhost:8765/generar";
+const URL_WORKER_ONLINE  = "https://giomont--1eff9dde8dc611f19bf51607ee4eb77e.web.val.run";
+// ^ reemplazá TU-USUARIO por el subdominio real que te dé Cloudflare Worker.
+
+function modoDeActualizacion() {
+  const sel = document.getElementById("regenModeSelect");
+  return sel ? sel.value : "all";
+}
+
+const MODO_LABEL = { all: "todo", noticias: "noticias", listas: "listas" };
+
+async function regenerarLocal() {
+  const btn = document.getElementById("regenLocalBtn");
+  const original = btn.textContent;
+  const modo = modoDeActualizacion();
+  btn.textContent = "⏳";
+  btn.disabled = true;
+  try {
+    const r = await fetch(URL_SERVIDOR_LOCAL + "?modo=" + encodeURIComponent(modo));
+    const data = await r.json();
+    alert(data.ok
+      ? "✓ generar.py " + MODO_LABEL[modo] + " corrió OK (local)"
+      : "✗ Error: " + data.error);
+  } catch (e) {
+    alert("✗ No se pudo conectar al servidor local.\n¿Está corriendo server_local.py en Termux?");
+  } finally {
+    btn.textContent = original;
+    btn.disabled = false;
+  }
+}
+
+async function regenerarOnline() {
+  const btn = document.getElementById("regenOnlineBtn");
+  const original = btn.textContent;
+  const modo = modoDeActualizacion();
+  btn.textContent = "⏳";
+  btn.disabled = true;
+  try {
+    const r = await fetch(URL_WORKER_ONLINE, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ modo }),
+    });
+    const data = await r.json();
+    alert(data.ok
+      ? "✓ Actualización (" + MODO_LABEL[modo] + ") disparada en GitHub Actions.\nLos JSON se actualizarán en 1-2 min."
+      : "✗ Error al disparar el workflow (status " + data.status + ")");
+  } catch (e) {
+    alert("✗ No se pudo contactar al worker.");
+  } finally {
+    btn.textContent = original;
+    btn.disabled = false;
+  }
+}
+
+document.getElementById("regenLocalBtn").addEventListener("click", regenerarLocal);
+document.getElementById("regenOnlineBtn").addEventListener("click", regenerarOnline);
+</script>
+
+</body>
+</html>

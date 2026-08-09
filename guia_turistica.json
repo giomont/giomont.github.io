@@ -1,142 +1,142 @@
 [
   {
-    "de": "Entschuldigung, wo ist der Bahnhof?",
-    "en": "Excuse me, where is the train station?",
-    "es": "Disculpe, ¿dónde está la estación?",
-    "fr": "Excusez-moi, où est la gare ?",
-    "cat": "Orientierung"
-  },
-  {
-    "de": "Ich hätte gerne ein Zimmer für zwei Nächte.",
-    "en": "I would like a room for two nights.",
-    "es": "Me gustaría una habitación para dos noches.",
-    "fr": "J'aimerais une chambre pour deux nuits.",
-    "cat": "Hotel"
-  },
-  {
-    "de": "Können Sie mir den Weg zum Museum zeigen?",
-    "en": "Can you show me the way to the museum?",
-    "es": "¿Puede mostrarme el camino al museo?",
-    "fr": "Pouvez-vous me montrer le chemin du musée ?",
-    "cat": "Orientierung"
-  },
-  {
-    "de": "Die Rechnung, bitte.",
-    "en": "Check, please.",
-    "es": "La cuenta, por favor.",
-    "fr": "J'aimerais la note, je vous prie.",
-    "cat": "Restaurant"
-  },
-  {
-    "de": "Haben Sie eine Speisekarte auf Englisch?",
-    "en": "(Do you have a menu in English?)",
-    "es": "¿Tienes una carta en inglés?",
-    "fr": "Avez-vous un menu en anglais ?",
-    "cat": "Restaurant"
-  },
-  {
-    "de": "Wie viel kostet ein Ticket für die U-Bahn?",
-    "en": "How much does a ticket for the metro cost?",
-    "es": "¿Cuánto cuesta un billete de metro?",
-    "fr": "Combien coûte un ticket de métro ?",
+    "de": "Gibt es eine direkte Verbindung zum Flughafen?",
+    "en": "Is there a direct connection to the airport?",
+    "es": "¿Hay conexión directa con el aeropuerto?",
+    "fr": "Existe-t-il une liaison directe avec l'aéroport ?",
     "cat": "Transport"
   },
   {
-    "de": "Ich brauche einen Arzt.",
-    "en": "I need a medic.",
-    "es": "Necesito a un médico.",
-    "fr": "J'ai besoin d'un médecin !",
+    "de": "Ist dieser Sitzplatz noch frei?",
+    "en": "Is this seat still available?",
+    "es": "¿Está libre este puesto?",
+    "fr": "Ce siège est-il encore disponible ?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Wie lange dauert die Fahrt bis zur Küste?",
+    "en": "How long does it take to get to the coast?",
+    "es": "¿Cuánto dura el trayecto hasta la costa?",
+    "fr": "Combien de temps dure le trajet jusqu'à la côte ?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Kann ich das Ticket im Voraus reservieren?",
+    "en": "Can I reserve the ticket in advance?",
+    "es": "¿Puedo reservar la entrada con antelación?",
+    "fr": "Puis-je réserver le billet à l'avance ?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Fährt dieser Bus zum Stadtzentrum?",
+    "en": "Is this bus going to the city centre?",
+    "es": "¿Este autobús va al centro de la ciudad?",
+    "fr": "Ce bus va-t-il au centre-ville ?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Wo finde ich einen Taxistand?",
+    "en": "Where can I find a taxi rank?",
+    "es": "¿Dónde puedo encontrar una parada de taxis?",
+    "fr": "Où puis-je trouver une station de taxis ?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Gibt es einen Fahrradverleih in der Nähe?",
+    "en": "Is there a bike rental nearby?",
+    "es": "¿Hay un servicio de alquiler de bicicletas cerca?",
+    "fr": "Y a-t-il un service de location de vélos à proximité ?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Muss ich hier umsteigen?",
+    "en": "Do I have to change here?",
+    "es": "¿Tengo que hacer un trasbordo?",
+    "fr": "Dois-je changer ici ?",
+    "cat": "Transport"
+  },
+  {
+    "de": "Rufen Sie bitte sofort einen Krankenwagen!",
+    "en": "Please call an ambulance immediately!",
+    "es": "¡Llame a una ambulancia de inmediato!",
+    "fr": "Appelez une ambulance immédiatement !",
     "cat": "Notfälle"
   },
   {
-    "de": "Sprechen Sie Englisch?",
-    "en": "Do You speak English?",
-    "es": "¿Habla usted inglés?",
-    "fr": "Parlez-vous anglais ?",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Könnten Sie das bitte wiederholen?",
-    "en": "Can you repeat that, please?",
-    "es": "¿Podría repetirlo por favor?",
-    "fr": "Pourriez-vous répéter ça s’il vous plaît ?",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Wo kann ich Geld wechseln?",
-    "en": "Where to change money?",
-    "es": "¿Dónde puedo cambiar dinero?",
-    "fr": "Où puis-je changer de l'argent ?",
-    "cat": "Geld"
-  },
-  {
-    "de": "Ist das WLAN kostenlos?",
-    "en": "Is Wi-Fi free?",
-    "es": "¿Es gratuito el wifi?",
-    "fr": "C'est gratuit ?",
-    "cat": "Hotel"
-  },
-  {
-    "de": "Um wie viel Uhr öffnet das Museum?",
-    "en": "What time does the museum open?",
-    "es": "¿A qué hora abre el museo?",
-    "fr": "À quelle heure le musée ouvre-t-il ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Ich bin allergisch gegen Nüsse.",
-    "en": "I'm allergic to nuts.",
-    "es": "Soy alérgico a las nueces.",
-    "fr": "Je suis allergique aux noix.",
-    "cat": "Restaurant"
-  },
-  {
-    "de": "Können Sie mir ein Taxi rufen?",
-    "en": "Can you call a taxi for me?",
-    "es": "¿Puede llamarme un taxi?",
-    "fr": "Pouvez-vous m'appeler un taxi ?",
-    "cat": "Transport"
-  },
-  {
-    "de": "Wo ist die nächste Apotheke?",
-    "en": "Where's the nearest drugstore?",
-    "es": "¿Dónde está la farmacia más cercana?",
-    "fr": "Où se trouve la pharmacie la plus proche ?",
+    "de": "Ich habe meinen Reisepass verloren.",
+    "en": "I lost my passport.",
+    "es": "He perdido mi pasaporte.",
+    "fr": "J'ai malheureusement perdu mon passeport !",
     "cat": "Notfälle"
   },
   {
-    "de": "Ich möchte eine Stadtführung buchen.",
-    "en": "I want to book a city tour.",
-    "es": "Quiero reservar una visita guiada por la ciudad.",
-    "fr": "Je souhaite réserver une visite guidée de la ville.",
-    "cat": "Sehenswürdigkeiten"
+    "de": "Wo ist das nächste Krankenhaus?",
+    "en": "Where is the nearest Pharmacy?",
+    "es": "¿Dónde está el hospital más cercano?",
+    "fr": "Où se trouve l'hôpital le plus proche ?",
+    "cat": "Notfälle"
   },
   {
-    "de": "Haben Sie vegetarische Gerichte?",
-    "en": "- Do you have any vegetarian meals?",
-    "es": "¿Tienes platos vegetarianos?",
-    "fr": "Avez-vous aussi des plats végétariens ?",
-    "cat": "Restaurant"
+    "de": "Ich habe mich verletzt, können Sie mir helfen?",
+    "en": "I hurt myself, can you help me?",
+    "es": "Me he hecho daño, ¿puede ayudarme?",
+    "fr": "Je me suis blessé, pouvez-vous m'aider ?",
+    "cat": "Notfälle"
   },
   {
-    "de": "Wie komme ich zum Flughafen?",
-    "en": "How do I get to the airport?",
-    "es": "¿Cómo llego al aeropuerto?",
-    "fr": "comment se rendre à l'aéroport",
-    "cat": "Transport"
+    "de": "Bitte rufen Sie die Polizei.",
+    "en": "Please call the police.",
+    "es": "Por favor, llame a la policía.",
+    "fr": "Veuillez appeler la police.",
+    "cat": "Notfälle"
   },
   {
-    "de": "Könnten Sie langsamer sprechen, bitte?",
-    "en": "Could you speak more slowly?",
-    "es": "¿Podría hablar más despacio, por favor?",
-    "fr": "Pourriez-vous parler plus lentement, s'il vous plaît ?",
+    "de": "Mir ist schlecht, ich brauche einen Arzt.",
+    "en": "I'm sick, I need a doctor.",
+    "es": "Me siento mal, necesito un médico.",
+    "fr": "J'ai mal, j'ai besoin d'un médecin.",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Gibt es hier eine Notaufnahme?",
+    "en": "Is there an emergency room here?",
+    "es": "¿Hay una sala de emergencias aquí?",
+    "fr": "Y a-t-il une salle d'urgence ici ?",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Mein Gepäck wurde gestohlen.",
+    "en": "My luggage was stolen.",
+    "es": "Mi equipaje ha sido robado.",
+    "fr": "Mes bagages ont été volés.",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Ich habe eine allergische Reaktion.",
+    "en": "I have an allergic reaction.",
+    "es": "Tengo una reacción alérgica.",
+    "fr": "J'ai une réaction allergique.",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Wo finde ich die nächste Feuerwache?",
+    "en": "Where can I find the nearest fire station?",
+    "es": "¿Dónde puedo encontrar la estación de bomberos más cercana?",
+    "fr": "Où puis-je trouver la caserne de pompiers la plus proche ?",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Ich verstehe leider nur ein bisschen Deutsch.",
+    "en": "Unfortunately, I only understand a little German.",
+    "es": "Lamentablemente, solo entiendo un poco de alemán.",
+    "fr": "Malheureusement, je ne comprends qu'un peu l'allemand.",
     "cat": "Kommunikation"
   },
   {
-    "de": "Vielen Dank für Ihre Hilfe!",
-    "en": "Thank you very much for your help!",
-    "es": "Muchas gracias por su ayuda.",
-    "fr": "Je vous remercie pour votre aide !",
+    "de": "Können Sie das bitte aufschreiben?",
+    "en": "Can you write that down please?",
+    "es": "¿Puede escribirlo, por favor?",
+    "fr": "Pouvez-vous l'écrire s'il vous plait ?",
     "cat": "Kommunikation"
   }
 ]
