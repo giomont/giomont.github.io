@@ -1,5 +1,19 @@
 [
   {
+    "de": "Hamburgs Bürgermeister Tschentscher kritisiert schwarz-rote Steuerpolitik",
+    "en": "Hamburg Mayor Tschentscher criticises black and red tax policy",
+    "es": "El alcalde de Hamburgo, Tschentscher, critica la política fiscal negra y roja",
+    "fr": "Le maire de Hambourg Tschentscher critique la politique fiscale rouge et noire",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Russlands Krieg in der Ukraine: Stundenlanger Luftalarm in Odessa",
+    "en": "Russia's War in Ukraine: Hours of Air Alarm in Odessa",
+    "es": "Guerra de Rusia en Ucrania: Alarma aérea de una hora en Odessa",
+    "fr": "Guerre de Russie en Ukraine : des heures d'alarme aérienne à Odessa",
+    "cat": "Welt"
+  },
+  {
     "de": "Brasilien: Abholzung im Amazonas auf Zehnjahrestief",
     "en": "Brazil: Amazon deforestation at 10-year low",
     "es": "Brasil: deforestación en la Amazonía a un mínimo de diez años",
@@ -124,19 +138,5 @@
     "es": "¿Puede el nuevo primer ministro británico acabar con la falta de vivienda en Burnham?",
     "fr": "Le nouveau Premier ministre britannique Burnham peut-il mettre fin à l'itinérance ?",
     "cat": "Sport"
-  },
-  {
-    "de": "Italien: Waldbrand am Westufer des Gardasees ausgebrochen",
-    "en": "Italy: Forest fire breaks out on the western shore of Lake Garda",
-    "es": "Italia: estalló un incendio forestal en la orilla oeste del lago de Garda",
-    "fr": "Italie : un incendie de forêt s'est déclaré sur la rive ouest du lac de Garde",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Ukraine: Schutzlos gegen ballistische Raketen",
-    "en": "Ukraine: Defenseless against ballistic missiles",
-    "es": "Ucrania: indefensa contra los misiles balísticos",
-    "fr": "Ukraine : sans défense contre les missiles balistiques",
-    "cat": "Welt"
   }
 ]
