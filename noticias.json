@@ -1,5 +1,26 @@
 [
   {
+    "de": "KI braucht Rechenzentren - aber welche braucht Deutschland?",
+    "en": "AI needs data centers - but which one does Germany need?",
+    "es": "La IA necesita centros de datos, pero ¿cuál necesita Alemania?",
+    "fr": "L'IA a besoin de centres de données - mais de quoi l'Allemagne a-t-elle besoin ?",
+    "cat": "Welt"
+  },
+  {
+    "de": "Kampf gegen Geldwäsche und Steuerbetrug: Wenn der Zoll den Porsche beschlagnahmt",
+    "en": "Fight against money laundering and tax fraud: When customs seize the Porsche",
+    "es": "Lucha contra el blanqueo de dinero y el fraude fiscal: cuando las aduanas se apoderan del Porsche",
+    "fr": "Lutte contre le blanchiment d'argent et la fraude fiscale : lorsque les douanes saisissent la Porsche",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Juni und Juli waren in Westeuropa so warm wie noch nie",
+    "en": "June and July were warmer than ever in Western Europe",
+    "es": "Junio y julio han sido más cálidos que nunca en Europa occidental",
+    "fr": "Juin et juillet ont été plus chauds que jamais en Europe occidentale",
+    "cat": "Wirtschaft"
+  },
+  {
     "de": "Niedrigwasser: Binnenschiffer warnen vor Zweiteilung des Rheins",
     "en": "Low water: Inland boatmen warn of the division of the Rhine",
     "es": "Aguas bajas: los navegantes advierten contra la división del Rin",
@@ -117,26 +138,5 @@
     "es": "Brasil: deforestación en la Amazonía a un mínimo de diez años",
     "fr": "Brésil : la déforestation en Amazonie à son plus bas niveau depuis dix ans",
     "cat": "Welt"
-  },
-  {
-    "de": "Straße von Hormus: Iran pocht auf Zugeständnisse der USA",
-    "en": "Strait of Hormuz: Iran insists on US concessions",
-    "es": "Estrecho de Ormuz: Irán insiste en las concesiones de Estados Unidos",
-    "fr": "Détroit d'Ormuz : l'Iran insiste sur les concessions américaines",
-    "cat": "Welt"
-  },
-  {
-    "de": "Bilger will Gehälter von Bahnmanagern an Ziele knüpfen",
-    "en": "Bilger wants to link salaries of railway managers to targets",
-    "es": "Bilger quiere vincular los salarios de los gerentes ferroviarios a los objetivos",
-    "fr": "Bilger veut lier les salaires des gestionnaires de chemins de fer à des objectifs",
-    "cat": "Welt"
-  },
-  {
-    "de": "Wie sich Krankenhäuser auf Demenz-Patienten einstellen",
-    "en": "How hospitals are adapting to dementia patients",
-    "es": "Cómo se adaptan los hospitales a los pacientes con demencia",
-    "fr": "Comment les hôpitaux s'adaptent aux patients atteints de démence",
-    "cat": "Sport"
   }
 ]
