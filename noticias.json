@@ -1,16 +1,58 @@
 [
   {
+    "de": "Anteil junger Menschen in Deutschland bleibt historisch niedrig",
+    "en": "Percentage of young people in Germany remains historically low",
+    "es": "La proporción de jóvenes en Alemania sigue siendo históricamente baja",
+    "fr": "La proportion de jeunes en Allemagne reste historiquement faible",
+    "cat": "Sport"
+  },
+  {
+    "de": "Auch Bilger will Drohnenabwehr an deutschen Flughäfen verbessern",
+    "en": "Bilger also wants to improve drone defense at German airports",
+    "es": "Bilger también quiere mejorar la defensa contra drones en los aeropuertos alemanes",
+    "fr": "Bilger veut également améliorer la défense contre les drones dans les aéroports allemands",
+    "cat": "Welt"
+  },
+  {
+    "de": "Marktbericht: DAX rückt vorsichtig vor",
+    "en": "Market report: DAX advances cautiously",
+    "es": "Informe de mercado: Dax avanza con cautela",
+    "fr": "Rapport de marché : le DAX avance prudemment",
+    "cat": "Welt"
+  },
+  {
+    "de": "IfW-Präsident wirft Pistorius falsche Investitionen in Bundeswehr vor",
+    "en": "IfW President accuses Pistorius of false investments in the Bundeswehr",
+    "es": "El presidente del IfW acusa a Pistorius de invertir incorrectamente en la Bundeswehr",
+    "fr": "Le président de l'IfW accuse Pistorius de faux investissements dans la Bundeswehr",
+    "cat": "Sport"
+  },
+  {
+    "de": "Nach tagelangem Regen: Mindestens 15 Tote auf den Philippinen",
+    "en": "After days of rain: At least 15 dead in the Philippines",
+    "es": "Después de días de lluvia: al menos 15 muertos en Filipinas",
+    "fr": "Après des jours de pluie : au moins 15 morts aux Philippines",
+    "cat": "Sport"
+  },
+  {
+    "de": "Fast 30 Jahre nach Mord an Tupac Shakur: Prozessbeginn in Los Angeles",
+    "en": "Nearly 30 years after the murder of Tupac Shakur: Trial begins in Los Angeles",
+    "es": "Casi 30 años después del asesinato de Tupac Shakur: inicio del juicio en Los Ángeles",
+    "fr": "Près de 30 ans après l'assassinat de Tupac Shakur : début du procès à Los Angeles",
+    "cat": "Welt"
+  },
+  {
+    "de": "Trump setzt auf wirtschaftlichen Druck gegen Iran",
+    "en": "Trump relies on economic pressure against Iran",
+    "es": "Trump presiona económicamente a Irán",
+    "fr": "Trump mise sur la pression économique contre l'Iran",
+    "cat": "Wirtschaft"
+  },
+  {
     "de": "Weltweit 350 Hilfskräfte bei humanitären Einsätzen getötet",
     "en": "350 aid workers killed in humanitarian operations worldwide",
     "es": "350 trabajadores humanitarios asesinados en operaciones humanitarias en todo el mundo",
     "fr": "350 travailleurs humanitaires tués dans des opérations humanitaires dans le monde",
-    "cat": "Welt"
-  },
-  {
-    "de": "Marktbericht: DAX bleibt in der Nähe des Allzeithochs",
-    "en": "Market Report: DAX Remains Near All-Time High",
-    "es": "Informe de mercado: el Dax se mantiene cerca del máximo histórico",
-    "fr": "Rapport de marché : le DAX reste proche du plus haut historique",
     "cat": "Welt"
   },
   {
@@ -96,47 +138,5 @@
     "es": "El festival callejero \"Hey Hillbrow! Let’s Dlala!\" anima un barrio problemático",
     "fr": "La fête de rue « Hey Hillbrow ! Let's Dlala ! » anime un quartier à problèmes",
     "cat": "Sport"
-  },
-  {
-    "de": "Bilger will Boni bei der Bahn mehr an Ziele knüpfen - und bekommt Zuspruch",
-    "en": "Bilger wants to link bonuses at the railway more to goals - and gets encouragement",
-    "es": "Bilger quiere vincular las bonificaciones en el ferrocarril más a los objetivos, y recibe apoyo",
-    "fr": "Bilger veut lier davantage les bonus au chemin de fer à des objectifs - et reçoit un accueil favorable",
-    "cat": "Welt"
-  },
-  {
-    "de": "Afghanistan - Tourismus bei den Taliban",
-    "en": "Afghanistan - Tourism with the Taliban",
-    "es": "Afganistán - Turismo talibán",
-    "fr": "Afghanistan - Le tourisme chez les Taliban",
-    "cat": "Welt"
-  },
-  {
-    "de": "Waldbrand am Gardasee unter Kontrolle",
-    "en": "Forest fire on Lake Garda under control",
-    "es": "Incendio forestal en el lago de Garda bajo control",
-    "fr": "Incendie de forêt sur le lac de Garde sous contrôle",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Ganztagsbetreuuung: Kraftakt für Kommunen - Gewinn für Kinder",
-    "en": "All-day care: strength for municipalities - profit for children",
-    "es": "Asistencia durante todo el día: esfuerzo para los municipios - beneficio para los niños",
-    "fr": "Garde d'enfants toute la journée : un tour de force pour les communes - un gain pour les enfants",
-    "cat": "Welt"
-  },
-  {
-    "de": "Schiffswrack aus der Römerzeit: Hunderte antike Krüge vor Sizilien gefunden",
-    "en": "Roman Shipwreck: Hundreds of Ancient Jars Found Off Sicily",
-    "es": "Naufragio de la época romana: cientos de jarras antiguas encontradas frente a Sicilia",
-    "fr": "Naufrage de l'époque romaine : des centaines de jarres antiques trouvées au large de la Sicile",
-    "cat": "Welt"
-  },
-  {
-    "de": "EU-Außengrenze in Lettland: Wo sich Ceuta nicht wiederholen soll",
-    "en": "EU external border in Latvia: where Ceuta should not repeat itself",
-    "es": "Frontera exterior de la UE en Letonia: donde Ceuta no debe repetirse",
-    "fr": "Frontière extérieure de l'UE en Lettonie : où Ceuta ne doit pas se répéter",
-    "cat": "Welt"
   }
 ]
