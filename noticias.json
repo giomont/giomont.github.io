@@ -1,5 +1,33 @@
 [
   {
+    "de": "Gold ist wieder gefragt: Zehn Prozent über Jahrestiefstpreis",
+    "en": "Gold is in demand again: ten percent above annual low price",
+    "es": "El oro vuelve a estar en demanda: un diez por ciento por encima del precio mínimo anual",
+    "fr": "L'or est à nouveau demandé : dix pour cent au-dessus du prix le plus bas annuel",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Klingbeils Steuerpläne stoßen auf Kritik - auch aus der Union",
+    "en": "Klingbeil's tax plans meet with criticism - also from the Union",
+    "es": "Los planes fiscales de Klingbeil reciben críticas, también de la Unión",
+    "fr": "Les plans fiscaux de Klingbeil font l'objet de critiques, y compris de la part de l'Union",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Europas aktivster Vulkan Ätna spuckt wieder Asche und Lava",
+    "en": "Europe's most active volcano Etna is spewing ash and lava again",
+    "es": "El volcán más activo de Europa, el Etna, vuelve a escupir ceniza y lava",
+    "fr": "Le volcan Etna le plus actif d'Europe crache à nouveau des cendres et de la lave",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "DB Regio: 989 Übergriffe auf Zugbegleiter im ersten Halbjahr",
+    "en": "DB Regio: 989 attacks on train attendants in the first half of the year",
+    "es": "DB Regio: 989 ataques a los asistentes de tren en la primera mitad del año",
+    "fr": "DB Regio : 989 agressions contre des agents de train au premier semestre",
+    "cat": "Welt"
+  },
+  {
     "de": "VdP-Zahlen: Mieten in Deutschland ziehen deutlich an",
     "en": "VdP figures: Rents in Germany are rising significantly",
     "es": "Números de VdP: los alquileres en Alemania están aumentando significativamente",
@@ -110,33 +138,5 @@
     "es": "Aguas bajas: los navegantes advierten contra la división del Rin",
     "fr": "Basses eaux : les bateliers mettent en garde contre la division du Rhin en deux",
     "cat": "Welt"
-  },
-  {
-    "de": "Erneut Waldbrände in Spanien und Frankreich ausgebrochen",
-    "en": "Forest fires erupted again in Spain and France",
-    "es": "Nuevos incendios forestales en España y Francia",
-    "fr": "De nouveaux incendies de forêt ont éclaté en Espagne et en France",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Pentagon ruft Rüstungsindustrie zu schnellerer Waffenproduktion auf",
-    "en": "Pentagon calls for arms industry to produce weapons faster",
-    "es": "El Pentágono pide a la industria armamentística que acelere la producción de armas",
-    "fr": "Le Pentagone appelle l'industrie de l'armement à accélérer la production d'armes",
-    "cat": "Welt"
-  },
-  {
-    "de": "Selenskyj droht mit \"angemessener Antwort\" auf russische Angriffe",
-    "en": "Zelensky threatens with \"adequate response\" to Russian attacks",
-    "es": "Zelensky amenaza con una \"respuesta adecuada\" a los ataques rusos",
-    "fr": "Zelensky menace d'une « réponse appropriée » aux attaques russes",
-    "cat": "Sport"
-  },
-  {
-    "de": "Linken-Chef Pantisano schließt Unterstützung für CDU in Sachsen-Anhalt nicht aus",
-    "en": "Left Party leader Pantisano does not rule out support for the CDU in Saxony-Anhalt",
-    "es": "El líder de La Izquierda Pantisano no excluye el apoyo a la CDU en Sajonia-Anhalt",
-    "fr": "Le chef de la gauche Pantisano n'exclut pas le soutien à la CDU en Saxe-Anhalt",
-    "cat": "Politik"
   }
 ]
