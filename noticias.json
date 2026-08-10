@@ -1,5 +1,103 @@
 [
   {
+    "de": "Iran erwägt Gebühren für \"Dienstleistungen\" in Straße von Hormus",
+    "en": "Iran considers fees for 'services' in Strait of Hormuz",
+    "es": "Irán está considerando cobrar por \"servicios\" en el Estrecho de Ormuz",
+    "fr": "L'Iran envisage de facturer des « services » dans le détroit d'Ormuz",
+    "cat": "Welt"
+  },
+  {
+    "de": "Partielle Sonnenfinsternis: So schützen Sie Ihre Augen",
+    "en": "Partial Solar Eclipse: How to Protect Your Eyes",
+    "es": "Eclipse solar parcial: cómo proteger tus ojos",
+    "fr": "Éclipse solaire partielle : comment protéger vos yeux",
+    "cat": "Welt"
+  },
+  {
+    "de": "Spanien: Vorfreude auf Sonnenfinsternis, Angst vor Waldbränden",
+    "en": "Spain: Anticipation of solar eclipse, fear of forest fires",
+    "es": "España: Anticipación al eclipse solar, miedo a los incendios forestales",
+    "fr": "Espagne : anticipation de l'éclipse, peur des feux de forêt",
+    "cat": "Umwelt"
+  },
+  {
+    "de": "Dürre in Europa: Ernteausfälle, trockene Flüsse und Wassersparen",
+    "en": "Drought in Europe: crop failures, dry rivers and water savings",
+    "es": "Sequía en Europa: pérdidas de cultivos, ríos secos y ahorro de agua",
+    "fr": "Sécheresse en Europe : mauvaises récoltes, rivières sèches et économies d'eau",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Marktbericht: DAX verteidigt jüngste Gewinne",
+    "en": "Market report: DAX defends recent gains",
+    "es": "Informe de mercado: Dax defiende los últimos beneficios",
+    "fr": "Rapport de marché : le DAX défend les gains récents",
+    "cat": "Welt"
+  },
+  {
+    "de": "Kulturstaatsminister Weimer will mehr Fördergelder für Gedenkstätten",
+    "en": "Minister of State for Culture Weimer wants more funding for memorial sites",
+    "es": "El Ministro de Cultura Weimer quiere más subvenciones para los lugares conmemorativos",
+    "fr": "Le ministre de la Culture Weimer veut plus de subventions pour les sites commémoratifs",
+    "cat": "Politik"
+  },
+  {
+    "de": "Kommentar zur Steuerreform: Schwarz-Rot verliert sich im Klein-Klein",
+    "en": "Commentary on tax reform: Black-Red gets lost in the Klein-Klein",
+    "es": "Comentario sobre la reforma fiscal: el negro y el rojo se pierden en la pequeña",
+    "fr": "Commentaire sur la réforme fiscale : le noir-rouge se perd dans la petite-petite",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Mehr als 50 Tote bei Erdbeben in Kolumbien",
+    "en": "More than 50 dead in earthquakes in Colombia",
+    "es": "Más de 50 muertos en terremoto en Colombia",
+    "fr": "Plus de 50 morts dans un tremblement de terre en Colombie",
+    "cat": "Welt"
+  },
+  {
+    "de": "True Crime: Verzerrt die Lust am Verbrechen die Realität?",
+    "en": "True Crime: Does the lust for crime distort reality?",
+    "es": "Verdadero crimen: ¿El placer por el crimen distorsiona la realidad?",
+    "fr": "True Crime : le plaisir du crime déforme-t-il la réalité ?",
+    "cat": "Welt"
+  },
+  {
+    "de": "Klingbeil nimmt Steuerpläne für Vereine zurück",
+    "en": "Klingbeil withdraws tax plans for clubs",
+    "es": "Klingbeil retira los planes fiscales para clubes",
+    "fr": "Klingbeil reprend les plans fiscaux pour les clubs",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Drohnenabwehr wird ausgebaut - Bund verstärkt Schutz an Flughäfen",
+    "en": "Drone defense is being expanded - federal government strengthens protection at airports",
+    "es": "Se amplía la defensa contra drones: la alianza refuerza la protección en los aeropuertos",
+    "fr": "La défense contre les drones est renforcée - la Confédération renforce la protection dans les aéroports",
+    "cat": "Welt"
+  },
+  {
+    "de": "Russische Oppositionspartei kämpft gegen Wahlausschluss",
+    "en": "Russian Opposition Party Fights Election Exclusion",
+    "es": "El partido de la oposición rusa lucha contra la exclusión electoral",
+    "fr": "Le parti d'opposition russe lutte contre l'exclusion électorale",
+    "cat": "Politik"
+  },
+  {
+    "de": "Weltsozialforum: \"Wir müssen auf die eigenen Ressourcen setzen\"",
+    "en": "World Social Forum: \"We have to rely on our own resources\"",
+    "es": "Foro Social Mundial: \"Tenemos que apostar por nuestros propios recursos\"",
+    "fr": "Forum social mondial : « Nous devons miser sur nos propres ressources »",
+    "cat": "Welt"
+  },
+  {
+    "de": "Meloni und Frederiksen warnen gemeinsam vor \"unkontrollierter Migration\"",
+    "en": "Meloni and Frederiksen jointly warn against \"uncontrolled migration\"",
+    "es": "Meloni y Frederiksen advierten conjuntamente contra la \"migración incontrolada\"",
+    "fr": "Meloni et Frederiksen mettent en garde ensemble contre une « migration incontrôlée »",
+    "cat": "Sport"
+  },
+  {
     "de": "Gold ist wieder gefragt: Zehn Prozent über Jahrestiefstpreis",
     "en": "Gold is in demand again: ten percent above annual low price",
     "es": "El oro vuelve a estar en demanda: un diez por ciento por encima del precio mínimo anual",
@@ -40,103 +138,5 @@
     "es": "Múltiples muertos en un ataque con drones ucranianos en Rusia",
     "fr": "Plusieurs morts dans l'attaque de drones ukrainiens en Russie",
     "cat": "Sport"
-  },
-  {
-    "de": "Warum werden in Malta kaum Asylanträge gestellt?",
-    "en": "Why are there hardly any asylum applications in Malta?",
-    "es": "¿Por qué apenas se presentan solicitudes de asilo en Malta?",
-    "fr": "Pourquoi les demandes d'asile sont-elles rares à Malte ?",
-    "cat": "Welt"
-  },
-  {
-    "de": "Anteil junger Menschen in Deutschland bleibt historisch niedrig",
-    "en": "Percentage of young people in Germany remains historically low",
-    "es": "La proporción de jóvenes en Alemania sigue siendo históricamente baja",
-    "fr": "La proportion de jeunes en Allemagne reste historiquement faible",
-    "cat": "Sport"
-  },
-  {
-    "de": "Auch Bilger will Drohnenabwehr an deutschen Flughäfen verbessern",
-    "en": "Bilger also wants to improve drone defense at German airports",
-    "es": "Bilger también quiere mejorar la defensa contra drones en los aeropuertos alemanes",
-    "fr": "Bilger veut également améliorer la défense contre les drones dans les aéroports allemands",
-    "cat": "Welt"
-  },
-  {
-    "de": "Marktbericht: DAX rückt vorsichtig vor",
-    "en": "Market report: DAX advances cautiously",
-    "es": "Informe de mercado: Dax avanza con cautela",
-    "fr": "Rapport de marché : le DAX avance prudemment",
-    "cat": "Welt"
-  },
-  {
-    "de": "IfW-Präsident wirft Pistorius falsche Investitionen in Bundeswehr vor",
-    "en": "IfW President accuses Pistorius of false investments in the Bundeswehr",
-    "es": "El presidente del IfW acusa a Pistorius de invertir incorrectamente en la Bundeswehr",
-    "fr": "Le président de l'IfW accuse Pistorius de faux investissements dans la Bundeswehr",
-    "cat": "Sport"
-  },
-  {
-    "de": "Nach tagelangem Regen: Mindestens 15 Tote auf den Philippinen",
-    "en": "After days of rain: At least 15 dead in the Philippines",
-    "es": "Después de días de lluvia: al menos 15 muertos en Filipinas",
-    "fr": "Après des jours de pluie : au moins 15 morts aux Philippines",
-    "cat": "Sport"
-  },
-  {
-    "de": "Fast 30 Jahre nach Mord an Tupac Shakur: Prozessbeginn in Los Angeles",
-    "en": "Nearly 30 years after the murder of Tupac Shakur: Trial begins in Los Angeles",
-    "es": "Casi 30 años después del asesinato de Tupac Shakur: inicio del juicio en Los Ángeles",
-    "fr": "Près de 30 ans après l'assassinat de Tupac Shakur : début du procès à Los Angeles",
-    "cat": "Welt"
-  },
-  {
-    "de": "Trump setzt auf wirtschaftlichen Druck gegen Iran",
-    "en": "Trump relies on economic pressure against Iran",
-    "es": "Trump presiona económicamente a Irán",
-    "fr": "Trump mise sur la pression économique contre l'Iran",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Weltweit 350 Hilfskräfte bei humanitären Einsätzen getötet",
-    "en": "350 aid workers killed in humanitarian operations worldwide",
-    "es": "350 trabajadores humanitarios asesinados en operaciones humanitarias en todo el mundo",
-    "fr": "350 travailleurs humanitaires tués dans des opérations humanitaires dans le monde",
-    "cat": "Welt"
-  },
-  {
-    "de": "Waldbrände in Kanada weiter außer Kontrolle",
-    "en": "Forest fires in Canada still out of control",
-    "es": "Los incendios forestales en Canadá continúan fuera de control",
-    "fr": "Incendies de forêt au Canada toujours hors de contrôle",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "KI braucht Rechenzentren - aber welche braucht Deutschland?",
-    "en": "AI needs data centers - but which one does Germany need?",
-    "es": "La IA necesita centros de datos, pero ¿cuál necesita Alemania?",
-    "fr": "L'IA a besoin de centres de données - mais de quoi l'Allemagne a-t-elle besoin ?",
-    "cat": "Welt"
-  },
-  {
-    "de": "Kampf gegen Geldwäsche und Steuerbetrug: Wenn der Zoll den Porsche beschlagnahmt",
-    "en": "Fight against money laundering and tax fraud: When customs seize the Porsche",
-    "es": "Lucha contra el blanqueo de dinero y el fraude fiscal: cuando las aduanas se apoderan del Porsche",
-    "fr": "Lutte contre le blanchiment d'argent et la fraude fiscale : lorsque les douanes saisissent la Porsche",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Juni und Juli waren in Westeuropa so warm wie noch nie",
-    "en": "June and July were warmer than ever in Western Europe",
-    "es": "Junio y julio han sido más cálidos que nunca en Europa occidental",
-    "fr": "Juin et juillet ont été plus chauds que jamais en Europe occidentale",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Niedrigwasser: Binnenschiffer warnen vor Zweiteilung des Rheins",
-    "en": "Low water: Inland boatmen warn of the division of the Rhine",
-    "es": "Aguas bajas: los navegantes advierten contra la división del Rin",
-    "fr": "Basses eaux : les bateliers mettent en garde contre la division du Rhin en deux",
-    "cat": "Welt"
   }
 ]
