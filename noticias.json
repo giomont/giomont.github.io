@@ -1,5 +1,26 @@
 [
   {
+    "de": "Weltweit 350 Hilfskräfte bei humanitären Einsätzen getötet",
+    "en": "350 aid workers killed in humanitarian operations worldwide",
+    "es": "350 trabajadores humanitarios asesinados en operaciones humanitarias en todo el mundo",
+    "fr": "350 travailleurs humanitaires tués dans des opérations humanitaires dans le monde",
+    "cat": "Welt"
+  },
+  {
+    "de": "Marktbericht: DAX bleibt in der Nähe des Allzeithochs",
+    "en": "Market Report: DAX Remains Near All-Time High",
+    "es": "Informe de mercado: el Dax se mantiene cerca del máximo histórico",
+    "fr": "Rapport de marché : le DAX reste proche du plus haut historique",
+    "cat": "Welt"
+  },
+  {
+    "de": "Waldbrände in Kanada weiter außer Kontrolle",
+    "en": "Forest fires in Canada still out of control",
+    "es": "Los incendios forestales en Canadá continúan fuera de control",
+    "fr": "Incendies de forêt au Canada toujours hors de contrôle",
+    "cat": "Umwelt"
+  },
+  {
     "de": "KI braucht Rechenzentren - aber welche braucht Deutschland?",
     "en": "AI needs data centers - but which one does Germany need?",
     "es": "La IA necesita centros de datos, pero ¿cuál necesita Alemania?",
@@ -116,27 +137,6 @@
     "en": "EU external border in Latvia: where Ceuta should not repeat itself",
     "es": "Frontera exterior de la UE en Letonia: donde Ceuta no debe repetirse",
     "fr": "Frontière extérieure de l'UE en Lettonie : où Ceuta ne doit pas se répéter",
-    "cat": "Welt"
-  },
-  {
-    "de": "Hamburgs Bürgermeister Tschentscher kritisiert schwarz-rote Steuerpolitik",
-    "en": "Hamburg Mayor Tschentscher criticises black and red tax policy",
-    "es": "El alcalde de Hamburgo, Tschentscher, critica la política fiscal negra y roja",
-    "fr": "Le maire de Hambourg Tschentscher critique la politique fiscale rouge et noire",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Russlands Krieg in der Ukraine: Stundenlanger Luftalarm in Odessa",
-    "en": "Russia's War in Ukraine: Hours of Air Alarm in Odessa",
-    "es": "Guerra de Rusia en Ucrania: Alarma aérea de una hora en Odessa",
-    "fr": "Guerre de Russie en Ukraine : des heures d'alarme aérienne à Odessa",
-    "cat": "Welt"
-  },
-  {
-    "de": "Brasilien: Abholzung im Amazonas auf Zehnjahrestief",
-    "en": "Brazil: Amazon deforestation at 10-year low",
-    "es": "Brasil: deforestación en la Amazonía a un mínimo de diez años",
-    "fr": "Brésil : la déforestation en Amazonie à son plus bas niveau depuis dix ans",
     "cat": "Welt"
   }
 ]
