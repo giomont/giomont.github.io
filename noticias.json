@@ -1,5 +1,19 @@
 [
   {
+    "de": "Niedrigwasser: Binnenschiffer warnen vor Zweiteilung des Rheins",
+    "en": "Low water: Inland boatmen warn of the division of the Rhine",
+    "es": "Aguas bajas: los navegantes advierten contra la división del Rin",
+    "fr": "Basses eaux : les bateliers mettent en garde contre la division du Rhin en deux",
+    "cat": "Welt"
+  },
+  {
+    "de": "Erneut Waldbrände in Spanien und Frankreich ausgebrochen",
+    "en": "Forest fires erupted again in Spain and France",
+    "es": "Nuevos incendios forestales en España y Francia",
+    "fr": "De nouveaux incendies de forêt ont éclaté en Espagne et en France",
+    "cat": "Umwelt"
+  },
+  {
     "de": "Pentagon ruft Rüstungsindustrie zu schnellerer Waffenproduktion auf",
     "en": "Pentagon calls for arms industry to produce weapons faster",
     "es": "El Pentágono pide a la industria armamentística que acelere la producción de armas",
@@ -124,19 +138,5 @@
     "es": "Cómo se adaptan los hospitales a los pacientes con demencia",
     "fr": "Comment les hôpitaux s'adaptent aux patients atteints de démence",
     "cat": "Sport"
-  },
-  {
-    "de": "Dobrindt will nach Drohnen-Vorfall Forschung ausbauen",
-    "en": "Dobrindt wants to expand research after drone incident",
-    "es": "Dobrindt quiere ampliar la investigación después del incidente del dron",
-    "fr": "Dobrindt veut développer la recherche après un incident de drone",
-    "cat": "Welt"
-  },
-  {
-    "de": "Kanadische Provinz British Columbia ruft wegen Waldbränden Notstand aus",
-    "en": "Canadian province of British Columbia declares state of emergency due to forest fires",
-    "es": "La provincia canadiense de Columbia Británica declara estado de emergencia por incendios forestales",
-    "fr": "La province canadienne de la Colombie-Britannique déclare l'état d'urgence en raison d'incendies de forêt",
-    "cat": "Umwelt"
   }
 ]

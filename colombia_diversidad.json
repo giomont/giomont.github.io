@@ -1,54 +1,5 @@
 [
   {
-    "de": "Arepas werden in ganz Kolumbien auf unterschiedliche Weise zubereitet.",
-    "en": "Arepas are prepared in different ways throughout Colombia.",
-    "es": "Las arepas se preparan de diferentes maneras en toda Colombia.",
-    "fr": "Les arepas sont préparés de différentes manières dans toute la Colombie.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Ajiaco ist eine traditionelle Suppe aus Bogotá.",
-    "en": "Ajiaco is a traditional soup from Bogotá.",
-    "es": "El ajiaco es una sopa tradicional de Bogotá.",
-    "fr": "L'Ajiaco est une soupe traditionnelle de Bogotá.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "An der Karibikküste isst man viel Fisch und Kokosreis.",
-    "en": "On the Caribbean coast you eat a lot of fish and coconut rice.",
-    "es": "En la costa caribeña se come mucho pescado y arroz de coco.",
-    "fr": "Sur la côte caraïbe, on mange beaucoup de poisson et de riz à la noix de coco.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Empanadas sind ein beliebter Snack im ganzen Land.",
-    "en": "Empanadas are a popular snack throughout the country.",
-    "es": "Las empanadas son un snack muy popular en todo el país.",
-    "fr": "Les empanadas sont une collation populaire dans tout le pays.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Tropische Früchte wie Lulo und Guanábana wachsen in Kolumbien.",
-    "en": "Tropical fruits like Lulo and Guanábana grow in Colombia.",
-    "es": "Frutas tropicales como el lulo y la guanábana crecen en Colombia.",
-    "fr": "Les fruits tropicaux tels que le lulo et le guanábana poussent en Colombie.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Der kolumbianische Kaffee gilt als einer der besten der Welt.",
-    "en": "Colombian coffee is considered one of the best in the world.",
-    "es": "El café colombiano es considerado uno de los mejores del mundo.",
-    "fr": "Le café colombien est considéré comme l'un des meilleurs au monde.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Chocolate santafereño wird traditionell mit Käse serviert.",
-    "en": "Chocolate santafereño is traditionally served with cheese.",
-    "es": "El chocolate santafereño se sirve tradicionalmente con queso.",
-    "fr": "Le chocolat santafereño est traditionnellement servi avec du fromage.",
-    "cat": "Kolumbien"
-  },
-  {
     "de": "Cumbia ist einer der bekanntesten Musikstile Kolumbiens.",
     "en": "Cumbia is one of Colombia's best-known musical styles.",
     "es": "La cumbia es uno de los estilos musicales más conocidos de Colombia.",
@@ -137,6 +88,55 @@
     "en": "The Wayuu community is known for their woven bags.",
     "es": "La comunidad Wayuu es conocida por sus bolsillos tejidos.",
     "fr": "La communauté Wayuu est connue pour ses sacs tissés.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Kunsthandwerk aus Filigranarbeit stammt aus Mompox.",
+    "en": "Crafts made of filigree work come from Mompox.",
+    "es": "La artesanía de filigrana proviene de Mompox.",
+    "fr": "L'artisanat en filigrane provient de Mompox.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Sombrero vueltiao ist ein traditioneller Hut aus der Karibikregion.",
+    "en": "Sombrero vueltiao is a traditional hat from the Caribbean region.",
+    "es": "Sombrero vueltiao es un sombrero tradicional de la región del Caribe.",
+    "fr": "Le Sombrero vueltiao est un chapeau traditionnel de la région des Caraïbes.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Keramikkunst hat in mehreren Regionen Kolumbiens eine lange Tradition.",
+    "en": "Ceramic art has a long tradition in several regions of Colombia.",
+    "es": "El arte cerámico tiene una larga tradición en varias regiones de Colombia.",
+    "fr": "L'art de la céramique a une longue tradition dans plusieurs régions de Colombie.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Handwerksmärkte findet man in fast jeder Stadt Kolumbiens.",
+    "en": "Craft markets can be found in almost every city in Colombia.",
+    "es": "Los mercados artesanales se pueden encontrar en casi todas las ciudades de Colombia.",
+    "fr": "On trouve des marchés artisanaux dans presque toutes les villes de Colombie.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "In San Gil kann man Rafting und Paragliding ausprobieren.",
+    "en": "In San Gil you can try rafting and paragliding.",
+    "es": "En San Gil se puede practicar rafting y parapente.",
+    "fr": "À San Gil, vous pouvez essayer le rafting et le parapente.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Der Nationalpark Los Nevados eignet sich für Bergsteigen.",
+    "en": "The Los Nevados National Park is suitable for mountaineering.",
+    "es": "El Parque Nacional Los Nevados es apto para el alpinismo.",
+    "fr": "Le parc national de Los Nevados est adapté à l'alpinisme.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Tauchen ist an den Riffen von San Andrés sehr beliebt.",
+    "en": "Diving is very popular on the reefs of San Andrés.",
+    "es": "El buceo es muy popular en los arrecifes de San Andrés.",
+    "fr": "La plongée est très populaire sur les récifs de San Andrés.",
     "cat": "Kolumbien"
   }
 ]

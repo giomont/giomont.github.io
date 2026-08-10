@@ -1,54 +1,5 @@
 [
   {
-    "de": "Fühlt sich jemand nicht gut?",
-    "en": "Is anyone not feeling well?",
-    "es": "¿Alguien no se siente bien?",
-    "fr": "Quelqu'un ne se sent pas bien ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Möchten Sie eine Pause machen?",
-    "en": "Would you like to take a break?",
-    "es": "¿Quieres tomarte un descanso?",
-    "fr": "Envie de faire une pause ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Ist die Route für Sie zu anstrengend?",
-    "en": "Is the route too strenuous for you?",
-    "es": "¿La ruta es demasiado exigente para ti?",
-    "fr": "L'itinéraire est-il trop fatigant pour vous ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Haben Sie noch Fragen zur Tour?",
-    "en": "Do you have any further questions?",
-    "es": "¿Tienes alguna pregunta?",
-    "fr": "Vous avez d’autres questions ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Möchten Sie mehr über diese Pflanze erfahren?",
-    "en": "Want to know more about this plant?",
-    "es": "¿Quieres saber más sobre esta planta?",
-    "fr": "Vous souhaitez en savoir plus sur cette plante ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Gefällt Ihnen die Aussicht?",
-    "en": "Do you like the view?",
-    "es": "¿Te gustan las vistas?",
-    "fr": "Aimez-vous la vue ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Sind Sie bereit für den nächsten Abschnitt?",
-    "en": "Are you ready for the next section?",
-    "es": "¿Listo para la siguiente etapa?",
-    "fr": "Êtes-vous prêt pour la section suivante ?",
-    "cat": "Grundlagen"
-  },
-  {
     "de": "Brauchen Sie eine Pause zum Fotografieren?",
     "en": "Need a break to take pictures?",
     "es": "¿Necesitas un descanso para hacer fotos?",
@@ -137,6 +88,55 @@
     "en": "How do you like the trip so far?",
     "es": "¿Qué te ha parecido el viaje hasta ahora?",
     "fr": "Que pensez-vous du voyage jusqu'à présent ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Was hat Ihnen am besten gefallen?",
+    "en": "What did you like best?",
+    "es": "¿Qué es lo que más te ha gustado?",
+    "fr": "Qu'est-ce qui vous a le plus plu ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Möchten Sie ein Foto von der Gruppe?",
+    "en": "Would you like a photo of the group?",
+    "es": "¿Quieres una foto del grupo?",
+    "fr": "Souhaitez-vous une photo du groupe ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Reisen Sie allein oder mit Familie?",
+    "en": "Travelling alone or with family?",
+    "es": "¿Viajas solo o en familia?",
+    "fr": "Vous voyagez seul ou en famille ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Wie lange bleiben Sie in Medellín?",
+    "en": "How long will you stay in Medellín?",
+    "es": "¿Cuánto tiempo te quedas en Medellín?",
+    "fr": "Combien de temps restez-vous à Medellín ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Kennen Sie schon die kolumbianische Küche?",
+    "en": "Do you already know Colombian cuisine?",
+    "es": "¿Conoces la cocina colombiana?",
+    "fr": "Connaissez-vous déjà la cuisine colombienne ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Vielen Dank, dass Sie an der Tour teilgenommen haben.",
+    "en": "Thank you for completing our survey!",
+    "es": "Gracias por participar en el tour.",
+    "fr": "Merci d'avoir participé à la tournée.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Ich hoffe, die Tour hat Ihnen gefallen.",
+    "en": "I hope you enjoyed the tour.",
+    "es": "Espero que os haya gustado la ruta.",
+    "fr": "J'espère que la tournée vous a plu.",
     "cat": "Grundlagen"
   }
 ]

@@ -1,54 +1,5 @@
 [
   {
-    "de": "Lokale Handwerker verkaufen Kunsthandwerk im Park.",
-    "en": "Local craftsmen sell handicrafts in the park.",
-    "es": "Los artesanos locales venden artesanías en el parque.",
-    "fr": "Les artisans locaux vendent de l'artisanat dans le parc.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Man findet dort auch handgemachten Schmuck.",
-    "en": "You can also find handmade jewellery there.",
-    "es": "También encontrarás joyas hechas a mano.",
-    "fr": "On y trouve également des bijoux faits à la main.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Die Gemeinden im Park leben teilweise von nachhaltigem Tourismus.",
-    "en": "The communities in the park partly live from sustainable tourism.",
-    "es": "Los municipios del parque viven en parte del turismo sostenible.",
-    "fr": "Les communautés du parc vivent en partie du tourisme durable.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Es gibt kleine Cafés mit Blick auf den Wald.",
-    "en": "There are small cafes overlooking the forest.",
-    "es": "Hay pequeñas cafeterías con vistas al bosque.",
-    "fr": "Il y a de petits cafés avec vue sur la forêt.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Lokale Familien bieten traditionelle Gerichte an.",
-    "en": "Local families offer traditional dishes.",
-    "es": "Las familias locales ofrecen platos tradicionales.",
-    "fr": "Les familles locales proposent des plats traditionnels.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Im Park regnet es häufig, besonders am Nachmittag.",
-    "en": "It often rains in the park, especially in the afternoon.",
-    "es": "En el parque llueve con frecuencia, sobre todo por la tarde.",
-    "fr": "Il pleut souvent dans le parc, surtout l'après-midi.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Es empfiehlt sich, eine Regenjacke mitzunehmen.",
-    "en": "It is recommended to bring a rain jacket.",
-    "es": "Se recomienda llevar un chubasquero.",
-    "fr": "Il est recommandé d'emporter une veste de pluie.",
-    "cat": "Arví"
-  },
-  {
     "de": "Die Luftfeuchtigkeit im Nebelwald ist sehr hoch.",
     "en": "The humidity in the cloud forest is very high.",
     "es": "La humedad en el bosque nuboso es muy alta.",
@@ -137,6 +88,55 @@
     "en": "Before the Spanish colonial period, indigenous communities lived there.",
     "es": "Antes de la época colonial española, las comunidades indígenas vivían allí.",
     "fr": "Avant l'époque coloniale espagnole, des communautés autochtones y vivaient.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Archäologen haben im Park alte Wege und Terrassen gefunden.",
+    "en": "Archaeologists have found ancient paths and terraces in the park.",
+    "es": "Los arqueólogos han encontrado antiguos caminos y terrazas en el parque.",
+    "fr": "Les archéologues ont trouvé d'anciens chemins et terrasses dans le parc.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Die Region war einst ein wichtiger Handelsweg der Ureinwohner.",
+    "en": "The region was once an important trade route for the indigenous people.",
+    "es": "La región fue una vez una importante ruta comercial de los pueblos indígenas.",
+    "fr": "La région était autrefois une importante voie commerciale pour les autochtones.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Im 20. Jahrhundert wurde das Gebiet zum Wasserschutzgebiet erklärt.",
+    "en": "In the 20th century, the area was declared a water protection area.",
+    "es": "En el siglo XX, la zona fue declarada reserva acuática.",
+    "fr": "Au 20ème siècle, la zone a été déclarée zone de protection des eaux.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Seit 2008 wird der Park touristisch entwickelt.",
+    "en": "The park has been developed for tourism since 2008.",
+    "es": "Desde 2008, el parque se ha desarrollado turísticamente.",
+    "fr": "Depuis 2008, le parc fait l'objet d'un développement touristique.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Das Interpretationszentrum informiert über die Geschichte des Parks.",
+    "en": "The Interpretation Centre provides information about the history of the park.",
+    "es": "El Centro de Interpretación informa sobre la historia del parque.",
+    "fr": "Le centre d'interprétation informe sur l'histoire du parc.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Schulen organisieren oft Exkursionen in den Park.",
+    "en": "Schools often organise excursions to the park.",
+    "es": "Las escuelas suelen organizar excursiones al parque.",
+    "fr": "Les écoles organisent souvent des excursions dans le parc.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Es gibt Umweltbildungsprogramme für Kinder.",
+    "en": "There are environmental education programs for children.",
+    "es": "Existen programas de educación ambiental para niños.",
+    "fr": "Il existe des programmes d'éducation environnementale pour les enfants.",
     "cat": "Arví"
   }
 ]

@@ -1,54 +1,5 @@
 [
   {
-    "de": "Muss ich hier umsteigen?",
-    "en": "Do I have to change here?",
-    "es": "¿Tengo que hacer un trasbordo?",
-    "fr": "Dois-je changer ici ?",
-    "cat": "Transport"
-  },
-  {
-    "de": "Rufen Sie bitte sofort einen Krankenwagen!",
-    "en": "Please call an ambulance immediately!",
-    "es": "¡Llame a una ambulancia de inmediato!",
-    "fr": "Appelez une ambulance immédiatement !",
-    "cat": "Notfälle"
-  },
-  {
-    "de": "Ich habe meinen Reisepass verloren.",
-    "en": "I lost my passport.",
-    "es": "He perdido mi pasaporte.",
-    "fr": "J'ai malheureusement perdu mon passeport !",
-    "cat": "Notfälle"
-  },
-  {
-    "de": "Wo ist das nächste Krankenhaus?",
-    "en": "Where is the nearest Pharmacy?",
-    "es": "¿Dónde está el hospital más cercano?",
-    "fr": "Où se trouve l'hôpital le plus proche ?",
-    "cat": "Notfälle"
-  },
-  {
-    "de": "Ich habe mich verletzt, können Sie mir helfen?",
-    "en": "I hurt myself, can you help me?",
-    "es": "Me he hecho daño, ¿puede ayudarme?",
-    "fr": "Je me suis blessé, pouvez-vous m'aider ?",
-    "cat": "Notfälle"
-  },
-  {
-    "de": "Bitte rufen Sie die Polizei.",
-    "en": "Please call the police.",
-    "es": "Por favor, llame a la policía.",
-    "fr": "Veuillez appeler la police.",
-    "cat": "Notfälle"
-  },
-  {
-    "de": "Mir ist schlecht, ich brauche einen Arzt.",
-    "en": "I'm sick, I need a doctor.",
-    "es": "Me siento mal, necesito un médico.",
-    "fr": "J'ai mal, j'ai besoin d'un médecin.",
-    "cat": "Notfälle"
-  },
-  {
     "de": "Gibt es hier eine Notaufnahme?",
     "en": "Is there an emergency room here?",
     "es": "¿Hay una sala de emergencias aquí?",
@@ -138,5 +89,54 @@
     "es": "Lo siento, no lo entendí.",
     "fr": "Excusez-moi, je n'ai pas compris.",
     "cat": "Kommunikation"
+  },
+  {
+    "de": "Danke, dass Sie so geduldig sind.",
+    "en": "Thank you for your patience.",
+    "es": "Gracias por ser tan paciente.",
+    "fr": "Merci d'être si patient.",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Wo finde ich den nächsten Geldautomaten?",
+    "en": "Where can I find the nearest ATM?",
+    "es": "¿Dónde puedo encontrar el cajero automático más cercano?",
+    "fr": "Où puis-je trouver le guichet automatique le plus proche ?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Akzeptieren Sie auch US-Dollar?",
+    "en": "Do you also accept US dollars?",
+    "es": "¿Aceptan también dólares estadounidenses?",
+    "fr": "Acceptez-vous également les dollars américains ?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Kann ich hier mit Karte bezahlen?",
+    "en": "Can I pay by card here?",
+    "es": "¿Puedo pagar con tarjeta?",
+    "fr": "Puis-je payer par carte ?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Wie ist der aktuelle Wechselkurs?",
+    "en": "What's today's exchange rate?",
+    "es": "¿Cuál es el tipo de cambio actual?",
+    "fr": "Quel est le taux de change actuel ?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Wo kann ich eine Quittung bekommen?",
+    "en": "Where can I get a receipt?",
+    "es": "¿Dónde puedo obtener un recibo?",
+    "fr": "Où puis-je obtenir un reçu ?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Gibt es hier eine Bank in der Nähe?",
+    "en": "Is there a bank near here?",
+    "es": "¿Hay algún banco cerca de aquí?",
+    "fr": "Est-ce qu'il y a une banque dans le coin ?",
+    "cat": "Geld"
   }
 ]
