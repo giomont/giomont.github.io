@@ -1,54 +1,5 @@
 [
   {
-    "de": "Die Luftfeuchtigkeit im Nebelwald ist sehr hoch.",
-    "en": "The humidity in the cloud forest is very high.",
-    "es": "La humedad en el bosque nuboso es muy alta.",
-    "fr": "L'humidité de l'air dans la forêt brumeuse est très élevée.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Am Morgen ist oft dichter Nebel zu sehen.",
-    "en": "In the morning, dense fog can often be seen.",
-    "es": "Por la mañana se ve a menudo una densa niebla.",
-    "fr": "Le matin, on voit souvent un brouillard épais.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Besucher sollten festes Schuhwerk tragen.",
-    "en": "Visitors should wear sturdy footwear.",
-    "es": "Los visitantes deben llevar calzado resistente.",
-    "fr": "Les visiteurs doivent porter des chaussures solides.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Es ist ratsam, auf den markierten Wegen zu bleiben.",
-    "en": "It is advisable to stay on the marked paths.",
-    "es": "Es recomendable seguir por los senderos señalizados.",
-    "fr": "Il est conseillé de rester sur les sentiers balisés.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Bei Gewitter sollte man offene Aussichtspunkte meiden.",
-    "en": "In the event of thunderstorms, you should avoid open viewpoints.",
-    "es": "En caso de tormenta, se deben evitar los miradores abiertos.",
-    "fr": "En cas d'orage, il faut éviter les points de vue ouverts.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Ein Erste-Hilfe-Kasten ist im Besucherzentrum verfügbar.",
-    "en": "A first aid kit is available at the Visitor Centre.",
-    "es": "Un botiquín de primeros auxilios está disponible en el centro de visitantes.",
-    "fr": "Une trousse de premiers soins est disponible au centre des visiteurs.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Die Parkwächter helfen bei Notfällen.",
-    "en": "The parking attendants help in emergencies.",
-    "es": "Los vigilantes del parque ayudan en caso de emergencias.",
-    "fr": "Les gardiens du parking aident en cas d'urgence.",
-    "cat": "Arví"
-  },
-  {
     "de": "Am besten besucht man den Park früh am Morgen.",
     "en": "The best time to visit the park is early in the morning.",
     "es": "Lo mejor es visitar el parque a primera hora de la mañana.",
@@ -137,6 +88,55 @@
     "en": "There are environmental education programs for children.",
     "es": "Existen programas de educación ambiental para niños.",
     "fr": "Il existe des programmes d'éducation environnementale pour les enfants.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Führungen erklären die Bedeutung des Nebelwaldes.",
+    "en": "Guided tours explain the importance of the cloud forest.",
+    "es": "Las visitas guiadas explican la importancia del bosque nuboso.",
+    "fr": "Des visites guidées expliquent l'importance de la forêt de nuages.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Wegen der geringen Lichtverschmutzung kann man Sterne gut beobachten.",
+    "en": "Because of the low light pollution, you can observe stars well.",
+    "es": "Debido a la baja contaminación lumínica, se pueden observar bien las estrellas.",
+    "fr": "En raison de la faible pollution lumineuse, il est facile d'observer les étoiles.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Es werden gelegentlich astronomische Nächte organisiert.",
+    "en": "Occasionally astronomical nights are organised.",
+    "es": "Ocasionalmente se organizan noches astronómicas.",
+    "fr": "Des nuits astronomiques sont parfois organisées.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Der Mirador Astronómico ist ein beliebter Ort dafür.",
+    "en": "The Mirador Astronómico is a popular place for this.",
+    "es": "El Mirador Astronómico es un lugar muy popular para ello.",
+    "fr": "Le Mirador Astronómico est un endroit populaire pour cela.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Viele Besucher kommen zum Wandern und zur Entspannung.",
+    "en": "Many visitors come for hiking and relaxation.",
+    "es": "Muchos visitantes vienen a pasear y relajarse.",
+    "fr": "De nombreux visiteurs viennent se promener et se détendre.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Der Wald wird oft für Achtsamkeitsübungen genutzt.",
+    "en": "The forest is often used for mindfulness exercises.",
+    "es": "El bosque se utiliza a menudo para ejercicios de mindfulness.",
+    "fr": "La forêt est souvent utilisée pour des exercices de pleine conscience.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Die Ruhe des Waldes zieht auch Künstler an.",
+    "en": "The tranquility of the forest also attracts artists.",
+    "es": "La tranquilidad del bosque también atrae a los artistas.",
+    "fr": "La tranquillité de la forêt attire également les artistes.",
     "cat": "Arví"
   }
 ]

@@ -1,54 +1,5 @@
 [
   {
-    "de": "Brauchen Sie eine Pause zum Fotografieren?",
-    "en": "Need a break to take pictures?",
-    "es": "¿Necesitas un descanso para hacer fotos?",
-    "fr": "Besoin d'une pause pour prendre des photos ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Ist allen warm genug angezogen?",
-    "en": "Is everyone dressed warmly enough?",
-    "es": "¿Todos están lo suficientemente abrigados?",
-    "fr": "Est-ce que tout le monde est habillé assez chaudement ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Bleiben Sie bitte ruhig, alles ist unter Kontrolle.",
-    "en": "Please stay calm, everything is under control.",
-    "es": "Por favor, mantenga la calma, todo está bajo control.",
-    "fr": "Restez calme, tout est sous contrôle.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Im Notfall folgen Sie bitte meinen Anweisungen.",
-    "en": "In case of emergency, please follow my instructions.",
-    "es": "En caso de emergencia, siga mis instrucciones.",
-    "fr": "En cas d'urgence, veuillez suivre mes instructions.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Der Notausgang ist dort drüben.",
-    "en": "The emergency exit is over there.",
-    "es": "La salida de emergencia está por allí.",
-    "fr": "La sortie de secours est là-bas.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Bitte melden Sie sich, wenn etwas fehlt.",
-    "en": "Please let us know if anything is missing.",
-    "es": "Por favor, póngase en contacto si falta algo.",
-    "fr": "Veuillez nous contacter si quelque chose manque.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Achten Sie bitte auf Ihre persönlichen Sachen.",
-    "en": "Please pay attention to your personal belongings.",
-    "es": "Preste atención a sus pertenencias personales.",
-    "fr": "Veuillez faire attention à vos effets personnels.",
-    "cat": "Grundlagen"
-  },
-  {
     "de": "Wenn Sie sich verlaufen, bleiben Sie an Ort und Stelle.",
     "en": "If you get lost, stay in place.",
     "es": "Si te pierdes, quédate en su sitio.",
@@ -137,6 +88,55 @@
     "en": "I hope you enjoyed the tour.",
     "es": "Espero que os haya gustado la ruta.",
     "fr": "J'espère que la tournée vous a plu.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Es war mir eine Freude, Sie zu begleiten.",
+    "en": "It was my pleasure to accompany you.",
+    "es": "Ha sido un placer acompañarle.",
+    "fr": "Ce fut un plaisir de vous accompagner.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Bitte bewerten Sie unsere Tour, wenn möglich.",
+    "en": "Please rate our tour if possible.",
+    "es": "Por favor, evalúe nuestro recorrido si es posible.",
+    "fr": "Veuillez évaluer notre visite si possible.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Kommen Sie gerne wieder nach Kolumbien.",
+    "en": "Feel free to come back to Colombia.",
+    "es": "No dudes en volver a Colombia.",
+    "fr": "Revenez volontiers en Colombie.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Ich hoffe, wir sehen uns bald wieder.",
+    "en": "I hope we'll meet again soon!",
+    "es": "Espero que nos veamos pronto.",
+    "fr": "J'espère que l'on se reverra.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Passen Sie gut auf sich auf.",
+    "en": "Take good care of yourself.",
+    "es": "Cuídese bien.",
+    "fr": "Prenez soin de vous,",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Gute Heimreise!",
+    "en": "Have a safe journey!",
+    "es": "¡Feliz viaje a casa!",
+    "fr": "Bon retour à la maison!",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Haben Sie genug Sonnencreme dabei?",
+    "en": "Do you have enough sunscreen?",
+    "es": "¿Has traído suficiente protector solar?",
+    "fr": "Avez-vous assez de crème solaire avec vous ?",
     "cat": "Grundlagen"
   }
 ]

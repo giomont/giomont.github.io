@@ -1,54 +1,5 @@
 [
   {
-    "de": "Cumbia ist einer der bekanntesten Musikstile Kolumbiens.",
-    "en": "Cumbia is one of Colombia's best-known musical styles.",
-    "es": "La cumbia es uno de los estilos musicales más conocidos de Colombia.",
-    "fr": "Cumbia est l'un des styles musicaux les plus connus de Colombie.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Salsa hat in Cali eine besonders starke Tradition.",
-    "en": "Salsa has a particularly strong tradition in Cali.",
-    "es": "La salsa tiene una tradición particularmente fuerte en Cali.",
-    "fr": "La salsa a une tradition particulièrement forte à Cali.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Vallenato wird oft mit Akkordeon gespielt.",
-    "en": "Vallenato is often played with an accordion.",
-    "es": "El vallenato se toca a menudo con acordeón.",
-    "fr": "Vallenato est souvent joué à l'accordéon.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Champeta stammt ursprünglich aus Cartagena.",
-    "en": "Champeta is originally from Cartagena.",
-    "es": "Champeta es originaria de Cartagena.",
-    "fr": "Champeta est originaire de Carthagène.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Bambuco ist ein traditioneller Tanz aus der Andenregion.",
-    "en": "Bambuco is a traditional dance from the Andean region.",
-    "es": "Bambuco es una danza tradicional de la región andina.",
-    "fr": "Le bambouco est une danse traditionnelle de la région andine.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Musik spielt bei fast jedem kolumbianischen Fest eine zentrale Rolle.",
-    "en": "Music plays a central role at almost every Colombian festival.",
-    "es": "La música juega un papel central en casi todos los festivales colombianos.",
-    "fr": "La musique joue un rôle central dans presque toutes les fêtes colombiennes.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Die kolumbianische Kaffeeregion ist UNESCO-Weltkulturerbe.",
-    "en": "The Colombian coffee region is a UNESCO World Heritage Site.",
-    "es": "La región cafetera colombiana es Patrimonio de la Humanidad por la UNESCO.",
-    "fr": "La région du café colombien est classée au patrimoine mondial de l'UNESCO.",
-    "cat": "Kolumbien"
-  },
-  {
     "de": "Viele Kaffeefincas bieten Führungen für Touristen an.",
     "en": "Many coffee fincas offer guided tours for tourists.",
     "es": "Muchas fincas de café ofrecen visitas guiadas para turistas.",
@@ -137,6 +88,55 @@
     "en": "Diving is very popular on the reefs of San Andrés.",
     "es": "El buceo es muy popular en los arrecifes de San Andrés.",
     "fr": "La plongée est très populaire sur les récifs de San Andrés.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "In der Sierra Nevada de Santa Marta gibt es mehrtägige Wandertouren.",
+    "en": "There are multi-day hiking tours in the Sierra Nevada de Santa Marta.",
+    "es": "En la Sierra Nevada de Santa Marta hay rutas de senderismo de varios días.",
+    "fr": "Il existe des randonnées de plusieurs jours dans la Sierra Nevada de Santa Marta.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Canyoning wird in mehreren Regionen Kolumbiens angeboten.",
+    "en": "Canyoning is offered in several regions of Colombia.",
+    "es": "El barranquismo se ofrece en varias regiones de Colombia.",
+    "fr": "Le canyoning est proposé dans plusieurs régions de Colombie.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Mountainbiking ist in der Kaffeeregion sehr beliebt.",
+    "en": "Mountain biking is very popular in the coffee region.",
+    "es": "El ciclismo de montaña es muy popular en la región del café.",
+    "fr": "Le VTT est très populaire dans la région du café.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Viele Gemeinschaften setzen auf nachhaltigen Ökotourismus.",
+    "en": "Many communities are committed to sustainable ecotourism.",
+    "es": "Muchas comunidades apuestan por el ecoturismo sostenible.",
+    "fr": "De nombreuses communautés misent sur l'écotourisme durable.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Indigene Reservate bieten oft geführte Naturerlebnisse an.",
+    "en": "Indigenous reserves often offer guided nature experiences.",
+    "es": "Las reservas indígenas a menudo ofrecen experiencias guiadas en la naturaleza.",
+    "fr": "Les réserves autochtones proposent souvent des expériences guidées dans la nature.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Kolumbien möchte den nachhaltigen Tourismus weiter ausbauen.",
+    "en": "Colombia wants to further expand sustainable tourism.",
+    "es": "Colombia quiere seguir desarrollando el turismo sostenible.",
+    "fr": "La Colombie souhaite continuer à développer le tourisme durable.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Der Schutz der Artenvielfalt hat für den Tourismus hohe Priorität.",
+    "en": "The protection of biodiversity is a high priority for tourism.",
+    "es": "La protección de la biodiversidad es una alta prioridad para el turismo.",
+    "fr": "La protection de la biodiversité est une priorité pour le tourisme.",
     "cat": "Kolumbien"
   }
 ]

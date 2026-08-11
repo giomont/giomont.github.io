@@ -1,54 +1,5 @@
 [
   {
-    "de": "Gibt es hier eine Notaufnahme?",
-    "en": "Is there an emergency room here?",
-    "es": "¿Hay una sala de emergencias aquí?",
-    "fr": "Y a-t-il une salle d'urgence ici ?",
-    "cat": "Notfälle"
-  },
-  {
-    "de": "Mein Gepäck wurde gestohlen.",
-    "en": "My luggage was stolen.",
-    "es": "Mi equipaje ha sido robado.",
-    "fr": "Mes bagages ont été volés.",
-    "cat": "Notfälle"
-  },
-  {
-    "de": "Ich habe eine allergische Reaktion.",
-    "en": "I have an allergic reaction.",
-    "es": "Tengo una reacción alérgica.",
-    "fr": "J'ai une réaction allergique.",
-    "cat": "Notfälle"
-  },
-  {
-    "de": "Wo finde ich die nächste Feuerwache?",
-    "en": "Where can I find the nearest fire station?",
-    "es": "¿Dónde puedo encontrar la estación de bomberos más cercana?",
-    "fr": "Où puis-je trouver la caserne de pompiers la plus proche ?",
-    "cat": "Notfälle"
-  },
-  {
-    "de": "Ich verstehe leider nur ein bisschen Deutsch.",
-    "en": "Unfortunately, I only understand a little German.",
-    "es": "Lamentablemente, solo entiendo un poco de alemán.",
-    "fr": "Malheureusement, je ne comprends qu'un peu l'allemand.",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Können Sie das bitte aufschreiben?",
-    "en": "Can you write that down please?",
-    "es": "¿Puede escribirlo, por favor?",
-    "fr": "Pouvez-vous l'écrire s'il vous plait ?",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Wie sagt man das auf Spanisch?",
-    "en": "How do you say that in Spanish?",
-    "es": "¿Cómo se dice en español?",
-    "fr": "Comment dit-on cela en espagnol ?",
-    "cat": "Kommunikation"
-  },
-  {
     "de": "Können Sie das für mich übersetzen?",
     "en": "Can you translate that for me?",
     "es": "¿Puede traducirlo para mí?",
@@ -138,5 +89,54 @@
     "es": "¿Hay algún banco cerca de aquí?",
     "fr": "Est-ce qu'il y a une banque dans le coin ?",
     "cat": "Geld"
+  },
+  {
+    "de": "Können Sie mir kleineres Geld wechseln?",
+    "en": "Can you exchange smaller money for me?",
+    "es": "¿Me puede cambiar dinero más pequeño?",
+    "fr": "Pouvez-vous me changer de l'argent plus petit ?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Ist Trinkgeld in Kolumbien üblich?",
+    "en": "Is tipping common in Colombia?",
+    "es": "¿Las propinas son comunes en Colombia?",
+    "fr": "Le pourboire est-il courant en Colombie ?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Wie viel kostet der Eintritt insgesamt?",
+    "en": "How much does it cost in total?",
+    "es": "¿Cuánto cuesta la entrada en total?",
+    "fr": "Combien coûte l'entrée au total ?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Gibt es einen Rabatt für Gruppen?",
+    "en": "Is there a discount for groups?",
+    "es": "¿Hay algún descuento para grupos?",
+    "fr": "Existe-t-il une réduction pour les groupes ?",
+    "cat": "Geld"
+  },
+  {
+    "de": "Wie lange dauert die Führung durch das Museum?",
+    "en": "How long is the guided tour of the museum?",
+    "es": "¿Cuánto dura la visita guiada al museo?",
+    "fr": "Combien de temps dure la visite guidée du musée ?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Gibt es einen Audioguide auf Deutsch?",
+    "en": "Is there an audio guide in German?",
+    "es": "¿Hay una audioguía en alemán?",
+    "fr": "Existe-t-il un audioguide en allemand ?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Wann schließt diese Sehenswürdigkeit?",
+    "en": "When does this attraction close?",
+    "es": "¿A qué hora cierra esta atracción?",
+    "fr": "Quand cette attraction touristique ferme-t-elle ?",
+    "cat": "Sehenswürdigkeiten"
   }
 ]
