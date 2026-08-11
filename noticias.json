@@ -1,5 +1,40 @@
 [
   {
+    "de": "Marktbericht: Geht die Börsenrally weiter?",
+    "en": "Market report: Is the stock market rally continuing?",
+    "es": "Informe de mercado: ¿Continúa el rally bursátil?",
+    "fr": "Rapport sur le marché : le rallye boursier se poursuit-il ?",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Ablenkungsmanöver: Trump im Catering-Wagen statt in der Air Force One?",
+    "en": "Distraction: Trump in the catering car instead of Air Force One?",
+    "es": "Distracción: ¿Trump en el carro de catering en lugar del Air Force One?",
+    "fr": "Détournement : Trump dans le chariot de restauration plutôt que dans Air Force One ?",
+    "cat": "Welt"
+  },
+  {
+    "de": "Volksinitiative: Will die Schweiz noch neutraler werden?",
+    "en": "Popular initiative: Does Switzerland want to become even more neutral?",
+    "es": "Iniciativa popular: ¿Suiza quiere ser aún más neutral?",
+    "fr": "Initiative populaire : la Suisse veut-elle devenir encore plus neutre ?",
+    "cat": "Welt"
+  },
+  {
+    "de": "Ungarns neue Präsident: Ein Mann mit Prinzipien",
+    "en": "Hungary's New President: A Man of Principles",
+    "es": "El nuevo presidente de Hungría: un hombre de principios",
+    "fr": "Le nouveau président hongrois : un homme de principes",
+    "cat": "Welt"
+  },
+  {
+    "de": "Klage von Verbraucherschützern: Sammelt Meta rechtswidrig Daten?",
+    "en": "Consumer advocacy lawsuit: Does meta illegally collect data?",
+    "es": "Demanda de los defensores del consumidor: ¿Meta recopila datos ilegalmente?",
+    "fr": "Plainte des défenseurs des consommateurs : Meta collecte-t-elle illégalement des données ?",
+    "cat": "Welt"
+  },
+  {
     "de": "Ramelow für Zusammenarbeit von Linkspartei und CDU in Sachsen-Anhalt",
     "en": "Ramelow for cooperation between the Left Party and the CDU in Saxony-Anhalt",
     "es": "Ramelow para la cooperación del Partido de la Izquierda y la CDU en Sajonia-Anhalt",
@@ -102,41 +137,6 @@
     "en": "Minister of State for Culture Weimer wants more funding for memorial sites",
     "es": "El Ministro de Cultura Weimer quiere más subvenciones para los lugares conmemorativos",
     "fr": "Le ministre de la Culture Weimer veut plus de subventions pour les sites commémoratifs",
-    "cat": "Politik"
-  },
-  {
-    "de": "Kommentar zur Steuerreform: Schwarz-Rot verliert sich im Klein-Klein",
-    "en": "Commentary on tax reform: Black-Red gets lost in the Klein-Klein",
-    "es": "Comentario sobre la reforma fiscal: el negro y el rojo se pierden en la pequeña",
-    "fr": "Commentaire sur la réforme fiscale : le noir-rouge se perd dans la petite-petite",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "True Crime: Verzerrt die Lust am Verbrechen die Realität?",
-    "en": "True Crime: Does the lust for crime distort reality?",
-    "es": "Verdadero crimen: ¿El placer por el crimen distorsiona la realidad?",
-    "fr": "True Crime : le plaisir du crime déforme-t-il la réalité ?",
-    "cat": "Welt"
-  },
-  {
-    "de": "Klingbeil nimmt Steuerpläne für Vereine zurück",
-    "en": "Klingbeil withdraws tax plans for clubs",
-    "es": "Klingbeil retira los planes fiscales para clubes",
-    "fr": "Klingbeil reprend les plans fiscaux pour les clubs",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Drohnenabwehr wird ausgebaut - Bund verstärkt Schutz an Flughäfen",
-    "en": "Drone defense is being expanded - federal government strengthens protection at airports",
-    "es": "Se amplía la defensa contra drones: la alianza refuerza la protección en los aeropuertos",
-    "fr": "La défense contre les drones est renforcée - la Confédération renforce la protection dans les aéroports",
-    "cat": "Welt"
-  },
-  {
-    "de": "Russische Oppositionspartei kämpft gegen Wahlausschluss",
-    "en": "Russian Opposition Party Fights Election Exclusion",
-    "es": "El partido de la oposición rusa lucha contra la exclusión electoral",
-    "fr": "Le parti d'opposition russe lutte contre l'exclusion électorale",
     "cat": "Politik"
   }
 ]
