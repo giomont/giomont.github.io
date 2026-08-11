@@ -1,5 +1,19 @@
 [
   {
+    "de": "Autohersteller verdienen im Schnitt deutlich weniger pro Auto",
+    "en": "Car manufacturers earn significantly less per car on average",
+    "es": "Los fabricantes de automóviles ganan de media mucho menos por coche",
+    "fr": "Les constructeurs automobiles gagnent en moyenne beaucoup moins par voiture",
+    "cat": "Welt"
+  },
+  {
+    "de": "Marktbericht: DAX bleibt der Nähe seiner Bestmarke",
+    "en": "Market report: DAX remains close to its record",
+    "es": "Informe de mercado: el Dax se mantiene cerca de su mejor marca",
+    "fr": "Rapport de marché : DAX reste proche de son record",
+    "cat": "Welt"
+  },
+  {
     "de": "Wohin steuert die Bundeszentrale für politische Bildung?",
     "en": "Where is the Federal Agency for Civic Education heading?",
     "es": "¿Hacia dónde se dirige la Central Federal de Educación Política?",
@@ -26,13 +40,6 @@
     "es": "Incendios forestales en Hesse: llamamiento al ahorro de agua en varios lugares",
     "fr": "Incendies de forêt en Hesse : appel à économiser l'eau dans plusieurs localités",
     "cat": "Umwelt"
-  },
-  {
-    "de": "Marktbericht: Geht die Börsenrally weiter?",
-    "en": "Market report: Is the stock market rally continuing?",
-    "es": "Informe de mercado: ¿Continúa el rally bursátil?",
-    "fr": "Rapport sur le marché : le rallye boursier se poursuit-il ?",
-    "cat": "Wirtschaft"
   },
   {
     "de": "Ablenkungsmanöver: Trump im Catering-Wagen statt in der Air Force One?",
@@ -130,13 +137,6 @@
     "en": "Iran considers fees for 'services' in Strait of Hormuz",
     "es": "Irán está considerando cobrar por \"servicios\" en el Estrecho de Ormuz",
     "fr": "L'Iran envisage de facturer des « services » dans le détroit d'Ormuz",
-    "cat": "Welt"
-  },
-  {
-    "de": "Partielle Sonnenfinsternis: So schützen Sie Ihre Augen",
-    "en": "Partial Solar Eclipse: How to Protect Your Eyes",
-    "es": "Eclipse solar parcial: cómo proteger tus ojos",
-    "fr": "Éclipse solaire partielle : comment protéger vos yeux",
     "cat": "Welt"
   }
 ]
