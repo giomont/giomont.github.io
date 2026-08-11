@@ -1,5 +1,33 @@
 [
   {
+    "de": "Wohin steuert die Bundeszentrale für politische Bildung?",
+    "en": "Where is the Federal Agency for Civic Education heading?",
+    "es": "¿Hacia dónde se dirige la Central Federal de Educación Política?",
+    "fr": "Où se dirige le Centre fédéral pour l'éducation civique ?",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Trump erklärt Straße von Hormus für minenfrei",
+    "en": "Trump declares Strait of Hormuz mine-free",
+    "es": "Trump declara el Estrecho de Ormuz libre de minas",
+    "fr": "Trump déclare le détroit d'Hormuz exempt de mines",
+    "cat": "Welt"
+  },
+  {
+    "de": "Zürich: Wie der Mikrohandel die Drogenszene eindämmt",
+    "en": "Zurich: How microtrafficking is curbing the drug scene",
+    "es": "Zúrich: cómo el microtráfico está frenando la escena de las drogas",
+    "fr": "Zurich : Comment le microtrafic freine la scène de la drogue",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Waldbrände in Hessen: Aufruf zum Wassersparen in mehreren Orten",
+    "en": "Forest fires in Hesse: Call for water saving in several places",
+    "es": "Incendios forestales en Hesse: llamamiento al ahorro de agua en varios lugares",
+    "fr": "Incendies de forêt en Hesse : appel à économiser l'eau dans plusieurs localités",
+    "cat": "Umwelt"
+  },
+  {
     "de": "Marktbericht: Geht die Börsenrally weiter?",
     "en": "Market report: Is the stock market rally continuing?",
     "es": "Informe de mercado: ¿Continúa el rally bursátil?",
@@ -110,33 +138,5 @@
     "es": "Eclipse solar parcial: cómo proteger tus ojos",
     "fr": "Éclipse solaire partielle : comment protéger vos yeux",
     "cat": "Welt"
-  },
-  {
-    "de": "Spanien: Vorfreude auf Sonnenfinsternis, Angst vor Waldbränden",
-    "en": "Spain: Anticipation of solar eclipse, fear of forest fires",
-    "es": "España: Anticipación al eclipse solar, miedo a los incendios forestales",
-    "fr": "Espagne : anticipation de l'éclipse, peur des feux de forêt",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Dürre in Europa: Ernteausfälle, trockene Flüsse und Wassersparen",
-    "en": "Drought in Europe: crop failures, dry rivers and water savings",
-    "es": "Sequía en Europa: pérdidas de cultivos, ríos secos y ahorro de agua",
-    "fr": "Sécheresse en Europe : mauvaises récoltes, rivières sèches et économies d'eau",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Marktbericht: DAX verteidigt jüngste Gewinne",
-    "en": "Market report: DAX defends recent gains",
-    "es": "Informe de mercado: Dax defiende los últimos beneficios",
-    "fr": "Rapport de marché : le DAX défend les gains récents",
-    "cat": "Welt"
-  },
-  {
-    "de": "Kulturstaatsminister Weimer will mehr Fördergelder für Gedenkstätten",
-    "en": "Minister of State for Culture Weimer wants more funding for memorial sites",
-    "es": "El Ministro de Cultura Weimer quiere más subvenciones para los lugares conmemorativos",
-    "fr": "Le ministre de la Culture Weimer veut plus de subventions pour les sites commémoratifs",
-    "cat": "Politik"
   }
 ]
