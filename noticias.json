@@ -1,5 +1,33 @@
 [
   {
+    "de": "Syriens Ex-Machthaber Assad in Abwesenheit zum Tode verurteilt",
+    "en": "Syria's former ruler Assad sentenced to death in absentia",
+    "es": "El ex dictador sirio Assad condenado a muerte en ausencia",
+    "fr": "L'ancien dirigeant syrien Assad condamné à mort par contumace",
+    "cat": "Welt"
+  },
+  {
+    "de": "Hitzeschutz an Schulen: Wenn Klassenzimmer zu heiß zum Lernen werden",
+    "en": "Heat protection in schools: When classrooms get too hot to learn",
+    "es": "Protección contra el calor en las escuelas: cuando las aulas se calientan demasiado para aprender",
+    "fr": "Protection contre la chaleur dans les écoles : quand les salles de classe deviennent trop chaudes pour apprendre",
+    "cat": "Umwelt"
+  },
+  {
+    "de": "Spaniens Provinzen hoffen auf die \"SoFi\"-Touristen",
+    "en": "Spain's provinces hope for the \"SoFi\"tourists",
+    "es": "Las provincias de España esperan a los turistas \"SoFi\"",
+    "fr": "Les provinces espagnoles espèrent les touristes « SoFi »",
+    "cat": "Welt"
+  },
+  {
+    "de": "Doppelt so viele Mädchen wegen Essstörungen im Krankenhaus",
+    "en": "Twice as many girls hospitalized for eating disorders",
+    "es": "El doble de chicas hospitalizadas por trastornos alimentarios",
+    "fr": "Deux fois plus de filles hospitalisées en raison de troubles de l'alimentation",
+    "cat": "Welt"
+  },
+  {
     "de": "Autohersteller verdienen im Schnitt deutlich weniger pro Auto",
     "en": "Car manufacturers earn significantly less per car on average",
     "es": "Los fabricantes de automóviles ganan de media mucho menos por coche",
@@ -91,10 +119,10 @@
     "cat": "Wirtschaft"
   },
   {
-    "de": "Mindestens fünf Tote: Neue russische Luftangriffe auf Ukraine",
-    "en": "At least five dead: New Russian airstrikes on Ukraine",
-    "es": "Al menos cinco muertos: nuevos ataques aéreos rusos contra Ucrania",
-    "fr": "Au moins cinq morts : nouvelles frappes aériennes russes sur l'Ukraine",
+    "de": "Mindestens neun Tote: Neue russische Luftangriffe auf Ukraine",
+    "en": "At Least Nine Dead: New Russian Airstrikes on Ukraine",
+    "es": "Al menos nueve muertos: nuevos ataques aéreos rusos contra Ucrania",
+    "fr": "Au moins neuf morts : nouvelles frappes aériennes russes sur l'Ukraine",
     "cat": "Welt"
   },
   {
@@ -110,33 +138,5 @@
     "es": "Partido de la oposición rusa Yabloko excluido de las elecciones parlamentarias",
     "fr": "Le parti d'opposition russe Yabloko exclu des élections législatives",
     "cat": "Politik"
-  },
-  {
-    "de": "Erdbeben in Kolumbien - viele Tote befürchtet",
-    "en": "Earthquakes in Colombia - many deaths feared",
-    "es": "Terremoto en Colombia: se temen muchas muertes",
-    "fr": "Tremblement de terre en Colombie - de nombreux décès sont à craindre",
-    "cat": "Welt"
-  },
-  {
-    "de": "Weitere Bundesländer lockern Lkw-Sonntagsfahrverbot",
-    "en": "Other federal states relax the ban on driving trucks on Sundays",
-    "es": "Otros estados federales están relajando la prohibición de conducir camiones los domingos",
-    "fr": "D'autres Länder assouplissent l'interdiction de conduire les camions le dimanche",
-    "cat": "Welt"
-  },
-  {
-    "de": "Flughafen Leipzig/Halle - Die Methode \"Drohne\"",
-    "en": "Leipzig/Halle Airport - The \"Drone\" method",
-    "es": "Aeropuerto de Leipzig/Halle - El método \"drone\"",
-    "fr": "Aéroport de Leipzig/Halle - La méthode « drone »",
-    "cat": "Welt"
-  },
-  {
-    "de": "Iran erwägt Gebühren für \"Dienstleistungen\" in Straße von Hormus",
-    "en": "Iran considers fees for 'services' in Strait of Hormuz",
-    "es": "Irán está considerando cobrar por \"servicios\" en el Estrecho de Ormuz",
-    "fr": "L'Iran envisage de facturer des « services » dans le détroit d'Ormuz",
-    "cat": "Welt"
   }
 ]
