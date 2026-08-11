@@ -1,5 +1,33 @@
 [
   {
+    "de": "Ramelow für Zusammenarbeit von Linkspartei und CDU in Sachsen-Anhalt",
+    "en": "Ramelow for cooperation between the Left Party and the CDU in Saxony-Anhalt",
+    "es": "Ramelow para la cooperación del Partido de la Izquierda y la CDU en Sajonia-Anhalt",
+    "fr": "Ramelow pour la coopération du Parti de gauche et de la CDU en Saxe-Anhalt",
+    "cat": "Politik"
+  },
+  {
+    "de": "Erdbeben mit mehr als 100 Toten: Notstand in Kolumbien",
+    "en": "Earthquakes with more than 100 dead: state of emergency in Colombia",
+    "es": "Terremoto con más de 100 muertos: Emergencia en Colombia",
+    "fr": "Séisme de plus de 100 morts : état d'urgence en Colombie",
+    "cat": "Welt"
+  },
+  {
+    "de": "Ukraine: Kann Europa im Drohnen-Wettlauf mithalten?",
+    "en": "Ukraine: Can Europe compete in the drone race?",
+    "es": "Ucrania: ¿Puede Europa competir con drones?",
+    "fr": "Ukraine : l'Europe peut-elle rivaliser dans la course aux drones ?",
+    "cat": "Wirtschaft"
+  },
+  {
+    "de": "Mindestens fünf Tote: Neue russische Luftangriffe auf Ukraine",
+    "en": "At least five dead: New Russian airstrikes on Ukraine",
+    "es": "Al menos cinco muertos: nuevos ataques aéreos rusos contra Ucrania",
+    "fr": "Au moins cinq morts : nouvelles frappes aériennes russes sur l'Ukraine",
+    "cat": "Welt"
+  },
+  {
     "de": "Parlament in der Türkei billigt Gesetz für Frieden mit der PKK",
     "en": "Parliament in Turkey approves law for peace with PKK",
     "es": "El Parlamento turco aprueba la ley de paz con el PKK",
@@ -110,33 +138,5 @@
     "es": "El partido de la oposición rusa lucha contra la exclusión electoral",
     "fr": "Le parti d'opposition russe lutte contre l'exclusion électorale",
     "cat": "Politik"
-  },
-  {
-    "de": "Weltsozialforum: \"Wir müssen auf die eigenen Ressourcen setzen\"",
-    "en": "World Social Forum: \"We have to rely on our own resources\"",
-    "es": "Foro Social Mundial: \"Tenemos que apostar por nuestros propios recursos\"",
-    "fr": "Forum social mondial : « Nous devons miser sur nos propres ressources »",
-    "cat": "Welt"
-  },
-  {
-    "de": "Meloni und Frederiksen warnen gemeinsam vor \"unkontrollierter Migration\"",
-    "en": "Meloni and Frederiksen jointly warn against \"uncontrolled migration\"",
-    "es": "Meloni y Frederiksen advierten conjuntamente contra la \"migración incontrolada\"",
-    "fr": "Meloni et Frederiksen mettent en garde ensemble contre une « migration incontrôlée »",
-    "cat": "Sport"
-  },
-  {
-    "de": "Gold ist wieder gefragt: Zehn Prozent über Jahrestiefstpreis",
-    "en": "Gold is in demand again: ten percent above annual low price",
-    "es": "El oro vuelve a estar en demanda: un diez por ciento por encima del precio mínimo anual",
-    "fr": "L'or est à nouveau demandé : dix pour cent au-dessus du prix le plus bas annuel",
-    "cat": "Wirtschaft"
-  },
-  {
-    "de": "Klingbeils Steuerpläne stoßen auf Kritik - auch aus der Union",
-    "en": "Klingbeil's tax plans meet with criticism - also from the Union",
-    "es": "Los planes fiscales de Klingbeil reciben críticas, también de la Unión",
-    "fr": "Les plans fiscaux de Klingbeil font l'objet de critiques, y compris de la part de l'Union",
-    "cat": "Wirtschaft"
   }
 ]
