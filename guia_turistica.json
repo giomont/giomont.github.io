@@ -1,54 +1,5 @@
 [
   {
-    "de": "Können Sie das für mich übersetzen?",
-    "en": "Can you translate that for me?",
-    "es": "¿Puede traducirlo para mí?",
-    "fr": "Pouvez-vous éventuellement traduire ceci pour moi ?",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Ich brauche einen Moment, um zu antworten.",
-    "en": "I need a moment to respond.",
-    "es": "Necesito un momento para responder.",
-    "fr": "J'ai besoin d'un moment pour répondre.",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Bitte sprechen Sie etwas langsamer.",
-    "en": "Please speak more slowly.",
-    "es": "Por favor, hable un poco más despacio.",
-    "fr": "Veuillez parler un peu plus lentement.",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Können Sie das Wort buchstabieren?",
-    "en": "Can you spell the word?",
-    "es": "¿Puede deletrear la palabra?",
-    "fr": "Pouvez-vous épeler le mot ?",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Ich habe eine Frage zu unserer Route.",
-    "en": "I have a question about our route.",
-    "es": "Tengo una pregunta sobre nuestra ruta.",
-    "fr": "J'ai une question sur notre itinéraire.",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Verzeihung, ich habe das nicht verstanden.",
-    "en": "Excuse me, I didn't get that.",
-    "es": "Lo siento, no lo entendí.",
-    "fr": "Excusez-moi, je n'ai pas compris.",
-    "cat": "Kommunikation"
-  },
-  {
-    "de": "Danke, dass Sie so geduldig sind.",
-    "en": "Thank you for your patience.",
-    "es": "Gracias por ser tan paciente.",
-    "fr": "Merci d'être si patient.",
-    "cat": "Kommunikation"
-  },
-  {
     "de": "Wo finde ich den nächsten Geldautomaten?",
     "en": "Where can I find the nearest ATM?",
     "es": "¿Dónde puedo encontrar el cajero automático más cercano?",
@@ -137,6 +88,55 @@
     "en": "When does this attraction close?",
     "es": "¿A qué hora cierra esta atracción?",
     "fr": "Quand cette attraction touristique ferme-t-elle ?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Ist Fotografieren hier erlaubt?",
+    "en": "Is taking pictures allowed?",
+    "es": "¿Está permitida la fotografía aquí?",
+    "fr": "La photographie est-elle autorisée ici ?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Gibt es einen ermäßigten Eintritt für Studenten?",
+    "en": "Is there a reduced admission for students?",
+    "es": "¿Hay una entrada reducida para estudiantes?",
+    "fr": "Existe-t-il une entrée à tarif réduit pour les étudiants ?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Können wir eine Gruppenführung buchen?",
+    "en": "Can we book a group tour?",
+    "es": "¿Podemos reservar una visita guiada en grupo?",
+    "fr": "Pouvons-nous réserver une visite guidée de groupe ?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Welche Sehenswürdigkeit empfehlen Sie als Erstes?",
+    "en": "Which attraction do you recommend first?",
+    "es": "¿Cuál es la primera atracción que recomienda?",
+    "fr": "Quelle attraction recommandez-vous en premier ?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Gibt es einen Souvenirladen am Ausgang?",
+    "en": "Is there a souvenir shop at the exit?",
+    "es": "¿Hay alguna tienda de souvenirs a la salida?",
+    "fr": "Y a-t-il une boutique de souvenirs à la sortie ?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Ist der Zugang für Rollstühle möglich?",
+    "en": "Is wheelchair access possible?",
+    "es": "¿Es posible el acceso para sillas de ruedas?",
+    "fr": "L'accès aux fauteuils roulants est-il possible ?",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Wie weit ist es zum nächsten Aussichtspunkt?",
+    "en": "How far is it to the nearest lookout point?",
+    "es": "¿A qué distancia está el mirador más cercano?",
+    "fr": "À quelle distance se trouve le point de vue le plus proche ?",
     "cat": "Sehenswürdigkeiten"
   }
 ]

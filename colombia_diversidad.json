@@ -1,54 +1,5 @@
 [
   {
-    "de": "Viele Kaffeefincas bieten Führungen für Touristen an.",
-    "en": "Many coffee fincas offer guided tours for tourists.",
-    "es": "Muchas fincas de café ofrecen visitas guiadas para turistas.",
-    "fr": "De nombreuses fincas de café proposent des visites guidées pour les touristes.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Der Kaffeeanbau prägt die Kultur der Region stark.",
-    "en": "Coffee cultivation has a strong influence on the culture of the region.",
-    "es": "El cultivo del café influye fuertemente en la cultura de la región.",
-    "fr": "La culture du café marque fortement la culture de la région.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Besucher können den Prozess vom Anbau bis zur Tasse erleben.",
-    "en": "Visitors can experience the process from growing to mugging.",
-    "es": "Los visitantes pueden experimentar el proceso desde el cultivo hasta la taza.",
-    "fr": "Les visiteurs peuvent découvrir le processus de la culture à la tasse.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Kolumbien exportiert Kaffee in viele Länder der Welt.",
-    "en": "Colombia exports coffee to many countries around the world.",
-    "es": "Colombia exporta café a muchos países del mundo.",
-    "fr": "La Colombie exporte du café dans de nombreux pays du monde.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Die Ernte des Kaffees erfolgt meist von Hand.",
-    "en": "The coffee is usually harvested by hand.",
-    "es": "La recolección del café suele ser manual.",
-    "fr": "La récolte du café se fait généralement à la main.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Die Wayuu-Gemeinschaft ist bekannt für ihre gewebten Taschen.",
-    "en": "The Wayuu community is known for their woven bags.",
-    "es": "La comunidad Wayuu es conocida por sus bolsillos tejidos.",
-    "fr": "La communauté Wayuu est connue pour ses sacs tissés.",
-    "cat": "Kolumbien"
-  },
-  {
-    "de": "Kunsthandwerk aus Filigranarbeit stammt aus Mompox.",
-    "en": "Crafts made of filigree work come from Mompox.",
-    "es": "La artesanía de filigrana proviene de Mompox.",
-    "fr": "L'artisanat en filigrane provient de Mompox.",
-    "cat": "Kolumbien"
-  },
-  {
     "de": "Sombrero vueltiao ist ein traditioneller Hut aus der Karibikregion.",
     "en": "Sombrero vueltiao is a traditional hat from the Caribbean region.",
     "es": "Sombrero vueltiao es un sombrero tradicional de la región del Caribe.",
@@ -137,6 +88,55 @@
     "en": "The protection of biodiversity is a high priority for tourism.",
     "es": "La protección de la biodiversidad es una alta prioridad para el turismo.",
     "fr": "La protection de la biodiversité est une priorité pour le tourisme.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Lokale Gemeinschaften profitieren direkt vom Ökotourismus.",
+    "en": "Local communities benefit directly from ecotourism.",
+    "es": "Las comunidades locales se benefician directamente del ecoturismo.",
+    "fr": "Les communautés locales bénéficient directement de l'écotourisme.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Es wird empfohlen, offizielle Reiseführer zu buchen.",
+    "en": "It is recommended to book official guides.",
+    "es": "Se recomienda reservar guías oficiales.",
+    "fr": "Il est recommandé de réserver des guides officiels.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "In vielen Touristenorten gibt es spezielle Touristenpolizei.",
+    "en": "There are special tourist police in many tourist resorts.",
+    "es": "En muchos lugares turísticos hay una policía turística especial.",
+    "fr": "Dans de nombreux lieux touristiques, il existe une police touristique spéciale.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Es ist ratsam, sich vor der Reise über die Region zu informieren.",
+    "en": "It is advisable to find out about the region before travelling.",
+    "es": "Es recomendable informarse sobre la zona antes de viajar.",
+    "fr": "Il est conseillé de se renseigner sur la région avant le voyage.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Reisende sollten wichtige Dokumente immer bei sich tragen.",
+    "en": "Travelers should always carry important documents with them.",
+    "es": "Los viajeros deben llevar siempre consigo documentos importantes.",
+    "fr": "Les voyageurs doivent toujours avoir sur eux les documents importants.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "In höher gelegenen Gebieten sollte man sich langsam akklimatisieren.",
+    "en": "In higher areas, you should slowly acclimatize.",
+    "es": "En las zonas más altas hay que aclimatarse lentamente.",
+    "fr": "Dans les zones d'altitude, il faut s'acclimater lentement.",
+    "cat": "Kolumbien"
+  },
+  {
+    "de": "Kolumbien hat in den letzten Jahren stark in Tourismus-Sicherheit investiert.",
+    "en": "Colombia has invested heavily in tourism security in recent years.",
+    "es": "Colombia ha invertido mucho en los últimos años en seguridad turística.",
+    "fr": "Ces dernières années, la Colombie a beaucoup investi dans la sécurité du tourisme.",
     "cat": "Kolumbien"
   }
 ]

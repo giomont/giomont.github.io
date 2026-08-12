@@ -1,5 +1,19 @@
 [
   {
+    "de": "Anthropic führt Wasserzeichen bei KI-Texten ein",
+    "en": "Anthropic introduces watermark to AI texts",
+    "es": "Anthropic introduce marcas de agua en los textos de IA",
+    "fr": "Anthropic introduit le filigrane dans les textes IA",
+    "cat": "Welt"
+  },
+  {
+    "de": "US-Militär beschießt Tanker im Golf von Oman",
+    "en": "US military firing on tankers in the Gulf of Oman",
+    "es": "Militares estadounidenses bombardean petroleros en el Golfo de Omán",
+    "fr": "L'armée américaine bombarde des pétroliers dans le golfe d'Oman",
+    "cat": "Welt"
+  },
+  {
     "de": "Mehrheit im Parlament für Abschaffung der Todesstrafe im Libanon",
     "en": "Majority in Parliament for Abolition of the Death Penalty in Lebanon",
     "es": "Mayoría en el Parlamento a favor de la abolición de la pena de muerte en el Líbano",
@@ -123,20 +137,6 @@
     "en": "Spain's provinces hope for the \"SoFi\"tourists",
     "es": "Las provincias de España esperan a los turistas \"SoFi\"",
     "fr": "Les provinces espagnoles espèrent les touristes « SoFi »",
-    "cat": "Welt"
-  },
-  {
-    "de": "Doppelt so viele Mädchen wegen Essstörungen im Krankenhaus",
-    "en": "Twice as many girls hospitalized for eating disorders",
-    "es": "El doble de chicas hospitalizadas por trastornos alimentarios",
-    "fr": "Deux fois plus de filles hospitalisées en raison de troubles de l'alimentation",
-    "cat": "Welt"
-  },
-  {
-    "de": "Autohersteller verdienen im Schnitt deutlich weniger pro Auto",
-    "en": "Car manufacturers earn significantly less per car on average",
-    "es": "Los fabricantes de automóviles ganan de media mucho menos por coche",
-    "fr": "Les constructeurs automobiles gagnent en moyenne beaucoup moins par voiture",
     "cat": "Welt"
   }
 ]

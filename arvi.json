@@ -1,54 +1,5 @@
 [
   {
-    "de": "Am besten besucht man den Park früh am Morgen.",
-    "en": "The best time to visit the park is early in the morning.",
-    "es": "Lo mejor es visitar el parque a primera hora de la mañana.",
-    "fr": "Il est préférable de visiter le parc tôt le matin.",
-    "cat": "Arví"
-  },
-  {
-    "de": "An Wochentagen ist weniger los als am Wochenende.",
-    "en": "Weekdays are less busy than weekends.",
-    "es": "Los días laborables son menos concurridos que los fines de semana.",
-    "fr": "Il se passe moins de choses en semaine que le week-end.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Eine Wasserflasche sollte man immer dabeihaben.",
-    "en": "You should always have a water bottle with you.",
-    "es": "Siempre hay que llevar una botella de agua.",
-    "fr": "Vous devriez toujours avoir une bouteille d'eau avec vous.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Sonnencreme wird trotz des Nebels empfohlen.",
-    "en": "Sunscreen is recommended despite the fog.",
-    "es": "Se recomienda protector solar a pesar de la niebla.",
-    "fr": "La crème solaire est recommandée malgré le brouillard.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Ein Fernglas ist ideal für die Vogelbeobachtung.",
-    "en": "Binoculars are ideal for bird watching.",
-    "es": "Unos prismáticos son ideales para el avistamiento de aves.",
-    "fr": "Les jumelles sont idéales pour l'observation des oiseaux.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Vor der spanischen Kolonialzeit lebten dort indigene Gemeinschaften.",
-    "en": "Before the Spanish colonial period, indigenous communities lived there.",
-    "es": "Antes de la época colonial española, las comunidades indígenas vivían allí.",
-    "fr": "Avant l'époque coloniale espagnole, des communautés autochtones y vivaient.",
-    "cat": "Arví"
-  },
-  {
-    "de": "Archäologen haben im Park alte Wege und Terrassen gefunden.",
-    "en": "Archaeologists have found ancient paths and terraces in the park.",
-    "es": "Los arqueólogos han encontrado antiguos caminos y terrazas en el parque.",
-    "fr": "Les archéologues ont trouvé d'anciens chemins et terrasses dans le parc.",
-    "cat": "Arví"
-  },
-  {
     "de": "Die Region war einst ein wichtiger Handelsweg der Ureinwohner.",
     "en": "The region was once an important trade route for the indigenous people.",
     "es": "La región fue una vez una importante ruta comercial de los pueblos indígenas.",
@@ -137,6 +88,55 @@
     "en": "The tranquility of the forest also attracts artists.",
     "es": "La tranquilidad del bosque también atrae a los artistas.",
     "fr": "La tranquillité de la forêt attire également les artistes.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Der Park ist ein beliebtes Ziel für Familienausflüge.",
+    "en": "The park is a popular destination for family outings.",
+    "es": "El parque es un destino popular para excursiones en familia.",
+    "fr": "Le parc est une destination prisée pour les sorties en famille.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Es gibt Picknickbereiche mit Tischen und Bänken.",
+    "en": "There are picnic areas with tables and benches.",
+    "es": "Hay zonas de picnic con mesas y bancos.",
+    "fr": "Il y a des aires de pique-nique avec tables et bancs.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Kinder können im Streichelzoo Tiere kennenlernen.",
+    "en": "Children can get to know animals in the petting zoo.",
+    "es": "Los niños pueden conocer animales en el zoológico interactivo.",
+    "fr": "Les enfants peuvent rencontrer des animaux au zoo pour enfants.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Am Eingang gibt es Informationstafeln für Besucher.",
+    "en": "There are information panels for visitors at the entrance.",
+    "es": "En la entrada hay paneles informativos para los visitantes.",
+    "fr": "À l'entrée, il y a des panneaux d'information pour les visiteurs.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Fotografen schätzen das besondere Licht im Nebelwald.",
+    "en": "Photographers appreciate the special light in the cloud forest.",
+    "es": "Los fotógrafos aprecian la luz especial en el bosque nublado.",
+    "fr": "Les photographes apprécient la lumière particulière de la forêt nuageuse.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Der Park bietet viele Motive für Naturfotografie.",
+    "en": "The park offers many motifs for nature photography.",
+    "es": "El parque ofrece muchos motivos para la fotografía de naturaleza.",
+    "fr": "Le parc offre de nombreux motifs pour la photographie de la nature.",
+    "cat": "Arví"
+  },
+  {
+    "de": "Drohnenflüge sind in bestimmten Zonen eingeschränkt.",
+    "en": "Drone flights are restricted in certain zones.",
+    "es": "Los vuelos con drones están restringidos en ciertas zonas.",
+    "fr": "Les vols de drones sont limités dans certaines zones.",
     "cat": "Arví"
   }
 ]

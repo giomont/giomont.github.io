@@ -1,54 +1,5 @@
 [
   {
-    "de": "Wenn Sie sich verlaufen, bleiben Sie an Ort und Stelle.",
-    "en": "If you get lost, stay in place.",
-    "es": "Si te pierdes, quédate en su sitio.",
-    "fr": "Si vous vous perdez, restez en place.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Ich habe immer ein Erste-Hilfe-Set dabei.",
-    "en": "I always have a first aid kit with me.",
-    "es": "Siempre llevo conmigo un botiquín de primeros auxilios.",
-    "fr": "J'ai toujours une trousse de premiers soins avec moi.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Bitte informieren Sie mich über Allergien.",
-    "en": "I would like to know more about:",
-    "es": "Por favor, infórmenme sobre las alergias.",
-    "fr": "Veuillez m'informer des allergies.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Woher kommen Sie?",
-    "en": "Where do you come from?",
-    "es": "¿De dónde viene?",
-    "fr": "D'où venez-vous ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Ist das Ihr erster Besuch in Kolumbien?",
-    "en": "Is this your first visit to Colombia?",
-    "es": "¿Es tu primera visita a Colombia?",
-    "fr": "Est-ce votre première visite en Colombie ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Wie gefällt Ihnen die Reise bisher?",
-    "en": "How do you like the trip so far?",
-    "es": "¿Qué te ha parecido el viaje hasta ahora?",
-    "fr": "Que pensez-vous du voyage jusqu'à présent ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Was hat Ihnen am besten gefallen?",
-    "en": "What did you like best?",
-    "es": "¿Qué es lo que más te ha gustado?",
-    "fr": "Qu'est-ce qui vous a le plus plu ?",
-    "cat": "Grundlagen"
-  },
-  {
     "de": "Möchten Sie ein Foto von der Gruppe?",
     "en": "Would you like a photo of the group?",
     "es": "¿Quieres una foto del grupo?",
@@ -137,6 +88,55 @@
     "en": "Do you have enough sunscreen?",
     "es": "¿Has traído suficiente protector solar?",
     "fr": "Avez-vous assez de crème solaire avec vous ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Vergessen Sie nicht, Ihre Kamera aufzuladen.",
+    "en": "Don't forget to charge your camera.",
+    "es": "No olvides cargar tu cámara.",
+    "fr": "N'oubliez pas de recharger votre appareil photo.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Bitte trinken Sie regelmäßig Wasser.",
+    "en": "Please drink water regularly.",
+    "es": "Por favor, beba agua con regularidad.",
+    "fr": "Veuillez boire de l'eau régulièrement.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Wir machen jetzt eine kurze Fotopause.",
+    "en": "We are now taking a short photo break.",
+    "es": "Ahora vamos a hacer una breve pausa para hacer fotos.",
+    "fr": "Nous prenons maintenant une courte pause photo.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Der Bus wartet schon auf uns.",
+    "en": "The bus is already waiting for us.",
+    "es": "El autobús nos está esperando.",
+    "fr": "Le bus nous attend déjà.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Bitte zählen wir kurz die Gruppe durch.",
+    "en": "Please let us briefly count the group.",
+    "es": "Por favor, contemos brevemente el grupo.",
+    "fr": "Veuillez compter brièvement le groupe.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Hat jemand sein Handy verloren?",
+    "en": "Has anyone lost their phone?",
+    "es": "¿Alguien ha perdido su móvil?",
+    "fr": "Quelqu'un a perdu son téléphone ?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Wir sind fast am Ausgangspunkt zurück.",
+    "en": "We are almost back at the starting point.",
+    "es": "Ya casi estamos de vuelta en el punto de partida.",
+    "fr": "Nous sommes presque de retour au point de départ.",
     "cat": "Grundlagen"
   }
 ]
