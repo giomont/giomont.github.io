@@ -1,5 +1,19 @@
 [
   {
+    "de": "Neue Regeln der EU: Diese Verpackungen gibt es bald nicht mehr",
+    "en": "New EU rules: These packagings will soon no longer be available",
+    "es": "Nuevas normas de la UE: estos envases pronto dejarán de existir",
+    "fr": "Nouvelles règles de l'UE : ces emballages ne seront bientôt plus disponibles",
+    "cat": "Welt"
+  },
+  {
+    "de": "Verkehrsminister will Flüsse wegen niedriger Pegel ausbauen",
+    "en": "Transport Minister wants to expand rivers because of low levels",
+    "es": "El Ministro de Transporte quiere expandir los ríos debido a los bajos niveles",
+    "fr": "Le ministre des Transports veut agrandir les rivières en raison des faibles niveaux",
+    "cat": "Politik"
+  },
+  {
     "de": "Anthropic führt Wasserzeichen bei KI-Texten ein",
     "en": "Anthropic introduces watermark to AI texts",
     "es": "Anthropic introduce marcas de agua en los textos de IA",
@@ -123,20 +137,6 @@
     "en": "Syria's former ruler Assad sentenced to death in absentia",
     "es": "El ex dictador sirio Assad condenado a muerte en ausencia",
     "fr": "L'ancien dirigeant syrien Assad condamné à mort par contumace",
-    "cat": "Welt"
-  },
-  {
-    "de": "Hitzeschutz an Schulen: Wenn Klassenzimmer zu heiß zum Lernen werden",
-    "en": "Heat protection in schools: When classrooms get too hot to learn",
-    "es": "Protección contra el calor en las escuelas: cuando las aulas se calientan demasiado para aprender",
-    "fr": "Protection contre la chaleur dans les écoles : quand les salles de classe deviennent trop chaudes pour apprendre",
-    "cat": "Umwelt"
-  },
-  {
-    "de": "Spaniens Provinzen hoffen auf die \"SoFi\"-Touristen",
-    "en": "Spain's provinces hope for the \"SoFi\"tourists",
-    "es": "Las provincias de España esperan a los turistas \"SoFi\"",
-    "fr": "Les provinces espagnoles espèrent les touristes « SoFi »",
     "cat": "Welt"
   }
 ]
