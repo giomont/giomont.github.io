@@ -25,10 +25,4 @@ jobs:
       - name: Ejecutar generar.py
         run: python3 generar.py all
 
-      - name: Subir JSON actualizados
-        run: |
-          git config user.name "wegweiser-bot"
-          git config user.email "bot@giomont.github.io"
-          git add noticias.json arvi.json colombia_diversidad.json guia_turistica.json aleman_basico.json
-          git diff --quiet --cached || git commit -m "Actualización automática de datos (generar.py)"
-          git push
+      
