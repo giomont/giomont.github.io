@@ -1,7 +1,119 @@
 [
   {
+    "de": "Gefällt Ihnen die Aussicht?",
+    "en": "Gefällt Ihnen die Aussicht?",
+    "es": "Gefällt Ihnen die Aussicht?",
+    "fr": "Gefällt Ihnen die Aussicht?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Sind Sie bereit für den nächsten Abschnitt?",
+    "en": "Sind Sie bereit für den nächsten Abschnitt?",
+    "es": "Sind Sie bereit für den nächsten Abschnitt?",
+    "fr": "Sind Sie bereit für den nächsten Abschnitt?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Brauchen Sie eine Pause zum Fotografieren?",
+    "en": "Brauchen Sie eine Pause zum Fotografieren?",
+    "es": "Brauchen Sie eine Pause zum Fotografieren?",
+    "fr": "Brauchen Sie eine Pause zum Fotografieren?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Ist allen warm genug angezogen?",
+    "en": "Ist allen warm genug angezogen?",
+    "es": "Ist allen warm genug angezogen?",
+    "fr": "Ist allen warm genug angezogen?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Bleiben Sie bitte ruhig, alles ist unter Kontrolle.",
+    "en": "Bleiben Sie bitte ruhig, alles ist unter Kontrolle.",
+    "es": "Bleiben Sie bitte ruhig, alles ist unter Kontrolle.",
+    "fr": "Bleiben Sie bitte ruhig, alles ist unter Kontrolle.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Im Notfall folgen Sie bitte meinen Anweisungen.",
+    "en": "Im Notfall folgen Sie bitte meinen Anweisungen.",
+    "es": "Im Notfall folgen Sie bitte meinen Anweisungen.",
+    "fr": "Im Notfall folgen Sie bitte meinen Anweisungen.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Der Notausgang ist dort drüben.",
+    "en": "Der Notausgang ist dort drüben.",
+    "es": "Der Notausgang ist dort drüben.",
+    "fr": "Der Notausgang ist dort drüben.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Bitte melden Sie sich, wenn etwas fehlt.",
+    "en": "Bitte melden Sie sich, wenn etwas fehlt.",
+    "es": "Bitte melden Sie sich, wenn etwas fehlt.",
+    "fr": "Bitte melden Sie sich, wenn etwas fehlt.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Achten Sie bitte auf Ihre persönlichen Sachen.",
+    "en": "Achten Sie bitte auf Ihre persönlichen Sachen.",
+    "es": "Achten Sie bitte auf Ihre persönlichen Sachen.",
+    "fr": "Achten Sie bitte auf Ihre persönlichen Sachen.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Wenn Sie sich verlaufen, bleiben Sie an Ort und Stelle.",
+    "en": "Wenn Sie sich verlaufen, bleiben Sie an Ort und Stelle.",
+    "es": "Wenn Sie sich verlaufen, bleiben Sie an Ort und Stelle.",
+    "fr": "Wenn Sie sich verlaufen, bleiben Sie an Ort und Stelle.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Ich habe immer ein Erste-Hilfe-Set dabei.",
+    "en": "Ich habe immer ein Erste-Hilfe-Set dabei.",
+    "es": "Ich habe immer ein Erste-Hilfe-Set dabei.",
+    "fr": "Ich habe immer ein Erste-Hilfe-Set dabei.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Bitte informieren Sie mich über Allergien.",
+    "en": "Bitte informieren Sie mich über Allergien.",
+    "es": "Bitte informieren Sie mich über Allergien.",
+    "fr": "Bitte informieren Sie mich über Allergien.",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Woher kommen Sie?",
+    "en": "Woher kommen Sie?",
+    "es": "Woher kommen Sie?",
+    "fr": "Woher kommen Sie?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Ist das Ihr erster Besuch in Kolumbien?",
+    "en": "Ist das Ihr erster Besuch in Kolumbien?",
+    "es": "Ist das Ihr erster Besuch in Kolumbien?",
+    "fr": "Ist das Ihr erster Besuch in Kolumbien?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Wie gefällt Ihnen die Reise bisher?",
+    "en": "Wie gefällt Ihnen die Reise bisher?",
+    "es": "Wie gefällt Ihnen die Reise bisher?",
+    "fr": "Wie gefällt Ihnen die Reise bisher?",
+    "cat": "Grundlagen"
+  },
+  {
+    "de": "Was hat Ihnen am besten gefallen?",
+    "en": "Was hat Ihnen am besten gefallen?",
+    "es": "Was hat Ihnen am besten gefallen?",
+    "fr": "Was hat Ihnen am besten gefallen?",
+    "cat": "Grundlagen"
+  },
+  {
     "de": "Möchten Sie ein Foto von der Gruppe?",
-    "en": "Would you like a photo of the group?",
+    "en": "Möchten Sie ein Foto von der Gruppe?",
     "es": "¿Quieres una foto del grupo?",
     "fr": "Souhaitez-vous une photo du groupe ?",
     "cat": "Grundlagen"
@@ -25,118 +137,6 @@
     "en": "Do you already know Colombian cuisine?",
     "es": "¿Conoces la cocina colombiana?",
     "fr": "Connaissez-vous déjà la cuisine colombienne ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Vielen Dank, dass Sie an der Tour teilgenommen haben.",
-    "en": "Thank you for completing our survey!",
-    "es": "Gracias por participar en el tour.",
-    "fr": "Merci d'avoir participé à la tournée.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Ich hoffe, die Tour hat Ihnen gefallen.",
-    "en": "I hope you enjoyed the tour.",
-    "es": "Espero que os haya gustado la ruta.",
-    "fr": "J'espère que la tournée vous a plu.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Es war mir eine Freude, Sie zu begleiten.",
-    "en": "It was my pleasure to accompany you.",
-    "es": "Ha sido un placer acompañarle.",
-    "fr": "Ce fut un plaisir de vous accompagner.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Bitte bewerten Sie unsere Tour, wenn möglich.",
-    "en": "Please rate our tour if possible.",
-    "es": "Por favor, evalúe nuestro recorrido si es posible.",
-    "fr": "Veuillez évaluer notre visite si possible.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Kommen Sie gerne wieder nach Kolumbien.",
-    "en": "Feel free to come back to Colombia.",
-    "es": "No dudes en volver a Colombia.",
-    "fr": "Revenez volontiers en Colombie.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Ich hoffe, wir sehen uns bald wieder.",
-    "en": "I hope we'll meet again soon!",
-    "es": "Espero que nos veamos pronto.",
-    "fr": "J'espère que l'on se reverra.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Passen Sie gut auf sich auf.",
-    "en": "Take good care of yourself.",
-    "es": "Cuídese bien.",
-    "fr": "Prenez soin de vous,",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Gute Heimreise!",
-    "en": "Have a safe journey!",
-    "es": "¡Feliz viaje a casa!",
-    "fr": "Bon retour à la maison!",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Haben Sie genug Sonnencreme dabei?",
-    "en": "Do you have enough sunscreen?",
-    "es": "¿Has traído suficiente protector solar?",
-    "fr": "Avez-vous assez de crème solaire avec vous ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Vergessen Sie nicht, Ihre Kamera aufzuladen.",
-    "en": "Don't forget to charge your camera.",
-    "es": "No olvides cargar tu cámara.",
-    "fr": "N'oubliez pas de recharger votre appareil photo.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Bitte trinken Sie regelmäßig Wasser.",
-    "en": "Please drink water regularly.",
-    "es": "Por favor, beba agua con regularidad.",
-    "fr": "Veuillez boire de l'eau régulièrement.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Wir machen jetzt eine kurze Fotopause.",
-    "en": "We are now taking a short photo break.",
-    "es": "Ahora vamos a hacer una breve pausa para hacer fotos.",
-    "fr": "Nous prenons maintenant une courte pause photo.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Der Bus wartet schon auf uns.",
-    "en": "The bus is already waiting for us.",
-    "es": "El autobús nos está esperando.",
-    "fr": "Le bus nous attend déjà.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Bitte zählen wir kurz die Gruppe durch.",
-    "en": "Please let us briefly count the group.",
-    "es": "Por favor, contemos brevemente el grupo.",
-    "fr": "Veuillez compter brièvement le groupe.",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Hat jemand sein Handy verloren?",
-    "en": "Has anyone lost their phone?",
-    "es": "¿Alguien ha perdido su móvil?",
-    "fr": "Quelqu'un a perdu son téléphone ?",
-    "cat": "Grundlagen"
-  },
-  {
-    "de": "Wir sind fast am Ausgangspunkt zurück.",
-    "en": "We are almost back at the starting point.",
-    "es": "Ya casi estamos de vuelta en el punto de partida.",
-    "fr": "Nous sommes presque de retour au point de départ.",
     "cat": "Grundlagen"
   }
 ]

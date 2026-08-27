@@ -1,142 +1,142 @@
 [
   {
+    "de": "Bitte rufen Sie die Polizei.",
+    "en": "Bitte rufen Sie die Polizei.",
+    "es": "Bitte rufen Sie die Polizei.",
+    "fr": "Bitte rufen Sie die Polizei.",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Mir ist schlecht, ich brauche einen Arzt.",
+    "en": "Mir ist schlecht, ich brauche einen Arzt.",
+    "es": "Mir ist schlecht, ich brauche einen Arzt.",
+    "fr": "Mir ist schlecht, ich brauche einen Arzt.",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Gibt es hier eine Notaufnahme?",
+    "en": "Gibt es hier eine Notaufnahme?",
+    "es": "Gibt es hier eine Notaufnahme?",
+    "fr": "Gibt es hier eine Notaufnahme?",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Mein Gepäck wurde gestohlen.",
+    "en": "Mein Gepäck wurde gestohlen.",
+    "es": "Mein Gepäck wurde gestohlen.",
+    "fr": "Mein Gepäck wurde gestohlen.",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Ich habe eine allergische Reaktion.",
+    "en": "Ich habe eine allergische Reaktion.",
+    "es": "Ich habe eine allergische Reaktion.",
+    "fr": "Ich habe eine allergische Reaktion.",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Wo finde ich die nächste Feuerwache?",
+    "en": "Wo finde ich die nächste Feuerwache?",
+    "es": "Wo finde ich die nächste Feuerwache?",
+    "fr": "Wo finde ich die nächste Feuerwache?",
+    "cat": "Notfälle"
+  },
+  {
+    "de": "Ich verstehe leider nur ein bisschen Deutsch.",
+    "en": "Ich verstehe leider nur ein bisschen Deutsch.",
+    "es": "Ich verstehe leider nur ein bisschen Deutsch.",
+    "fr": "Ich verstehe leider nur ein bisschen Deutsch.",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Können Sie das bitte aufschreiben?",
+    "en": "Können Sie das bitte aufschreiben?",
+    "es": "Können Sie das bitte aufschreiben?",
+    "fr": "Können Sie das bitte aufschreiben?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Wie sagt man das auf Spanisch?",
+    "en": "Wie sagt man das auf Spanisch?",
+    "es": "Wie sagt man das auf Spanisch?",
+    "fr": "Wie sagt man das auf Spanisch?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Können Sie das für mich übersetzen?",
+    "en": "Können Sie das für mich übersetzen?",
+    "es": "Können Sie das für mich übersetzen?",
+    "fr": "Können Sie das für mich übersetzen?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Ich brauche einen Moment, um zu antworten.",
+    "en": "Ich brauche einen Moment, um zu antworten.",
+    "es": "Ich brauche einen Moment, um zu antworten.",
+    "fr": "Ich brauche einen Moment, um zu antworten.",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Bitte sprechen Sie etwas langsamer.",
+    "en": "Bitte sprechen Sie etwas langsamer.",
+    "es": "Bitte sprechen Sie etwas langsamer.",
+    "fr": "Bitte sprechen Sie etwas langsamer.",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Können Sie das Wort buchstabieren?",
+    "en": "Können Sie das Wort buchstabieren?",
+    "es": "Können Sie das Wort buchstabieren?",
+    "fr": "Können Sie das Wort buchstabieren?",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Ich habe eine Frage zu unserer Route.",
+    "en": "Ich habe eine Frage zu unserer Route.",
+    "es": "Ich habe eine Frage zu unserer Route.",
+    "fr": "Ich habe eine Frage zu unserer Route.",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Verzeihung, ich habe das nicht verstanden.",
+    "en": "Verzeihung, ich habe das nicht verstanden.",
+    "es": "Verzeihung, ich habe das nicht verstanden.",
+    "fr": "Verzeihung, ich habe das nicht verstanden.",
+    "cat": "Kommunikation"
+  },
+  {
+    "de": "Danke, dass Sie so geduldig sind.",
+    "en": "Danke, dass Sie so geduldig sind.",
+    "es": "Danke, dass Sie so geduldig sind.",
+    "fr": "Danke, dass Sie so geduldig sind.",
+    "cat": "Kommunikation"
+  },
+  {
     "de": "Wo finde ich den nächsten Geldautomaten?",
-    "en": "Where can I find the nearest ATM?",
-    "es": "¿Dónde puedo encontrar el cajero automático más cercano?",
-    "fr": "Où puis-je trouver le guichet automatique le plus proche ?",
+    "en": "Wo finde ich den nächsten Geldautomaten?",
+    "es": "Wo finde ich den nächsten Geldautomaten?",
+    "fr": "Wo finde ich den nächsten Geldautomaten?",
     "cat": "Geld"
   },
   {
     "de": "Akzeptieren Sie auch US-Dollar?",
-    "en": "Do you also accept US dollars?",
-    "es": "¿Aceptan también dólares estadounidenses?",
-    "fr": "Acceptez-vous également les dollars américains ?",
+    "en": "Akzeptieren Sie auch US-Dollar?",
+    "es": "Akzeptieren Sie auch US-Dollar?",
+    "fr": "Akzeptieren Sie auch US-Dollar?",
     "cat": "Geld"
   },
   {
     "de": "Kann ich hier mit Karte bezahlen?",
-    "en": "Can I pay by card here?",
-    "es": "¿Puedo pagar con tarjeta?",
-    "fr": "Puis-je payer par carte ?",
+    "en": "Kann ich hier mit Karte bezahlen?",
+    "es": "Kann ich hier mit Karte bezahlen?",
+    "fr": "Kann ich hier mit Karte bezahlen?",
     "cat": "Geld"
   },
   {
     "de": "Wie ist der aktuelle Wechselkurs?",
-    "en": "What's today's exchange rate?",
-    "es": "¿Cuál es el tipo de cambio actual?",
-    "fr": "Quel est le taux de change actuel ?",
+    "en": "Wie ist der aktuelle Wechselkurs?",
+    "es": "Wie ist der aktuelle Wechselkurs?",
+    "fr": "Wie ist der aktuelle Wechselkurs?",
     "cat": "Geld"
-  },
-  {
-    "de": "Wo kann ich eine Quittung bekommen?",
-    "en": "Where can I get a receipt?",
-    "es": "¿Dónde puedo obtener un recibo?",
-    "fr": "Où puis-je obtenir un reçu ?",
-    "cat": "Geld"
-  },
-  {
-    "de": "Gibt es hier eine Bank in der Nähe?",
-    "en": "Is there a bank near here?",
-    "es": "¿Hay algún banco cerca de aquí?",
-    "fr": "Est-ce qu'il y a une banque dans le coin ?",
-    "cat": "Geld"
-  },
-  {
-    "de": "Können Sie mir kleineres Geld wechseln?",
-    "en": "Can you exchange smaller money for me?",
-    "es": "¿Me puede cambiar dinero más pequeño?",
-    "fr": "Pouvez-vous me changer de l'argent plus petit ?",
-    "cat": "Geld"
-  },
-  {
-    "de": "Ist Trinkgeld in Kolumbien üblich?",
-    "en": "Is tipping common in Colombia?",
-    "es": "¿Las propinas son comunes en Colombia?",
-    "fr": "Le pourboire est-il courant en Colombie ?",
-    "cat": "Geld"
-  },
-  {
-    "de": "Wie viel kostet der Eintritt insgesamt?",
-    "en": "How much does it cost in total?",
-    "es": "¿Cuánto cuesta la entrada en total?",
-    "fr": "Combien coûte l'entrée au total ?",
-    "cat": "Geld"
-  },
-  {
-    "de": "Gibt es einen Rabatt für Gruppen?",
-    "en": "Is there a discount for groups?",
-    "es": "¿Hay algún descuento para grupos?",
-    "fr": "Existe-t-il une réduction pour les groupes ?",
-    "cat": "Geld"
-  },
-  {
-    "de": "Wie lange dauert die Führung durch das Museum?",
-    "en": "How long is the guided tour of the museum?",
-    "es": "¿Cuánto dura la visita guiada al museo?",
-    "fr": "Combien de temps dure la visite guidée du musée ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Gibt es einen Audioguide auf Deutsch?",
-    "en": "Is there an audio guide in German?",
-    "es": "¿Hay una audioguía en alemán?",
-    "fr": "Existe-t-il un audioguide en allemand ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Wann schließt diese Sehenswürdigkeit?",
-    "en": "When does this attraction close?",
-    "es": "¿A qué hora cierra esta atracción?",
-    "fr": "Quand cette attraction touristique ferme-t-elle ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Ist Fotografieren hier erlaubt?",
-    "en": "Is taking pictures allowed?",
-    "es": "¿Está permitida la fotografía aquí?",
-    "fr": "La photographie est-elle autorisée ici ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Gibt es einen ermäßigten Eintritt für Studenten?",
-    "en": "Is there a reduced admission for students?",
-    "es": "¿Hay una entrada reducida para estudiantes?",
-    "fr": "Existe-t-il une entrée à tarif réduit pour les étudiants ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Können wir eine Gruppenführung buchen?",
-    "en": "Can we book a group tour?",
-    "es": "¿Podemos reservar una visita guiada en grupo?",
-    "fr": "Pouvons-nous réserver une visite guidée de groupe ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Welche Sehenswürdigkeit empfehlen Sie als Erstes?",
-    "en": "Which attraction do you recommend first?",
-    "es": "¿Cuál es la primera atracción que recomienda?",
-    "fr": "Quelle attraction recommandez-vous en premier ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Gibt es einen Souvenirladen am Ausgang?",
-    "en": "Is there a souvenir shop at the exit?",
-    "es": "¿Hay alguna tienda de souvenirs a la salida?",
-    "fr": "Y a-t-il une boutique de souvenirs à la sortie ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Ist der Zugang für Rollstühle möglich?",
-    "en": "Is wheelchair access possible?",
-    "es": "¿Es posible el acceso para sillas de ruedas?",
-    "fr": "L'accès aux fauteuils roulants est-il possible ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Wie weit ist es zum nächsten Aussichtspunkt?",
-    "en": "How far is it to the nearest lookout point?",
-    "es": "¿A qué distancia está el mirador más cercano?",
-    "fr": "À quelle distance se trouve le point de vue le plus proche ?",
-    "cat": "Sehenswürdigkeiten"
   }
 ]
