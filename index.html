@@ -512,6 +512,7 @@
         <option value="arvi.json" title="Arví">🌳</option>
         <option value="colombia_diversidad.json" title="Diversidad Colombia">🌈</option>
         <option value="guia_turistica.json" title="Guía Turística">🧳</option>
+        <option value="conversacion_alemana.json" title="Konversation">🗨️</option>
       </select>
       <select id="categorySelect" title="Kategorie"></select>
       <select id="langSelect" title="Sprache"></select>
@@ -655,7 +656,7 @@ const CATEGORY_ICONS = {
   Umwelt:"🌱", Grundlagen:"🇩🇪", Arví:"🌳", Kolumbien:"🌈",
   Orientierung:"🧭", Hotel:"🏨", Restaurant:"🍽️", Transport:"🚌",
   Notfälle:"🆘", Kommunikation:"💬", Geld:"💶", Sehenswürdigkeiten:"🗺️",
-  Tourismus:"🧳", Reisen:"✈️"
+  Tourismus:"🧳", Reisen:"✈️", Konversation:"🗨️"
 };
 function setupCategories(){
   const cats = ["Alle", ...new Set(allPhrases.map(p => p.cat))];
@@ -1482,6 +1483,7 @@ const SOURCE_A_BANCO = {
   "colombia_diversidad.json": "colombia",
   "guia_turistica.json": "guia",
   "aleman_basico.json": "basico",
+  "conversacion_alemana.json": "conversacion",
   // noticias.json no tiene banco propio en generar.py (se arma desde el
   // feed RSS cada vez), así que ese caso no se puede guardar de forma
   // permanente.
