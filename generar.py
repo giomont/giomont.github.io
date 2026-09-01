@@ -23,15 +23,22 @@ Genera los archivos JSON de Wegweiser:
   aleman_basico.json -> ídem con un banco de 100 frases básicas de alemán
                      para el guía (categoría única "Grundlagen").
 
+  conversacion_alemana.json -> ídem con un banco de 100 de las frases más
+                     usadas en conversaciones cotidianas en alemán
+                     (small talk, opiniones, acuerdo/desacuerdo, pedir
+                     aclaraciones, sentimientos, planes, teléfono, clima,
+                     hobbies, rutina; categoría única "Konversation").
+
 Rotación diaria
 ----------------
-Los cuatro bancos "fijos" (arví, colombia, guía, básico) tienen 100 frases
-cada uno. Para no tener que traducir las 100 cada vez (tardaría mucho y
-gastaría la cuota gratuita de MyMemory) el script selecciona automáticamente
-un subconjunto de ITEMS_POR_LISTA frases, distinto cada día, usando la fecha
-como semilla (ver seleccionar_rotando()). Así, cada vez que se corre
-`generar.py listas` (o `all`) las listas también "se actualizan" como las
-noticias: el contenido va rotando día a día por todo el banco de 100.
+Los cinco bancos "fijos" (arví, colombia, guía, básico, conversación) tienen
+100 frases cada uno. Para no tener que traducir las 100 cada vez (tardaría
+mucho y gastaría la cuota gratuita de MyMemory) el script selecciona
+automáticamente un subconjunto de ITEMS_POR_LISTA frases, distinto cada día,
+usando la fecha como semilla (ver seleccionar_rotando()). Así, cada vez que
+se corre `generar.py listas` (o `all`) las listas también "se actualizan"
+como las noticias: el contenido va rotando día a día por todo el banco de
+100.
 
 Uso:
     python3 generar.py noticias      # solo noticias.json
@@ -39,13 +46,14 @@ Uso:
     python3 generar.py colombia      # solo colombia_diversidad.json
     python3 generar.py guia          # solo guia_turistica.json
     python3 generar.py basico        # solo aleman_basico.json
-    python3 generar.py listas        # arvi + colombia + guia + basico (sin noticias)
+    python3 generar.py conversacion  # solo conversacion_alemana.json
+    python3 generar.py listas        # arvi + colombia + guia + basico + conversacion (sin noticias)
     python3 generar.py all           # noticias + listas (todo, por defecto)
 
 Para agregar más frases a cualquiera de los bancos, simplemente agregá una
 línea en alemán a ARVI_PHRASES, COLOMBIA_PHRASES, GUIA_PHRASES (con su
-categoría) o ALEMAN_BASICO_PHRASES más abajo y volvé a correr el script:
-la traducción al inglés/español/francés se genera sola.
+categoría), ALEMAN_BASICO_PHRASES o CONVERSACION_PHRASES más abajo y volvé
+a correr el script: la traducción al inglés/español/francés se genera sola.
 
 Solo usa la librería estándar de Python (urllib), sin dependencias externas.
 """
@@ -75,6 +83,7 @@ ARVI_FILE = "arvi.json"
 COLOMBIA_FILE = "colombia_diversidad.json"
 GUIA_FILE = "guia_turistica.json"
 ALEMAN_BASICO_FILE = "aleman_basico.json"
+CONVERSACION_FILE = "conversacion_alemana.json"
 
 # Cuántas frases del banco de 100 se traducen y publican en cada corrida.
 # El resto queda "en reserva" y va apareciendo en las corridas siguientes
@@ -577,6 +586,123 @@ ALEMAN_BASICO_PHRASES = [
     "Wir sind fast am Ausgangspunkt zurück.",
 ]
 
+# conversacion_alemana.json: todas las frases usan la categoría única
+# "Konversation". A diferencia de ALEMAN_BASICO_PHRASES (frases del guía
+# hacia el turista), este banco son las frases más usadas en una
+# conversación cotidiana en alemán entre dos personas cualquiera.
+CONVERSACION_PHRASES = [
+    # --- Smalltalk / Begrüßung ---
+    "Hallo, wie geht's dir?",
+    "Mir geht es gut, danke der Nachfrage.",
+    "Lange nicht gesehen!",
+    "Was gibt's Neues bei dir?",
+    "Alles klar bei dir zu Hause?",
+    "Schön, dich zu treffen!",
+    "Wie war dein Wochenende?",
+    "Ich freue mich, dich wiederzusehen.",
+    "Was machst du gerade so?",
+    "Erzähl mal, wie läuft's?",
+    # --- Meinung äußern ---
+    "Ich glaube, das ist eine gute Idee.",
+    "Meiner Meinung nach stimmt das nicht ganz.",
+    "Ich finde das ziemlich interessant.",
+    "Ehrlich gesagt, das überzeugt mich nicht.",
+    "Ich bin mir nicht sicher, aber ich denke schon.",
+    "Aus meiner Sicht wäre das die beste Lösung.",
+    "Das sehe ich anders.",
+    "Ich habe dazu keine feste Meinung.",
+    "Das kommt darauf an, wie man es betrachtet.",
+    "Ich muss zugeben, du hast einen guten Punkt.",
+    # --- Zustimmung / Ablehnung ---
+    "Ja, genau, das stimmt.",
+    "Da hast du völlig recht.",
+    "Nein, das glaube ich nicht.",
+    "Damit bin ich nicht einverstanden.",
+    "Klar, das machen wir so.",
+    "Auf keinen Fall!",
+    "Das kann gut sein.",
+    "Ich bin da eher skeptisch.",
+    "Einverstanden, machen wir es so.",
+    "Das sehe ich genauso.",
+    # --- Nachfragen / Klarheit ---
+    "Kannst du das bitte wiederholen?",
+    "Wie bitte?",
+    "Was meinst du damit genau?",
+    "Ich habe das nicht ganz verstanden.",
+    "Könntest du das bitte langsamer sagen?",
+    "Was bedeutet dieses Wort?",
+    "Habe ich das richtig verstanden?",
+    "Kannst du mir ein Beispiel geben?",
+    "Entschuldigung, kannst du das buchstabieren?",
+    "Meinst du das ernst?",
+    # --- Gefühle ausdrücken ---
+    "Ich freue mich sehr darüber.",
+    "Das tut mir wirklich leid.",
+    "Ich bin ein bisschen müde heute.",
+    "Das macht mich glücklich.",
+    "Ich bin etwas nervös deswegen.",
+    "Das ärgert mich ehrlich gesagt.",
+    "Ich bin stolz auf dich.",
+    "Das überrascht mich total.",
+    "Ich mache mir ein bisschen Sorgen.",
+    "Ich bin einfach nur erleichtert.",
+    # --- Verabredungen / Einladungen ---
+    "Hast du morgen Zeit?",
+    "Wollen wir uns mal treffen?",
+    "Ich lade dich zum Kaffee ein.",
+    "Passt es dir am Wochenende?",
+    "Wann können wir uns sehen?",
+    "Kommst du mit zum Essen?",
+    "Wir könnten uns um sechs Uhr treffen.",
+    "Hast du Lust, ins Kino zu gehen?",
+    "Lass uns das nächste Woche planen.",
+    "Ich sage dir noch Bescheid, ob es klappt.",
+    # --- Telefonieren ---
+    "Hallo, hier spricht Giovanni.",
+    "Kann ich bitte mit Frau Müller sprechen?",
+    "Einen Moment bitte, ich verbinde Sie.",
+    "Die Verbindung ist gerade schlecht.",
+    "Kannst du mich später zurückrufen?",
+    "Ich rufe dich in einer Stunde an.",
+    "Tut mir leid, ich habe dich nicht gehört.",
+    "Ich schreibe dir lieber eine Nachricht.",
+    "Danke für den Anruf, bis bald!",
+    "Ich lege jetzt auf, wir sprechen später.",
+    # --- Über das Wetter sprechen ---
+    "Was für ein schöner Tag heute!",
+    "Es ist ziemlich kalt geworden, findest du nicht?",
+    "Ich hoffe, es regnet morgen nicht.",
+    "Der Sommer war dieses Jahr sehr heiß.",
+    "Hast du den Wetterbericht gesehen?",
+    "Es sieht nach Regen aus.",
+    "Endlich scheint mal wieder die Sonne.",
+    "Zieh dich warm an, es ist windig draußen.",
+    "Der Winter kommt dieses Jahr früh.",
+    "Bei diesem Wetter bleibe ich lieber zu Hause.",
+    # --- Hobbys und Freizeit ---
+    "Was machst du gerne in deiner Freizeit?",
+    "Ich lese in meiner Freizeit sehr gerne.",
+    "Spielst du ein Musikinstrument?",
+    "Ich gehe am liebsten wandern.",
+    "Welche Filme magst du?",
+    "Ich koche sehr gerne am Wochenende.",
+    "Treibst du regelmäßig Sport?",
+    "Ich fotografiere gerne in meiner Freizeit.",
+    "Wir spielen jeden Freitag Karten.",
+    "Ich höre gerne Musik beim Spazierengehen.",
+    # --- Alltag / Routine ---
+    "Ich stehe normalerweise um sieben Uhr auf.",
+    "Wie kommst du zur Arbeit?",
+    "Ich mache jeden Morgen einen Kaffee.",
+    "Am Abend gehe ich meistens früh schlafen.",
+    "Was isst du normalerweise zum Frühstück?",
+    "Ich erledige heute noch ein paar Besorgungen.",
+    "Am Wochenende räume ich immer die Wohnung auf.",
+    "Ich bin gerade auf dem Weg nach Hause.",
+    "Heute habe ich einen vollen Terminkalender.",
+    "Zum Feierabend trinke ich gerne einen Tee.",
+]
+
 # ---------------------------------------------------------------------------
 # 1) Descargar y parsear el feed RSS (solo para noticias.json)
 # ---------------------------------------------------------------------------
@@ -738,6 +864,11 @@ def generar_basico():
     generar_desde_banco(seleccion, "Grundlagen", ALEMAN_BASICO_FILE, "Alemán básico")
 
 
+def generar_conversacion():
+    seleccion = seleccionar_rotando(CONVERSACION_PHRASES, ITEMS_POR_LISTA)
+    generar_desde_banco(seleccion, "Konversation", CONVERSACION_FILE, "Conversación alemana")
+
+
 def guardar(items, output_file):
     with open(output_file, "w", encoding="utf-8") as f:
         json.dump(items, f, ensure_ascii=False, indent=2)
@@ -755,10 +886,11 @@ GENERADORES = {
     "colombia": generar_colombia,
     "guia": generar_guia,
     "basico": generar_basico,
+    "conversacion": generar_conversacion,
 }
 
 # Nombres de los generadores que forman el grupo "listas" (todo menos noticias).
-LISTAS_MODOS = ("arvi", "colombia", "guia", "basico")
+LISTAS_MODOS = ("arvi", "colombia", "guia", "basico", "conversacion")
 
 
 def generar_listas():

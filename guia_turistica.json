@@ -1,142 +1,142 @@
 [
   {
-    "de": "Wann schließt diese Sehenswürdigkeit?",
-    "en": "When does this attraction close?",
-    "es": "¿A qué hora cierra esta atracción?",
-    "fr": "Quand cette attraction touristique ferme-t-elle ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Ist Fotografieren hier erlaubt?",
-    "en": "Is taking pictures allowed?",
-    "es": "¿Está permitida la fotografía aquí?",
-    "fr": "La photographie est-elle autorisée ici ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Gibt es einen ermäßigten Eintritt für Studenten?",
-    "en": "Is there a reduced admission for students?",
-    "es": "¿Hay una entrada reducida para estudiantes?",
-    "fr": "Existe-t-il une entrée à tarif réduit pour les étudiants ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Können wir eine Gruppenführung buchen?",
-    "en": "Can we book a group tour?",
-    "es": "¿Podemos reservar una visita guiada en grupo?",
-    "fr": "Pouvons-nous réserver une visite guidée de groupe ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Welche Sehenswürdigkeit empfehlen Sie als Erstes?",
-    "en": "Which attraction do you recommend first?",
-    "es": "¿Cuál es la primera atracción que recomienda?",
-    "fr": "Quelle attraction recommandez-vous en premier ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Gibt es einen Souvenirladen am Ausgang?",
-    "en": "Is there a souvenir shop at the exit?",
-    "es": "¿Hay alguna tienda de souvenirs a la salida?",
-    "fr": "Y a-t-il une boutique de souvenirs à la sortie ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Ist der Zugang für Rollstühle möglich?",
-    "en": "Is wheelchair access possible?",
-    "es": "¿Es posible el acceso para sillas de ruedas?",
-    "fr": "L'accès aux fauteuils roulants est-il possible ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Wie weit ist es zum nächsten Aussichtspunkt?",
-    "en": "How far is it to the nearest lookout point?",
-    "es": "¿A qué distancia está el mirador más cercano?",
-    "fr": "À quelle distance se trouve le point de vue le plus proche ?",
-    "cat": "Sehenswürdigkeiten"
-  },
-  {
-    "de": "Entschuldigung, wo ist der Bahnhof?",
-    "en": "Excuse me, where is the train station?",
-    "es": "Disculpe, ¿dónde está la estación?",
-    "fr": "Excusez-moi, où est la gare ?",
-    "cat": "Orientierung"
-  },
-  {
-    "de": "Ich hätte gerne ein Zimmer für zwei Nächte.",
-    "en": "I would like a room for two nights.",
-    "es": "Me gustaría una habitación para dos noches.",
-    "fr": "J'aimerais une chambre pour deux nuits.",
-    "cat": "Hotel"
-  },
-  {
-    "de": "Können Sie mir den Weg zum Museum zeigen?",
-    "en": "Can you show me the way to the museum?",
-    "es": "¿Puede mostrarme el camino al museo?",
-    "fr": "Können Sie mir den Weg zum Museum zeigen?",
-    "cat": "Orientierung"
-  },
-  {
-    "de": "Die Rechnung, bitte.",
-    "en": "Check, please.",
-    "es": "La cuenta, por favor.",
-    "fr": "J'aimerais la note, je vous prie.",
-    "cat": "Restaurant"
-  },
-  {
-    "de": "Haben Sie eine Speisekarte auf Englisch?",
-    "en": "(Do you have a menu in English?)",
-    "es": "¿Tienes una carta en inglés?",
-    "fr": "Avez-vous un menu en anglais ?",
-    "cat": "Restaurant"
-  },
-  {
-    "de": "Wie viel kostet ein Ticket für die U-Bahn?",
-    "en": "How much does a ticket for the metro cost?",
-    "es": "¿Cuánto cuesta un billete de metro?",
-    "fr": "Combien coûte un ticket de métro ?",
+    "de": "Können Sie mir ein Taxi rufen?",
+    "en": "Can you call a taxi for me?",
+    "es": "¿Puede llamarme un taxi?",
+    "fr": "Pouvez-vous m'appeler un taxi ?",
     "cat": "Transport"
   },
   {
-    "de": "Ich brauche einen Arzt.",
-    "en": "I need a medic.",
-    "es": "Necesito a un médico.",
-    "fr": "J'ai besoin d'un médecin !",
+    "de": "Wo ist die nächste Apotheke?",
+    "en": "Where's the nearest drugstore?",
+    "es": "¿Dónde está la farmacia más cercana?",
+    "fr": "Où se trouve la pharmacie la plus proche ?",
     "cat": "Notfälle"
   },
   {
-    "de": "Sprechen Sie Englisch?",
-    "en": "Do You speak English?",
-    "es": "¿Habla usted inglés?",
-    "fr": "Parlez-vous anglais ?",
+    "de": "Ich möchte eine Stadtführung buchen.",
+    "en": "I want to book a city tour.",
+    "es": "Quiero reservar una visita guiada por la ciudad.",
+    "fr": "Je souhaite réserver une visite guidée de la ville.",
+    "cat": "Sehenswürdigkeiten"
+  },
+  {
+    "de": "Haben Sie vegetarische Gerichte?",
+    "en": "- Do you have any vegetarian meals?",
+    "es": "¿Tienes platos vegetarianos?",
+    "fr": "Avez-vous aussi des plats végétariens ?",
+    "cat": "Restaurant"
+  },
+  {
+    "de": "Wie komme ich zum Flughafen?",
+    "en": "How do I get to the airport?",
+    "es": "¿Cómo llego al aeropuerto?",
+    "fr": "comment se rendre à l'aéroport",
+    "cat": "Transport"
+  },
+  {
+    "de": "Könnten Sie langsamer sprechen, bitte?",
+    "en": "Could you speak more slowly?",
+    "es": "¿Podría hablar más despacio, por favor?",
+    "fr": "Pourriez-vous parler plus lentement, s'il vous plaît ?",
     "cat": "Kommunikation"
   },
   {
-    "de": "Könnten Sie das bitte wiederholen?",
-    "en": "Can you repeat that, please?",
-    "es": "¿Podría repetirlo por favor?",
-    "fr": "Pourriez-vous répéter ça s’il vous plaît ?",
+    "de": "Vielen Dank für Ihre Hilfe!",
+    "en": "Thank you very much for your help!",
+    "es": "Muchas gracias por su ayuda.",
+    "fr": "Je vous remercie pour votre aide !",
     "cat": "Kommunikation"
   },
   {
-    "de": "Wo kann ich Geld wechseln?",
-    "en": "Where to change money?",
-    "es": "¿Dónde puedo cambiar dinero?",
-    "fr": "Où puis-je changer de l'argent ?",
-    "cat": "Geld"
+    "de": "Entschuldigung, wie komme ich zum Hauptplatz?",
+    "en": "Excuse me, how do I get to the main square?",
+    "es": "Disculpe, ¿cómo llego a la plaza principal?",
+    "fr": "Excusez-moi, comment puis-je me rendre sur la place principale ?",
+    "cat": "Orientierung"
   },
   {
-    "de": "Ist das WLAN kostenlos?",
-    "en": "Is Wi-Fi free?",
-    "es": "¿Es gratuito el wifi?",
-    "fr": "C'est gratuit ?",
+    "de": "Ist das Rathaus weit von hier entfernt?",
+    "en": "Is City Hall far from here?",
+    "es": "¿Está el ayuntamiento muy lejos de aquí?",
+    "fr": "L'hôtel de ville est-il loin d'ici ?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Können Sie mir die Richtung zum Hafen zeigen?",
+    "en": "Can you show me the direction to the port?",
+    "es": "¿Me puede indicar la dirección hacia el puerto?",
+    "fr": "Pouvez-vous me montrer la direction du port ?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Wo befindet sich die nächste Bushaltestelle?",
+    "en": "Where is the nearest bus stop?",
+    "es": "¿Dónde está la parada de autobús más cercana?",
+    "fr": "Où se trouve l'arrêt de bus le plus proche ?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Gibt es hier in der Nähe einen Stadtplan?",
+    "en": "Is there a map around here?",
+    "es": "¿Hay un mapa de la ciudad cerca de aquí?",
+    "fr": "Y a-t-il un plan de la ville à proximité ?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Wie weit ist es bis zum Aussichtspunkt?",
+    "en": "How far is it to the lookout point?",
+    "es": "¿A qué distancia está el mirador?",
+    "fr": "Quelle est la distance jusqu'au point de vue ?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Muss ich hier rechts oder links abbiegen?",
+    "en": "Do I have to turn right or left here?",
+    "es": "¿Tengo que girar a la derecha o a la izquierda aquí?",
+    "fr": "Dois-je tourner à droite ou à gauche ?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Wo ist der Eingang zum Park?",
+    "en": "Where is the entrance to the park?",
+    "es": "¿Dónde está la entrada al parque?",
+    "fr": "Où est l'entrée du parc ?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Können Sie mir helfen, mich zu orientieren?",
+    "en": "Can you help me orient myself?",
+    "es": "¿Me puede ayudar a orientarme?",
+    "fr": "Können Sie mir helfen, mich zu orientieren?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Ist dieser Weg der kürzeste zum Zentrum?",
+    "en": "Ist dieser Weg der kürzeste zum Zentrum?",
+    "es": "Ist dieser Weg der kürzeste zum Zentrum?",
+    "fr": "Ist dieser Weg der kürzeste zum Zentrum?",
+    "cat": "Orientierung"
+  },
+  {
+    "de": "Ich habe ein Zimmer für heute Nacht reserviert.",
+    "en": "I have reserved a room for tonight.",
+    "es": "He reservado una habitación para esta noche.",
+    "fr": "Ich habe ein Zimmer für heute Nacht reserviert.",
     "cat": "Hotel"
   },
   {
-    "de": "Um wie viel Uhr öffnet das Museum?",
-    "en": "What time does the museum open?",
-    "es": "¿A qué hora abre el museo?",
-    "fr": "À quelle heure le musée ouvre-t-il ?",
-    "cat": "Sehenswürdigkeiten"
+    "de": "Um wie viel Uhr ist der Check-out?",
+    "en": "when is check out time?",
+    "es": "¿A qué hora es el check-out?",
+    "fr": "Um wie viel Uhr ist der Check-out?",
+    "cat": "Hotel"
+  },
+  {
+    "de": "Können Sie mein Gepäck aufbewahren?",
+    "en": "Können Sie mein Gepäck aufbewahren?",
+    "es": "Können Sie mein Gepäck aufbewahren?",
+    "fr": "Können Sie mein Gepäck aufbewahren?",
+    "cat": "Hotel"
   }
 ]

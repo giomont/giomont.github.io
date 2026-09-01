@@ -1,142 +1,142 @@
 [
   {
-    "de": "Haben Sie genug Sonnencreme dabei?",
-    "en": "Do you have enough sunscreen?",
-    "es": "¿Has traído suficiente protector solar?",
-    "fr": "Avez-vous assez de crème solaire avec vous ?",
+    "de": "Es tut mir leid, ich spreche wenig Deutsch.",
+    "en": "Es tut mir leid, ich spreche wenig Deutsch.",
+    "es": "Lo siento, no hablo mucho alemán.",
+    "fr": "Je suis désolé, je parle peu allemand.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Vergessen Sie nicht, Ihre Kamera aufzuladen.",
-    "en": "Don't forget to charge your camera.",
-    "es": "No olvides cargar tu cámara.",
-    "fr": "N'oubliez pas de recharger votre appareil photo.",
+    "de": "Vielen Dank für Ihren Besuch!",
+    "en": "Vielen Dank für Ihren Besuch!",
+    "es": "¡Gracias por tu visita!",
+    "fr": "Vielen Dank für Ihren Besuch!",
     "cat": "Grundlagen"
   },
   {
-    "de": "Bitte trinken Sie regelmäßig Wasser.",
-    "en": "Please drink water regularly.",
-    "es": "Por favor, beba agua con regularidad.",
-    "fr": "Veuillez boire de l'eau régulièrement.",
+    "de": "Mein Name ist Giovanni. Wie heißen Sie?",
+    "en": "Mein Name ist Giovanni. Wie heißen Sie?",
+    "es": "Mein Name ist Giovanni. Wie heißen Sie?",
+    "fr": "Je m'appelle Giovanni. Quel est votre nom ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Wir machen jetzt eine kurze Fotopause.",
-    "en": "We are now taking a short photo break.",
-    "es": "Ahora vamos a hacer una breve pausa para hacer fotos.",
-    "fr": "Nous prenons maintenant une courte pause photo.",
+    "de": "Zählen wir zusammen: eins, zwei, drei.",
+    "en": "Let's add together: one, two, three.",
+    "es": "Cuentemos juntos: uno, dos, tres.",
+    "fr": "Comptons ensemble : un, deux, trois.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Der Bus wartet schon auf uns.",
-    "en": "The bus is already waiting for us.",
-    "es": "El autobús nos está esperando.",
-    "fr": "Le bus nous attend déjà.",
+    "de": "Links ist der Eingang, rechts ist der Ausgang.",
+    "en": "On the left is the entrance, on the right is the exit.",
+    "es": "A la izquierda está la entrada, a la derecha está la salida.",
+    "fr": "L'entrée est à gauche, la sortie est à droite.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Bitte zählen wir kurz die Gruppe durch.",
-    "en": "Please let us briefly count the group.",
-    "es": "Por favor, contemos brevemente el grupo.",
-    "fr": "Veuillez compter brièvement le groupe.",
+    "de": "Wir fahren jetzt mit der Seilbahn.",
+    "en": "We are now taking the cable car.",
+    "es": "Ahora cogeremos el teleférico.",
+    "fr": "Nous prenons maintenant le téléphérique.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Hat jemand sein Handy verloren?",
-    "en": "Has anyone lost their phone?",
-    "es": "¿Alguien ha perdido su móvil?",
-    "fr": "Quelqu'un a perdu son téléphone ?",
+    "de": "Bis bald und gute Reise!",
+    "en": "See you soon and have a nice trip!",
+    "es": "¡Hasta pronto y buen viaje!",
+    "fr": "À bientôt et bon voyage !",
     "cat": "Grundlagen"
   },
   {
-    "de": "Wir sind fast am Ausgangspunkt zurück.",
-    "en": "We are almost back at the starting point.",
-    "es": "Ya casi estamos de vuelta en el punto de partida.",
-    "fr": "Nous sommes presque de retour au point de départ.",
+    "de": "Guten Morgen! Ich hoffe, Sie haben gut geschlafen.",
+    "en": "Good morning! I hope you slept well.",
+    "es": "¡Buenos días! Espero que hayan dormido bien.",
+    "fr": "Bonjour ! J'espère que vous avez bien dormi.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Guten Tag! Wie kann ich Ihnen helfen?",
-    "en": "Hello how can I help you?",
-    "es": "¡Buenas tardes! ¿En qué puedo ayudarle?",
-    "fr": "Bonjour, puis-je vous aider ?",
+    "de": "Guten Abend, herzlich willkommen zur Abendtour.",
+    "en": "Good evening, welcome to the evening tour.",
+    "es": "Buenas tardes, bienvenidos al tour nocturno.",
+    "fr": "Bonsoir, bienvenue à la visite du soir.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Ich heiße Giovanni und bin Ihr Reiseführer.",
-    "en": "My name is Giovanni and I am your guide.",
-    "es": "Me llamo Giovanni y soy su guía.",
-    "fr": "Je m'appelle Giovanni et je suis votre guide.",
+    "de": "Wie geht es Ihnen heute?",
+    "en": "How are you doing today?",
+    "es": "Cómo está hoy?",
+    "fr": "Comment allez-vous aujourd'hui ?",
     "cat": "Grundlagen"
   },
   {
-    "de": "Willkommen in Kolumbien!",
-    "en": "Welcome to Colombia!",
-    "es": "Willkommen in Kolumbien!",
-    "fr": "Bienvenue en Colombie !",
+    "de": "Es freut mich, Sie kennenzulernen.",
+    "en": "I am delighted to meet you.",
+    "es": "Es un placer conocerlo.",
+    "fr": "Ça me réjouit de vous rencontrer.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Wie viel kostet das?",
-    "en": "How much is it?",
-    "es": "¿Cuánto cuesta eso?",
-    "fr": "Combien cela coûte-t-il ?",
+    "de": "Bitte, nach Ihnen.",
+    "en": "After you, please",
+    "es": "Por favor, después de usted.",
+    "fr": "S'il vous plaît, après vous.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Wo ist die Toilette, bitte?",
-    "en": "Where is the toilet, please?",
-    "es": "¿Dónde está el baño, por favor?",
-    "fr": "Où sont les toilettes, s'il vous plaît ?",
+    "de": "Entschuldigen Sie die Verspätung.",
+    "en": "I'm sorry I'm late.",
+    "es": "Disculpe la tardanza.",
+    "fr": "Excusez mon retard.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Ich verstehe nicht, können Sie das wiederholen?",
-    "en": "I don't understand, can you repeat that?",
-    "es": "No entiendo, ¿puede repetirlo?",
-    "fr": "Je ne comprends pas, pouvez-vous le répéter ?",
+    "de": "Es tut mir leid für die Unannehmlichkeiten.",
+    "en": "I'm sorry for the inconvenience.",
+    "es": "Lamento las molestias.",
+    "fr": "Je suis désolé pour la gêne occasionnée.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Bitte folgen Sie mir.",
-    "en": "Please follow me.",
-    "es": "Por favor, síganme.",
-    "fr": "Veuillez me suivre.",
+    "de": "Ich wünsche Ihnen einen schönen Tag.",
+    "en": "Have a nice day.",
+    "es": "Le deseo con todo mi afecto un feliz día.",
+    "fr": "Très bonne journée,",
     "cat": "Grundlagen"
   },
   {
-    "de": "Wir treffen uns um neun Uhr.",
-    "en": "We'll meet at 3:00 p.m.",
-    "es": "Juntémonos a las 3:00 p.m.",
-    "fr": "Rendez-vous à 9h.",
+    "de": "Auf Wiedersehen und bis zum nächsten Mal!",
+    "en": "See you around'? Manni:",
+    "es": "¡Adiós y hasta la próxima!",
+    "fr": "Au revoir et à la prochaine !",
     "cat": "Grundlagen"
   },
   {
-    "de": "Das Wetter ist heute sehr schön.",
-    "en": "The #weather# is very beautiful today.",
-    "es": "El #tiempo# hoy es muy agradable.",
-    "fr": "La #météo# est très belle aujourd'hui.",
+    "de": "Schönen Aufenthalt in Kolumbien!",
+    "en": "Have a nice stay in Colombia!",
+    "es": "¡Feliz estancia en Colombia!",
+    "fr": "Bon séjour en Colombie !",
     "cat": "Grundlagen"
   },
   {
-    "de": "Haben Sie Fragen?",
-    "en": "Do you have any questions?",
-    "es": "¿Tienes preguntas?",
-    "fr": "Vous avez des questions ?",
+    "de": "Wir treffen uns in fünf Minuten.",
+    "en": "We'll meet in five minutes.",
+    "es": "Nos vemos en cinco minutos.",
+    "fr": "Rendez-vous dans cinq minutes.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Der Ausflug dauert drei Stunden.",
-    "en": "The tour lasts three hours.",
-    "es": "La excursión dura tres horas.",
-    "fr": "L'excursion dure trois heures.",
+    "de": "Der Ausflug beginnt um acht Uhr morgens.",
+    "en": "Der Ausflug beginnt um acht Uhr morgens.",
+    "es": "La excursión comienza a las ocho de la mañana.",
+    "fr": "L'excursion commence à huit heures du matin.",
     "cat": "Grundlagen"
   },
   {
-    "de": "Bitte trinken Sie viel Wasser.",
-    "en": "Drink plenty of water.",
-    "es": "Por favor, beba mucha agua.",
-    "fr": "Veuillez boire beaucoup d'eau.",
+    "de": "Wir haben noch zehn Minuten Zeit.",
+    "en": "We have ten minutes left.",
+    "es": "Nos quedan diez minutos.",
+    "fr": "Il nous reste dix minutes.",
     "cat": "Grundlagen"
   }
 ]

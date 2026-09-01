@@ -1,105 +1,56 @@
 [
   {
-    "de": "Wie war dein Wochenende?",
-    "en": "Wie war dein Wochenende?",
-    "es": "Wie war dein Wochenende?",
-    "fr": "Wie war dein Wochenende?",
-    "cat": "Konversation"
-  },
-  {
-    "de": "Ich freue mich, dich wiederzusehen.",
-    "en": "Ich freue mich, dich wiederzusehen.",
-    "es": "Ich freue mich, dich wiederzusehen.",
-    "fr": "Ich freue mich, dich wiederzusehen.",
-    "cat": "Konversation"
-  },
-  {
-    "de": "Was machst du gerade so?",
-    "en": "Was machst du gerade so?",
-    "es": "Was machst du gerade so?",
-    "fr": "Was machst du gerade so?",
-    "cat": "Konversation"
-  },
-  {
-    "de": "Erzähl mal, wie läuft's?",
-    "en": "Erzähl mal, wie läuft's?",
-    "es": "Erzähl mal, wie läuft's?",
-    "fr": "Erzähl mal, wie läuft's?",
-    "cat": "Konversation"
-  },
-  {
-    "de": "Ich glaube, das ist eine gute Idee.",
-    "en": "Ich glaube, das ist eine gute Idee.",
-    "es": "Ich glaube, das ist eine gute Idee.",
-    "fr": "Ich glaube, das ist eine gute Idee.",
-    "cat": "Konversation"
-  },
-  {
-    "de": "Meiner Meinung nach stimmt das nicht ganz.",
-    "en": "Meiner Meinung nach stimmt das nicht ganz.",
-    "es": "Meiner Meinung nach stimmt das nicht ganz.",
-    "fr": "Meiner Meinung nach stimmt das nicht ganz.",
-    "cat": "Konversation"
-  },
-  {
-    "de": "Ich finde das ziemlich interessant.",
-    "en": "Ich finde das ziemlich interessant.",
-    "es": "Ich finde das ziemlich interessant.",
-    "fr": "Ich finde das ziemlich interessant.",
-    "cat": "Konversation"
-  },
-  {
     "de": "Ehrlich gesagt, das überzeugt mich nicht.",
-    "en": "Ehrlich gesagt, das überzeugt mich nicht.",
-    "es": "Ehrlich gesagt, das überzeugt mich nicht.",
-    "fr": "Ehrlich gesagt, das überzeugt mich nicht.",
+    "en": "Honestly, that doesn't convince me.",
+    "es": "Francamente, no me convence.",
+    "fr": "Honnêtement, cela ne me convainc pas.",
     "cat": "Konversation"
   },
   {
     "de": "Ich bin mir nicht sicher, aber ich denke schon.",
-    "en": "Ich bin mir nicht sicher, aber ich denke schon.",
+    "en": "I'm not sure, but I think so.",
     "es": "Ich bin mir nicht sicher, aber ich denke schon.",
-    "fr": "Ich bin mir nicht sicher, aber ich denke schon.",
+    "fr": "Je ne suis pas sûr, mais je pense que oui.",
     "cat": "Konversation"
   },
   {
     "de": "Aus meiner Sicht wäre das die beste Lösung.",
-    "en": "Aus meiner Sicht wäre das die beste Lösung.",
-    "es": "Aus meiner Sicht wäre das die beste Lösung.",
-    "fr": "Aus meiner Sicht wäre das die beste Lösung.",
+    "en": "In my view, this would be the best solution.",
+    "es": "En mi opinión, esta sería la mejor solución.",
+    "fr": "À mon avis, ce serait la meilleure solution.",
     "cat": "Konversation"
   },
   {
     "de": "Das sehe ich anders.",
-    "en": "Das sehe ich anders.",
-    "es": "Das sehe ich anders.",
-    "fr": "Das sehe ich anders.",
+    "en": "I beg to differ.",
+    "es": "yo lo veo de otra manera",
+    "fr": "Permettez-moi d’ être d’ un autre avis.",
     "cat": "Konversation"
   },
   {
     "de": "Ich habe dazu keine feste Meinung.",
-    "en": "Ich habe dazu keine feste Meinung.",
-    "es": "Ich habe dazu keine feste Meinung.",
-    "fr": "Ich habe dazu keine feste Meinung.",
+    "en": "I didn’t know what to say. I don’t have a settled opinion on it.",
+    "es": "No tengo una opinión firme al respecto.",
+    "fr": "Je n’ai pas d’avis",
     "cat": "Konversation"
   },
   {
     "de": "Das kommt darauf an, wie man es betrachtet.",
-    "en": "Das kommt darauf an, wie man es betrachtet.",
-    "es": "Das kommt darauf an, wie man es betrachtet.",
-    "fr": "Das kommt darauf an, wie man es betrachtet.",
+    "en": "That depends on how you look at it.",
+    "es": "Depende de cómo se mire.",
+    "fr": "Cela dépend de la façon dont vous le regardez.",
     "cat": "Konversation"
   },
   {
     "de": "Ich muss zugeben, du hast einen guten Punkt.",
-    "en": "Ich muss zugeben, du hast einen guten Punkt.",
+    "en": "I have to admit, you have a good point.",
     "es": "Ich muss zugeben, du hast einen guten Punkt.",
     "fr": "Ich muss zugeben, du hast einen guten Punkt.",
     "cat": "Konversation"
   },
   {
     "de": "Ja, genau, das stimmt.",
-    "en": "Ja, genau, das stimmt.",
+    "en": "Yes, that's right.",
     "es": "Ja, genau, das stimmt.",
     "fr": "Ja, genau, das stimmt.",
     "cat": "Konversation"
@@ -107,27 +58,27 @@
   {
     "de": "Da hast du völlig recht.",
     "en": "Da hast du völlig recht.",
-    "es": "Da hast du völlig recht.",
-    "fr": "Da hast du völlig recht.",
+    "es": "Tienes toda la razón.",
+    "fr": "Tu as tout à fait raison.",
     "cat": "Konversation"
   },
   {
     "de": "Nein, das glaube ich nicht.",
-    "en": "Nein, das glaube ich nicht.",
-    "es": "Nein, das glaube ich nicht.",
-    "fr": "Nein, das glaube ich nicht.",
+    "en": "No, I don´t believe so.",
+    "es": "No, no creo en él.",
+    "fr": "Non, je ne le crois pas.",
     "cat": "Konversation"
   },
   {
     "de": "Damit bin ich nicht einverstanden.",
-    "en": "Damit bin ich nicht einverstanden.",
-    "es": "Damit bin ich nicht einverstanden.",
-    "fr": "Damit bin ich nicht einverstanden.",
+    "en": "I don't agree with this slogan.",
+    "es": "Esto es posible también.",
+    "fr": "Je respecte tous ceux qui luttent contre le tabagisme, et j'en suis.",
     "cat": "Konversation"
   },
   {
     "de": "Klar, das machen wir so.",
-    "en": "Klar, das machen wir so.",
+    "en": "Let's do that.",
     "es": "Klar, das machen wir so.",
     "fr": "Klar, das machen wir so.",
     "cat": "Konversation"
@@ -135,8 +86,57 @@
   {
     "de": "Auf keinen Fall!",
     "en": "Auf keinen Fall!",
-    "es": "Auf keinen Fall!",
-    "fr": "Auf keinen Fall!",
+    "es": "¡De ninguna manera!",
+    "fr": "Sûrement pas !",
+    "cat": "Konversation"
+  },
+  {
+    "de": "Das kann gut sein.",
+    "en": "That might well be. I have two children.",
+    "es": "Puede ser.",
+    "fr": "C'est possible.",
+    "cat": "Konversation"
+  },
+  {
+    "de": "Ich bin da eher skeptisch.",
+    "en": "Ich bin da eher skeptisch ...",
+    "es": "Soy más bien escéptico.",
+    "fr": "Comment faire une sélection?",
+    "cat": "Konversation"
+  },
+  {
+    "de": "Einverstanden, machen wir es so.",
+    "en": "Agreed, let's do it this way.",
+    "es": "De acuerdo, hagámoslo así.",
+    "fr": "D'accord, faisons comme ça.",
+    "cat": "Konversation"
+  },
+  {
+    "de": "Das sehe ich genauso.",
+    "en": "I see it like that as well.",
+    "es": "Estoy de acuerdo.",
+    "fr": "Je pense la même chose.",
+    "cat": "Konversation"
+  },
+  {
+    "de": "Kannst du das bitte wiederholen?",
+    "en": "Could you repeat that, please?",
+    "es": "¿Podrías repetirlo, por favor?",
+    "fr": "Peux-tu répéter cela ?",
+    "cat": "Konversation"
+  },
+  {
+    "de": "Wie bitte?",
+    "en": "Wait, what?",
+    "es": "¿Perdona?",
+    "fr": "Pardon ?",
+    "cat": "Konversation"
+  },
+  {
+    "de": "Was meinst du damit genau?",
+    "en": "What do you mean by it?",
+    "es": "¿Qué quieres decir con eso?",
+    "fr": "Que voulez-vous dire exactement par là ?",
     "cat": "Konversation"
   }
 ]
